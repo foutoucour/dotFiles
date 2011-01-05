@@ -1,0 +1,6 @@
+#! /bin/csh
+
+setenv JOBVERBOSE 1
+    echo `job -d $1 $2` | awk -F ' ' '{for(i=1;i<=NF;i++){print $i}}' | grep \.csh | xargs grep -n $3
+unsetenv JOBVERBOSE 
+
