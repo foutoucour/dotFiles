@@ -1,0 +1,65 @@
+#!/usr/bin/env mpcpython
+#jordi-r Thu 06 Jan 2011 16:05:00 GMT
+#
+# Script to remove rex Attributs.
+# Used during jcom prod, when Dneg shared some assets with us.
+#
+# Usage : scriptName fileName.ma
+# it will output a new file : fileName.cleaned.ma
+#
+import sys
+
+
+
+# List of attributs the script will remove
+listRexAttrs = ["rexSubdiv",
+            "rexSubdivEdgeWeight",
+            "rexSubdivRule",
+            "rexSubd",
+            "rexPtex",
+            "rexInterpBoundary",
+            "rexFaceVaryingInterpBoundary",
+            "mtorSubdiv",
+            "pcLodMin",
+            "pcLodMax",
+            ]
+
+file = sys.argv[1]
+
+# Creation of the name of the new file.
+# The new files will be formated as fileName.cleaned.ma.
+sNoExtFile = file.replace(".ma", "")
+newfile = "%s.cleaned.ma" %sNoExtFile
+
+
+oFile = open(file,'r')
+lines = oFile.readlines()
+a = 0
+while a < len(lines):
+
+    # There is a lot of line so this condition just avoid
+    # the loop over listRexAttrs on every lines of the file.
+    # Every Rex attributs start with "rex".
+    #if "rex" in lines[a]:
+
+    for rexAttr in listRexAttrs:
+
+        if rexAttr in lines[a]:
+
+            # If the line is not ended by ";" that means the command is on
+            # several lines. So we have to check next lines and to remove
+            # each lines till we find a ";".
+            while not ";" in lines[a]:
+                lines[a] = ""
+                a += 1
+
+            # This is to remove the line with ";"
+            # as the loop remove the line only if there is no ";" in it.
+            lines[a] = ""
+    # Next line !
+    a += 1
+
+#Writing the new file with only clean lines in it.
+open(newfile,"w").writelines(lines)
+
+

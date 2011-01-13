@@ -1,0 +1,15 @@
+#!/usr/bin/env mpcpython
+#jordi-r Thu 13 Jan 2011 12:50:16 GMT
+# Wrapper of jcom_RenameTextureFiles.py setting it for dneg stuff.
+
+import os
+import sys
+
+sCurrentScriptPath = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(sCurrentScriptPath)
+
+import jcom_RenameTextureFiles as rTF
+
+r = rTF.TextureRenamer("cinesite", sys.argv[1])
+
+

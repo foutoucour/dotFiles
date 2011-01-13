@@ -191,7 +191,7 @@ endfunction
 
 " remapping
 
-map <F2> ajordi-r <C-R>=strftime("%c")<CR><Esc>,cc
+map <F2> ajordi-r <C-R>=strftime("%c")<CR><Esc>,ccA<ESC>
 
 inoremap <Tab> <C-R>=SmartTab(1)<CR>
 inoremap <S-Tab> <C-R>=SmartTab(0)<CR>
