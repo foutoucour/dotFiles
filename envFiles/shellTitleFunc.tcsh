@@ -1,4 +1,4 @@
-
+#!/bin/tcsh -f
 # setting shellTitle, iconTitle and background color for different cases
 
 
@@ -13,13 +13,13 @@ if ( $?JOB) then
 	
 	if ($?SHOT) then
 			#set sTitle="$JOB/$SHOT $DIST $PWD"
-			set sTitle="$JOB/$SHOT $DIST $discipline_tmp"
-			set sIconTitle="$SHOT $DIST"
+			set sTitle="$JOB/$SHOT-$DIST-$discipline_tmp"
+			set sIconTitle="$SHOT-$DIST"
 			set sBgColor='$JOB_COLOUR'
 	else # no SHOT.
 		#set sTitle="$JOB $DIST $PWD"
-		set sTitle="$JOB $DIST $discipline_tmp"
-		set sIconTitle="$JOB $DIST"
+		set sTitle="$JOB-$DIST-$discipline_tmp"
+		set sIconTitle="$JOB-$DIST"
 		set sBgColor="$JOB_COLOUR"
 	endif # endif SHOT
 else # no JOB

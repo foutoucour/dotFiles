@@ -23,22 +23,6 @@ set autolist
 #alias _prompt 'set prompt="%U%T%u:`whoami`:%B$cwd%b: > "'
 alias _prompt 'set prompt="%U%T%u:`whoami`:%B%~%b > "'
 
-#if ( $?prompt ) then
-        #switch ($TERM)
-                #case "xterm*":
-                        #if ($?JOB && $?SHOT) then
-                                #set prompt = "%{\033]0;/jobs/${JOB}"/"${SHOT} %n@%m:%~\007%}$whoami""@""${hostname}:$con1%~ > $coff"
-                        #else if ($?JOB) then
-                                #set prompt = "%{\033]0;/jobs/${JOB} %n@%m:%~\007%}$whoami""@""${hostname}:$con1%~ > $coff"
-                        #else
-                                #set prompt = "%{\033]0;%n@%m:%~\007%}$whoami""@""${hostname}:$con1%~ > $coff"
-                        #endif
-                        #breaksw
-                #default:
-                        ## Do nothing (keeps Framecycler from breaking in hub viewer).
-                        #breaksw
-        #endsw
-#endif
 
 ## shell title feature
 alias _shellTitleFunc 'source /usr/people/jordi-r/config/shellTitleFunc.tcsh'

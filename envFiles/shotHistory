@@ -1,6 +1,3 @@
-et2 rnd/rnd_pipeline maya2011_mpc
-et2 282a_rr/282a_rr_412 maya2011_fx
-et2 rnd/rnd_pipeline maya2011_fx
 et2 282a_rr/282a_rr_412
 et2 282a_rr/282a_rr_412 maya2011_fx
 et2 282a_rr/282a_rr_412
@@ -48,3 +45,6 @@ et2 012_cb/012_cb_175 maya2011_layout
 et2 282a_rr/282a_rr_422 maya2011_layout
 et2 rnd/rnd_pipeline maya2011_animation
 library build/bird maya2011_rigging
+xmfc build maya2011_fur
+xmfc build/charHank maya2011_fur
+p4 rnd/rnd_pipeline maya2011_mpc

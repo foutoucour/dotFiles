@@ -76,7 +76,7 @@ set scs
 set lbr
 
 " columns	width of the display
-set co=265
+set co=99
 
 " lines	number of lines in the display
 set lines=80
