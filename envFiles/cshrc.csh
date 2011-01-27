@@ -85,6 +85,21 @@ alias sw 		'ws'
 
 alias refresh     'cd;cd -'
 
+
+alias cleanTools    'rm -fr $DEVTOOLS/*'
+
+alias j2011 	'job -d maya2011_\!:*;cd -'
+alias j2011rnd 	'job -d maya2011_\!:1 et2 rnd/rnd_pipeline'
+
+alias m				'maya &'
+alias mb            'maya -batch &'
+alias hg			'history | grep \!*'
+alias lg			'ls -1 | grep \!*'
+alias cg            'cd `ls | grep \!*`'
+alias bgColor		'echo -n "\033]11;\!*\033\\"'
+alias bgBlack   	'bgColor black'
+alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
+
 alias makeInstall		'rm -fr .build/;make install OPTIMIZED=1 -j 6 && date'
 alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
 alias makeI                 'makeInstall'
@@ -95,18 +110,10 @@ alias mmakeNewInstall 	'makeNewInstall && m'
 alias mmakeI            'mmakeInstall'
 alias mmakeN            'mmakeNewInstall'
 
-alias cleanTools    'rm -fr $DEVTOOLS/*'
-
-alias j2011 	'job -d maya2011_\!:*;cd -'
-alias j2011rnd 	'job -d maya2011_\!:1 et2 rnd/rnd_pipeline'
-
-alias m				'maya &'
-alias hg			'history | grep \!*'
-alias lg			'ls -1 | grep \!*'
-alias cg            'cd `ls | grep \!*`'
-alias bgColor		'echo -n "\033]11;\!*\033\\"'
-alias bgBlack   	'bgColor black'
-alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
+alias bmakeInstall		'makeInstall && mb' 
+alias bmakeNewInstall 	'makeNewInstall && mb'
+alias bmakeI            'bmakeInstall'
+alias bmakeN            'bmakeNewInstall'
 
 alias topu	'top -u $USER'
 

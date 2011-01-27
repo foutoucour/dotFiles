@@ -23,9 +23,3 @@ setenv JOBVERBOSE 1
 
 
 
-
-setenv MAYA_PRELOAD ${DEVTOOLS}/maya/${MAYA_MAJOR_VERSION}/preload/lib64/XtWidgetIntercept.so
-unsetenv MAYA_PRELOAD
-
-
-

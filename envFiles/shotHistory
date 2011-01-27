@@ -1,16 +1,3 @@
-et2 282a_rr/282a_rr_412
-et2 282a_rr/282a_rr_412 maya2011_fx
-et2 282a_rr/282a_rr_412
-et2 282a_rr/282a_rr_360 maya2011_fx
-et2 rnd/rnd_pipeline maya2011_fx
-et2 rnd/rnd_pipeline maya2011_mpc
-et2 rnd/rnd_pipeline maya2011_fx
-p4 PL/PL_040 maya2011_fx
-p4 PL/PL_060 maya2011_fx
-et2 rnd/rnd_pipeline maya2011_fx
-p4 PL/PL_060 fx
-p4 PL/PL_060 maya2011_fx
-et2 rnd/rnd_pipeline maya2011_fx
 et2 rnd/rnd_pipeline maya2011_layout
 et2 rnd/rnd_pipeline maya2011_fx
 p4 PL/PL_060 maya2011_asset
@@ -48,3 +35,16 @@ library build/bird maya2011_rigging
 xmfc build maya2011_fur
 xmfc build/charHank maya2011_fur
 p4 rnd/rnd_pipeline maya2011_mpc
+p4 rnd/rnd_pipeline maya2011_animation
+xmfc 024_HC/024_HC_0090 maya2011_mpc
+xmfc 024_HC/024_HC_0090 maya2011_fx
+uap rnd/hub maya2011_mpc
+lop config/hub maya2011_mpc
+p4 rnd/rnd_pipeline
+p4 rnd/rnd_pipeline maya2011_animation
+et2 233_bp/233_bp_035 maya2011_animation
+et2 233_bp/233_bp_035 animation
+et2 235_bp/235_bp_056 maya2011_animation
+et2 235_bp/235_bp_060 maya2011_mpc
+et2 012_cb/012_cb_175 maya2011_mpc
+uap rnd/rnd_pipeline
