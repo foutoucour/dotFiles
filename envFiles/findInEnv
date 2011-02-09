@@ -5,6 +5,6 @@ echo "JOB :		" $2
 echo "TO FIND :	" $3
 echo " "
 setenv JOBVERBOSE 1
-    echo `job -d $1 $2` | awk -F ' ' '{for(i=1;i<=NF;i++){print $i}}' | grep \.csh | xargs grep -n $3
+    echo `job -d $1 $2` | awk -F ' ' '{for(i=1;i<=NF;i++){print $i}}' | grep \.csh | xargs grep -in $3
 unsetenv JOBVERBOSE 
 

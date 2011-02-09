@@ -5,5 +5,5 @@ echo "JOB :		" $2
 echo "TO FIND :	" $3
 echo " "
 # set VERBOSE
-echo `job -d maya2011_$1 $2` | awk -F ' ' '{for(i=1;i<=NF;i++){print $i}}' | grep \.csh | xargs grep -n $3
+echo `job -d maya2011_$1 $2` | awk -F ' ' '{for(i=1;i<=NF;i++){print $i}}' | grep \.csh | xargs grep -in $3
 # unset VERBOSE

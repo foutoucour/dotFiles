@@ -206,8 +206,14 @@ map o o<ESC>
 map O O<ESC>
 map <C-S> :w<CR>
 map <F5> :%s/\s*$//g<CR>:noh<CR>
-map ,c" yyPiprint "<Esc>A"<Esc>
-map ,c' yyPiprint '<Esc>A'<Esc>
+
+map ,c; yyp:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
+map ,c" yypIprint "<Esc>A"<Esc>
+map ,c' yypIprint '<Esc>A'<Esc>
+map ,C; yyP:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
+map ,C" yyPIprint "<Esc>A"<Esc>
+map ,C' yyPIprint '<Esc>A'<Esc>
+
 map <F10> :bd<CR>
 map <F11> :tabprevious<CR>:set co=161<CR>:vsplit<CR>:bn<CR>:tabnext<CR>:q<CR>
 "map <F12> <C-W>w
