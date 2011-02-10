@@ -100,20 +100,16 @@ alias bgColor		'echo -n "\033]11;\!*\033\\"'
 alias bgBlack   	'bgColor black'
 alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
 
-alias makeInstall		'rm -fr .build/;make install OPTIMIZED=1 -j 6 && date'
-alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
+alias makeInstall		'make clean;make install OPTIMIZED=1 -j 6 && date'
 alias makeI                 'makeInstall'
+alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
 alias makeN                 'makeNewInstall'
 
-alias mmakeInstall		'makeInstall && m'
-alias mmakeNewInstall 	'makeNewInstall && m'
-alias mmakeI            'mmakeInstall'
-alias mmakeN            'mmakeNewInstall'
+alias mmakeI            'makeI && m'
+alias mmakeN            'makeN && m'
 
-alias bmakeInstall		'makeInstall && mb' 
-alias bmakeNewInstall 	'makeNewInstall && mb'
-alias bmakeI            'bmakeInstall'
-alias bmakeN            'bmakeNewInstall'
+alias bmakeI            'makeI && mb'
+alias bmakeN            'makeN && mb'
 
 alias topu	'top -u $USER'
 
