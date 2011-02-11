@@ -40,82 +40,91 @@ def findCategorie(sValue):
 
 #findCategorie("410")
 dictGeneralProductionProfile = {
-    "Artist":"200",
-    "Dev":"020",
-    "Prod":"002",
-    "ArtistDev":"110",
-    "ArtistProd":"101",
-    "DevProd":"011"
+    "gArtist":"200",
+    "gDev":"020",
+    "gProd":"002",
+    "gArtistDev":"110",
+    "gArtistProd":"101",
+    "gDevProd":"011",
     }
 
 dictProductionProfile = {
-    "Animation":dictGeneralProductionProfile["Artist"],
-    "Character":dictGeneralProductionProfile["ArtistDev"],
-    "Compositing":dictGeneralProductionProfile["Artist"],
-    "Concept":dictGeneralProductionProfile["Artist"],
-    "Environment":dictGeneralProductionProfile["Artist"],
-    "FX":dictGeneralProductionProfile["Artist"],
-    "Game":dictGeneralProductionProfile["Artist"],
-    "Generalist":dictGeneralProductionProfile["ArtistDev"],
-    "Interface":dictGeneralProductionProfile["ArtistDev"],
-    "Layout":dictGeneralProductionProfile["Artist"],
-    "Level":dictGeneralProductionProfile["ArtistDev"],
-    "Lighting":dictGeneralProductionProfile["Artist"],
-    "Matchmoving":dictGeneralProductionProfile["Artist"],
-    "Modeling":dictGeneralProductionProfile["Artist"],
-    "Motion Capture":dictGeneralProductionProfile["Artist"],
-    "Pipeline":dictGeneralProductionProfile["Dev"],
-    "Pre-Vis":dictGeneralProductionProfile["Artist"],
-    "Production":dictGeneralProductionProfile["Prod"],
-    #"RenderWrangler":dictGeneralProductionProfile["Dev"],
-    "Rendering":dictGeneralProductionProfile["Dev"],
-    "Rigging":dictGeneralProductionProfile["ArtistDev"],
-    "Data":dictGeneralProductionProfile["Dev"],
-    "Rotoscoping":dictGeneralProductionProfile["Artist"],
-    "Shading":dictGeneralProductionProfile["Artist"],
-    "Shader":dictGeneralProductionProfile["Dev"],
-    "Story Board":dictGeneralProductionProfile["ArtistProd"],
-    "Texturing":dictGeneralProductionProfile["Artist"],
-    "Fur":dictGeneralProductionProfile["Artist"],
-    "Cloth":dictGeneralProductionProfile["Artist"],
-    "Graphic":dictGeneralProductionProfile["Artist"],
-    "Software":dictGeneralProductionProfile["Dev"],
-    "Sound":dictGeneralProductionProfile["Artist"],
-    "Web":dictGeneralProductionProfile["ArtistDev"],
-    "OpenGL":dictGeneralProductionProfile["Dev"],
-    "RnD":dictGeneralProductionProfile["Dev"],
-    "Executive":dictGeneralProductionProfile["Prod"],
-    "VFX":dictGeneralProductionProfile["ArtistProd"],
-    "Line":dictGeneralProductionProfile["Prod"],
-    "Human Ressources":dictGeneralProductionProfile["Prod"],
-    "Recruitment":dictGeneralProductionProfile["ArtistProd"],
-    "Crew":dictGeneralProductionProfile["ArtistProd"],
-    "Runner":dictGeneralProductionProfile["ArtistProd"],
-    "Visual Development":dictGeneralProductionProfile["Artist"],
-    "Digital Matte Painting":dictGeneralProductionProfile["Artist"],
-    "System":dictGeneralProductionProfile["Dev"],
-    "Database":dictGeneralProductionProfile["Dev"],
-    "Technology":dictGeneralProductionProfile["Dev"],
+    "Animation":dictGeneralProductionProfile["gArtist"],
+    "Character":dictGeneralProductionProfile["gArtistDev"],
+    "Compositing":dictGeneralProductionProfile["gArtist"],
+    "Concept":dictGeneralProductionProfile["gArtist"],
+    "Environment":dictGeneralProductionProfile["gArtist"],
+    "FX":dictGeneralProductionProfile["gArtist"],
+    "Game":dictGeneralProductionProfile["gArtist"],
+    "Generalist":dictGeneralProductionProfile["gArtistDev"],
+    "Interface":dictGeneralProductionProfile["gArtistDev"],
+    "Layout":dictGeneralProductionProfile["gArtist"],
+    "Level":dictGeneralProductionProfile["gArtistDev"],
+    "Lighting":dictGeneralProductionProfile["gArtist"],
+    "Matchmoving":dictGeneralProductionProfile["gArtist"],
+    "Modeling":dictGeneralProductionProfile["gArtist"],
+    "Motion Capture":dictGeneralProductionProfile["gArtist"],
+    "Pipeline":dictGeneralProductionProfile["gDev"],
+    "Pre-Vis":dictGeneralProductionProfile["gArtist"],
+    "gProduction":dictGeneralProductionProfile["gProd"],
+    #"RenderWrangler":dictGeneralProductionProfile["gDev"],
+    "Rendering":dictGeneralProductionProfile["gDev"],
+    "Rigging":dictGeneralProductionProfile["gArtistDev"],
+    "Data":dictGeneralProductionProfile["gDev"],
+    "Rotoscoping":dictGeneralProductionProfile["gArtist"],
+    "Shading":dictGeneralProductionProfile["gArtist"],
+    "Shader":dictGeneralProductionProfile["gDev"],
+    "Story Board":dictGeneralProductionProfile["gArtistProd"],
+    "Texturing":dictGeneralProductionProfile["gArtist"],
+    "Fur":dictGeneralProductionProfile["gArtist"],
+    "Cloth":dictGeneralProductionProfile["gArtist"],
+    "Graphic":dictGeneralProductionProfile["gArtist"],
+    "Software":dictGeneralProductionProfile["gDev"],
+    "Sound":dictGeneralProductionProfile["gArtist"],
+    "Web":dictGeneralProductionProfile["gArtistDev"],
+    "OpenGL":dictGeneralProductionProfile["gDev"],
+    "RnD":dictGeneralProductionProfile["gDev"],
+    "Executive":dictGeneralProductionProfile["gProd"],
+    "VFX":dictGeneralProductionProfile["gArtistProd"],
+    "Line":dictGeneralProductionProfile["gProd"],
+    "Human Ressources":dictGeneralProductionProfile["gProd"],
+    "Recruitment":dictGeneralProductionProfile["gArtistProd"],
+    "Crew":dictGeneralProductionProfile["gArtistProd"],
+    "Runner":dictGeneralProductionProfile["gArtistProd"],
+    "Visual Development":dictGeneralProductionProfile["gArtist"],
+    "Digital Matte Painting":dictGeneralProductionProfile["gArtist"],
+    "System":dictGeneralProductionProfile["gDev"],
+    "Database":dictGeneralProductionProfile["gDev"],
+    "Technology":dictGeneralProductionProfile["gDev"],
     }
 
+dictGeneralTypeProfiles = {
+    "tArtist":"300",
+    "tTechnical Director":"120",
+    "tProd":"003",
+    "tTeacher":"210",
+    "tDeveloper":"030",
+    "tWriter":"201",
+    }
+
+
 dictTypeProfiles = {
-    "Artist":"300",
-    "Technical Director":"120",
-    "Director":"003",
-    "Head of Department":"003",
-    "Manager":"003",
-    "Supervisor":"003",
-    "Technical Artist":"120",
-    "Assistant TD":"120",
-    "Menthor":"210",
-    "Professor":"210",
-    "Engineer":"030",
-    "Developer":"030",
-    "Assistant":"003",
-    "Coordinator":"003",
-    "Producer":"003",
-    "Writer":"201",
-    "Designer":"300",
+    "Artist":dictGeneralTypeProfiles["tArtist"],
+    "Technical Director":dictGeneralTypeProfiles["tTechnical Director"],
+    "Director":dictGeneralTypeProfiles["tProd"],
+    "Head of Department":dictGeneralTypeProfiles["tProd"],
+    "Manager":dictGeneralTypeProfiles["tProd"],
+    "Supervisor":dictGeneralTypeProfiles["tProd"],
+    "Technical Artist":dictGeneralTypeProfiles["tTechnical Director"],
+    "Assistant TD":dictGeneralTypeProfiles["tTechnical Director"],
+    "Teacher":dictGeneralTypeProfiles["tTeacher"],
+    "Engineer":dictGeneralTypeProfiles["tDeveloper"],
+    "Developer":dictGeneralTypeProfiles["tDeveloper"],
+    "Assistant":dictGeneralTypeProfiles["tProd"],
+    "Coordinator":dictGeneralTypeProfiles["tProd"],
+    "Producer":dictGeneralTypeProfiles["tProd"],
+    "Writer":dictGeneralTypeProfiles["tWriter"],
+    "Designer":dictGeneralTypeProfiles["tArtist"],
     }
 
 dictCategories = {}
@@ -124,16 +133,16 @@ dictCategories = {}
     #dpValue = dictTypeProfiles[dpKey]
     #for tpKey in sorted(dictProductionProfile.keys()) :
         #tpValue = dictProductionProfile[tpKey]
-for dpKey in sorted(dictProductionProfile.keys()) :
-    dpValue = dictProductionProfile[dpKey]
-    for tpKey in sorted(dictTypeProfiles.keys()) :
-        tpValue = dictTypeProfiles[tpKey]
+for dpKey in sorted(dictGeneralProductionProfile.keys()) :
+    dpValue = dictGeneralProductionProfile[dpKey]
+    for tpKey in sorted(dictGeneralTypeProfiles.keys()) :
+        tpValue = dictGeneralTypeProfiles[tpKey]
         fullname = "%s %s" %(dpKey, tpKey)
         fullvalue = "%03d" %(int(dpValue)+int(tpValue))
         #categorie = "%s %s" %(findCategorie(fullvalue),fullvalue)
         categorie = findCategorie(fullvalue)
 
-        print "%-40s %05s %s" %(fullname, fullvalue, categorie)
+        #print "%-40s %05s %s" %(fullname, fullvalue, categorie)
 
         if not categorie in dictCategories.keys():
             dictCategories[categorie] = []
@@ -143,12 +152,12 @@ for dpKey in sorted(dictProductionProfile.keys()) :
     #print ""
 
 
-#for key in sorted(dictCategories.iterkeys()):
-    #list = dictCategories[key]
-    #list.sort()
-    #print key, len(list)
-    #for i in list :
-        #print "\t", i
-    #print ""
+for key in sorted(dictCategories.iterkeys()):
+    list = dictCategories[key]
+    list.sort()
+    print key, len(list)
+    for i in list :
+        print "\t", i
+    print ""
 
 
