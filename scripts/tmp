@@ -1,0 +1,799 @@
+Artist Animation                           500 artist
+Artist Character                           410 artist
+Artist Cloth                               500 artist
+Artist Compositing                         500 artist
+Artist Concept                             500 artist
+Artist Crew                                401 artist
+Artist Data                                320 artist (Minor : dev)
+Artist Database                            320 artist (Minor : dev)
+Artist Digital Matte Painting              500 artist
+Artist Environment                         500 artist
+Artist Executive                           302 artist (Minor : prod)
+Artist FX                                  500 artist
+Artist Fur                                 500 artist
+Artist Game                                500 artist
+Artist Generalist                          410 artist
+Artist Graphic                             500 artist
+Artist Human Ressources                    302 artist (Minor : prod)
+Artist Interface                           410 artist
+Artist Layout                              500 artist
+Artist Level                               410 artist
+Artist Lighting                            500 artist
+Artist Line                                302 artist (Minor : prod)
+Artist Matchmoving                         500 artist
+Artist Modeling                            500 artist
+Artist Motion Capture                      500 artist
+Artist OpenGL                              320 artist (Minor : dev)
+Artist Pipeline                            320 artist (Minor : dev)
+Artist Pre-Vis                             500 artist
+Artist Production                          302 artist (Minor : prod)
+Artist Recruitment                         401 artist
+Artist Rendering                           320 artist (Minor : dev)
+Artist Rigging                             410 artist
+Artist RnD                                 320 artist (Minor : dev)
+Artist Rotoscoping                         500 artist
+Artist Runner                              401 artist
+Artist Shader                              320 artist (Minor : dev)
+Artist Shading                             500 artist
+Artist Software                            320 artist (Minor : dev)
+Artist Sound                               500 artist
+Artist Story Board                         401 artist
+Artist System                              320 artist (Minor : dev)
+Artist Technology                          320 artist (Minor : dev)
+Artist Texturing                           500 artist
+Artist VFX                                 401 artist
+Artist Visual Development                  500 artist
+Artist Web                                 410 artist
+
+Assistant Animation                        203 prod (Minor : artist)
+Assistant Character                        113 prod
+Assistant Cloth                            203 prod (Minor : artist)
+Assistant Compositing                      203 prod (Minor : artist)
+Assistant Concept                          203 prod (Minor : artist)
+Assistant Crew                             104 prod
+Assistant Data                             023 prod (Minor : dev)
+Assistant Database                         023 prod (Minor : dev)
+Assistant Digital Matte Painting           203 prod (Minor : artist)
+Assistant Environment                      203 prod (Minor : artist)
+Assistant Executive                        005 prod
+Assistant FX                               203 prod (Minor : artist)
+Assistant Fur                              203 prod (Minor : artist)
+Assistant Game                             203 prod (Minor : artist)
+Assistant Generalist                       113 prod
+Assistant Graphic                          203 prod (Minor : artist)
+Assistant Human Ressources                 005 prod
+Assistant Interface                        113 prod
+Assistant Layout                           203 prod (Minor : artist)
+Assistant Level                            113 prod
+Assistant Lighting                         203 prod (Minor : artist)
+Assistant Line                             005 prod
+Assistant Matchmoving                      203 prod (Minor : artist)
+Assistant Modeling                         203 prod (Minor : artist)
+Assistant Motion Capture                   203 prod (Minor : artist)
+Assistant OpenGL                           023 prod (Minor : dev)
+Assistant Pipeline                         023 prod (Minor : dev)
+Assistant Pre-Vis                          203 prod (Minor : artist)
+Assistant Production                       005 prod
+Assistant Recruitment                      104 prod
+Assistant Rendering                        023 prod (Minor : dev)
+Assistant Rigging                          113 prod
+Assistant RnD                              023 prod (Minor : dev)
+Assistant Rotoscoping                      203 prod (Minor : artist)
+Assistant Runner                           104 prod
+Assistant Shader                           023 prod (Minor : dev)
+Assistant Shading                          203 prod (Minor : artist)
+Assistant Software                         023 prod (Minor : dev)
+Assistant Sound                            203 prod (Minor : artist)
+Assistant Story Board                      104 prod
+Assistant System                           023 prod (Minor : dev)
+Assistant Technology                       023 prod (Minor : dev)
+Assistant Texturing                        203 prod (Minor : artist)
+Assistant VFX                              104 prod
+Assistant Visual Development               203 prod (Minor : artist)
+Assistant Web                              113 prod
+
+Assistant TD Animation                     320 artist (Minor : dev)
+Assistant TD Character                     230 dev (Minor : artist)
+Assistant TD Cloth                         320 artist (Minor : dev)
+Assistant TD Compositing                   320 artist (Minor : dev)
+Assistant TD Concept                       320 artist (Minor : dev)
+Assistant TD Crew                          221 artist+dev
+Assistant TD Data                          140 dev
+Assistant TD Database                      140 dev
+Assistant TD Digital Matte Painting        320 artist (Minor : dev)
+Assistant TD Environment                   320 artist (Minor : dev)
+Assistant TD Executive                     122 dev+prod
+Assistant TD FX                            320 artist (Minor : dev)
+Assistant TD Fur                           320 artist (Minor : dev)
+Assistant TD Game                          320 artist (Minor : dev)
+Assistant TD Generalist                    230 dev (Minor : artist)
+Assistant TD Graphic                       320 artist (Minor : dev)
+Assistant TD Human Ressources              122 dev+prod
+Assistant TD Interface                     230 dev (Minor : artist)
+Assistant TD Layout                        320 artist (Minor : dev)
+Assistant TD Level                         230 dev (Minor : artist)
+Assistant TD Lighting                      320 artist (Minor : dev)
+Assistant TD Line                          122 dev+prod
+Assistant TD Matchmoving                   320 artist (Minor : dev)
+Assistant TD Modeling                      320 artist (Minor : dev)
+Assistant TD Motion Capture                320 artist (Minor : dev)
+Assistant TD OpenGL                        140 dev
+Assistant TD Pipeline                      140 dev
+Assistant TD Pre-Vis                       320 artist (Minor : dev)
+Assistant TD Production                    122 dev+prod
+Assistant TD Recruitment                   221 artist+dev
+Assistant TD Rendering                     140 dev
+Assistant TD Rigging                       230 dev (Minor : artist)
+Assistant TD RnD                           140 dev
+Assistant TD Rotoscoping                   320 artist (Minor : dev)
+Assistant TD Runner                        221 artist+dev
+Assistant TD Shader                        140 dev
+Assistant TD Shading                       320 artist (Minor : dev)
+Assistant TD Software                      140 dev
+Assistant TD Sound                         320 artist (Minor : dev)
+Assistant TD Story Board                   221 artist+dev
+Assistant TD System                        140 dev
+Assistant TD Technology                    140 dev
+Assistant TD Texturing                     320 artist (Minor : dev)
+Assistant TD VFX                           221 artist+dev
+Assistant TD Visual Development            320 artist (Minor : dev)
+Assistant TD Web                           230 dev (Minor : artist)
+
+Coordinator Animation                      203 prod (Minor : artist)
+Coordinator Character                      113 prod
+Coordinator Cloth                          203 prod (Minor : artist)
+Coordinator Compositing                    203 prod (Minor : artist)
+Coordinator Concept                        203 prod (Minor : artist)
+Coordinator Crew                           104 prod
+Coordinator Data                           023 prod (Minor : dev)
+Coordinator Database                       023 prod (Minor : dev)
+Coordinator Digital Matte Painting         203 prod (Minor : artist)
+Coordinator Environment                    203 prod (Minor : artist)
+Coordinator Executive                      005 prod
+Coordinator FX                             203 prod (Minor : artist)
+Coordinator Fur                            203 prod (Minor : artist)
+Coordinator Game                           203 prod (Minor : artist)
+Coordinator Generalist                     113 prod
+Coordinator Graphic                        203 prod (Minor : artist)
+Coordinator Human Ressources               005 prod
+Coordinator Interface                      113 prod
+Coordinator Layout                         203 prod (Minor : artist)
+Coordinator Level                          113 prod
+Coordinator Lighting                       203 prod (Minor : artist)
+Coordinator Line                           005 prod
+Coordinator Matchmoving                    203 prod (Minor : artist)
+Coordinator Modeling                       203 prod (Minor : artist)
+Coordinator Motion Capture                 203 prod (Minor : artist)
+Coordinator OpenGL                         023 prod (Minor : dev)
+Coordinator Pipeline                       023 prod (Minor : dev)
+Coordinator Pre-Vis                        203 prod (Minor : artist)
+Coordinator Production                     005 prod
+Coordinator Recruitment                    104 prod
+Coordinator Rendering                      023 prod (Minor : dev)
+Coordinator Rigging                        113 prod
+Coordinator RnD                            023 prod (Minor : dev)
+Coordinator Rotoscoping                    203 prod (Minor : artist)
+Coordinator Runner                         104 prod
+Coordinator Shader                         023 prod (Minor : dev)
+Coordinator Shading                        203 prod (Minor : artist)
+Coordinator Software                       023 prod (Minor : dev)
+Coordinator Sound                          203 prod (Minor : artist)
+Coordinator Story Board                    104 prod
+Coordinator System                         023 prod (Minor : dev)
+Coordinator Technology                     023 prod (Minor : dev)
+Coordinator Texturing                      203 prod (Minor : artist)
+Coordinator VFX                            104 prod
+Coordinator Visual Development             203 prod (Minor : artist)
+Coordinator Web                            113 prod
+
+Designer Animation                         500 artist
+Designer Character                         410 artist
+Designer Cloth                             500 artist
+Designer Compositing                       500 artist
+Designer Concept                           500 artist
+Designer Crew                              401 artist
+Designer Data                              320 artist (Minor : dev)
+Designer Database                          320 artist (Minor : dev)
+Designer Digital Matte Painting            500 artist
+Designer Environment                       500 artist
+Designer Executive                         302 artist (Minor : prod)
+Designer FX                                500 artist
+Designer Fur                               500 artist
+Designer Game                              500 artist
+Designer Generalist                        410 artist
+Designer Graphic                           500 artist
+Designer Human Ressources                  302 artist (Minor : prod)
+Designer Interface                         410 artist
+Designer Layout                            500 artist
+Designer Level                             410 artist
+Designer Lighting                          500 artist
+Designer Line                              302 artist (Minor : prod)
+Designer Matchmoving                       500 artist
+Designer Modeling                          500 artist
+Designer Motion Capture                    500 artist
+Designer OpenGL                            320 artist (Minor : dev)
+Designer Pipeline                          320 artist (Minor : dev)
+Designer Pre-Vis                           500 artist
+Designer Production                        302 artist (Minor : prod)
+Designer Recruitment                       401 artist
+Designer Rendering                         320 artist (Minor : dev)
+Designer Rigging                           410 artist
+Designer RnD                               320 artist (Minor : dev)
+Designer Rotoscoping                       500 artist
+Designer Runner                            401 artist
+Designer Shader                            320 artist (Minor : dev)
+Designer Shading                           500 artist
+Designer Software                          320 artist (Minor : dev)
+Designer Sound                             500 artist
+Designer Story Board                       401 artist
+Designer System                            320 artist (Minor : dev)
+Designer Technology                        320 artist (Minor : dev)
+Designer Texturing                         500 artist
+Designer VFX                               401 artist
+Designer Visual Development                500 artist
+Designer Web                               410 artist
+
+Developer Animation                        230 dev (Minor : artist)
+Developer Character                        140 dev
+Developer Cloth                            230 dev (Minor : artist)
+Developer Compositing                      230 dev (Minor : artist)
+Developer Concept                          230 dev (Minor : artist)
+Developer Crew                             131 dev
+Developer Data                             050 dev
+Developer Database                         050 dev
+Developer Digital Matte Painting           230 dev (Minor : artist)
+Developer Environment                      230 dev (Minor : artist)
+Developer Executive                        032 dev (Minor : prod)
+Developer FX                               230 dev (Minor : artist)
+Developer Fur                              230 dev (Minor : artist)
+Developer Game                             230 dev (Minor : artist)
+Developer Generalist                       140 dev
+Developer Graphic                          230 dev (Minor : artist)
+Developer Human Ressources                 032 dev (Minor : prod)
+Developer Interface                        140 dev
+Developer Layout                           230 dev (Minor : artist)
+Developer Level                            140 dev
+Developer Lighting                         230 dev (Minor : artist)
+Developer Line                             032 dev (Minor : prod)
+Developer Matchmoving                      230 dev (Minor : artist)
+Developer Modeling                         230 dev (Minor : artist)
+Developer Motion Capture                   230 dev (Minor : artist)
+Developer OpenGL                           050 dev
+Developer Pipeline                         050 dev
+Developer Pre-Vis                          230 dev (Minor : artist)
+Developer Production                       032 dev (Minor : prod)
+Developer Recruitment                      131 dev
+Developer Rendering                        050 dev
+Developer Rigging                          140 dev
+Developer RnD                              050 dev
+Developer Rotoscoping                      230 dev (Minor : artist)
+Developer Runner                           131 dev
+Developer Shader                           050 dev
+Developer Shading                          230 dev (Minor : artist)
+Developer Software                         050 dev
+Developer Sound                            230 dev (Minor : artist)
+Developer Story Board                      131 dev
+Developer System                           050 dev
+Developer Technology                       050 dev
+Developer Texturing                        230 dev (Minor : artist)
+Developer VFX                              131 dev
+Developer Visual Development               230 dev (Minor : artist)
+Developer Web                              140 dev
+
+Director Animation                         203 prod (Minor : artist)
+Director Character                         113 prod
+Director Cloth                             203 prod (Minor : artist)
+Director Compositing                       203 prod (Minor : artist)
+Director Concept                           203 prod (Minor : artist)
+Director Crew                              104 prod
+Director Data                              023 prod (Minor : dev)
+Director Database                          023 prod (Minor : dev)
+Director Digital Matte Painting            203 prod (Minor : artist)
+Director Environment                       203 prod (Minor : artist)
+Director Executive                         005 prod
+Director FX                                203 prod (Minor : artist)
+Director Fur                               203 prod (Minor : artist)
+Director Game                              203 prod (Minor : artist)
+Director Generalist                        113 prod
+Director Graphic                           203 prod (Minor : artist)
+Director Human Ressources                  005 prod
+Director Interface                         113 prod
+Director Layout                            203 prod (Minor : artist)
+Director Level                             113 prod
+Director Lighting                          203 prod (Minor : artist)
+Director Line                              005 prod
+Director Matchmoving                       203 prod (Minor : artist)
+Director Modeling                          203 prod (Minor : artist)
+Director Motion Capture                    203 prod (Minor : artist)
+Director OpenGL                            023 prod (Minor : dev)
+Director Pipeline                          023 prod (Minor : dev)
+Director Pre-Vis                           203 prod (Minor : artist)
+Director Production                        005 prod
+Director Recruitment                       104 prod
+Director Rendering                         023 prod (Minor : dev)
+Director Rigging                           113 prod
+Director RnD                               023 prod (Minor : dev)
+Director Rotoscoping                       203 prod (Minor : artist)
+Director Runner                            104 prod
+Director Shader                            023 prod (Minor : dev)
+Director Shading                           203 prod (Minor : artist)
+Director Software                          023 prod (Minor : dev)
+Director Sound                             203 prod (Minor : artist)
+Director Story Board                       104 prod
+Director System                            023 prod (Minor : dev)
+Director Technology                        023 prod (Minor : dev)
+Director Texturing                         203 prod (Minor : artist)
+Director VFX                               104 prod
+Director Visual Development                203 prod (Minor : artist)
+Director Web                               113 prod
+
+Engineer Animation                         230 dev (Minor : artist)
+Engineer Character                         140 dev
+Engineer Cloth                             230 dev (Minor : artist)
+Engineer Compositing                       230 dev (Minor : artist)
+Engineer Concept                           230 dev (Minor : artist)
+Engineer Crew                              131 dev
+Engineer Data                              050 dev
+Engineer Database                          050 dev
+Engineer Digital Matte Painting            230 dev (Minor : artist)
+Engineer Environment                       230 dev (Minor : artist)
+Engineer Executive                         032 dev (Minor : prod)
+Engineer FX                                230 dev (Minor : artist)
+Engineer Fur                               230 dev (Minor : artist)
+Engineer Game                              230 dev (Minor : artist)
+Engineer Generalist                        140 dev
+Engineer Graphic                           230 dev (Minor : artist)
+Engineer Human Ressources                  032 dev (Minor : prod)
+Engineer Interface                         140 dev
+Engineer Layout                            230 dev (Minor : artist)
+Engineer Level                             140 dev
+Engineer Lighting                          230 dev (Minor : artist)
+Engineer Line                              032 dev (Minor : prod)
+Engineer Matchmoving                       230 dev (Minor : artist)
+Engineer Modeling                          230 dev (Minor : artist)
+Engineer Motion Capture                    230 dev (Minor : artist)
+Engineer OpenGL                            050 dev
+Engineer Pipeline                          050 dev
+Engineer Pre-Vis                           230 dev (Minor : artist)
+Engineer Production                        032 dev (Minor : prod)
+Engineer Recruitment                       131 dev
+Engineer Rendering                         050 dev
+Engineer Rigging                           140 dev
+Engineer RnD                               050 dev
+Engineer Rotoscoping                       230 dev (Minor : artist)
+Engineer Runner                            131 dev
+Engineer Shader                            050 dev
+Engineer Shading                           230 dev (Minor : artist)
+Engineer Software                          050 dev
+Engineer Sound                             230 dev (Minor : artist)
+Engineer Story Board                       131 dev
+Engineer System                            050 dev
+Engineer Technology                        050 dev
+Engineer Texturing                         230 dev (Minor : artist)
+Engineer VFX                               131 dev
+Engineer Visual Development                230 dev (Minor : artist)
+Engineer Web                               140 dev
+
+Head of Department Animation               203 prod (Minor : artist)
+Head of Department Character               113 prod
+Head of Department Cloth                   203 prod (Minor : artist)
+Head of Department Compositing             203 prod (Minor : artist)
+Head of Department Concept                 203 prod (Minor : artist)
+Head of Department Crew                    104 prod
+Head of Department Data                    023 prod (Minor : dev)
+Head of Department Database                023 prod (Minor : dev)
+Head of Department Digital Matte Painting   203 prod (Minor : artist)
+Head of Department Environment             203 prod (Minor : artist)
+Head of Department Executive               005 prod
+Head of Department FX                      203 prod (Minor : artist)
+Head of Department Fur                     203 prod (Minor : artist)
+Head of Department Game                    203 prod (Minor : artist)
+Head of Department Generalist              113 prod
+Head of Department Graphic                 203 prod (Minor : artist)
+Head of Department Human Ressources        005 prod
+Head of Department Interface               113 prod
+Head of Department Layout                  203 prod (Minor : artist)
+Head of Department Level                   113 prod
+Head of Department Lighting                203 prod (Minor : artist)
+Head of Department Line                    005 prod
+Head of Department Matchmoving             203 prod (Minor : artist)
+Head of Department Modeling                203 prod (Minor : artist)
+Head of Department Motion Capture          203 prod (Minor : artist)
+Head of Department OpenGL                  023 prod (Minor : dev)
+Head of Department Pipeline                023 prod (Minor : dev)
+Head of Department Pre-Vis                 203 prod (Minor : artist)
+Head of Department Production              005 prod
+Head of Department Recruitment             104 prod
+Head of Department Rendering               023 prod (Minor : dev)
+Head of Department Rigging                 113 prod
+Head of Department RnD                     023 prod (Minor : dev)
+Head of Department Rotoscoping             203 prod (Minor : artist)
+Head of Department Runner                  104 prod
+Head of Department Shader                  023 prod (Minor : dev)
+Head of Department Shading                 203 prod (Minor : artist)
+Head of Department Software                023 prod (Minor : dev)
+Head of Department Sound                   203 prod (Minor : artist)
+Head of Department Story Board             104 prod
+Head of Department System                  023 prod (Minor : dev)
+Head of Department Technology              023 prod (Minor : dev)
+Head of Department Texturing               203 prod (Minor : artist)
+Head of Department VFX                     104 prod
+Head of Department Visual Development      203 prod (Minor : artist)
+Head of Department Web                     113 prod
+
+Manager Animation                          203 prod (Minor : artist)
+Manager Character                          113 prod
+Manager Cloth                              203 prod (Minor : artist)
+Manager Compositing                        203 prod (Minor : artist)
+Manager Concept                            203 prod (Minor : artist)
+Manager Crew                               104 prod
+Manager Data                               023 prod (Minor : dev)
+Manager Database                           023 prod (Minor : dev)
+Manager Digital Matte Painting             203 prod (Minor : artist)
+Manager Environment                        203 prod (Minor : artist)
+Manager Executive                          005 prod
+Manager FX                                 203 prod (Minor : artist)
+Manager Fur                                203 prod (Minor : artist)
+Manager Game                               203 prod (Minor : artist)
+Manager Generalist                         113 prod
+Manager Graphic                            203 prod (Minor : artist)
+Manager Human Ressources                   005 prod
+Manager Interface                          113 prod
+Manager Layout                             203 prod (Minor : artist)
+Manager Level                              113 prod
+Manager Lighting                           203 prod (Minor : artist)
+Manager Line                               005 prod
+Manager Matchmoving                        203 prod (Minor : artist)
+Manager Modeling                           203 prod (Minor : artist)
+Manager Motion Capture                     203 prod (Minor : artist)
+Manager OpenGL                             023 prod (Minor : dev)
+Manager Pipeline                           023 prod (Minor : dev)
+Manager Pre-Vis                            203 prod (Minor : artist)
+Manager Production                         005 prod
+Manager Recruitment                        104 prod
+Manager Rendering                          023 prod (Minor : dev)
+Manager Rigging                            113 prod
+Manager RnD                                023 prod (Minor : dev)
+Manager Rotoscoping                        203 prod (Minor : artist)
+Manager Runner                             104 prod
+Manager Shader                             023 prod (Minor : dev)
+Manager Shading                            203 prod (Minor : artist)
+Manager Software                           023 prod (Minor : dev)
+Manager Sound                              203 prod (Minor : artist)
+Manager Story Board                        104 prod
+Manager System                             023 prod (Minor : dev)
+Manager Technology                         023 prod (Minor : dev)
+Manager Texturing                          203 prod (Minor : artist)
+Manager VFX                                104 prod
+Manager Visual Development                 203 prod (Minor : artist)
+Manager Web                                113 prod
+
+Menthor Animation                          410 artist
+Menthor Character                          320 artist (Minor : dev)
+Menthor Cloth                              410 artist
+Menthor Compositing                        410 artist
+Menthor Concept                            410 artist
+Menthor Crew                               311 artist
+Menthor Data                               230 dev (Minor : artist)
+Menthor Database                           230 dev (Minor : artist)
+Menthor Digital Matte Painting             410 artist
+Menthor Environment                        410 artist
+Menthor Executive                          212 artist+prod
+Menthor FX                                 410 artist
+Menthor Fur                                410 artist
+Menthor Game                               410 artist
+Menthor Generalist                         320 artist (Minor : dev)
+Menthor Graphic                            410 artist
+Menthor Human Ressources                   212 artist+prod
+Menthor Interface                          320 artist (Minor : dev)
+Menthor Layout                             410 artist
+Menthor Level                              320 artist (Minor : dev)
+Menthor Lighting                           410 artist
+Menthor Line                               212 artist+prod
+Menthor Matchmoving                        410 artist
+Menthor Modeling                           410 artist
+Menthor Motion Capture                     410 artist
+Menthor OpenGL                             230 dev (Minor : artist)
+Menthor Pipeline                           230 dev (Minor : artist)
+Menthor Pre-Vis                            410 artist
+Menthor Production                         212 artist+prod
+Menthor Recruitment                        311 artist
+Menthor Rendering                          230 dev (Minor : artist)
+Menthor Rigging                            320 artist (Minor : dev)
+Menthor RnD                                230 dev (Minor : artist)
+Menthor Rotoscoping                        410 artist
+Menthor Runner                             311 artist
+Menthor Shader                             230 dev (Minor : artist)
+Menthor Shading                            410 artist
+Menthor Software                           230 dev (Minor : artist)
+Menthor Sound                              410 artist
+Menthor Story Board                        311 artist
+Menthor System                             230 dev (Minor : artist)
+Menthor Technology                         230 dev (Minor : artist)
+Menthor Texturing                          410 artist
+Menthor VFX                                311 artist
+Menthor Visual Development                 410 artist
+Menthor Web                                320 artist (Minor : dev)
+
+Producer Animation                         203 prod (Minor : artist)
+Producer Character                         113 prod
+Producer Cloth                             203 prod (Minor : artist)
+Producer Compositing                       203 prod (Minor : artist)
+Producer Concept                           203 prod (Minor : artist)
+Producer Crew                              104 prod
+Producer Data                              023 prod (Minor : dev)
+Producer Database                          023 prod (Minor : dev)
+Producer Digital Matte Painting            203 prod (Minor : artist)
+Producer Environment                       203 prod (Minor : artist)
+Producer Executive                         005 prod
+Producer FX                                203 prod (Minor : artist)
+Producer Fur                               203 prod (Minor : artist)
+Producer Game                              203 prod (Minor : artist)
+Producer Generalist                        113 prod
+Producer Graphic                           203 prod (Minor : artist)
+Producer Human Ressources                  005 prod
+Producer Interface                         113 prod
+Producer Layout                            203 prod (Minor : artist)
+Producer Level                             113 prod
+Producer Lighting                          203 prod (Minor : artist)
+Producer Line                              005 prod
+Producer Matchmoving                       203 prod (Minor : artist)
+Producer Modeling                          203 prod (Minor : artist)
+Producer Motion Capture                    203 prod (Minor : artist)
+Producer OpenGL                            023 prod (Minor : dev)
+Producer Pipeline                          023 prod (Minor : dev)
+Producer Pre-Vis                           203 prod (Minor : artist)
+Producer Production                        005 prod
+Producer Recruitment                       104 prod
+Producer Rendering                         023 prod (Minor : dev)
+Producer Rigging                           113 prod
+Producer RnD                               023 prod (Minor : dev)
+Producer Rotoscoping                       203 prod (Minor : artist)
+Producer Runner                            104 prod
+Producer Shader                            023 prod (Minor : dev)
+Producer Shading                           203 prod (Minor : artist)
+Producer Software                          023 prod (Minor : dev)
+Producer Sound                             203 prod (Minor : artist)
+Producer Story Board                       104 prod
+Producer System                            023 prod (Minor : dev)
+Producer Technology                        023 prod (Minor : dev)
+Producer Texturing                         203 prod (Minor : artist)
+Producer VFX                               104 prod
+Producer Visual Development                203 prod (Minor : artist)
+Producer Web                               113 prod
+
+Professor Animation                        410 artist
+Professor Character                        320 artist (Minor : dev)
+Professor Cloth                            410 artist
+Professor Compositing                      410 artist
+Professor Concept                          410 artist
+Professor Crew                             311 artist
+Professor Data                             230 dev (Minor : artist)
+Professor Database                         230 dev (Minor : artist)
+Professor Digital Matte Painting           410 artist
+Professor Environment                      410 artist
+Professor Executive                        212 artist+prod
+Professor FX                               410 artist
+Professor Fur                              410 artist
+Professor Game                             410 artist
+Professor Generalist                       320 artist (Minor : dev)
+Professor Graphic                          410 artist
+Professor Human Ressources                 212 artist+prod
+Professor Interface                        320 artist (Minor : dev)
+Professor Layout                           410 artist
+Professor Level                            320 artist (Minor : dev)
+Professor Lighting                         410 artist
+Professor Line                             212 artist+prod
+Professor Matchmoving                      410 artist
+Professor Modeling                         410 artist
+Professor Motion Capture                   410 artist
+Professor OpenGL                           230 dev (Minor : artist)
+Professor Pipeline                         230 dev (Minor : artist)
+Professor Pre-Vis                          410 artist
+Professor Production                       212 artist+prod
+Professor Recruitment                      311 artist
+Professor Rendering                        230 dev (Minor : artist)
+Professor Rigging                          320 artist (Minor : dev)
+Professor RnD                              230 dev (Minor : artist)
+Professor Rotoscoping                      410 artist
+Professor Runner                           311 artist
+Professor Shader                           230 dev (Minor : artist)
+Professor Shading                          410 artist
+Professor Software                         230 dev (Minor : artist)
+Professor Sound                            410 artist
+Professor Story Board                      311 artist
+Professor System                           230 dev (Minor : artist)
+Professor Technology                       230 dev (Minor : artist)
+Professor Texturing                        410 artist
+Professor VFX                              311 artist
+Professor Visual Development               410 artist
+Professor Web                              320 artist (Minor : dev)
+
+Supervisor Animation                       203 prod (Minor : artist)
+Supervisor Character                       113 prod
+Supervisor Cloth                           203 prod (Minor : artist)
+Supervisor Compositing                     203 prod (Minor : artist)
+Supervisor Concept                         203 prod (Minor : artist)
+Supervisor Crew                            104 prod
+Supervisor Data                            023 prod (Minor : dev)
+Supervisor Database                        023 prod (Minor : dev)
+Supervisor Digital Matte Painting          203 prod (Minor : artist)
+Supervisor Environment                     203 prod (Minor : artist)
+Supervisor Executive                       005 prod
+Supervisor FX                              203 prod (Minor : artist)
+Supervisor Fur                             203 prod (Minor : artist)
+Supervisor Game                            203 prod (Minor : artist)
+Supervisor Generalist                      113 prod
+Supervisor Graphic                         203 prod (Minor : artist)
+Supervisor Human Ressources                005 prod
+Supervisor Interface                       113 prod
+Supervisor Layout                          203 prod (Minor : artist)
+Supervisor Level                           113 prod
+Supervisor Lighting                        203 prod (Minor : artist)
+Supervisor Line                            005 prod
+Supervisor Matchmoving                     203 prod (Minor : artist)
+Supervisor Modeling                        203 prod (Minor : artist)
+Supervisor Motion Capture                  203 prod (Minor : artist)
+Supervisor OpenGL                          023 prod (Minor : dev)
+Supervisor Pipeline                        023 prod (Minor : dev)
+Supervisor Pre-Vis                         203 prod (Minor : artist)
+Supervisor Production                      005 prod
+Supervisor Recruitment                     104 prod
+Supervisor Rendering                       023 prod (Minor : dev)
+Supervisor Rigging                         113 prod
+Supervisor RnD                             023 prod (Minor : dev)
+Supervisor Rotoscoping                     203 prod (Minor : artist)
+Supervisor Runner                          104 prod
+Supervisor Shader                          023 prod (Minor : dev)
+Supervisor Shading                         203 prod (Minor : artist)
+Supervisor Software                        023 prod (Minor : dev)
+Supervisor Sound                           203 prod (Minor : artist)
+Supervisor Story Board                     104 prod
+Supervisor System                          023 prod (Minor : dev)
+Supervisor Technology                      023 prod (Minor : dev)
+Supervisor Texturing                       203 prod (Minor : artist)
+Supervisor VFX                             104 prod
+Supervisor Visual Development              203 prod (Minor : artist)
+Supervisor Web                             113 prod
+
+Technical Artist Animation                 320 artist (Minor : dev)
+Technical Artist Character                 230 dev (Minor : artist)
+Technical Artist Cloth                     320 artist (Minor : dev)
+Technical Artist Compositing               320 artist (Minor : dev)
+Technical Artist Concept                   320 artist (Minor : dev)
+Technical Artist Crew                      221 artist+dev
+Technical Artist Data                      140 dev
+Technical Artist Database                  140 dev
+Technical Artist Digital Matte Painting    320 artist (Minor : dev)
+Technical Artist Environment               320 artist (Minor : dev)
+Technical Artist Executive                 122 dev+prod
+Technical Artist FX                        320 artist (Minor : dev)
+Technical Artist Fur                       320 artist (Minor : dev)
+Technical Artist Game                      320 artist (Minor : dev)
+Technical Artist Generalist                230 dev (Minor : artist)
+Technical Artist Graphic                   320 artist (Minor : dev)
+Technical Artist Human Ressources          122 dev+prod
+Technical Artist Interface                 230 dev (Minor : artist)
+Technical Artist Layout                    320 artist (Minor : dev)
+Technical Artist Level                     230 dev (Minor : artist)
+Technical Artist Lighting                  320 artist (Minor : dev)
+Technical Artist Line                      122 dev+prod
+Technical Artist Matchmoving               320 artist (Minor : dev)
+Technical Artist Modeling                  320 artist (Minor : dev)
+Technical Artist Motion Capture            320 artist (Minor : dev)
+Technical Artist OpenGL                    140 dev
+Technical Artist Pipeline                  140 dev
+Technical Artist Pre-Vis                   320 artist (Minor : dev)
+Technical Artist Production                122 dev+prod
+Technical Artist Recruitment               221 artist+dev
+Technical Artist Rendering                 140 dev
+Technical Artist Rigging                   230 dev (Minor : artist)
+Technical Artist RnD                       140 dev
+Technical Artist Rotoscoping               320 artist (Minor : dev)
+Technical Artist Runner                    221 artist+dev
+Technical Artist Shader                    140 dev
+Technical Artist Shading                   320 artist (Minor : dev)
+Technical Artist Software                  140 dev
+Technical Artist Sound                     320 artist (Minor : dev)
+Technical Artist Story Board               221 artist+dev
+Technical Artist System                    140 dev
+Technical Artist Technology                140 dev
+Technical Artist Texturing                 320 artist (Minor : dev)
+Technical Artist VFX                       221 artist+dev
+Technical Artist Visual Development        320 artist (Minor : dev)
+Technical Artist Web                       230 dev (Minor : artist)
+
+Technical Director Animation               320 artist (Minor : dev)
+Technical Director Character               230 dev (Minor : artist)
+Technical Director Cloth                   320 artist (Minor : dev)
+Technical Director Compositing             320 artist (Minor : dev)
+Technical Director Concept                 320 artist (Minor : dev)
+Technical Director Crew                    221 artist+dev
+Technical Director Data                    140 dev
+Technical Director Database                140 dev
+Technical Director Digital Matte Painting   320 artist (Minor : dev)
+Technical Director Environment             320 artist (Minor : dev)
+Technical Director Executive               122 dev+prod
+Technical Director FX                      320 artist (Minor : dev)
+Technical Director Fur                     320 artist (Minor : dev)
+Technical Director Game                    320 artist (Minor : dev)
+Technical Director Generalist              230 dev (Minor : artist)
+Technical Director Graphic                 320 artist (Minor : dev)
+Technical Director Human Ressources        122 dev+prod
+Technical Director Interface               230 dev (Minor : artist)
+Technical Director Layout                  320 artist (Minor : dev)
+Technical Director Level                   230 dev (Minor : artist)
+Technical Director Lighting                320 artist (Minor : dev)
+Technical Director Line                    122 dev+prod
+Technical Director Matchmoving             320 artist (Minor : dev)
+Technical Director Modeling                320 artist (Minor : dev)
+Technical Director Motion Capture          320 artist (Minor : dev)
+Technical Director OpenGL                  140 dev
+Technical Director Pipeline                140 dev
+Technical Director Pre-Vis                 320 artist (Minor : dev)
+Technical Director Production              122 dev+prod
+Technical Director Recruitment             221 artist+dev
+Technical Director Rendering               140 dev
+Technical Director Rigging                 230 dev (Minor : artist)
+Technical Director RnD                     140 dev
+Technical Director Rotoscoping             320 artist (Minor : dev)
+Technical Director Runner                  221 artist+dev
+Technical Director Shader                  140 dev
+Technical Director Shading                 320 artist (Minor : dev)
+Technical Director Software                140 dev
+Technical Director Sound                   320 artist (Minor : dev)
+Technical Director Story Board             221 artist+dev
+Technical Director System                  140 dev
+Technical Director Technology              140 dev
+Technical Director Texturing               320 artist (Minor : dev)
+Technical Director VFX                     221 artist+dev
+Technical Director Visual Development      320 artist (Minor : dev)
+Technical Director Web                     230 dev (Minor : artist)
+
+Writer Animation                           401 artist
+Writer Character                           311 artist
+Writer Cloth                               401 artist
+Writer Compositing                         401 artist
+Writer Concept                             401 artist
+Writer Crew                                302 artist (Minor : prod)
+Writer Data                                221 artist+dev
+Writer Database                            221 artist+dev
+Writer Digital Matte Painting              401 artist
+Writer Environment                         401 artist
+Writer Executive                           203 prod (Minor : artist)
+Writer FX                                  401 artist
+Writer Fur                                 401 artist
+Writer Game                                401 artist
+Writer Generalist                          311 artist
+Writer Graphic                             401 artist
+Writer Human Ressources                    203 prod (Minor : artist)
+Writer Interface                           311 artist
+Writer Layout                              401 artist
+Writer Level                               311 artist
+Writer Lighting                            401 artist
+Writer Line                                203 prod (Minor : artist)
+Writer Matchmoving                         401 artist
+Writer Modeling                            401 artist
+Writer Motion Capture                      401 artist
+Writer OpenGL                              221 artist+dev
+Writer Pipeline                            221 artist+dev
+Writer Pre-Vis                             401 artist
+Writer Production                          203 prod (Minor : artist)
+Writer Recruitment                         302 artist (Minor : prod)
+Writer Rendering                           221 artist+dev
+Writer Rigging                             311 artist
+Writer RnD                                 221 artist+dev
+Writer Rotoscoping                         401 artist
+Writer Runner                              302 artist (Minor : prod)
+Writer Shader                              221 artist+dev
+Writer Shading                             401 artist
+Writer Software                            221 artist+dev
+Writer Sound                               401 artist
+Writer Story Board                         302 artist (Minor : prod)
+Writer System                              221 artist+dev
+Writer Technology                          221 artist+dev
+Writer Texturing                           401 artist
+Writer VFX                                 302 artist (Minor : prod)
+Writer Visual Development                  401 artist
+Writer Web                                 311 artist
+
