@@ -1,5 +1,3 @@
-et2 rnd/rnd_pipeline maya2011_matchmove
-et2 rnd/rnd_pipeline maya2011_fx
 et2 rnd/rnd_pipeline maya2011_mpc
 et2 rnd/rnd_pipeline maya2011_fur
 et2 rnd/rnd_pipeline maya2011_mpc
@@ -48,3 +46,5 @@ xmfc rnd/rnd_pipeline
 et2 340_vh/340_vh_220
 jcom build/charWarhoon light
 library tst/leopard
+hsbcIronLion_4400118 build/lion tvc-maya2011
+hsbcIronLion_4400118 build/lion tvc
