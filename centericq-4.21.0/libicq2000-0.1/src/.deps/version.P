@@ -1,0 +1,3 @@
+version.o: version.cpp ../libicq2000/version.h
+version.cpp :
+../libicq2000/version.h :

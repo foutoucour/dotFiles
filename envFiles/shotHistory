@@ -1,6 +1,3 @@
-et2 rnd/rnd_pipeline maya2011_mpc
-et2 rnd/rnd_pipeline maya2011_fur
-et2 rnd/rnd_pipeline maya2011_mpc
 et2 rnd/rnd_pipeline maya2011_fur
 et2 rnd/rnd_pipeline maya2011_fx
 et2 rnd/rnd_pipeline maya2011_3ddmp
@@ -48,3 +45,6 @@ jcom build/charWarhoon light
 library tst/leopard
 hsbcIronLion_4400118 build/lion tvc-maya2011
 hsbcIronLion_4400118 build/lion tvc
+hsbcIronLion_4400118 build/lion tvc-maya2011
+dhlGrow_1408826 grow/sh210 tvc
+hsbcIronLion_4400118 build/lion tvc-maya2011

@@ -1,0 +1,80 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:561: checking for a BSD compatible install
+configure:614: checking whether build environment is sane
+configure:671: checking whether make sets ${MAKE}
+configure:717: checking for working aclocal-1.4
+configure:730: checking for working autoconf
+configure:743: checking for working automake-1.4
+configure:756: checking for working autoheader
+configure:769: checking for working makeinfo
+configure:792: checking for c++
+configure:824: checking whether the C++ compiler (c++  ) works
+configure:840: c++ -o conftest    conftest.C  1>&5
+configure:866: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:871: checking whether we are using GNU C++
+configure:880: c++ -E conftest.C
+configure:899: checking whether c++ accepts -g
+configure:931: checking how to run the C preprocessor
+configure:952: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1013: checking for ranlib
+configure:1069: checking how to run the C++ preprocessor
+configure:1087: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1115: checking for sstream
+configure:1125: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1115: checking for strstream
+configure:1125: c++ -E  conftest.C >/dev/null 2>conftest.out
+In file included from /usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/backward/strstream:51,
+                 from configure:1121:
+/usr/lib/gcc/x86_64-redhat-linux/4.1.2/../../../../include/c++/4.1.2/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header. Please consider using one of the 32 headers found in section 17.4.1.2 of the C++ standard. Examples include substituting the <X> header for the <X.h> header for C++ includes, or <iostream> instead of the deprecated header <iostream.h>. To disable this warning use -Wno-deprecated.
+configure: failed program was:
+#line 1120 "configure"
+#include "confdefs.h"
+#include <strstream>
+configure:1161: checking for ANSI C header files
+configure:1174: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1241: cc -o conftest    conftest.c  1>&5
+configure: In function 'main':
+configure:1236: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1268: checking for arpa/inet.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for fcntl.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for netdb.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for netinet/in.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for stdlib.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for string.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1268: checking for sys/socket.h
+configure:1278: cc -E  conftest.c >/dev/null 2>conftest.out
+configure:1307: checking for working const
+configure:1361: cc -c   conftest.c 1>&5
+configure:1382: checking for size_t
+configure:1415: checking whether time.h and sys/time.h may both be included
+configure:1429: cc -c   conftest.c 1>&5
+configure:1452: checking types of arguments for select()
+configure:1485: cc -c   conftest.c 1>&5
+configure:1526: checking for gethostbyname
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for gethostname
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for getpass
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for inet_ntoa
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for memset
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1538: warning: conflicting types for built-in function 'memset'
+configure:1526: checking for select
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for socket
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for strerror
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1526: checking for strtol
+configure:1554: cc -o conftest    conftest.c  1>&5
+configure:1588: checking for curl-config
