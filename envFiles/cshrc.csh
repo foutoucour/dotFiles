@@ -6,7 +6,7 @@
 #setenv XTERM_GEOM 80x40
 
 # default PATH set up
-setenv PATH $HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
+setenv PATH /mpc/people/jordi-r/dotFiles/scripts:$HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
 
 
 ###########################################################################################################
@@ -25,7 +25,7 @@ alias _prompt 'set prompt="%U%T%u:`whoami`:%B%~%b > "'
 
 
 ## shell title feature
-alias _shellTitleFunc 'source /usr/people/jordi-r/config/shellTitleFunc.tcsh'
+alias _shellTitleFunc 'source /mpc/people/jordi-r/config/shellTitleFunc.tcsh'
 ## Trick to not have a shell with the same size than the window of gvim.
 ### The eval create $COLUMNS and $LINES equal to the current size of the shell
 ### so we need to store them in variables.
@@ -59,7 +59,7 @@ alias job		'source $TOOLS/scripts/job.csh \!*;_shellTitleFunc;cd -'
 alias cd       	'cd \!:*;_prompt;'
 alias popd     	'popd \!:*;_prompt;'
 alias pushd    	'pushd \!:*;_prompt;'
-alias _vim		/usr/people/jordi-r/apps/vim/bin/vim
+alias _vim		/mpc/people/jordi-r/apps/vim/bin/vim
 alias gvim      '_vim -c gvim'
 
 if ($?TERM) then
@@ -73,8 +73,8 @@ endif
 ###########################################################################################################
 ## Find in environment feature.
 ### Find a string in environment files use by a job.
-alias findInEnv		'/usr/people/jordi-r/config/findInEnv'
-alias findInEnv2011	'/usr/people/jordi-r/config/findInEnv2011'
+alias findInEnv		'/mpc/people/jordi-r/config/findInEnv'
+alias findInEnv2011	'/mpc/people/jordi-r/config/findInEnv2011'
 alias nameShell 	'echo -n "\033]2;\!:*\033\\";echo -n "\033]1;\!:*\033\\"'
 
 alias gitka     'gitk --all &'
@@ -117,7 +117,7 @@ alias topu	'top -u $USER'
 ### Quick oi
 alias qoi	"echo \!:2 | oi -i \!:1"
 
-alias soi "/usr/people/jordi-r/config/oiSpam.py"
+alias soi "/mpc/people/jordi-r/config/oiSpam.py"
 alias rob		'oi robert-t'
 alias qRob		'qoi robert-t \!:1'
 alias qrob		'qRob'
