@@ -1,0 +1,225 @@
+# -*- coding: utf-8 -*-
+import sys
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+
+
+class Gui(QtGui.QWidget):
+    """
+    Graphic Interface of GlobalOptions Application
+    Discuss with controlor through an observer
+    """
+    def __init__(self, sParent, parent=None):
+        self.ADD_REF_GROUPBOX_NAME = 'AddRefs'
+        self.MANAGE_REF_GROUPBOX_NAME = 'ManageRefs'
+        self.POINT_LIGHT_BUTTON_NAME = 'Point'
+        self.SPOT_LIGHT_BUTTON_NAME = 'Spot'
+        self.AMBIENT_LIGHT_BUTTON_NAME = 'Ambient'
+        self.REFLECTION_LIGHT_BUTTON_NAME = 'Reflection'
+        self.OCCLUSION_LIGHT_BUTTON_NAME = 'Occlusion'
+        self.BAKE_LIGHT_BUTTON_NAME = 'Bake'
+        self.BLOCKER_BUTTON_NAME = 'Blocker'
+        self.SHADOW_CAMERA_BUTTON_NAME = 'Shadow Camera'
+        self.REMOVE_BUTTON_NAME = 'Remove'
+        self.DUPLICATE_BUTTON_NAME = 'Duplicate'
+        self.INSTANCE_BUTTON_NAME = 'Instance'
+        self.RENAME_BUTTON_NAME = 'Rename'
+        
+        QtGui.QWidget.__init__(self, parent)
+        self.__oMainLayout = QtGui.QVBoxLayout()
+        self.__addRef(self.__oMainLayout)
+        self.__manageRef(self.__oMainLayout)
+        self.__oMainLayout.addStretch(1)
+        # sParent is the value of __name__ of 
+        # GlobalOptionsLaunchers, the launcher of this UI
+        # if the GUI is launched directly by GOL, 
+        # the GUI layout has to be set,
+        # otherwise, it is set by one of the merger
+        if sParent == '__main__':
+            self.setLayout(self.__oMainLayout)
+    
+    def getMainLayout(self):
+        """
+        @rtype: object
+        @return: main Qt.Layout of the GUI
+        """ 
+        return self.__oMainLayout
+    
+    def setObserver(self, object):
+        """
+        The observer will be the bridge between the controlor and the GUI
+        This way, the GUI doesn't know the controlor
+        @type object: object
+        @param object: observer
+        """ 
+        self.__oObserver = object
+            
+    def __addRef(self, oMasterLayout):
+        """
+        Group of widget to create references (lights, cameraShadow, blocker)
+        @type oMasterLayout: object
+        @param oMasterLayout: Qt Layout adress 
+        """
+        self.__oAddRefGlobalLayout = QtGui.QHBoxLayout()
+        # Grouping
+        self.__oAddRefGrpBox = QtGui.QGroupBox(self.ADD_REF_GROUPBOX_NAME)
+        self.__oAddRefGrpBox.setCheckable(0)
+        self.__oAddRefLayout = QtGui.QVBoxLayout(self.__oAddRefGrpBox)
+        # Widget Creation methods
+        self.__lightButton(self.__oAddRefLayout)
+        self.__blocker(self.__oAddRefLayout)
+        self.__shadowCamera(self.__oAddRefLayout)
+        # Grouping
+        self.__oAddRefGlobalLayout.addWidget(self.__oAddRefGrpBox)
+        oMasterLayout.addLayout(self.__oAddRefGlobalLayout)
+    
+    def __manageRef(self, oMasterLayout):
+        """
+        Group of widget to manage references
+        @type oMasterLayout: object
+        @param oMasterLayout: Qt Layout adress
+        """
+        def __removeButton_onClicked():
+            self.__oObserver.removeButton_onClicked()
+        
+        def __duplButton_onClicked():
+            self.__oObserver.duplButton_onClicked()
+        
+        def __instButton_onClicked():
+            self.__oObserver.instButton_onClicked()
+        
+        def __renameButton_onClicked():
+            self.__oObserver.renameButton_onClicked()
+                
+        self.__oManageRefButtonGlobalLayout = QtGui.QHBoxLayout()
+        self.__oManageRefGrpBox = QtGui.QGroupBox(
+                                        self.MANAGE_REF_GROUPBOX_NAME)
+        self.__oManageRefGrpBox.setCheckable(0)
+        self.__oManageRefButtonsLayout = QtGui.QVBoxLayout(
+                                                self.__oManageRefGrpBox)
+        self.__oRenameButton = QtGui.QPushButton(
+                             self.RENAME_BUTTON_NAME,self.__oManageRefGrpBox)
+        self.connect(self.__oRenameButton, QtCore.SIGNAL('clicked()'),
+                     __renameButton_onClicked)
+        self.__oRemoveButton = QtGui.QPushButton(
+                             self.REMOVE_BUTTON_NAME,self.__oManageRefGrpBox)
+        self.connect(self.__oRemoveButton, QtCore.SIGNAL('clicked()'),
+                     __removeButton_onClicked)
+        self.__oDuplButton = QtGui.QPushButton(
+                       self.DUPLICATE_BUTTON_NAME,self.__oManageRefGrpBox)
+        self.connect(self.__oDuplButton, QtCore.SIGNAL('clicked()'),
+                     __duplButton_onClicked)
+        self.__oInstButton = QtGui.QPushButton(
+                       self.INSTANCE_BUTTON_NAME, self.__oManageRefGrpBox)
+        self.connect(self.__oInstButton, QtCore.SIGNAL('clicked()'),
+                     __instButton_onClicked)
+        
+        self.__oManageRefButtonsLayout.addWidget(self.__oRenameButton)
+        self.__oManageRefButtonsLayout.addWidget(self.__oRemoveButton)
+        self.__oManageRefButtonsLayout.addWidget(self.__oDuplButton)
+        self.__oManageRefButtonsLayout.addWidget(self.__oInstButton)
+        self.__oManageRefButtonGlobalLayout.addWidget(self.__oManageRefGrpBox)
+        oMasterLayout.addLayout(self.__oManageRefButtonGlobalLayout)
+        
+    def __lightButton(self, oMasterLayout):
+        """
+        Group of pushButton to create light references
+        @type oMasterLayout: object
+        @param oMasterLayout: Qt Layout adress
+        """
+        def __pointLightButton_onClicked():
+            self.__oObserver.pointLightButton_onClicked()
+        
+        def __spotLightButton_onClicked():
+            self.__oObserver.spotLightButton_onClicked()
+            
+        def __ambientLightButton_onClicked():
+            self.__oObserver.ambientLightButton_onClicked()
+        
+        def __reflectionLightButton_onClicked():
+            self.__oObserver.reflectionLightButton_onClicked()
+            
+        def __occluLightButton_onClicked():
+            self.__oObserver.occluLightButton_onClicked()
+        
+        def __bakeLightButton_onClicked():
+            self.__oObserver.bakeLightButton_onClicked()
+        
+        self.__oLightGlobalLayout = QtGui.QVBoxLayout()
+        self.__oLightGrpBox = QtGui.QGroupBox()
+        self.__oLightGrpBox.setCheckable(0)
+        self.__oLightButtonsLayout = QtGui.QVBoxLayout(self.__oLightGrpBox)
+        # PointLight
+        self.__oPointLightButton = QtGui.QPushButton(
+                        self.POINT_LIGHT_BUTTON_NAME, self.__oLightGrpBox)
+        self.connect(self.__oPointLightButton, QtCore.SIGNAL('clicked()'),
+                     __pointLightButton_onClicked)
+        # SpotLight
+        self.__oSpotLightButton = QtGui.QPushButton(
+                        self.SPOT_LIGHT_BUTTON_NAME, self.__oLightGrpBox)
+        self.connect(self.__oSpotLightButton, QtCore.SIGNAL('clicked()'),
+                     __spotLightButton_onClicked)
+        # AmbientLight
+        self.__oAmbientLightButton = QtGui.QPushButton(
+                       self.AMBIENT_LIGHT_BUTTON_NAME,self.__oLightGrpBox)
+        self.connect(self.__oAmbientLightButton, QtCore.SIGNAL('clicked()'),
+                     __ambientLightButton_onClicked)
+        # ReflectionLight
+        self.__oReflectionLightButton = QtGui.QPushButton(
+                    self.REFLECTION_LIGHT_BUTTON_NAME,self.__oLightGrpBox)
+        self.connect(self.__oReflectionLightButton, QtCore.SIGNAL('clicked()'),
+                     __reflectionLightButton_onClicked)
+        # Occlusion Light
+        self.__oOccluLightButton = QtGui.QPushButton(
+                      self.OCCLUSION_LIGHT_BUTTON_NAME,self.__oLightGrpBox)
+        self.connect(self.__oOccluLightButton, QtCore.SIGNAL('clicked()'),
+                     __occluLightButton_onClicked)
+        # Bake Light
+        self.__oBakeLightButton = QtGui.QPushButton(
+                            self.BAKE_LIGHT_BUTTON_NAME,self.__oLightGrpBox)
+        self.connect(self.__oBakeLightButton, QtCore.SIGNAL('clicked()'),
+                     __bakeLightButton_onClicked)
+        # Adding widget to the layout
+        self.__oLightButtonsLayout.addWidget(self.__oSpotLightButton)
+        self.__oLightButtonsLayout.addWidget(self.__oPointLightButton)
+        self.__oLightButtonsLayout.addWidget(self.__oAmbientLightButton)
+        self.__oLightButtonsLayout.addWidget(self.__oReflectionLightButton)
+        self.__oLightButtonsLayout.addWidget(self.__oOccluLightButton)
+        self.__oLightButtonsLayout.addWidget(self.__oBakeLightButton)
+        
+        self.__oLightGlobalLayout.addWidget(self.__oLightGrpBox)
+        oMasterLayout.addLayout(self.__oLightGlobalLayout)
+        
+    def __blocker(self, oMasterLayout):
+        """
+        PushButton to create blocker reference
+        @type oMasterLayout: object
+        @param oMasterLayout: Qt Layout adress
+        """
+        def __blockerButton_onClicked():
+            self.__oObserver.blockerButton_onClicked()
+        self.__oBlockerButtonsLayout = QtGui.QHBoxLayout()
+        self.__oBlockerButton = QtGui.QPushButton(
+                                          self.BLOCKER_BUTTON_NAME, self)
+        self.connect(self.__oBlockerButton, QtCore.SIGNAL('clicked()'),
+                     __blockerButton_onClicked)
+        self.__oBlockerButtonsLayout.addWidget(self.__oBlockerButton)
+        oMasterLayout.addLayout(self.__oBlockerButtonsLayout)
+    
+    def __shadowCamera(self, oMasterLayout):
+        """
+        PushButton to create ShadowCamera Reference
+        @type oMasterLayout: object
+        @param oMasterLayout: Qt Layout adress
+        """
+        def __shdCamButton_onClicked():
+            self.__oObserver.shdCamButton_onClicked()
+        self.__oShdCamButtonsLayout = QtGui.QHBoxLayout()
+        self.__oShdCamButton = QtGui.QPushButton(
+                                        self.SHADOW_CAMERA_BUTTON_NAME, self)
+        self.connect(self.__oShdCamButton, QtCore.SIGNAL('clicked()'),
+                     __shdCamButton_onClicked)
+        self.__oShdCamButtonsLayout.addWidget(self.__oShdCamButton)
+        oMasterLayout.addLayout(self.__oShdCamButtonsLayout)
+
+# Ni!

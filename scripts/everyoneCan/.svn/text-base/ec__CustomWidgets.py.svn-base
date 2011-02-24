@@ -1,0 +1,150 @@
+import sys
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+
+class AlGroupBox(QtGui.QGroupBox):
+    """Qt GroupBox with contentMargin at 0,0,0,0"""
+    def __init__(self, sName):
+        """
+        @type sName: string
+        @param sName: Title of the groupBox 
+        """
+        QtGui.QGroupBox.__init__(self)
+        self.setTitle(sName)
+        self.setContentsMargins(0,0,0,0)
+    
+class AlLineEdit(QtGui.QLineEdit):
+    """Formated Qt LineEdit with a height of 22"""
+    def __init__(self):
+        QtGui.QLineEdit.__init__(self)
+        self.setMaximumHeight(22)       
+    
+class AlVBoxLayout(QtGui.QVBoxLayout):
+    """Qt QVBoxLayout with contentMargin at 0,0,0,0"""
+    def __init__(self):
+        QtGui.QVBoxLayout.__init__(self)
+        self.setContentsMargins(0,0,0,0)
+    
+class AlHBoxLayout(QtGui.QHBoxLayout):
+    """Qt AlHBoxLayout with contentMargin at 0,0,0,0"""
+    def __init__(self):
+        QtGui.QHBoxLayout.__init__(self)
+        self.setContentsMargins(0,0,0,0)
+
+class AlGroupLabel(QtGui.QWidget):
+    """
+    Qt Widget containing a Label and a widget
+    """
+    def __init__(self, sName, oWidget):
+        """
+        @type sName: string
+        @param sName: Title of the Qt Label
+        @type oWidget: Qt Widget
+        @param oWidget: widget after the Label
+        """
+        QtGui.QWidget.__init__(self)
+        self.setContentsMargins(0,0,0,0)   
+        self.__oGrid = QtGui.QGridLayout()
+        self.__oGrid.setColumnMinimumWidth(0,100)
+        self.__oGrid.setContentsMargins(0,0,0,0)
+        self.__oGrid.setColumnStretch(0,0)
+        self.__oGrid.setColumnStretch(1,1)
+        self.__oLabel = QtGui.QLabel(sName)
+        self.__oLabel.setAlignment(QtCore.Qt.AlignRight)
+        self.__oGrid.addWidget(self.__oLabel,1,0)
+        self.__oGrid.addWidget(oWidget,1,1)
+        self.setLayout(self.__oGrid)
+
+class AlComboBox(QtGui.QComboBox):
+    """Qt ComboBox with add items in it"""
+    def __init__(self, listItems):
+        """
+        @type listItems: list of string
+        @param listItems: title of items to add to the widget
+        """
+        QtGui.QComboBox.__init__(self)
+        self.addItems(listItems)
+        
+class AlIconPushButton(QtGui.QPushButton):
+    """Qt Push Button with Icon and tooltip on it"""
+    def __init__(self, sIcon, sName=''):
+        """
+        @type sIcon: string
+        @param sIcon: Path of a picture
+        @type sName: string
+        @param sName: text of the tooltip
+        """
+        QtGui.QPushButton.__init__(self)
+        self.__oIcon = QtGui.QIcon(sIcon)
+        self.setIcon(self.__oIcon)
+        self.setIconSize(QtCore.QSize(24,24))
+        self.setToolTip(sName)
+        self.setContentsMargins(0,0,0,0)
+    
+
+class AlBloc (QtGui.QWidget):
+    """
+    Qt Widget containing a push button and a groupBox.
+    Pushing the button will hide the groupBox
+    The mainWindow will be resized after the groupBox is hidden
+    """   
+    def __init__(self, oGui, sIconPath, sName, oWidget):
+        """
+        @type oGui: Qt MainWindow
+        @param oGui: Window containing Gui
+        @type sIconPath: string
+        @param param: path to the picture
+        @type sName: string
+        @param sName: title of the groupBox
+        @type oWidget: Qt Widget 
+        @param oWidget: Widget contained by the groupBox
+        """
+        def __oBlocButton_onClicked():
+            if self.__boolHideState == 0:
+                self.__boolHideState = 1
+            else :
+                self.__boolHideState = 0
+            self.__oRightParent.setHidden(self.__boolHideState)
+            self.__oGui.setMaximumHeight(1)
+            
+        self.__oGui = oGui
+        self.__boolHideState = 0    
+        QtGui.QWidget.__init__(self)
+        self.__oMainLayout = QtGui.QHBoxLayout()
+        self.__oMainLayout.setContentsMargins(0,0,0,0)
+        #==================================================================
+        # left
+        #==================================================================
+        self.__oLeftLayout = QtGui.QVBoxLayout()
+        self.__oBlocButton = QtGui.QPushButton()
+        self.__oBlocButton.setFlat(1)
+        pic = QtGui.QPixmap(sIconPath)
+        self.__oIcon = QtGui.QIcon(pic)
+        self.__oBlocButton.setIcon(self.__oIcon)
+        self.__oBlocButton.setIconSize(QtCore.QSize(32,32))
+        self.connect(self.__oBlocButton,
+                     QtCore.SIGNAL('clicked()'),
+                    __oBlocButton_onClicked)
+        self.__oLeftLayout.addWidget(self.__oBlocButton)
+        self.__oLeftLayout.addStretch(1)
+        #==================================================================
+        # right
+        #==================================================================
+        self.__oRightParent = QtGui.QWidget()
+        self.__oRightMainLayout = QtGui.QVBoxLayout()
+        self.__oRightGrp = QtGui.QGroupBox(sName)
+        self.__oRightGrp.setMinimumWidth(300)
+        self.__oRightGrp.setContentsMargins(0,10,0,0)
+        self.__oRightLayout = QtGui.QHBoxLayout(self.__oRightGrp)
+        self.__oRightLayout.addWidget(oWidget)
+        self.__oRightMainLayout.addWidget(self.__oRightGrp)
+        self.__oRightParent.setLayout(self.__oRightMainLayout)
+        #======================================================================
+        # main
+        #======================================================================
+        self.__oMainLayout.addLayout(self.__oLeftLayout)
+        self.__oMainLayout.addWidget(self.__oRightParent)
+        self.__oMainLayout.addStretch(1)
+        self.setLayout(self.__oMainLayout)
+        
+# Ni !

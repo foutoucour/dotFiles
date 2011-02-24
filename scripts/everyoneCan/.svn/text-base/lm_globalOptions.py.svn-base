@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+import sys
+from PyQt4 import QtGui
+import lm__TabMerger    #function class to set the methods to merge 
+                        #the application in a Qwidget    
+import lm__GlobalOptionsUI
+import lm__GlobalOptionsCtrl
+import lm__GlobalOptionsModel
+
+class GlobalOptionsLauncher(lm__TabMerger.Merger):
+    """
+    Launcher of the GlobalApplication
+    Can be launched as a standAlone 
+    or from lm_Launcher (launcher of LightingMaster GUI)
+    """
+    def __init__(self):
+        self.WINDOWS_NAME = 'Global Options'
+        self.oGui = lm__GlobalOptionsUI.Gui(__name__)
+        self.oModel = lm__GlobalOptionsModel.Model()
+        self.oCtrl = lm__GlobalOptionsCtrl.Control(self.oGui,self.oModel)
+        if not __name__ == '__main__':         
+            self.setParent(self.oGui.getMainLayout())
+            self.sTabName = self.WINDOWS_NAME
+        
+
+if __name__ == '__main__':
+    app = QtGui.QApplication(sys.argv)
+    app.setStyle(QtGui.QStyleFactory.create('cleanlooks'))
+    launcher = GlobalOptionsLauncher()
+    launcher.oGui.setWindowTitle(launcher.WINDOWS_NAME)
+    launcher.oGui.show()
+    sys.exit(app.exec_())       
+        
+# Ni!

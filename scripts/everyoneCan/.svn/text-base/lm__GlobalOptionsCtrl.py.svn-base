@@ -1,0 +1,151 @@
+# -*- coding: utf-8 -*-
+import lm__Namer # Application to set the name of a selection
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+
+class Control(QtGui.QWidget):
+    """controlor of the GlobalOptions Application"""
+    def __init__(self, oGui, oModel):
+        """
+        Setting of the link with Gui and the model
+        GuiObserver is the handler of the Gui for the controlor 
+        @type oGui: object
+        @param oGui: Interface part of this GlobalOptions Application
+        @type oModel: object
+        @param oModel: Logic part of the GlobalOptions Application
+        """
+        self.__oModel = oModel
+        self.__oGui = oGui
+        self.__oGui.setObserver(GuiObserver(self)) 
+            
+    def pointLightButton_onClicked(self):
+        """Control of the pointLight PushButton""" 
+        self.__setReferenceName('point Light')
+    
+    def spotLightButton_onClicked(self):
+        """Control of the spotLight PushButton"""
+        self.__setReferenceName('spot Light')
+        
+    def ambientLightButton_onClicked(self):
+        """Control of the ambientLight PushButton"""
+        self.__setReferenceName('ambient Light')
+        
+    def reflectionLightButton_onClicked(self):
+        """Control of the reflectionLight PushButton"""
+        self.__setReferenceName('Reflection Light')
+        
+    def occluLightButton_onClicked(self):
+        """Control of the occlusionLight PushButton"""
+        self.__setReferenceName('Occlusion Light')
+        
+    def bakeLightButton_onClicked(self):
+        """Control of the bakeLight PushButton"""
+        self.__setReferenceName('Bake Light')
+        
+    def blockerButton_onClicked(self):
+        """Control of the blocker PushButton"""
+        self.__setReferenceName('Blocker')
+        
+    def shdCamButton_onClicked(self):
+        """Control of the shadowCamera PushButton"""
+        self.__setReferenceName('Shadow Camera')
+    
+    def renameButton_onClicked(self):
+        """Control of the rename PushButton"""
+        self.__setReferenceName('renaming')
+        
+    def removeButton_onClicked(self):
+        """Control of the remove PushButton"""
+        print 'CTRL Remove'
+    
+    def duplButton_onClicked(self):
+        """Control of the duplicate PushButton"""
+        print 'CTRL Duplicate'
+    
+    def instButton_onClicked(self):
+        """Control of the instance PushButton"""
+        print 'CTRL Instance'
+           
+    def __getReferenceName(self):
+        """
+        call when the lm__Namer.Naming() instance
+        emit the QT.signa 'Naming_nameSet'
+        @rtype: string
+        @return: name set by the user
+        """
+        print self.__oNamer.getValue()
+                
+    def __setReferenceName(self,string):
+        """
+        Call of an instance of lm__Namer.Naming Class.
+        It allows to set a name to the reference.
+        @type string: string
+        @param string: current name of the reference
+        """           
+        self.__oNamer = lm__Namer.Naming(string)
+        self.__oNamer.show()
+        self.connect(self.__oNamer,
+                     QtCore.SIGNAL('Naming_nameSet'),
+                     self.__getReferenceName)    
+  
+class GuiObserver:
+    """Handler of GlobalOptions UI
+    It makes the bridge between the UI and the controlor.
+    This way, the UI doesn't need to know the controlor
+    """
+    def __init__(self, object):
+        """
+        @type object: object
+        @param object: globalOptions controlor 
+        """
+        self.__oCtrl = object
+    
+    def pointLightButton_onClicked(self):
+        """placeholder for the pointLight Push Button Method"""
+        self.__oCtrl.pointLightButton_onClicked()
+    
+    def spotLightButton_onClicked(self):
+        """placeholder for the spotLight Push Button Method"""
+        self.__oCtrl.spotLightButton_onClicked()
+        
+    def ambientLightButton_onClicked(self):
+        """placeholder for the ambientLight Push Button Method"""
+        self.__oCtrl.ambientLightButton_onClicked()
+        
+    def reflectionLightButton_onClicked(self):
+        """placeholder for the reflectionLight Push Button Method"""
+        self.__oCtrl.reflectionLightButton_onClicked()
+    
+    def occluLightButton_onClicked(self):
+        """placeholder for the occlusionLight Push Button Method"""
+        self.__oCtrl.occluLightButton_onClicked()
+        
+    def bakeLightButton_onClicked(self):
+        """placeholder for the bakeLight Push Button Method"""
+        self.__oCtrl.bakeLightButton_onClicked()
+        
+    def blockerButton_onClicked(self):
+        """placeholder for the blocker Push Button Method"""
+        self.__oCtrl.blockerButton_onClicked()
+        
+    def shdCamButton_onClicked(self):
+        """placeholder for the shadowCamera Push Button Method"""
+        self.__oCtrl.shdCamButton_onClicked()
+    
+    def renameButton_onClicked(self):
+        """placeholder for the rename Push Button Method"""
+        self.__oCtrl.renameButton_onClicked()
+        
+    def removeButton_onClicked(self):
+        """placeholder for the remove Push Button Method"""
+        self.__oCtrl.removeButton_onClicked()
+    
+    def duplButton_onClicked(self):
+        """placeholder for the duplicate Push Button Method"""
+        self.__oCtrl.duplButton_onClicked()
+    
+    def instButton_onClicked(self):
+        """placeholder for the instance Push Button Method"""
+        self.__oCtrl.instButton_onClicked()
+
+# Ni!

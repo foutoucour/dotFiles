@@ -1,0 +1,693 @@
+# -*- coding: utf-8 -*-
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+import al_setLiquid
+import maya.cmds as cmds
+import maya.mel as mel
+import os
+import al.fileio
+
+
+class Control(QtGui.QWidget, al_setLiquid.setLiquid):
+    """controlor of the GlobalOptions Application"""
+    #==========================================================================
+    # constants
+    #==========================================================================
+    __SET_NAME = 'al_RenderSet'
+    __RESOLUTION = 1920
+    __RESOLUTIONY = 1080
+    __FORMAT_LIST = ['framebuffer', 'tiff']
+    
+    __BUCKET_SIZE_LIST = ['8','16','32','64']
+    __GRID_SIZE_LIST = ['64','256','1024','4096']
+    __FARM_GROUP_LIST = ['preview', 'final', 'final_night']
+    __INIT_NODE_NAME = 'al_renderOptionsInit'
+    #==========================================================================
+    # variables
+    #==========================================================================
+    __sFrameValue = ''
+    __sStepValue = ''
+    
+    def __init__(self, oGui, oModel):
+        """
+        Setting of the link with Gui and the model
+        GuiObserver is the handler of the Gui for the controlor 
+        @type oGui: object
+        @param oGui: Interface part of this GlobalOptions Application
+        @type oModel: object
+        @param oModel: Logic part of the GlobalOptions Application
+        """
+        self.__RESO_LIST = self.__makeListOfNumbers(10)
+        self.__oModel = oModel
+        self.__oGui = oGui
+        self.__intiateValues()
+        self.__oGui.main()
+        self.__setValues()
+        self.__signals()
+    
+    def __intiateValues(self):
+        """
+        Initiate values before the Gui is created.
+        """
+        self.__cameraListing()
+        self.__oGui.setFormatList(self.__FORMAT_LIST)
+        self.__oGui.setResoList(self.__RESO_LIST)
+        self.__oGui.setBucketSizeList(self.__BUCKET_SIZE_LIST)
+        self.__oGui.setGridSizeList(self.__GRID_SIZE_LIST)
+        self.__oGui.setFarmGroupList(self.__FARM_GROUP_LIST)
+
+    def __setValues(self):
+        """
+        Method to set value of the GUI.
+        The first time the GUI is created for a scene, 
+        defauld values will be set and
+        it will create a node named __INIT_NODE_NAME.
+        So the second time the GUI is launched on a scene, 
+        the controlor will grab values from liquid instead to set default
+        values
+        """
+        if not cmds.objExists(self.__INIT_NODE_NAME):
+            self.l_set()
+            self.__setResolution(9)
+            self.__setCurrentFrameState(2)
+            self.__setFrameText('0')
+            self.__setByFrameText('1')
+            self.__setCameraBlurState(0)
+            self.__setDOFState(0)
+            self.__setLazynessState(0)
+            self.__setShadingRateText('1')
+            self.__setPixelSampleText('2')
+            self.__setBucketSize(2)
+            self.__setGridSize(2)
+            self.__setSampleMotionState(0)
+            self.__setFormat(0)
+            self.__setToFarmState(1)
+            self.__setFarmGroup(0)
+            self.__setRayState(0)
+            self.__setSurfaceState(0)
+            self.__setDisplacementState(0)
+            self.__setSubSurfaceState(0)
+            self.__setRibNameText('')
+            self.__setPictureFolderText('rmanpix' +os.sep)
+            cmds.setAttr('liquidGlobals.xResolution', self.__RESOLUTION)
+            cmds.setAttr('liquidGlobals.renderScriptFormat', 3)
+            cmds.createNode('liquidGlobals', n=self.__INIT_NODE_NAME, ss=1)
+        else :
+            iValue = 100 / (self.__RESOLUTION/(
+                    float(cmds.getAttr('liquidGlobals.xResolution'))))
+            sValue = self.__resolutionListFormat(iValue)
+            sCurrentIndex = self.__findIndex(self.__RESO_LIST, sValue)
+            self.__setResolution(sCurrentIndex)
+            iValue = cmds.getAttr('liquidGlobals.doAnimation')
+            iValue = self.__invertedBool(iValue)
+            iValue = self.__double(iValue)
+            self.__setCurrentFrameState(iValue)
+            listFrameSeq = self.__splitFrameValue(
+                        cmds.getAttr('liquidGlobals.frameSequence'))         
+            self.__setFrameText(listFrameSeq[0])
+            self.__setByFrameText(listFrameSeq[1])
+            self.__setCameraBlurState(
+                    self.__double(cmds.getAttr('liquidGlobals.cameraBlur')))
+            self.__setDOFState(
+                    self.__double(cmds.getAttr('liquidGlobals.depthOfField')))
+            self.__setLazynessState(
+                    self.__double(cmds.getAttr('liquidGlobals.lazyCompute')))
+            self.__setShadingRateText(
+                            str(cmds.getAttr('liquidGlobals.shadingRate')))
+            self.__setPixelSampleText(
+                            str(cmds.getAttr('liquidGlobals.pixelSamples')))
+            sCurrentIndex = self.__findIndex(self.__BUCKET_SIZE_LIST, 
+                            cmds.getAttr('liquidGlobals.limitsBucketXSize'))
+            self.__setBucketSize(sCurrentIndex)
+            sCurrentIndex = self.__findIndex(self.__GRID_SIZE_LIST, 
+                            cmds.getAttr('liquidGlobals.limitsGridSize'))
+            self.__setGridSize(sCurrentIndex)
+            self.__setSampleMotionState(
+                    self.__double(cmds.getAttr('liquidGlobals.cameraBlur')))
+            sCurrentIndex = self.__findIndex(self.__FORMAT_LIST, 
+                            cmds.getAttr('liquidGlobals.ddImageType[0]'))
+            self.__setFormat(sCurrentIndex)
+            self.__setToFarmState(
+                            cmds.getAttr('liquidGlobals.useRenderScript'))
+            sCurrentCamera = cmds.getAttr('liquidGlobals.renderCamera')
+            sCurrentIndex = self.__findIndex(self.__listCameras, 
+                            sCurrentCamera)
+            self.__setCamera(sCurrentIndex)
+            sCurrentIndex = self.__findIndex(self.__FARM_GROUP_LIST, 
+                            cmds.getAttr('liquidGlobals.jobPriority'))
+            self.__setFarmGroup(sCurrentIndex)
+            self.__setRayState(
+                self.__double(cmds.getAttr('liquidGlobals.useRayTracing')))
+            self.__setSurfaceState(
+                self.__double(cmds.getAttr('liquidGlobals.ignoreSurfaces')))
+            self.__setDisplacementState(
+              self.__double(cmds.getAttr('liquidGlobals.ignoreDisplacements')))
+            self.__setSubSurfaceState(
+    self.__double(cmds.getAttr('liquidGlobals.ignoreSubSurfaceScattering')))
+            self.__setRibNameText(
+                            cmds.getAttr('liquidGlobals.ribName'))
+            self.__setPictureFolderText(
+                            cmds.getAttr('liquidGlobals.pictureDirectory'))
+            
+    #==========================================================================
+    # set Methods       
+    #==========================================================================
+    def __setResolution(self, iValue):
+        """
+        Method to set the resolution format for the GUI and for liquid
+        @type iValue: integer
+        @param iValue: Resolution for X
+        """
+        self.__oGui.setResolution(iValue)
+        sValue = self.__RESO_LIST[iValue]
+        sValue = sValue.split('%')[0]
+        iValue = float(sValue)
+        iResolution = self.__RESOLUTION*iValue/100
+        cmds.setAttr('liquidGlobals.xResolution', iResolution)
+                
+    def __setCurrentFrameState(self, iValue):
+        """
+        """
+        self.__oGui.setCurrentFrameState(iValue)
+        iValue = self.__clampedBool(iValue)
+        self.__oGui.setAnimationDisabled(iValue)        
+        iValue = self.__invertedBool(iValue)
+        cmds.setAttr('liquidGlobals.doAnimation', iValue)
+       
+    def __setFrameText(self, string):
+        """
+        """
+        self.__oGui.setFrameText(string)
+        self.__sFrameValue = string
+        self.__setFrameValue()
+
+    def __setByFrameText(self, string):
+        """
+        """
+        self.__oGui.setByFrameText(string)
+        self.__sStepValue = string
+        self.__setFrameValue()
+        
+    def __setCameraBlurState(self, iValue):
+        """
+        """
+        self.__oGui.setCameraBlurState(iValue)
+        cmds.setAttr('liquidGlobals.cameraBlur', self.__clampedBool(iValue))
+        
+    def __setDOFState(self, iValue):
+        """
+        """
+        self.__oGui.setDOFState(iValue)
+        cmds.setAttr('liquidGlobals.depthOfField', self.__clampedBool(iValue))
+        
+    def __setLazynessState(self, iValue):
+        """
+        """
+        self.__oGui.setLazynessState(iValue)
+        cmds.setAttr('liquidGlobals.lazyCompute', self.__clampedBool(iValue))
+        
+    def __setShadingRateText(self, string):
+        """
+        """
+        fValue = float(string)
+        fValue = round(fValue, 3)
+        cmds.setAttr('liquidGlobals.shadingRate', fValue)
+        self.__oGui.setShadingRateText(str(fValue))
+    
+    def __setRibNameText(self, string):
+        """
+        """
+        self.__oGui.setRibNameText(string)
+        cmds.setAttr('liquidGlobals.ribName', string, type='string')
+    
+    def __setPictureFolderText(self, string):
+        """
+        """
+        self.__oGui.setPictureFolderText(string)
+        cmds.setAttr('liquidGlobals.pictureDirectory', string, type='string')
+        
+    def __setPixelSampleText(self, string):
+        """
+        """
+        self.__oGui.setPixelSampleText(string)
+        cmds.setAttr('liquidGlobals.pixelSamples', float(string))
+
+    def __setBucketSize(self, iValue):
+        """
+        """
+        self.__oGui.setBucketSize(iValue)
+        sText = self.__BUCKET_SIZE_LIST[iValue]
+        cmds.setAttr('liquidGlobals.limitsBucketXSize', float(sText))
+        cmds.setAttr('liquidGlobals.limitsBucketYSize', float(sText))
+        
+    def __setGridSize(self, iValue):
+        """
+        """
+        self.__oGui.setGridSize(iValue)
+        sText = self.__GRID_SIZE_LIST[iValue]
+        cmds.setAttr('liquidGlobals.limitsGridSize', float(sText))        
+
+    def __setSampleMotionState(self, iValue):
+        """
+        """
+        self.__oGui.setSampleMotionState(iValue)
+        cmds.setAttr('liquidGlobals.hiddenSampleMotion',
+                     self.__clampedBool(iValue))
+        
+    def __setFormat(self, iValue):
+        """
+        """
+        self.__oGui.setFormat(iValue)
+        sText = self.__FORMAT_LIST[iValue]
+        cmds.setAttr('liquidGlobals.ddImageType[0]', sText, type='string')
+    
+    def __setCamera(self, iValue):
+        """
+        """
+        self.__oGui.setCamera(iValue)
+        sText = self.__listCameras[iValue]
+        cmds.setAttr('liquidGlobals.renderCamera', sText, type='string')
+    
+    def __refreshCameraList(self):
+        """
+        """
+        self.__cameraListing()
+        self.__oGui.refreshCameraList()
+    
+    def __setToFarmState(self, iValue):
+        """
+        """
+        self.__oGui.setToFarmState(iValue)
+        cmds.setAttr('liquidGlobals.useRenderScript', iValue)
+        iValue = self.__text2Bool(str(iValue))*3
+        cmds.setAttr('liquidGlobals.renderScriptFormat', iValue)
+        
+    def __setFarmGroup(self, iValue):
+        """
+        """
+        self.__oGui.setFarmGroup(iValue)
+        sText = self.__FARM_GROUP_LIST[iValue]
+        cmds.setAttr('liquidGlobals.jobPriority', sText, type='string')
+       
+    def __setRayState(self, iValue):
+        """
+        """
+        self.__oGui.setRayState(iValue)
+        cmds.setAttr('liquidGlobals.useRayTracing', 
+                     self.__clampedBool(iValue))
+       
+    def __setSurfaceState(self, iValue):
+        """
+        """
+        self.__oGui.setSurfaceState(iValue)
+        cmds.setAttr('liquidGlobals.ignoreSurfaces', 
+                     self.__clampedBool(iValue))
+        
+    def __setDisplacementState(self, iValue):
+        """
+        """
+        self.__oGui.setDisplacementState(iValue)
+        cmds.setAttr('liquidGlobals.ignoreDisplacements', 
+                     self.__clampedBool(iValue))
+        
+    def __setSubSurfaceState(self, iValue):
+        """
+        """
+        self.__oGui.setSubSurfaceState(iValue)
+        cmds.setAttr('liquidGlobals.ignoreSubSurfaceScattering', 
+                     self.__clampedBool(iValue))
+        
+    #==========================================================================
+    # Answers to QtCore.SIGNALs
+    #==========================================================================
+    def __resoComboBox_onChanged(self):
+        """
+        """
+        self.__setResolution(self.__oGui.getResolution())
+    
+    def __currentFrame_onClick(self):
+        """
+        """
+        self.__setCurrentFrameState(self.__oGui.getCurrentFrameState())
+    
+    def __frame_onChanged(self):
+        """
+        """
+        self.__setFrameText(self.__oGui.getFrameText())
+    
+    def __byFrame_onChanged(self):
+        """
+        """
+        self.__setByFrameText(self.__oGui.getByFrameText())
+    
+    def __SME_onClick(self):
+        """
+        """
+        '''
+        sWorkFolder = self.__workfolder()
+        print sWorkFolder
+        getTaskFromPath() << gimme the task from the project folder
+        oServer.query(searchType, filter=(('id', search_id), )
+        '''
+        self.__setFrameText('Start,Middle,End')
+    
+    def __shotTimeline_onClick(self):
+        """
+        """
+        self.__setFrameText('Start-End')
+    
+    def __shotTimeline_onClick(self):
+        """
+        """
+        self.__setFrameText('CurrentStart-CurrentEnd')
+    
+    def __camBlur_onClick(self):      
+        """
+        """  
+        self.__setCameraBlurState(self.__oGui.getCameraBlurState())
+    
+    def __lazyness_onClick(self):
+        """
+        """
+        self.__setLazynessState(self.__oGui.getLazynessState())
+    
+    def __DOF_onClick(self):
+        """
+        """
+        self.__setDOFState(self.__oGui.getDOFState())
+        
+    def __shadingRate_onChanged(self):
+        """
+        """
+        self.__setShadingRateText(self.__oGui.getShadingRateText())
+    
+    def __ribName_onChanged(self):
+        """
+        """
+        self.__setRibNameText(self.__oGui.getRibNameText())
+    
+    def __ribName_onClick(self):
+        """
+        """
+        sPath = self.__getPath('')
+        sPath += os.sep
+        sPath += 'rib'
+        self.__openFolder(sPath)
+        
+    def __pictureFolder_onChanged(self):
+        """
+        """
+        self.__setPictureFolderText(self.__oGui.getPictureFolderText())
+
+    def __pictureFolder_onClick(self):
+        """
+        """
+        sPath = self.__getPath('liquidGlobals.pictureDirectory')
+        self.__openFolder(sPath)
+                      
+    def __pixelSamples_onChanged(self):
+        """
+        """
+        self.__setPixelSampleText(self.__oGui.getPixelSampleText())
+    
+    def __sampleMotionOptions_onClick(self):
+        """
+        """
+        self.__setSampleMotionState(self.__oGui.getSampleMotionState())
+    
+    def __bucketSize_onChanged(self):
+        """
+        """
+        self.__setBucketSize(self.__oGui.getBucketSize())
+    
+    def __gridSize_onChanged(self):
+        """
+        """
+        self.__setGridSize(self.__oGui.getGridSize())
+    
+    def __format_onChanged(self):
+        self.__setFormat(self.__oGui.getFormat())
+    
+    def __camera_onChanged(self):
+        self.__setCamera(self.__oGui.getCamera())
+        
+    def __camera_onClick(self):
+        self.__refreshCameraList()
+
+    def __toFarmBloc_onClick(self):
+        self.__setToFarmState(self.__oGui.getToFarmState()) 
+    
+    def __farmGroup_onChanged(self):
+        self.__setFarmGroup(self.__oGui.getFarmGroup())
+    
+    def __ray_onClick(self):
+        self.__setRayState(self.__oGui.getRayState())
+    
+    def __surface_onClick(self):
+        self.__setSurfaceState(self.__oGui.getSurfaceState())
+    
+    def __displacement_onClick(self):
+        self.__setDisplacementState(self.__oGui.getDisplacementState())
+    
+    def __subsurface_onClick(self):
+        self.__setSubSurfaceState(self.__oGui.getSubSurfaceState())
+    
+    def __renderButton_onClick(self):
+        self.__setToFarmState(self.__oGui.getToFarmState())
+        mel.eval('liquidRender;')
+        
+    def __renderSelectionButton_onClick(self):
+        mel.eval('liquidRenderSelected;')
+    
+    def __add2SetButton_onClick(self):
+        if cmds.objExists(self.__SET_NAME):
+            cmds.sets(cmds.ls(sl=1), add=self.__SET_NAME)
+        else:
+            cmds.sets(n=self.__SET_NAME)
+       
+    def __remove2SetButton_onClick(self):
+        if cmds.objExists(self.__SET_NAME):
+            cmds.sets(cmds.ls(sl=1), remove=self.__SET_NAME) 
+    
+    def __clearSetButton_onClick(self):
+        if cmds.objExists(self.__SET_NAME):
+            cmds.sets(cl=self.__SET_NAME)
+            
+    def __renderSet_onClick(self):
+        listCurrentSel = cmds.ls(sl=1)
+        cmds.select(self.__SET_NAME, r=1)
+        mel.eval('liquidRenderSelected;')
+        cmds.select(listCurrentSel, r=1)
+    
+    def __liquid_onClick(self):
+        self.__setValues()
+    
+    #==========================================================================
+    # internal methods    
+    #==========================================================================
+    def __setFrameValue(self):
+        sValue = self.__splitFrameValue(self.__sFrameValue)[0]
+        if self.__sStepValue == '0' or self.__sStepValue == '':
+            self.__sStepValue= '1'
+        sValue += 'x'
+        sValue += self.__sStepValue
+        cmds.setAttr('liquidGlobals.frameSequence', sValue, type='string')
+    
+    def __splitFrameValue(self, sValue):
+        return sValue.split('x')
+        
+    def __text2Bool(self,string):
+        if string == 'True':
+            return 1
+        else :
+            return 0
+    
+    def __clampedBool(self,int):
+        if int > 1:
+            int = 1
+        return int
+    
+    def __invertedBool(self, int):
+        return 1-int
+    
+    def __makeListOfNumbers(self, iStep):
+        listNumbers = []
+        iNumber = 0
+        while iNumber <=(200-iStep) :
+            iNumber += iStep
+            listNumbers.append(self.__resolutionListFormat(iNumber))
+        return listNumbers
+    
+    def __resolutionListFormat(self, iValue):
+        iValue = int(iValue)
+        iResoX = int(self.__RESOLUTION * iValue /100)
+        iResoY = int(self.__RESOLUTIONY * iValue /100)
+        return str(iValue)+'% ('+str(iResoX)+'/'+str(iResoY)+')'
+            
+    def __double(self,string):
+        return 2*int(string)
+
+    def __findIndex(self, list, variable):
+        try :
+            return list.index(str(variable))
+        except :
+            return 0
+        
+    def __cameraListing(self):
+        """
+        Listing of Camera of the scene.
+        This listing needs to exclude shadow cameras
+        Shadow cameras got the alTag and alType tag
+        """
+        self.__listCameras = []
+        for sCamera in  cmds.ls(cameras=1):
+            try :
+                cmds.getAttr('%s.alType' %sCamera)
+            except :
+                sType = ''
+                try :
+                    for i in cmds.listConnections(sCamera):
+                        try :
+                            sType = cmds.getAttr('%s.alType' %i)
+                        except:
+                            pass
+                except :
+                    pass
+                if not sType == 'Light':
+                    self.__listCameras.append(sCamera)    
+        self.__listCameras.sort()
+        self.__oGui.setCameraList(self.__listCameras)
+        return
+    
+    def __workfolder(self):
+        return  cmds.workspace( q=True, o=True )
+        
+    def __getPath(self, liquidParameter):
+        sPath = self.__workfolder()
+        try : 
+            sPath += cmds.getAttr(liquidParameter)
+        except :
+            pass
+        return sPath
+    
+    def __openFolder(self, sPath):
+        if not os.system('gnome-open %s' %sPath) == 0:
+            i=0
+            sNewPath = ''
+            listPathSplit = sPath.split(os.sep)
+            while i < len(listPathSplit)-2:
+                sNewPath += listPathSplit[i]
+                sNewPath += os.sep
+                i+=1
+            self.__openFolder(sNewPath)
+    
+    #==========================================================================
+    # SIGNALS
+    #==========================================================================
+    def __signals(self):
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('resoComboBox_onChanged'),
+                     self.__resoComboBox_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('currentFrame_onClick'),
+                     self.__currentFrame_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('frame_onChanged'),
+                     self.__frame_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('byFrame_onChanged'),
+                     self.__byFrame_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('SME_onClick'),
+                     self.__SME_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('shotTimeline_onClick'),
+                     self.__shotTimeline_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('shotTimeline_onClick'),
+                     self.__shotTimeline_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('camBlur_onClick'),
+                     self.__camBlur_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('DOF_onClick'),
+                     self.__DOF_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('lazyness_onClick'),
+                     self.__lazyness_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('shadingRate_onChanged'),
+                     self.__shadingRate_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('pixelSamples_onChanged'),
+                     self.__pixelSamples_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('ribName_onChanged'),
+                     self.__ribName_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('ribName_onClick'),
+                     self.__ribName_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('pictureFolder_onChanged'),
+                     self.__pictureFolder_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('pictureFolder_onClick'),
+                     self.__pictureFolder_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('sampleMotionOptions_onClick'),
+                     self.__sampleMotionOptions_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('bucketSize_onChanged'),
+                     self.__bucketSize_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('gridSize_onChanged'),
+                     self.__gridSize_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('format_onChanged'),
+                     self.__format_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('camera_onChanged'),
+                     self.__camera_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('camera_onClick'),
+                     self.__camera_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('toFarmBloc_onClick'),
+                     self.__toFarmBloc_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('farmGroup_onChanged'),
+                     self.__farmGroup_onChanged)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('ray_onClick'),
+                     self.__ray_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('surface_onClick'),
+                     self.__surface_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('displacement_onClick'),
+                     self.__displacement_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('subsurface_onClick'),
+                     self.__subsurface_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('renderButton_onClick'),
+                     self.__renderButton_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('renderSelectionButton_onClick'),
+                     self.__renderSelectionButton_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('add2SetButton_onClick'),
+                     self.__add2SetButton_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('remove2SetButton_onClick'),
+                     self.__remove2SetButton_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('clearSetButton_onClick'),
+                     self.__clearSetButton_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('renderSet_onClick'),
+                     self.__renderSet_onClick)
+        self.connect(self.__oGui,
+                     QtCore.SIGNAL('liquid_onClick'),
+                     self.__liquid_onClick)
+# Ni!

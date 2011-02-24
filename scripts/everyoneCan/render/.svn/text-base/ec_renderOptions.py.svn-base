@@ -1,0 +1,88 @@
+# -*- coding: utf-8 -*-
+import sys
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+from everyoneCan import ec__TabMerger   #function class to set the methods  
+                                        #to merge the application in a Qwidget    
+from everyoneCan.render import ec__RenderOptionsUI
+from everyoneCan.render import ec__RenderOptionsCtrl
+reload(ec__RenderOptionsUI)
+reload(ec__RenderOptionsCtrl)
+    
+class RenderOptionsLauncher(ec__TabMerger.Merger):
+    """
+    Launcher of the RenderApplication
+    Can be launched as a standAlone 
+    or from ec_Launcher (launcher of LightingMaster GUI)
+    """
+    def __init__(self, boolSelfLaunch=1):
+        self.WINDOWS_NAME = 'Render, Everyone Can Render'
+        self.oGui = ec__RenderOptionsUI.Gui(boolSelfLaunch)
+        self.oCtrl = ec__RenderOptionsCtrl.Control(self.oGui,'self.oModel')
+        if boolSelfLaunch == 0:         
+            self.setParent(self.oGui.getLayout())
+            self.sTabName = self.WINDOWS_NAME
+        
+def main():
+    """
+    The main function when using qt inside maya using PumbThread
+    HowTo :
+    import sys
+    sys.path.append('/home/jordi_riera/dev/production/maya/scripts/lighting/python')
+    import ec_renderOptions
+    reload(ec_renderOptions)
+    ec_renderOptions.main()
+    """
+    import pumpThread
+    global launcherRenderOptions, app
+    #check to see if the dialog is already loaded
+    if 'launcherRenderOptions' in globals():
+        try:
+            launcherRenderOptions.oGui.setWindowFlags(
+                                            QtCore.Qt.WindowStaysOnTopHint)
+            launcherRenderOptions.oGui.setWindowFlags(
+                                            QtCore.Qt.WindowCancelButtonHint)
+            launcherRenderOptions.oGui.setWindowState(
+                                                QtCore.Qt.WindowActive)
+            launcherRenderOptions.oGui.show()
+            return
+        except:
+            del launcherRenderOptions
+    pumpThread.initializePumpThread()
+
+    app = QtGui.qApp
+    app.setStyle(QtGui.QStyleFactory.create('cleanlooks'))
+    app.setFont(QtGui.QFont('Bitstream Vera Sans', 8))
+
+    launcherRenderOptions = RenderOptionsLauncher() #MAIN FUNCTION HERE
+    launcherRenderOptions.oGui.resize(1,1)
+    launcherRenderOptions.oGui.setWindowTitle(
+                                    launcherRenderOptions.WINDOWS_NAME)
+    launcherRenderOptions.oGui.show()
+    app.connect(app, QtCore.SIGNAL('lastWindowClosed()'),
+                app, QtCore.SLOT('quit()'))
+
+
+def debug():
+    import pumpThread
+    global launcherRenderOptions, app
+    #check to see if the dialog is already loaded
+    
+    if 'launcherRenderOptions' in globals():
+        del launcherRenderOptions
+
+    pumpThread.initializePumpThread()
+
+    app = QtGui.qApp
+    app.setStyle(QtGui.QStyleFactory.create('cleanlooks'))
+    app.setFont(QtGui.QFont('Bitstream Vera Sans', 8))
+
+    launcherRenderOptions = RenderOptionsLauncher() #MAIN FUNCTION HERE
+    launcherRenderOptions.oGui.resize(1,1)
+    launcherRenderOptions.oGui.setWindowTitle(
+                                    launcherRenderOptions.WINDOWS_NAME)
+    launcherRenderOptions.oGui.show()
+    app.connect(app, QtCore.SIGNAL('lastWindowClosed()'),
+                app, QtCore.SLOT('quit()'))
+        
+# Ni!

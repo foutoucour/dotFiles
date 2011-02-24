@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+import sys
+from PyQt4 import QtGui
+from PyQt4 import QtCore
+
+class Tabbor(QtGui.QWidget):
+    """
+    This class gathers applications of lighting department in a single UI
+    displaying each applications in a tab
+    """
+    def __init__(self, parent=None):
+        QtGui.QWidget.__init__(self, parent)
+        self.__oMainLayout = QtGui.QVBoxLayout()
+        self.__listTabs = []
+    
+    def createWidgets(self, oMasterLayout):
+        self.__looper()
+        oMasterLayout.addLayout(self.__oMainLayout)
+        
+    def addTab(self, object):
+        self.__listTabs.append(object)
+    
+    def setTitle(self,string):
+        self.setWindowTitle(string)
+        
+    def __looper(self):
+        self.__oTabLayout = QtGui.QVBoxLayout()
+        self.__oTab = QtGui.QTabWidget()
+        self.__oMainLayout.addWidget(self.__oTab)
+        for object in self.__listTabs:
+            self.__oTab.addTab(object.oParent, object.sTabName)
+
+# Ni!

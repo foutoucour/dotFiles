@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/alrepos/cg-repo/!svn/ver/6315/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan
+END
+lm__GlobalOptionsCtrl.py
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm__GlobalOptionsCtrl.py
+END
+lm_launcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm_launcher.py
+END
+lightRigTypes.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/alrepos/cg-repo/!svn/ver/6282/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lightRigTypes.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/__init__.py
+END
+UIs.py
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/alrepos/cg-repo/!svn/ver/6300/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/UIs.py
+END
+lm__Tabbor.py
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm__Tabbor.py
+END
+CustomWidgets.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/alrepos/cg-repo/!svn/ver/6314/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/CustomWidgets.py
+END
+lm__GlobalOptionsUI.py
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm__GlobalOptionsUI.py
+END
+Namer.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/alrepos/cg-repo/!svn/ver/6044/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/Namer.py
+END
+SharedConstants.py
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/alrepos/cg-repo/!svn/ver/6314/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/SharedConstants.py
+END
+lm_globalOptions.py
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm_globalOptions.py
+END
+lm_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm_test.py
+END
+ec__CustomWidgets.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/alrepos/cg-repo/!svn/ver/6019/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/ec__CustomWidgets.py
+END
+ec__Namer.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/alrepos/cg-repo/!svn/ver/6019/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/ec__Namer.py
+END
+TabMerger.py
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/alrepos/cg-repo/!svn/ver/6044/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/TabMerger.py
+END
+multiLinkBlocker.py
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/alrepos/cg-repo/!svn/ver/6282/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/multiLinkBlocker.py
+END
+ec__TabMerger.py
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/ec__TabMerger.py
+END
+al_magicLightAttr.py
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/alrepos/cg-repo/!svn/ver/6229/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/al_magicLightAttr.py
+END
+Paths.py
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/alrepos/cg-repo/!svn/ver/6282/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/Paths.py
+END
+lm_linkManager.py
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm_linkManager.py
+END
+lm__GlobalOptionsModel.py
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm__GlobalOptionsModel.py
+END
+lm___application_spine.py
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/alrepos/cg-repo/!svn/ver/6006/deployment/trunk/production/maya/scripts/lighting/python/everyoneCan/lm___application_spine.py
+END

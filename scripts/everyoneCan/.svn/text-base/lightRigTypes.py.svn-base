@@ -1,0 +1,26 @@
+class TypeLister:
+    """
+    Name of types used in LightRigs
+    """
+    blocker                 ='Blocker'
+    clamp                   = 'Clamp'
+    cluster                 = 'Cluster'
+    constrain               ='Constrain'
+    display                 = 'Display'
+    driver                  = 'Driver'
+    expression              = 'Expression'
+    group                   = 'Group'
+    light                   = 'Light'
+    liquidLightShader       = 'LiquidLightShader'
+    liquidSurfaceShader     = 'LiquidSurfaceShader'
+    makePrimitive           = 'MakePrimitive'
+    mayaShader              = 'MayaShader'
+    multiplyDivide          = 'MultiplyDivide'
+    plusMinusAverage        = 'PlusMinusAverage'
+    shadowCamera            = 'ShadowCamera'
+    shape                   = 'Shape'
+    textureFile             = 'File'
+    set                     = 'Set'
+    tweak                   = 'Tweak'
+    debug                   = 'Debug'
+    pictureNode             = 'PictureNode'
