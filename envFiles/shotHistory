@@ -1,8 +1,3 @@
-et2 rnd/rnd_pipeline maya2011_fur
-et2 rnd/rnd_pipeline maya2011_fx
-et2 rnd/rnd_pipeline maya2011_3ddmp
-et2 rnd/rnd_pipeline maya2011_fx
-et2 rnd/rnd_pipeline maya2011_asset
 et2 build/charDeatheater maya2011_asset
 et2 rnd/rnd_pipeline maya2011_asset
 et2 rnd/rnd_pipeline maya2011_fx
@@ -47,4 +42,9 @@ hsbcIronLion_4400118 build/lion tvc-maya2011
 hsbcIronLion_4400118 build/lion tvc
 hsbcIronLion_4400118 build/lion tvc-maya2011
 dhlGrow_1408826 grow/sh210 tvc
+hsbcIronLion_4400118 build/lion tvc-maya2011
+jgk build/envBeanstalk animation
+dairyQueenKittens_2400783 build/bunny fur
+dairyQueenKittens_2400783 build/bunny tvc
+dairyQueenKittens_2400783 build/bunny tvc-maya2011
 hsbcIronLion_4400118 build/lion tvc-maya2011

@@ -31,6 +31,6 @@
 	merge = merge --no-commit
 [merge]
 	conflictstyle = diff3
-    ;tool = meld
-    tool = vimdiff 
+    tool = meld
+    ;tool = vimdiff 
 

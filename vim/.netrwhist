@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/mpc/class1/jcom/tools/scripts'
 let g:netrw_dirhist_2='.'
 let g:netrw_dirhist_3='/usr/people/jordi-r/maya'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='.'
 let g:netrw_dirhist_6='/mpc/devel/jordi-r/workspace/git/techAnimTools/mel/menu'
 let g:netrw_dirhist_7='.'
 let g:netrw_dirhist_8='/mpc/devel/jordi-r/workspace/git/animationTools/mel/menu'
+let g:netrw_dirhist_9='.'

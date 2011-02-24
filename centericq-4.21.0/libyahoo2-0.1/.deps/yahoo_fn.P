@@ -1,3 +1,0 @@
-yahoo_fn.o: yahoo_fn.c yahoo_fn.h
-yahoo_fn.c :
-yahoo_fn.h :
