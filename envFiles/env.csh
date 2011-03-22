@@ -8,18 +8,9 @@
 # needs by mpcMake and setup my env dev
 source $TOOLS/config/devenv.csh
 
-###########################################################################################################
-# custom environment variable
-###########################################################################################################
-setenv ECLIPSE_VERSION 3.6.0
-setenv J_SVN 'http://svn.mpc.local/repos'
-setenv JOBVERBOSE 1
+# default PATH set up
+setenv PATH $HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
 
-
-###########################################################################################################
-# Local setting depending on DIST 
-###########################################################################################################
-
-
+setenv MUPPETRAY_VERSION 3.2
 
 

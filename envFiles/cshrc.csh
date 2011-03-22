@@ -5,8 +5,6 @@
 #setenv XTERM_FONT screen15
 #setenv XTERM_GEOM 80x40
 
-# default PATH set up
-setenv PATH /mpc/people/jordi-r/dotFiles/scripts:$HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
 
 
 ###########################################################################################################
@@ -53,8 +51,9 @@ alias grep      'grep --color=auto'
 
 # only for linux
 alias dir       'dir --color'
-#alias ls        'ls -h --group-directories-first --color=auto'
 alias ls        'ls -h --color=auto'
+alias la        'ls -a'
+alias lt        'ls -lrt'
 
 alias job		'source $TOOLS/scripts/job.csh \!*;_shellTitleFunc;cd -'
 alias cd       	'cd \!:*;_prompt;'
@@ -63,7 +62,7 @@ alias pushd    	'pushd \!:*;_prompt;'
 alias _vim		/mpc/people/jordi-r/apps/vim/bin/vim
 alias gvim      '_vim -c gvim'
 
-if ($?TERM) then
+if( $?prompt ) then
     if (`echo ${DESKTOP_SESSION}` == 'WindowMaker') then
         alias gvim      '_getSize;_vim -c gvim \!:*;_resizeShell;'
     endif
@@ -102,7 +101,7 @@ alias bgColor		'echo -n "\033]11;\!*\033\\"'
 alias bgBlack   	'bgColor black'
 alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
 
-alias makeInstall		'make clean; rm .build -fr;make install OPTIMIZED=1 -j 6 && date'
+alias makeInstall		'make clean; rm .build -fr;make install VERBOSE=0 OPTIMIZED=1 -j 6 &&echo&&echo&&date&&echo&&echo'
 alias makeI                 'makeInstall'
 alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
 alias makeN                 'makeNewInstall'
@@ -123,9 +122,6 @@ alias soi "/mpc/people/jordi-r/config/oiSpam.py"
 alias rob		'oi robert-t'
 alias qRob		'qoi robert-t \!:1'
 alias qrob		'qRob'
-alias ben		'oi benoit-l'
-alias qBen		'qoi benoit-l \!:1'
-alias qben		'qBen'
 alias nico		'oi nicolas-c'
 
 ## RCS
@@ -145,7 +141,7 @@ alias disciplinesPath		'cd /software/tools/config/disciplines/'
 
 alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -l \!:1 *`'
 
-if ($?TERM) then
+if( $?prompt ) then
     if ($?DESKTOP_SESSION) then
         _shellTitleFunc
         _prompt
