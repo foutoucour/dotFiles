@@ -15,19 +15,19 @@ class Control(QtCore.QObject):
     __BLOCKER           = 'blocker'
     __SHADOW_CAMERA     = 'ShadowCamera'
     __MAGIC             = 'magicLight'
-   
+
     def __init__(self, oGui, oModel):
         """
-        Setting of the link with Gui and the model 
+        Setting of the link with Gui and the model
         @type oGui: object
         @param oGui: Interface part of this lightOptions Application
         """
         self.__oModel = oModel
         self.__oGui = oGui
-        self.__signals()        
-            
+        self.__signals()
+
     def __pointLightButton(self):
-        """Control of the pointLight""" 
+        """Control of the pointLight"""
         self.__oModel.createReference(self.__POINT)
 
     def __spotLightButton(self):
@@ -37,19 +37,19 @@ class Control(QtCore.QObject):
     def __ambientLightButton(self):
         """Control of the ambientLight"""
         self.__oModel.createReference(self.__AMBIENT)
-       
+
     def __reflectionLightButton(self):
         """Control of the reflectionLight"""
         self.__oModel.createReference(self.__REFLECTION)
-        
+
     def __occluLightButton(self):
         """Control of the occlusionLight"""
         self.__oModel.createReference(self.__OCCLUSION)
-        
+
     def __bakeLightButton(self):
         """Control of the bakeLight"""
         self.__oModel.createReference(self.__BAKE)
-               
+
     def __blockerButton(self):
         """Control of the blocker"""
         self.__oModel.createReference(self.__BLOCKER)
@@ -57,59 +57,59 @@ class Control(QtCore.QObject):
     def __linkBlockerButton(self):
         """Control of the blocker"""
         self.__oModel.linkBlocker()
-        
+
     def __unlinkBlockerButton(self):
         """Control of the blocker"""
         self.__oModel.unlinkBlocker()
-        
+
     def __shdCamButton(self):
         """Control of the shadowCamera"""
         self.__oModel.createReference(self.__SHADOW_CAMERA)
-   
+
     def __renameButton(self):
         """Control of the rename"""
         self.__oModel.renameRef()
-        
+
     def __removeButton(self):
         """Control of the remove"""
-        self.__oModel.removeRef() 
-        
+        self.__oModel.removeRef()
+
     def __duplButton(self):
         """Control of the duplicate"""
         self.__oModel.duplicateRef()
-        
+
     def __instButton(self):
         """Control of the instance"""
         self.__oModel.instance()
-    
+
     def __unlinkInstanceButton(self):
         """Control of the unlink"""
         self.__oModel.unlink()
-    
+
     def __snapButton(self):
         """Control of the unlink"""
         self.__oModel.snap()
-    
+
     def __findMasterButton(self):
         """Control of the unlink"""
         self.__oModel.selectMaster()
-    
+
     def __findInstanceButton(self):
         """Control of the unlink"""
         self.__oModel.selectInstance()
-    
+
     def __magicLightButton(self):
         """Control of the magicLight"""
         self.__oModel.createReference(self.__MAGIC)
-    
+
     def __magicLightAddAttrButton(self):
         """Control of the magicLightAddAttr"""
         self.__oModel.magicLightAddAttr()
-    
+
     def __magicLightRemoveAttrButton(self):
         """Control of the magicLightRemoveAttr"""
         self.__oModel.magicLightRemoveAttr()
-        
+
     def __signals(self):
         #======================================================================
         # Ligths
@@ -165,5 +165,5 @@ class Control(QtCore.QObject):
                      self.__findMasterButton)
         self.connect(self.__oGui, QtCore.SIGNAL('findInstance'),
                      self.__findInstanceButton)
-        
+
 # Ni!
