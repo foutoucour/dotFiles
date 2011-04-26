@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/mpc/class1/jcom/tools/scripts'
-let g:netrw_dirhist_2='.'
-let g:netrw_dirhist_3='/usr/people/jordi-r/maya'
-let g:netrw_dirhist_4='/usr/people/jordi-r/dotFiles'
-let g:netrw_dirhist_5='.'
-let g:netrw_dirhist_6='/mpc/devel/jordi-r/workspace/git/techAnimTools/mel/menu'
-let g:netrw_dirhist_7='.'
-let g:netrw_dirhist_8='/mpc/devel/jordi-r/workspace/git/animationTools/mel/menu'
-let g:netrw_dirhist_9='.'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='.'
+let g:netrw_dirhist_2='/mpc/devel/jordi-r/tools/maya/2011/mel/muppetRay/3.4'
+let g:netrw_dirhist_3='.'

@@ -33,14 +33,14 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                                    'liquidLightShaderNode',
                                    'message'
                                    ]
-    
+
     __INSTANCE_MASTER_ATTR  = 'alInstanceMaster'
     __TAG_OF_MASTER         = 'alTag'
     #==========================================================================
     # variables
     #==========================================================================
-    
-    
+
+
     def __init__(self):
         """
         """
@@ -53,13 +53,13 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         self.__boolLinkAttr         = 0
         self.__sLightType           = ''
         self.__sRefPath             = ''
- 
+
     def linkBlocker(self):
         self.__oBlockerLinker.add()
-        
+
     def unlinkBlocker(self):
         self.__oBlockerLinker.remove()
-        
+
     def createReference(self, sType):
         """
         Methods to create a reference.
@@ -69,7 +69,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         """
         # __boolCreateReference is to indicate if we are creating a reference
         # during the __getValueAndRename method.
-        self.__boolCreateReference = 1 
+        self.__boolCreateReference = 1
         self.__sLightType = sType
         self.__setReferenceName(sType)
 
@@ -81,7 +81,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         sNamespace, sName = self.__splitReferenceName(sel)
         self.__sRefPath = self.__getPathFromSelection(sel)
         self.__setReferenceName(sNamespace)
-        
+
     def removeRef(self):
         """
         Method to remove a reference.
@@ -97,11 +97,11 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                 self.__unlinkBlockerAndShader(sel)
             sRefNode = self.__getPathFromSelection(sel)
             cmds.file(sRefNode, rr=1)
-        
+
     def duplicateRef(self):
         """
         Method to duplicate a Reference.
-        Duplicate means to get from pipeline the same type of 
+        Duplicate means to get from pipeline the same type of
         reference and to set the same values.
         """
         self.__boolCopyAttr = 1
@@ -111,7 +111,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         sNamespace += 'Dupl'
         self.__sRefPath = self.__getPathFromSelection(self.__listLight[0])
         self.__setReferenceName(sNamespace)
-    
+
     def instance(self):
         """
         Method to instanciate a reference
@@ -125,7 +125,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         sNamespace = '__%s' %sNamespace
         self.__sRefPath = self.__getPathFromSelection(self.__listLight[0])
         self.__setReferenceName(sNamespace)
-    
+
     def unlink(self):
         """
         Method to unlink an instance and its master
@@ -141,7 +141,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                     pass
             sMaster = cmds.listRelatives(sMaster)[0]
             for sAttr in cmds.listAttr(sMaster):
-                if not 'liquid' in sAttr:   #or it will break a connection with 
+                if not 'liquid' in sAttr:   #or it will break a connection with
                                             #liquid, I can't tell which...
                     try:
                         cmds.disconnectAttr('%s.%s' %(sMaster, sAttr),
@@ -151,23 +151,23 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             self.__copyAttr(sMaster,sSel)
             sInstanceAttr = '%s.%s' %(sSel,self.__INSTANCE_MASTER_ATTR)
             cmds.deleteAttr(sInstanceAttr)
-    
+
     def selectMaster(self):
         """
         Method to find and select the master of the selected instance
         """
         sMaster = self.__findMaster()
-        if not sMaster == '': 
+        if not sMaster == '':
             cmds.select(sMaster)
-    
+
     def selectInstance(self):
         """
         Method to find and select the master of the selected instance
         """
         listInstances = self.__findInstance()
-        if not len(listInstances) == 0: 
+        if not len(listInstances) == 0:
             cmds.select(listInstances)
-    
+
     def snap(self):
         """
         Method to snap 2 objects
@@ -176,16 +176,16 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         sel = self.__getSelection()
         a = 0
         while a < len(self.__LIST_ATTR)-6:
-            cmds.setAttr('%s.%s' %(sel[1], self.__LIST_ATTR[a]), 
+            cmds.setAttr('%s.%s' %(sel[1], self.__LIST_ATTR[a]),
                          cmds.getAttr('%s.%s' %(sel[0], self.__LIST_ATTR[a])))
             a += 1
-            
+
     def magicLightAddAttr(self):
         al_magicLightAttr.main(1)
-        
+
     def magicLightRemoveAttr(self):
         al_magicLightAttr.main(0)
-        
+
     #==========================================================================
     # Private methods
     #==========================================================================
@@ -204,7 +204,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         @return: file path
         """
         return cmds.referenceQuery(string,filename=True)
-    
+
     def __setNamespace(self, string):
         sNoNumber = string
         if re.search('[0-9]\Z', sNoNumber) == None:
@@ -213,7 +213,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             while not re.search('[0-9]\Z', sNoNumber) == None:
                 lenght = len(sNoNumber)
                 sNoNumber = sNoNumber[0:lenght-1]
-    
+
             sNumbers = string[len(sNoNumber):]
             sNextNumbers = str(1 + int(sNumbers))
             iNumberOfZero = 0
@@ -222,7 +222,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                 iNumberOfZero += 1
             sNewString = '%s%s' %(sNoNumber, sNextNumbers)
         return sNewString
-        
+
     def __setReferenceName(self,sNamespace):
         """
         Call of an instance of ec__Namer.Naming Class.
@@ -231,13 +231,13 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         @param sNamespace: current name of the reference
         """
         text, ok = QtGui.QInputDialog.getText(None,
-                                              'Namer', 
+                                              'Namer',
                                               'Enter a name:',
                                               QtGui.QLineEdit.Normal,
                                               sNamespace)
         if ok:
             self.__getValueAndRename(str(text))
-    
+
     def __getValueAndRename(self, sNewNamespace):
         """
         call when the ec__Namer.Naming() instance
@@ -255,7 +255,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
            self.__create(self.__sLightType,
                                   sNewNamespace)
         else:
-            # __boolCopyAttr indicates if we are copying attrs 
+            # __boolCopyAttr indicates if we are copying attrs
             if self.__boolCopyAttr == 1:
                 self.__boolCopyAttr = 0
                 self.__sRefPath =  self.__createReferenceFromPath(
@@ -266,15 +266,15 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                 self.__copyAttr(self.__listLight[0],self.__listLight[1])
                 self.__copyAttr(self.__getShape(self.__listLight[0]),
                                 self.__getShape(self.__listLight[1]))
-            
-            # __boolLinkAttr indicates if we are linking attrs    
+
+            # __boolLinkAttr indicates if we are linking attrs
             elif self.__boolLinkAttr == 1:
                 self.__boolLinkAttr = 0
                 self.__sRefPath =  self.__createReferenceFromPath(
                                                         self.__sRefPath,
                                                         sNewNamespace)
                 self.__selectFromPath(self.__sRefPath)
-                self.__listLight.append(cmds.ls(sl=1)[0])                
+                self.__listLight.append(cmds.ls(sl=1)[0])
                 self.__copyAttr(self.__listLight[0],self.__listLight[1])
                 self.__copyAttr(self.__getShape(self.__listLight[0]),
                                 self.__getShape(self.__listLight[1]))
@@ -290,15 +290,15 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                                  '%s.%s' %(self.__listLight[1],
                                  self.__INSTANCE_MASTER_ATTR),
                                  f=1)
-            # renaming 
+            # renaming
             else:
                 sel = self.__getSelection()[0]
                 sRefNode = self.__getPathFromSelection(sel)
                 cmds.file(str(sRefNode),e=True,ns=sNewNamespace)
-        
+
         self.emit(QtCore.SIGNAL('LightOptionsModel_Signal'))
         return 1
-    
+
     def __create(self, sType, sNamespace):
         """
         Method to create a Reference.
@@ -307,7 +307,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         @type sNamespace: string
         @param sNamespace: namespace for the new reference
         @rtype: string
-        @return: return the path of the reference if exists, or '' 
+        @return: return the path of the reference if exists, or ''
         """
         sPath = self.__getPathFromTactic(sType)
         if not sPath == 0:
@@ -317,14 +317,14 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             return sPath
         else :
             return 0
-    
+
     def __getPathFromTactic(self, sAsset):
         """
         Method to get from Tactic the path of the last file of the reference.
         @type sAsset: string
         @param sAsset: name of the asset
         @rtype: string
-        @return: path of the file if exists, '' if not 
+        @return: path of the file if exists, '' if not
         """
         oAsset = al.pipeline.getAssets(project='plants',
                                               assets=[sAsset]
@@ -338,7 +338,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             if 'fine.mb' in sPath :
                 return sPath
         return ''
-        
+
     def __copyAttr(self, sSource, sTarget):
         """
         Method to copy attr between two objects.
@@ -354,13 +354,13 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
                 command += AttrValue
                 cmds.setAttr(command)
             except:
-                try : 
+                try :
                     command += ",type='string'"
                     cmds.setAttr('%s.%s' %(sTarget, sAttr), AttrValue,)
                 except:
                     pass
         return
-                
+
     def __linkAttr(self,sSource, sTarget):
         """
         Method to link attrs of two objects.
@@ -388,13 +388,13 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         cmds.file(str(sPath), sa=1)
         cmds.select(self.__getSelection()[0])
         return
-    
+
     def __selectFromNamespace(self, sNamespace):
         cmds.select(cl=1)
         sel = cmds.ls('%s:al_*' %sNamespace, shapes=1)[0]
         sel = cmds.listRelatives(sel, p=1)
         cmds.select(sel)
-    
+
     def __createReferenceFromPath(self, sPath, sNamespace):
         """
         Method to create a reference from the path of a file.
@@ -405,16 +405,16 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         @rtype: string
         @return: file path
         """
-        return cmds.file( sPath, r=1, 
+        return cmds.file( sPath, r=1,
                    ns=str(sNamespace), type='mayaBinary')
-        
+
     def __splitReferenceName(self, sRefName):
         """
         Method to split namespace and name of a reference.
         @type sRefName: string
         @param sRefName: name of a reference
         @rtype: string list
-        @return: [namespace, name] 
+        @return: [namespace, name]
         """
         return sRefName.split(':')
 
@@ -427,7 +427,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         @return: name of shape
         """
         return cmds.listRelatives(sObject)[0]
-        
+
     def __findMaster(self):
         """
         Method to get the master of an selected instance.
@@ -443,7 +443,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
         except :
             sMaster = ''
         return sMaster
-    
+
     def __findInstance(self):
         """
         Method to get the master of an selected instance.
@@ -458,7 +458,7 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             if self.__INSTANCE_MASTER_ATTR in sConn:
                 listInstances.append(sConn.split('.')[0])
         return listInstances
-    
+
     def __unlinkBlockerAndShader(self, sBlocker):
         """
         Method to set some value on shaders linked to a blocker.
@@ -484,5 +484,5 @@ class Model(QtGui.QWidget, lightRigTypes.TypeLister):
             except :
                 pass
         return sBlockerShape
-    
+
 # Ni !

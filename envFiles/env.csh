@@ -11,6 +11,5 @@ source $TOOLS/config/devenv.csh
 # default PATH set up
 setenv PATH $HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
 
-setenv MUPPETRAY_VERSION 3.2
 
 

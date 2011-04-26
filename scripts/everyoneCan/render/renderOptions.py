@@ -2,19 +2,19 @@
 import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
-from everyoneCan import TabMerger   #function class to set the methods  
-                                    #to merge the application in a Qwidget    
+from everyoneCan import TabMerger   #function class to set the methods
+                                    #to merge the application in a Qwidget
 from everyoneCan.render import RenderOptionsUI
 from everyoneCan.render import RenderOptionsModel
 from everyoneCan.render import RenderOptionsCtrl
 reload(RenderOptionsUI)
 reload(RenderOptionsModel)
 reload(RenderOptionsCtrl)
-    
+
 class RenderOptionsLauncher(TabMerger.Merger):
     """
     Launcher of the RenderApplication
-    Can be launched as a standAlone 
+    Can be launched as a standAlone
     or from ec_Launcher (launcher of LightingMaster GUI)
     """
     def __init__(self, boolSelfLaunch=1):
@@ -22,10 +22,10 @@ class RenderOptionsLauncher(TabMerger.Merger):
         self.oGui           = RenderOptionsUI.Gui(boolSelfLaunch)
         oModel              = RenderOptionsModel.Model()
         self.oCtrl          = RenderOptionsCtrl.Control(self.oGui,oModel)
-        if boolSelfLaunch == 0:         
+        if boolSelfLaunch == 0:
             self.setParent(self.oGui.getLayout())
             self.sTabName = self.WINDOWS_NAME
-        
+
 def main():
     """
     The main function when using qt inside maya using PumbThread
@@ -64,7 +64,7 @@ def debug():
     import pumpThread
     global launcherRenderOptions, app
     #check to see if the dialog is already loaded
-    
+
     if 'launcherRenderOptions' in globals():
         del launcherRenderOptions
 
@@ -81,5 +81,5 @@ def debug():
     launcherRenderOptions.oGui.show()
     app.connect(app, QtCore.SIGNAL('lastWindowClosed()'),
                 app, QtCore.SLOT('quit()'))
-        
+
 # Ni!

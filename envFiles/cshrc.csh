@@ -101,14 +101,24 @@ alias bgColor		'echo -n "\033]11;\!*\033\\"'
 alias bgBlack   	'bgColor black'
 alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
 
+#jordi-r Tue 05 Apr 2011 12:22:59 BST
+# make install feature.
+# This will increase the speed of the process and also remove some bug due to the .build feature.
+
+# clean all builds, make optmized install on 6 cores and if success show the finishing time
 alias makeInstall		'make clean; rm .build -fr;make install VERBOSE=0 OPTIMIZED=1 -j 6 &&echo&&echo&&date&&echo&&echo'
-alias makeI                 'makeInstall'
+alias makeI             'makeInstall'
+
+# like MakeInstall but remove the tool folder first.
+# Useful to be sure to have a clean environment.
 alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
-alias makeN                 'makeNewInstall'
+alias makeN             'makeNewInstall'
 
-alias mmakeI            'makeI && m'
-alias mmakeN            'makeN && m'
+# Do the install and launch maya (lazyness throne ;) )
+alias mmakeI            'makeI && maya&'
+alias mmakeN            'makeN && maya&'
 
+# Do the install and launch maya batch (lazyness throne ;) )
 alias bmakeI            'makeI && mb'
 alias bmakeN            'makeN && mb'
 
@@ -122,7 +132,6 @@ alias soi "/mpc/people/jordi-r/config/oiSpam.py"
 alias rob		'oi robert-t'
 alias qRob		'qoi robert-t \!:1'
 alias qrob		'qRob'
-alias nico		'oi nicolas-c'
 
 ## RCS
 alias Rco			'co -l'

@@ -16,7 +16,6 @@ class AlGroupBox(QtGui.QGroupBox):
 class AlLineEdit(QtGui.QLineEdit):
     """Formated Qt LineEdit with a height of 22"""
     def __init__(self):
-
         QtGui.QLineEdit.__init__(self)
         self.setMaximumHeight(22)
         oColor = QtGui.QColor(255,255,255)
