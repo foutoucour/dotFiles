@@ -12,4 +12,5 @@ source $TOOLS/config/devenv.csh
 setenv PATH $HOME/tools/scripts:$HOME/tools/bin/${UNAME}:${PATH}
 
 
+setenv MUPPETRAY_VERSION 3.4
 
