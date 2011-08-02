@@ -148,7 +148,7 @@ alias c						'cd ~/config/'
 alias centralVersionPath 	'cd $TOOLS/config/environment/london/$MAYA_MAJOR_VERSION/$MUGGINS_VERSION/$PLATFORM'
 alias disciplinesPath		'cd /software/tools/config/disciplines/'
 
-alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -l \!:1 *`'
+alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
 
 if( $?prompt ) then
     if ($?DESKTOP_SESSION) then

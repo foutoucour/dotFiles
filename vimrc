@@ -21,6 +21,9 @@ let Tlist_Use_Horiz_Window=0
 nnoremap TT :TlistToggle<CR>
 map <F4> :TlistToggle<CR>
 map :W :w
+map :E :e
+map :Q :q
+map :Vs :vs
 
 " Various Taglist diplay config:
 let Tlist_Use_Right_Window = 1
@@ -36,13 +39,35 @@ set dictionary+=/usr/share/dict/words
 " filetype plugin on
 let g:pydiction_location = '/usr/people/jordi-r/.vim/after/ftplugin/pydiction-1.2/complete-dict'
 
-set autochdir
+" Try to preserve the expand mode of the original file.
+" Highlight mismatches as bad
+highlight BadWhitespace ctermbg=red guibg=red
+fu Select_tab_style()
+    if search('^    ', 'n', 10)
+		" Display tabs at the beginning of a line in Python mode as bad.
+		" Expand tabs into spaces
+        set expandtab
+		match BadWhitespace /^\t\+/
+		redraw | echo "Whitespace is SPACES"
+    el 
+		" Display spaces at the beginning of a line in Python mode as bad.
+		" Don't expand tabs into spaces
+        set noexpandtab
+		match BadWhitespace /^ \+/
+		redraw | echo "Whitespace is TABS"
+    en
+endf
+
+" Tabs/spaces
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+
+set autochdir
 set nonumber
 set nu!
 set wrapscan
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 16
+"set guifont=Bitstream\ Vera\ Sans\ Mono\ 16
 set hlsearch
 set incsearch
 set ruler
@@ -108,7 +133,7 @@ set tpm=100
 set sj=-25
 
 " guifont	list of font names to be used in the GUI
-set gfn=Fixed\ 11
+ set gfn=Fixed16,
 
 " visualbell	use a visual bell instead of beeping
 set vb
@@ -118,7 +143,7 @@ set sc
 
 " textwidth	line length above which to break a line
 "	(local to buffer)
-set tw=80
+set tw=99
 
 " backspace	specifies what <BS>, CTRL-W, etc. can do in Insert mode
 set bs=indent,start
@@ -136,11 +161,11 @@ set nojs
 
 " shiftwidth	number of spaces used for each step of (auto)indent
 "	(local to buffer)
-set sw=4
+"set sw=4
 
 " softtabstop	if non-zero, number of spaces to insert for a <Tab>
 "	(local to buffer)
-set sts=4
+"set sts=4
 
 " shiftround	round to 'shiftwidth' for "<<" and ">>"
 set sr
@@ -174,6 +199,7 @@ hi Normal guibg=Black guifg=LightGray
 " Set the colors
 colorscheme liquidcarbon
 
+
 if getline(1) =~ '-*-c++-*-'
     set filetype=cpp
 endif
@@ -192,7 +218,7 @@ endfunction
 " remapping
 
 map <S-F2> ajordi-r <C-R>=strftime("%c")<CR><Esc>,ccA<ESC>
-map <F2> Oi        """<CR>"""<Esc>
+map <F2> Oi\t\t"""<CR>"""<Esc>
 map <C-F2> oi# Ni !<Esc>
 inoremap <Tab> <C-R>=SmartTab(1)<CR>
 inoremap <S-Tab> <C-R>=SmartTab(0)<CR>
@@ -207,6 +233,7 @@ map o o<ESC>
 map O O<ESC>
 map <C-S> :w<CR>
 map <F5> :%s/\s*$//g<CR>:noh<CR>
+map <S-F5> :%s/    /\t/g<CR>:noh<CR>
 
 map ,c; yyp:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
 map ,c" yypIprint "<Esc>A"<Esc>
@@ -237,10 +264,6 @@ set encoding=utf-8
 let python_highlight_all=1
 
 
-" Fixed width
-set textwidth=99
-"set fo+=t
-
 " Alert when we get too long
 highlight WarnLength ctermbg=darkred ctermfg=white guibg=#773333
 match WarnLength /\%>99v.\+/
@@ -248,22 +271,6 @@ match WarnLength /\%>99v.\+/
 " Keep a couple of context lines
 set scrolloff=2
 
-" Try to preserve the expand mode of the original file.
-" Highlight mismatches as bad
-highlight BadWhitespace ctermbg=red guibg=red
-fu Select_tab_style()
-    if search('^\t', 'n', 150)
-		" Display spaces at the beginning of a line in Python mode as bad.
-		" Don't expand tabs into spaces
-        set noexpandtab
-		match BadWhitespace /^ \+/
-    el 
-		" Display tabs at the beginning of a line in Python mode as bad.
-		" Expand tabs into spaces
-        set expandtab
-		match BadWhitespace /^\t\+/
-    en
-endf
 au BufRead,BufNewFile *.py,*.pyw call Select_tab_style()
 " Warn about any trailing whitespace
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
