@@ -96,6 +96,7 @@ alias mb            'maya -batch &'
 alias hg			'history | grep \!*'
 alias lg			'ls -1 | grep -i \!*'
 alias cg            'cd `ls | grep -i \!*`'
+alias ggo           'cd ~/workspace/git/; cg'
 alias eg            'env | grep -i \!*'
 alias bgColor		'echo -n "\033]11;\!*\033\\"'
 alias bgBlack   	'bgColor black'
@@ -113,6 +114,10 @@ alias makeI             'makeInstall'
 # Useful to be sure to have a clean environment.
 alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
 alias makeN             'makeNewInstall'
+
+alias makeSphinx        'makeInstall; make sphinx'
+alias makeS             'makeSphinx'
+
 
 # Do the install and launch maya (lazyness throne ;) )
 alias mmakeI            'makeI && maya&'

@@ -1,20 +1,3 @@
-philipsSonicare_1409786 rnd/rnd_sequence tvc
-specialKMiniBreaksHandbag30_1409247 build/build_sequence tvc-maya2011
-specialKMiniBreaksHandbag30_1409247 build/build_sequence tvc
-specialKMiniBreaksHandbag30_1409247 build/build_sequence tvc-maya2011
-vo5AssemblyLine_1409232 build tvc
-vo5AssemblyLine_1409232 build/doll tvc
-et2 233_bp/233_bp_025 maya2011_mpc
-philipsSonicare_1409786 build/build_sequence tvc
-vo5AssemblyLine_1409232 shots/sh010 tvc
-et2 233_bp/233_bp_025 maya2011_mpc
-jcom wa_109/wa_109_0130 animation
-vo5AssemblyLine_1409232 shots/sh010 tvc
-jcom wa_109/wa_109_0130 animation
-jcom wa_109/wa_109_0320 animation
-et2 build/build_sequence maya2011_mpc
-jcom wa_109/wa_109_0320 animation
-jcom wa_109/wa_109_0320 light
 jcom wa_109/wa_109_0320 animation
 jcom wa_109/wa_109_0320 crowd
 jcom wa_109/wa_109_0320 light
@@ -48,3 +31,20 @@ cott2 rnd/rnd_fx_kronos fx
 jcom wa_109/wa_109_0130 animation
 uap rnd/rnd_pipeline rnd
 jcom wa_109/wa_109_0690 animation
+cott2 layout/autorenderTest layout
+rnd_dev rnd/rnd_pipeline
+cott2 build/charMakhai asset
+cott2 layout
+cott2 build/charMakhai asset
+cott2 layout/autorenderTest
+cott2 CB_020/CB_020_0020 fx
+cott2 CB_026/CB_026_0210
+uap 036_dp/036_dp_825 light
+cott2 CB_026/CB_026_0210
+cott2 FE_075/FE_075_9060
+uap 123_jc/123_jc_140 light
+cott2 build/charKronos rigging
+cott2 rnd/rnd_pipeline
+cott2 build/charMakhai animation
+uap 123_jc/123_jc_140 light
+cott2 rnd/rnd_pipeline
