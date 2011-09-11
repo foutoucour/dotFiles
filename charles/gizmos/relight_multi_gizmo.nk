@@ -1,0 +1,3529 @@
+set cut_paste_input [stack 0]
+version 6.2 v4
+push $cut_paste_input
+Group {
+ name relight_instance_1
+ selected true
+ xpos 540
+ ypos 1142
+ addUserKnob {20 Relight}
+ addUserKnob {22 allON T "n = 0\nwhile n < 8:\n    nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(1)\n    n = n + 1" +STARTLINE}
+ addUserKnob {22 allOFF -STARTLINE T "n = 0\nwhile n < 8:\n    nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(0)\n    n = n + 1"}
+ addUserKnob {22 toggle -STARTLINE T "n = 0\nwhile n < 8:\n    if nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").value():\n        nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(0)\n    else:\n        nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(1)\n\n    n = n + 1"}
+ addUserKnob {22 resetValues l Reset -STARTLINE T execfile('/usr/people/charles-c/Lighting/release/script/resetValue.py')}
+ addUserKnob {22 goBackToMaya l Maya -STARTLINE T execfile('/usr/people/charles-c/Lighting/release/script/goBackToMaya_LightRig.py')}
+ addUserKnob {6 ML0_Switch l "ML0 Active" +STARTLINE}
+ ML0_Switch {{parent.relight_master.ML0_Switch}}
+ addUserKnob {6 ML1_Switch l "ML1 Active" -STARTLINE}
+ ML1_Switch {{parent.relight_master.ML1_Switch}}
+ addUserKnob {6 ML2_Switch l "ML2 Active" -STARTLINE}
+ ML2_Switch {{parent.relight_master.ML2_Switch}}
+ addUserKnob {6 ML3_Switch l "ML3 Active" -STARTLINE}
+ ML3_Switch {{parent.relight_master.ML3_Switch}}
+ addUserKnob {6 ML4_Switch l "ML4 Active" +STARTLINE}
+ ML4_Switch {{parent.relight_master.ML4_Switch}}
+ addUserKnob {6 ML5_Switch l "ML5 Active" -STARTLINE}
+ ML5_Switch {{parent.relight_master.ML5_Switch}}
+ addUserKnob {6 ML6_Switch l "ML6 Active" -STARTLINE}
+ ML6_Switch {{parent.relight_master.ML6_Switch}}
+ addUserKnob {6 ML7_Switch l "ML7 Active" -STARTLINE}
+ ML7_Switch {{parent.relight_master.ML7_Switch}}
+ addUserKnob {20 multiLight0 n 1}
+ addUserKnob {1 ML0_name l ML0}
+ ML0_name "North Dome"
+ addUserKnob {6 ml0_initial l i -STARTLINE}
+ ml0_initial {{parent.relight_master.ml0_initial}}
+ addUserKnob {41 value_2 l "MD0 Diffuse" T MD0_intensity.value}
+ addUserKnob {6 MD0_neutral l i -STARTLINE}
+ MD0_neutral {{parent.relight_master.MD0_neutral}}
+ addUserKnob {41 value_1 l "MS0 Specular" T MS0_intensity.value}
+ addUserKnob {6 MS0_neutral l i -STARTLINE}
+ MS0_neutral {{parent.relight_master.MS0_neutral}}
+ addUserKnob {41 value l "ML0 Color" T ML0_color.value}
+ addUserKnob {6 MC0_neutral l i -STARTLINE}
+ MC0_neutral {{parent.relight_master.MC0_neutral}}
+ addUserKnob {41 red l "ML0 Exposure" T ML0_intensity.red}
+ addUserKnob {6 ME0_neutral l i -STARTLINE}
+ ME0_neutral {{parent.relight_master.ME0_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 multiLight1 n 1}
+ addUserKnob {1 ML1_name l ML1}
+ ML1_name "South Dome"
+ addUserKnob {6 ml1_initial l i -STARTLINE}
+ ml1_initial {{parent.relight_master.ml1_initial}}
+ addUserKnob {41 value_4 l "MD1 Diffuse" T MD1_intensity.value}
+ addUserKnob {6 MD1_neutral l i -STARTLINE}
+ MD1_neutral {{parent.relight_master.MD1_neutral}}
+ addUserKnob {41 value_5 l "MS1 Specular" T MS1_intensity.value}
+ addUserKnob {6 MS1_neutral l i -STARTLINE}
+ MS1_neutral {{parent.relight_master.MS1_neutral}}
+ addUserKnob {41 value_3 l "ML1 Color" T ML1_color.value}
+ addUserKnob {6 MC1_neutral l i -STARTLINE}
+ MC1_neutral {{parent.relight_master.MC1_neutral}}
+ addUserKnob {41 red_1 l "ML1 Exposure" T ML1_intensity.red}
+ addUserKnob {6 ME1_neutral l i -STARTLINE}
+ ME1_neutral {{parent.relight_master.ME1_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 multiLight2 n 1}
+ addUserKnob {1 ML2_name l ML2}
+ ML2_name "Key Light"
+ addUserKnob {6 ml2_initial l i -STARTLINE}
+ ml2_initial {{parent.relight_master.ml2_initial}}
+ addUserKnob {41 value_21 l "MD2 Diffuse" T MD2_intensity.value}
+ addUserKnob {6 MD2_neutral l i -STARTLINE}
+ MD2_neutral {{parent.relight_master.MD2_neutral}}
+ addUserKnob {41 value_22 l "MS2 Specular" T MS2_intensity.value}
+ addUserKnob {6 MS2_neutral l i -STARTLINE}
+ MS2_neutral {{parent.relight_master.MS2_neutral}}
+ addUserKnob {41 value_6 l "ML2 Color" T ML2_color.value}
+ addUserKnob {6 MC2_neutral l i -STARTLINE}
+ MC2_neutral {{parent.relight_master.MC2_neutral}}
+ addUserKnob {41 red_7 l "ML2 Exposure" T ML2_intensity.red}
+ addUserKnob {6 ME2_neutral l i -STARTLINE}
+ ME2_neutral {{parent.relight_master.ME2_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {20 multiLight3 n 1}
+ multiLight3 0
+ addUserKnob {1 ML3_name l ML3}
+ ML3_name "Fill light"
+ addUserKnob {6 ml3_initial l i -STARTLINE}
+ ml3_initial {{parent.relight_master.ml3_initial}}
+ addUserKnob {41 value_23 l "MD3 Diffuse" T MD3_intensity.value}
+ addUserKnob {6 MD3_neutral l i -STARTLINE}
+ MD3_neutral {{parent.relight_master.MD3_neutral}}
+ addUserKnob {41 value_7 l "MD3 Specular" T MS3_intensity.value}
+ addUserKnob {6 MS3_neutral l i -STARTLINE}
+ MS3_neutral {{parent.relight_master.MS3_neutral}}
+ addUserKnob {41 value_8 l "ML3 Color" T ML3_color.value}
+ addUserKnob {6 MC3_neutral l i -STARTLINE}
+ MC3_neutral {{parent.relight_master.MC3_neutral}}
+ addUserKnob {41 red_2 l "ML3 Exposure" T ML3_intensity.red}
+ addUserKnob {6 ME3_neutral l i -STARTLINE}
+ ME3_neutral {{parent.relight_master.ME3_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {20 multiLight4 n 1}
+ multiLight4 0
+ addUserKnob {1 ML4_name l ML4}
+ ML4_name "Rim light"
+ addUserKnob {6 ml4_initial l i -STARTLINE}
+ ml4_initial {{parent.relight_master.ml4_initial}}
+ addUserKnob {41 value_9 l "MD4 Diffuse" T MD4_intensity.value}
+ addUserKnob {6 MD4_neutral l i -STARTLINE}
+ MD4_neutral {{parent.relight_master.MD4_neutral}}
+ addUserKnob {41 value_10 l "MS4 Specular" T MS4_intensity.value}
+ addUserKnob {6 MS4_neutral l i -STARTLINE}
+ MS4_neutral {{parent.relight_master.MS4_neutral}}
+ addUserKnob {41 value_11 l "ML4 Color" T ML4_color.value}
+ addUserKnob {6 MC4_neutral l i -STARTLINE}
+ MC4_neutral {{parent.relight_master.MC4_neutral}}
+ addUserKnob {41 red_3 l "ML4 Exposure" T ML4_intensity.red}
+ addUserKnob {6 ME4_neutral l i -STARTLINE}
+ ME4_neutral {{parent.relight_master.ME4_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {20 multiLight5 n 1}
+ multiLight5 0
+ addUserKnob {1 ML5_name l ML5}
+ ML5_name "Other Light"
+ addUserKnob {6 ml5_initial l i -STARTLINE}
+ ml5_initial {{parent.relight_master.ml5_initial}}
+ addUserKnob {41 value_12 l "MD5 Diffuse" T MD5_intensity.value}
+ addUserKnob {6 MD5_neutral l i -STARTLINE}
+ MD5_neutral {{parent.relight_master.MD5_neutral}}
+ addUserKnob {41 value_13 l "MS5 Specular" T MS5_intensity.value}
+ addUserKnob {6 MS5_neutral l i -STARTLINE}
+ MS5_neutral {{parent.relight_master.MS5_neutral}}
+ addUserKnob {41 value_14 l "ML5 Color" T ML5_color.value}
+ addUserKnob {6 MC5_neutral l i -STARTLINE}
+ MC5_neutral {{parent.relight_master.MC5_neutral}}
+ addUserKnob {41 red_4 l "ML5 Exposure" T ML5_intensity.red}
+ addUserKnob {6 ME5_neutral l i -STARTLINE}
+ ME5_neutral {{parent.relight_master.ME5_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {20 multiLight6 n 1}
+ multiLight6 0
+ addUserKnob {1 ML6_name l ML6}
+ ML6_name "Other Light"
+ addUserKnob {6 ml6_initial l i -STARTLINE}
+ ml6_initial {{parent.relight_master.ml6_initial}}
+ addUserKnob {41 value_15 l "MD6 Diffuse" T MD6_intensity.value}
+ addUserKnob {6 MD6_neutral l i -STARTLINE}
+ MD6_neutral {{parent.relight_master.MD6_neutral}}
+ addUserKnob {41 value_16 l "MS6 Specular" T MS6_intensity.value}
+ addUserKnob {6 MS6_neutral l i -STARTLINE}
+ MS6_neutral {{parent.relight_master.MS6_neutral}}
+ addUserKnob {41 value_17 l "ML6 Color" T ML6_color.value}
+ addUserKnob {6 MC6_neutral l i -STARTLINE}
+ MC6_neutral {{parent.relight_master.MC6_neutral}}
+ addUserKnob {41 red_5 l "ML6 Exposure" T ML6_intensity.red}
+ addUserKnob {6 ME6_neutral l i -STARTLINE}
+ ME6_neutral {{parent.relight_master.ME6_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 multiLight7 n 1}
+ multiLight7 0
+ addUserKnob {1 ML7_name l ML7}
+ ML7_name "Other Light"
+ addUserKnob {6 ml7_initial l i -STARTLINE}
+ ml7_initial {{parent.relight_master.ml7_initial}}
+ addUserKnob {41 value_18 l "MD7 Diffuse" T MD7_intensity.value}
+ addUserKnob {6 MD7_neutral l i -STARTLINE}
+ MD7_neutral {{parent.relight_master.MD7_neutral}}
+ addUserKnob {41 value_19 l "MS7 Specular" T MS7_intensity.value}
+ addUserKnob {6 MS7_neutral l i -STARTLINE}
+ MS7_neutral {{parent.relight_master.MS7_neutral}}
+ addUserKnob {41 value_20 l "ML7 Color" T ML7_color.value}
+ addUserKnob {6 MC7_neutral l i -STARTLINE}
+ MC7_neutral {{parent.relight_master.MC7_neutral}}
+ addUserKnob {41 red_6 l "ML7 Exposure" T ML7_intensity.red}
+ addUserKnob {6 ME7_neutral l i -STARTLINE}
+ ME7_neutral {{parent.relight_master.ME7_neutral}}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+ addUserKnob {20 Bounce}
+ addUserKnob {6 bounceCheckbox l Active +STARTLINE}
+ bounceCheckbox {{parent.relight_master.bounceCheckbox}}
+ addUserKnob {41 value_24 l Color T Multi_Bounce.value}
+ addUserKnob {6 sssbounce_neutral_color l i -STARTLINE}
+ sssbounce_neutral_color {{parent.relight_master.sssbounce_neutral_color}}
+ addUserKnob {41 red_8 l Exposure T bounce_intensity.red}
+ addUserKnob {6 sssbounce_neutral_intensity l i -STARTLINE}
+ sssbounce_neutral_intensity {{parent.relight_master.sssbounce_neutral_intensity}}
+ addUserKnob {20 Scatter l INVISIBLE +INVISIBLE}
+ addUserKnob {6 scatterCheckbox l INVISIBLE +INVISIBLE +STARTLINE}
+ scatterCheckbox {{parent.relight_master.scatterCheckbox}}
+ addUserKnob {41 value_25 l INVISIBLE +INVISIBLE T Multi_Scater.value}
+ addUserKnob {6 scatterColor_neutral l INVISIBLE -STARTLINE +INVISIBLE}
+ scatterColor_neutral {{parent.relight_master.scatterColor_neutral}}
+ addUserKnob {41 red_10 l INVISIBLE +INVISIBLE T scater_intensity.red}
+ addUserKnob {6 scatter_neutral l i -STARTLINE}
+ scatter_neutral {{parent.relight_master.scatter_neutral}}
+ addUserKnob {20 Lift}
+ addUserKnob {4 lift_mix_choose l Lift/Mix M {None "Lift (Grade)" "Mix (Dissolve)" "" ""}}
+ lift_mix_choose "Lift (Grade)"
+ addUserKnob {26 ""}
+ addUserKnob {19 lift_color l Color}
+ lift_color {{parent.relight_master.lift_color.left.r} {parent.relight_master.lift_color.left.g} {parent.relight_master.lift_color.left.b} {parent.relight_master.lift_color.left.a}}
+ addUserKnob {6 grade_lift_active l i -STARTLINE}
+ grade_lift_active {{parent.relight_master.grade_lift_active.left}}
+ addUserKnob {19 mix_color l Color +HIDDEN}
+ mix_color {{parent.relight_master.mix_color.left.r} {parent.relight_master.mix_color.left.g} {parent.relight_master.mix_color.left.b} {parent.relight_master.mix_color.left.a}}
+ addUserKnob {6 mix_color_active l i -STARTLINE +HIDDEN}
+ mix_color_active {{parent.relight_master.mix_color_active.left}}
+ addUserKnob {7 mix_dissolve l Intensity +HIDDEN}
+ mix_dissolve {{parent.relight_master.mix_dissolve.left}}
+ addUserKnob {6 mix_dissolve_active l i -STARTLINE +HIDDEN}
+ mix_dissolve_active {{parent.relight_master.mix_dissolve_active.left}}
+}
+ Input {
+  inputs 0
+  name primary
+  xpos 4028
+  ypos -650
+  number 1
+ }
+set Ncd618a80 [stack 0]
+ Dot {
+  name Dot11
+  xpos 4679
+  ypos -645
+ }
+ Dot {
+  name Dot13
+  xpos 4679
+  ypos 309
+ }
+push $Ncd618a80
+ Unpremult {
+  name Unpremult1
+  xpos 3905
+  ypos -553
+ }
+ Input {
+  inputs 0
+  name multiSpecular7
+  xpos 2913
+  ypos -652
+  number 18
+ }
+push $Ncd618a80
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle9
+  xpos 4028
+  ypos -551
+ }
+set Ncce4e050 [stack 0]
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge29
+  xpos 2913
+  ypos -556
+ }
+set Nce759400 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse7
+  xpos 2777
+  ypos -652
+  number 17
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge28
+  xpos 2777
+  ypos -556
+ }
+set Nce5d9060 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular6
+  xpos 2330
+  ypos -649
+  number 16
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge26
+  xpos 2330
+  ypos -553
+ }
+set Nce862e90 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse6
+  xpos 2194
+  ypos -649
+  number 15
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge25
+  xpos 2194
+  ypos -553
+ }
+set Nceed87a0 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular5
+  xpos 1762
+  ypos -650
+  number 14
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge23
+  xpos 1762
+  ypos -554
+ }
+set Ncf75d610 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse5
+  xpos 1626
+  ypos -650
+  number 13
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge22
+  xpos 1626
+  ypos -554
+ }
+set Ncec8b010 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular4
+  xpos 1231
+  ypos -651
+  number 2
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge6
+  xpos 1231
+  ypos -555
+ }
+set Ncf1283e0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse4
+  xpos 1095
+  ypos -651
+  number 3
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge7
+  xpos 1095
+  ypos -555
+ }
+set Nce68cef0 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular3
+  xpos 735
+  ypos -651
+  number 4
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge8
+  xpos 735
+  ypos -555
+ }
+set Nceb3d6a0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse3
+  xpos 599
+  ypos -651
+  number 5
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge9
+  xpos 599
+  ypos -555
+ }
+set Nced50f00 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular2
+  xpos 230
+  ypos -651
+  number 6
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge10
+  xpos 230
+  ypos -555
+ }
+set Ncf050cb0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse2
+  xpos 120
+  ypos -651
+  number 7
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge11
+  xpos 120
+  ypos -555
+ }
+set Nce965e30 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular1
+  xpos -271
+  ypos -652
+  number 8
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge12
+  xpos -271
+  ypos -556
+ }
+set Ncedf6bc0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse1
+  xpos -381
+  ypos -652
+  number 9
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge13
+  xpos -381
+  ypos -556
+ }
+set Nceba8840 [stack 0]
+push 0
+ Input {
+  inputs 0
+  name multiDiffuse0
+  xpos -859
+  ypos -651
+  number 10
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge14
+  xpos -859
+  ypos -556
+ }
+set Nce63c730 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular0
+  xpos -749
+  ypos -651
+  number 11
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge15
+  xpos -749
+  ypos -556
+ }
+set Ncf069310 [stack 0]
+ Merge2 {
+  inputs 16+1
+  operation plus
+  name Merge16
+  xpos 3756
+  ypos -553
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name diff_bance
+  xpos 3756
+  ypos -468
+ }
+ Input {
+  inputs 0
+  name bounce
+  xpos 3244
+  ypos -655
+ }
+ Dot {
+  name Dot71
+  xpos 3278
+  ypos -421
+ }
+set Nce1c61c0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name diff_scatter
+  xpos 3756
+  ypos -426
+ }
+ Remove {
+  inputs 0
+  name RemoveDisconnect
+  xpos -1165
+  ypos -65
+  hide_input true
+  disable true
+ }
+ NoOp {
+  name Disconnect
+  xpos -1055
+  ypos -58
+ }
+set Ncdc02970 [stack 0]
+ Switch {
+  inputs 2
+  which {{scatterCheckbox i}}
+  name scater_switch
+  xpos 3756
+  ypos -56
+ }
+set Ncdc026d0 [stack 0]
+push $Nce1c61c0
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name bounce_color_neutral
+  xpos 3244
+  ypos -317
+ }
+push $Nce1c61c0
+ Dot {
+  name Dot63
+  xpos 3390
+  ypos -421
+ }
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.Multi_Bounce.value.r} {parent.parent.relight_master.Multi_Bounce.value.g} {parent.parent.relight_master.Multi_Bounce.value.b} {parent.parent.relight_master.Multi_Bounce.value.a}}
+  name Multi_Bounce
+  xpos 3356
+  ypos -317
+ }
+ Switch {
+  inputs 2
+  which {{sssbounce_neutral_color i x1022 0}}
+  name bounceColor_neutral
+  xpos 3356
+  ypos -242
+ }
+set Nce4d25b0 [stack 0]
+push $Nce4d25b0
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.bounce_intensity.red}}
+  green {{parent.parent.relight_master.bounce_intensity.green i}}
+  blue {{parent.parent.relight_master.bounce_intensity.blue i}}
+  name bounce_intensity
+  label "\[value mode]"
+  xpos 3272
+  ypos -183
+ }
+ Switch {
+  inputs 2
+  which {{sssbounce_neutral_intensity i}}
+  name bounce_neutral
+  xpos 3356
+  ypos -110
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{bounceCheckbox i}}
+  name bounce_Switch
+  xpos 3356
+  ypos -58
+ }
+set Nce4d22a0 [stack 0]
+push $Nce5d9060
+ Dot {
+  name Dot61
+  xpos 2618
+  ypos -551
+ }
+push $Nce759400
+ Dot {
+  name Dot62
+  xpos 2618
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus7
+  xpos 2584
+  ypos -86
+ }
+push $Nce5d9060
+push $Nce5d9060
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD7_intensity.value}}
+  name MD7_intensity
+  xpos 2702
+  ypos -472
+ }
+ Switch {
+  inputs 2
+  which {{MD7_neutral i}}
+  name md7_neutral
+  xpos 2777
+  ypos -420
+ }
+push $Nce759400
+push $Nce759400
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS7_intensity.value}}
+  name MS7_intensity
+  xpos 2838
+  ypos -472
+ }
+ Switch {
+  inputs 2
+  which {{MS7_neutral i}}
+  name ms7_neutral
+  xpos 2913
+  ypos -418
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML7
+  xpos 2851
+  ypos -367
+ }
+set Nced78510 [stack 0]
+push $Nced78510
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML7_color.value.r} {parent.parent.relight_master.ML7_color.value.g} {parent.parent.relight_master.ML7_color.value.b} {parent.parent.relight_master.ML7_color.value.a}}
+  name ML7_color
+  xpos 2755
+  ypos -302
+ }
+ Switch {
+  inputs 2
+  which {{MC7_neutral i}}
+  name mc7_neutral
+  xpos 2851
+  ypos -244
+ }
+set Nceb5f900 [stack 0]
+push $Nceb5f900
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML7_intensity.red}}
+  green {{parent.parent.relight_master.ML7_intensity.green i}}
+  blue {{parent.parent.relight_master.ML7_intensity.blue i}}
+  name ML7_intensity
+  label "\[value mode]"
+  xpos 2781
+  ypos -187
+ }
+ Switch {
+  inputs 2
+  which {{ME7_neutral i}}
+  name me7_neutral
+  xpos 2851
+  ypos -121
+ }
+ Switch {
+  inputs 2
+  which {{ml7_initial i}}
+  name ml7_initial
+  xpos 2851
+  ypos -86
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML7_Switch i}}
+  name ML7_Switch
+  xpos 2851
+  ypos -58
+ }
+set Ncd3f74b0 [stack 0]
+push $Nceed87a0
+ Dot {
+  name Dot59
+  xpos 2027
+  ypos -548
+ }
+push $Nce862e90
+ Dot {
+  name Dot60
+  xpos 2027
+  ypos -548
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus6
+  xpos 1993
+  ypos -86
+ }
+push $Nceed87a0
+push $Nceed87a0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD6_intensity.value}}
+  name MD6_intensity
+  xpos 2125
+  ypos -471
+ }
+ Switch {
+  inputs 2
+  which {{MD6_neutral i}}
+  name md6_neutral
+  xpos 2194
+  ypos -425
+ }
+push $Nce862e90
+push $Nce862e90
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS6_intensity.value}}
+  name MS6_intensity
+  xpos 2261
+  ypos -471
+ }
+ Switch {
+  inputs 2
+  which {{MS1_neutral i}}
+  name ms6_neutral
+  xpos 2330
+  ypos -422
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML6
+  xpos 2271
+  ypos -364
+ }
+set Ncedda820 [stack 0]
+push $Ncedda820
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML6_color.value.r} {parent.parent.relight_master.ML6_color.value.g} {parent.parent.relight_master.ML6_color.value.b} {parent.parent.relight_master.ML6_color.value.a}}
+  name ML6_color
+  xpos 2192
+  ypos -312
+ }
+ Switch {
+  inputs 2
+  which {{MC6_neutral i}}
+  name mc6_neutral
+  xpos 2271
+  ypos -265
+ }
+set Ncebe8de0 [stack 0]
+push $Ncebe8de0
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML6_intensity.red}}
+  green {{parent.parent.relight_master.ML6_intensity.green i}}
+  blue {{parent.parent.relight_master.ML6_intensity.blue i}}
+  name ML6_intensity
+  label "\[value mode]"
+  xpos 2188
+  ypos -194
+ }
+ Switch {
+  inputs 2
+  which {{ME6_neutral i}}
+  name me6_neutral
+  xpos 2271
+  ypos -131
+ }
+ Switch {
+  inputs 2
+  which {{ml6_initial i}}
+  name ml6_initial
+  xpos 2269
+  ypos -86
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML6_Switch i}}
+  name ML6_Switch
+  xpos 2271
+  ypos -58
+ }
+set Ncd89f890 [stack 0]
+push $Ncec8b010
+ Dot {
+  name Dot57
+  xpos 1503
+  ypos -549
+ }
+push $Ncf75d610
+ Dot {
+  name Dot58
+  xpos 1503
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus5
+  xpos 1469
+  ypos -86
+ }
+push $Ncec8b010
+push $Ncec8b010
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD5_intensity.value}}
+  name MD5_intensity
+  xpos 1555
+  ypos -463
+ }
+ Switch {
+  inputs 2
+  which {{MD5_neutral i}}
+  name md5_neutral
+  xpos 1626
+  ypos -401
+ }
+push $Ncf75d610
+push $Ncf75d610
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS5_intensity.value}}
+  name MS5_intensity
+  xpos 1691
+  ypos -463
+ }
+ Switch {
+  inputs 2
+  which {{MS5_neutral i}}
+  name ms5_neutral
+  xpos 1762
+  ypos -402
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML5
+  xpos 1703
+  ypos -355
+ }
+set Nce45c2d0 [stack 0]
+push $Nce45c2d0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML5_color.value.r} {parent.parent.relight_master.ML5_color.value.g} {parent.parent.relight_master.ML5_color.value.b} {parent.parent.relight_master.ML5_color.value.a}}
+  name ML5_color
+  xpos 1631
+  ypos -297
+ }
+ Switch {
+  inputs 2
+  which {{MC5_neutral i}}
+  name mc5_neutral
+  xpos 1703
+  ypos -240
+ }
+set Nce45bd30 [stack 0]
+push $Nce45bd30
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML5_intensity.red}}
+  green {{parent.parent.relight_master.ML5_intensity.green i}}
+  blue {{parent.parent.relight_master.ML5_intensity.blue i}}
+  name ML5_intensity
+  label "\[value mode]"
+  xpos 1635
+  ypos -190
+ }
+ Switch {
+  inputs 2
+  which {{ME5_neutral i}}
+  name me5_neutral
+  xpos 1703
+  ypos -123
+ }
+ Switch {
+  inputs 2
+  which {{ml5_initial i}}
+  name ml5_initial
+  xpos 1703
+  ypos -86
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML5_Switch i}}
+  name ML5_Switch
+  xpos 1703
+  ypos -58
+ }
+set Nce9a4310 [stack 0]
+push $Nce68cef0
+ Dot {
+  name Dot55
+  xpos 975
+  ypos -550
+ }
+push $Ncf1283e0
+ Dot {
+  name Dot56
+  xpos 975
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus4
+  xpos 941
+  ypos -95
+ }
+push $Nce68cef0
+push $Nce68cef0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD4_intensity.value}}
+  name MD4_intensity
+  xpos 1024
+  ypos -473
+ }
+ Switch {
+  inputs 2
+  which {{MD4_neutral i}}
+  name md4_neutral
+  xpos 1095
+  ypos -423
+ }
+push $Ncf1283e0
+push $Ncf1283e0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS4_intensity.value}}
+  name MS4_intensity
+  xpos 1160
+  ypos -474
+ }
+ Switch {
+  inputs 2
+  which {{MS4_neutral i}}
+  name ms4_neutral
+  xpos 1231
+  ypos -422
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML4
+  xpos 1173
+  ypos -382
+ }
+set Ncf21ddf0 [stack 0]
+push $Ncf21ddf0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML4_color.value.r} {parent.parent.relight_master.ML4_color.value.g} {parent.parent.relight_master.ML4_color.value.b} {parent.parent.relight_master.ML4_color.value.a}}
+  name ML4_color
+  xpos 1093
+  ypos -326
+ }
+ Switch {
+  inputs 2
+  which {{MC4_neutral i}}
+  name mc4_neutral
+  xpos 1173
+  ypos -281
+ }
+set Nceb1adb0 [stack 0]
+push $Nceb1adb0
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML4_intensity.red}}
+  green {{parent.parent.relight_master.ML4_intensity.green i}}
+  blue {{parent.parent.relight_master.ML4_intensity.blue i}}
+  name ML4_intensity
+  label "\[value mode]"
+  xpos 1102
+  ypos -210
+ }
+ Switch {
+  inputs 2
+  which {{ME4_neutral i}}
+  name me4_neutral
+  xpos 1173
+  ypos -144
+ }
+ Switch {
+  inputs 2
+  which {{ml4_initial i}}
+  name ml4_initial
+  xpos 1173
+  ypos -95
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML4_Switch i}}
+  name ML4_Switch
+  xpos 1173
+  ypos -58
+ }
+set Nce983c90 [stack 0]
+push $Nced50f00
+ Dot {
+  name Dot53
+  xpos 480
+  ypos -549
+ }
+push $Nceb3d6a0
+ Dot {
+  name Dot54
+  xpos 480
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus3
+  xpos 446
+  ypos -80
+ }
+push $Nced50f00
+push $Nced50f00
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD3_intensity.value}}
+  name MD3_intensity
+  xpos 532
+  ypos -469
+ }
+ Switch {
+  inputs 2
+  which {{MD3_neutral i}}
+  name md3_neutral
+  xpos 599
+  ypos -416
+ }
+push $Nceb3d6a0
+push $Nceb3d6a0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS3_intensity.value}}
+  name MS3_intensity
+  xpos 670
+  ypos -471
+ }
+ Switch {
+  inputs 2
+  which {{MS3_neutral i}}
+  name ms3_neutral
+  xpos 735
+  ypos -420
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML3
+  xpos 664
+  ypos -370
+ }
+set Ncee439e0 [stack 0]
+push $Ncee439e0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML3_color.value.r} {parent.parent.relight_master.ML3_color.value.g} {parent.parent.relight_master.ML3_color.value.b} {parent.parent.relight_master.ML3_color.value.a}}
+  name ML3_color
+  xpos 592
+  ypos -305
+ }
+ Switch {
+  inputs 2
+  which {{MC3_neutral i}}
+  name mc3_neutral
+  xpos 664
+  ypos -245
+ }
+set Nce20b5e0 [stack 0]
+push $Nce20b5e0
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML3_intensity.red}}
+  green {{parent.parent.relight_master.ML3_intensity.green i}}
+  blue {{parent.parent.relight_master.ML3_intensity.blue i}}
+  name ML3_intensity
+  label "\[value mode]"
+  xpos 598
+  ypos -192
+ }
+ Switch {
+  inputs 2
+  which {{ME3_neutral i}}
+  name me3_neutral
+  xpos 664
+  ypos -126
+ }
+ Switch {
+  inputs 2
+  which {{ml3_initial i}}
+  name ml3_initial
+  xpos 664
+  ypos -80
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML3_Switch i}}
+  name ML3_Switch
+  xpos 664
+  ypos -58
+ }
+set Nce363ee0 [stack 0]
+push $Nce965e30
+ Dot {
+  name Dot51
+  xpos -35
+  ypos -550
+ }
+push $Ncf050cb0
+ Dot {
+  name Dot52
+  xpos -35
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus2
+  xpos -69
+  ypos -86
+ }
+push $Nce965e30
+push $Nce965e30
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD2_intensity.value}}
+  name MD2_intensity
+  xpos 59
+  ypos -477
+ }
+ Switch {
+  inputs 2
+  which {{MD2_neutral i}}
+  name md2_neutral
+  xpos 120
+  ypos -421
+ }
+push $Ncf050cb0
+push $Ncf050cb0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS2_intensity.value}}
+  name MS2_intensity
+  xpos 182
+  ypos -477
+ }
+ Switch {
+  inputs 2
+  which {{MS2_neutral i}}
+  name ms2_neutral
+  xpos 230
+  ypos -420
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML2
+  xpos 166
+  ypos -382
+ }
+set Nce700960 [stack 0]
+push $Nce700960
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML2_color.value.r} {parent.parent.relight_master.ML2_color.value.g} {parent.parent.relight_master.ML2_color.value.b} {parent.parent.relight_master.ML2_color.value.a}}
+  name ML2_color
+  xpos 97
+  ypos -313
+ }
+ Switch {
+  inputs 2
+  which {{MC2_neutral i}}
+  name mc2_neutral
+  xpos 166
+  ypos -258
+ }
+set Ncd3fe610 [stack 0]
+push $Ncd3fe610
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML2_intensity.red}}
+  green {{parent.parent.relight_master.ML2_intensity.green i}}
+  blue {{parent.parent.relight_master.ML2_intensity.blue i}}
+  name ML2_intensity
+  label "\[value mode]"
+  xpos 98
+  ypos -198
+ }
+ Switch {
+  inputs 2
+  which {{ME2_neutral i}}
+  name me2_neutral
+  xpos 166
+  ypos -129
+ }
+ Switch {
+  inputs 2
+  which {{ml2_initial i}}
+  name ml2_initial
+  xpos 166
+  ypos -86
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML2_Switch i}}
+  name ML2_Switch
+  xpos 166
+  ypos -58
+ }
+set Nce1dcec0 [stack 0]
+push 0
+push $Nce63c730
+ Dot {
+  name Dot47
+  xpos -989
+  ypos -551
+ }
+push $Ncf069310
+ Dot {
+  name Dot48
+  xpos -989
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus
+  xpos -1023
+  ypos -94
+ }
+push $Nce63c730
+push $Nce63c730
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD0_intensity.value}}
+  name MD0_intensity
+  xpos -942
+  ypos -478
+ }
+ Switch {
+  inputs 2
+  which {{MD0_neutral i}}
+  name md0_neutral
+  xpos -859
+  ypos -403
+ }
+push $Ncf069310
+push $Ncf069310
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS0_intensity.value}}
+  name MS0_intensity
+  xpos -807
+  ypos -478
+ }
+ Switch {
+  inputs 2
+  which {{MS0_neutral i}}
+  name ms0_neutral
+  xpos -749
+  ypos -405
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML0
+  xpos -803
+  ypos -334
+ }
+set Ncee5c380 [stack 0]
+push $Ncee5c380
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML0_color.value.r} {parent.parent.relight_master.ML0_color.value.g} {parent.parent.relight_master.ML0_color.value.b} {parent.parent.relight_master.ML0_color.value.a}}
+  name ML0_color
+  xpos -892
+  ypos -298
+ }
+ Switch {
+  inputs 2
+  which {{MC0_neutral i}}
+  name mc0_neutral
+  xpos -803
+  ypos -259
+ }
+set Ncf0cdcb0 [stack 0]
+push $Ncf0cdcb0
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML0_intensity.red}}
+  green {{parent.parent.relight_master.ML0_intensity.green i}}
+  blue {{parent.parent.relight_master.ML0_intensity.blue i}}
+  name ML0_intensity
+  label "\[value mode]"
+  xpos -892
+  ypos -200
+ }
+ Switch {
+  inputs 2
+  which {{ME0_neutral i}}
+  name me0_neutral
+  xpos -803
+  ypos -126
+ }
+ Switch {
+  inputs 2
+  which {{ml0_initial i}}
+  name ml0_initial
+  xpos -803
+  ypos -94
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML0_Switch i}}
+  name ML0_Switch
+  xpos -803
+  ypos -58
+ }
+set Ncf0cd3c0 [stack 0]
+push $Nceba8840
+ Dot {
+  name Dot50
+  xpos -529
+  ypos -551
+ }
+push $Ncedf6bc0
+ Dot {
+  name Dot49
+  xpos -529
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus1
+  xpos -563
+  ypos -92
+ }
+push $Nceba8840
+push $Nceba8840
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MD1_intensity.value}}
+  name MD1_intensity
+  xpos -455
+  ypos -479
+ }
+ Switch {
+  inputs 2
+  which {{MD1_neutral i}}
+  name md1_neutral
+  xpos -381
+  ypos -416
+ }
+push $Ncedf6bc0
+push $Ncedf6bc0
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.MS1_intensity.value}}
+  name MS1_intensity
+  xpos -329
+  ypos -479
+ }
+ Switch {
+  inputs 2
+  which {{MS1_neutral i}}
+  name ms1_neutral
+  xpos -271
+  ypos -417
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML1
+  xpos -334
+  ypos -369
+ }
+set Ncd78fd90 [stack 0]
+push $Ncd78fd90
+ Multiply {
+  channels rgb
+  value {{parent.parent.relight_master.ML1_color.value.r} {parent.parent.relight_master.ML1_color.value.g} {parent.parent.relight_master.ML1_color.value.b} {parent.parent.relight_master.ML1_color.value.a}}
+  name ML1_color
+  xpos -406
+  ypos -309
+ }
+ Switch {
+  inputs 2
+  which {{MC1_neutral i}}
+  name mc1_neutral
+  xpos -334
+  ypos -256
+ }
+set Ncd3d3b60 [stack 0]
+push $Ncd3d3b60
+ EXPTool {
+  mode Stops
+  gang false
+  red {{parent.parent.relight_master.ML1_intensity.red}}
+  green {{parent.parent.relight_master.ML1_intensity.green i}}
+  blue {{parent.parent.relight_master.ML1_intensity.blue i}}
+  name ML1_intensity
+  label "\[value mode]"
+  xpos -418
+  ypos -197
+ }
+ Switch {
+  inputs 2
+  which {{ME1_neutral i}}
+  name me1_neutral
+  xpos -334
+  ypos -130
+ }
+ Switch {
+  inputs 2
+  which {{ml1_initial i}}
+  name ml1_initial
+  xpos -334
+  ypos -92
+ }
+push $Ncdc02970
+ Switch {
+  inputs 2
+  which {{ML1_Switch i}}
+  name ML1_Switch
+  xpos -334
+  ypos -58
+ }
+set Ncd53adf0 [stack 0]
+ Merge2 {
+  inputs 10+1
+  operation plus
+  name Merge1
+  xpos 4338
+  ypos -56
+ }
+ Input {
+  inputs 0
+  name color
+  xpos 4478
+  ypos -651
+  number 12
+ }
+push $Ncce4e050
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos 4478
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge2
+  xpos 4478
+  ypos -56
+ }
+ Grade {
+  white 0.18
+  name Grade1
+  xpos 4478
+  ypos -28
+ }
+push $Ncce4e050
+ Dot {
+  name Dot74
+  xpos 4289
+  ypos -546
+ }
+ Dot {
+  name Dot73
+  xpos 4289
+  ypos 65
+ }
+ SwitchMatte {
+  inputs 2
+  name SwitchMatte2
+  xpos 4478
+  ypos 60
+  from0 rgba.alpha
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox2
+  xpos 4479
+  ypos 304
+ }
+ Dot {
+  name Dot72
+  xpos 4512
+  ypos 536
+ }
+push $Ncd618a80
+ Dot {
+  name Dot68
+  xpos 4213
+  ypos -645
+ }
+ Dot {
+  name Dot69
+  xpos 4229
+  ypos 451
+ }
+push $Ncd618a80
+ Dot {
+  name Dot9
+  xpos 4153
+  ypos -645
+ }
+ Dot {
+  name Dot10
+  xpos 4167
+  ypos 397
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 1}
+  name atmosphere_color_neutral
+  xpos -1011
+  ypos 56
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[0\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[1\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[2\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[3\\]]" i}}
+  name atmosphere_color
+  xpos -1128
+  ypos 58
+ }
+ Switch {
+  inputs 2
+  which {{mix_color_active i}}
+  name switch_atmosphere_color
+  xpos -1060
+  ypos 148
+ }
+set Nce8772c0 [stack 0]
+push $Ncdc026d0
+ Dot {
+  name Dot70
+  xpos 3790
+  ypos 46
+ }
+push $Nce4d22a0
+ Dot {
+  name Dot8
+  xpos 3390
+  ypos 44
+ }
+push $Ncd3f74b0
+ Dot {
+  name Dot7
+  xpos 2885
+  ypos 44
+ }
+push $Ncd89f890
+ Dot {
+  name Dot6
+  xpos 2305
+  ypos 46
+ }
+push $Nce9a4310
+ Dot {
+  name Dot5
+  xpos 1737
+  ypos 44
+ }
+push $Nce983c90
+ Dot {
+  name Dot4
+  xpos 1207
+  ypos 44
+ }
+push $Nce363ee0
+ Dot {
+  name Dot3
+  xpos 698
+  ypos 44
+ }
+push $Nce1dcec0
+ Dot {
+  name Dot2
+  xpos 200
+  ypos 44
+ }
+push 0
+push $Ncd53adf0
+ Dot {
+  name Dot1
+  xpos -300
+  ypos 44
+ }
+push $Ncf0cd3c0
+ Merge2 {
+  inputs 10+1
+  operation plus
+  name ML_merge
+  xpos -803
+  ypos 39
+ }
+set Nceabf0c0 [stack 0]
+ Dissolve {
+  inputs 2
+  name atmosphere_dissolve_neutrak
+  xpos -1142
+  ypos 203
+ }
+push $Nce8772c0
+push $Nceabf0c0
+ Dissolve {
+  inputs 2
+  which {{parent.parent.relight_master.atmosphere_dissolve.which i}}
+  name atmosphere_dissolve
+  xpos -991
+  ypos 198
+ }
+ Switch {
+  inputs 2
+  which {{parent.parent.relight_master.atmosphere_dissolve_switch.which i}}
+  name atmosphere_dissolve_switch
+  xpos -1066
+  ypos 265
+ }
+push $Nceabf0c0
+push $Nceabf0c0
+ Grade {
+  black {{parent.parent.relight_master.grade_lift_mix.black.r i} {parent.parent.relight_master.grade_lift_mix.black.g i} {parent.parent.relight_master.grade_lift_mix.black.b i} {parent.parent.relight_master.grade_lift_mix.black.a i}}
+  name grade_lift_mix
+  xpos -652
+  ypos 195
+ }
+ Switch {
+  inputs 2
+  which {{parent.parent.relight_master.grade_lift_mix_neutral.which i}}
+  name grade_lift_mix_neutral
+  xpos -652
+  ypos 265
+ }
+push $Nceabf0c0
+ Switch {
+  inputs 3
+  which {{parent.parent.relight_master.switch_lift_mix.which i}}
+  name switch_lift_mix
+  xpos -803
+  ypos 265
+ }
+ Dot {
+  name Dot12
+  xpos -769
+  ypos 331
+ }
+push $Ncce4e050
+ SwitchMatte {
+  inputs 2
+  name SwitchMatte1
+  xpos 4042
+  ypos 326
+  from0 rgba.alpha
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 4042
+  ypos 392
+ }
+ Switch {
+  inputs 2
+  which {{parent.parent.relight_master.Switch1.which.left i}}
+  name Switch1
+  xpos 4042
+  ypos 446
+ }
+ Switch {
+  inputs 2
+  which {{parent.parent.relight_master.Switch2.which.left i}}
+  name Switch2
+  xpos 4042
+  ypos 531
+ }
+ Output {
+  name out
+  xpos 4042
+  ypos 590
+ }
+end_group
+push $cut_paste_input
+Group {
+ name relight_master
+ selected true
+ xpos 356
+ ypos 1141
+ addUserKnob {20 Relight}
+ addUserKnob {6 switch_primary l Primary -STARTLINE}
+ addUserKnob {6 scatterCheckbox l Scatter -STARTLINE}
+ scatterCheckbox true
+ addUserKnob {6 switch_grey l Grey -STARTLINE}
+ addUserKnob {22 allON T "n = 0\nwhile n < 8:\n    nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(1)\n    n = n + 1" +STARTLINE}
+ addUserKnob {22 allOFF -STARTLINE T "n = 0\nwhile n < 8:\n    nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(0)\n    n = n + 1"}
+ addUserKnob {22 toggle l INVISIBLE -STARTLINE +INVISIBLE T "n = 0\nwhile n < 8:\n    if nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").value():\n        nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(0)\n    else:\n        nuke.thisNode().knob(\"ML\"+str(n)+\"_Switch\").setValue(1)\n\n    n = n + 1"}
+ addUserKnob {22 resetValues l Reset -STARTLINE T execfile('/usr/people/charles-c/Lighting/release/script/resetValue.py')}
+ addUserKnob {22 goBackToMaya l Maya -STARTLINE T execfile('/usr/people/charles-c/Lighting/release/script/goBackToMaya_LightRig.py')}
+ addUserKnob {6 ML0_Switch l "ML0 Active" +STARTLINE}
+ ML0_Switch true
+ addUserKnob {6 ML1_Switch l "ML1 Active" -STARTLINE}
+ ML1_Switch true
+ addUserKnob {6 ML2_Switch l "ML2 Active" -STARTLINE}
+ ML2_Switch true
+ addUserKnob {6 ML3_Switch l "ML3 Active" -STARTLINE}
+ ML3_Switch true
+ addUserKnob {6 ML4_Switch l "ML4 Active" +STARTLINE}
+ ML4_Switch true
+ addUserKnob {6 ML5_Switch l "ML5 Active" -STARTLINE}
+ ML5_Switch true
+ addUserKnob {6 ML6_Switch l "ML6 Active" -STARTLINE}
+ ML6_Switch true
+ addUserKnob {6 ML7_Switch l "ML7 Active" -STARTLINE}
+ ML7_Switch true
+ addUserKnob {20 multiLight0 n 1}
+ addUserKnob {1 ML0_name l ML0}
+ ML0_name "North Dome"
+ addUserKnob {6 ml0_initial l i -STARTLINE}
+ addUserKnob {41 value_2 l "MD0 Diffuse" T MD0_intensity.value}
+ addUserKnob {6 MD0_neutral l i -STARTLINE}
+ addUserKnob {41 value_1 l "MS0 Specular" T MS0_intensity.value}
+ addUserKnob {6 MS0_neutral l i -STARTLINE}
+ addUserKnob {41 value l "ML0 Color" T ML0_color.value}
+ addUserKnob {6 MC0_neutral l i -STARTLINE}
+ addUserKnob {41 red l "ML0 Exposure" T ML0_intensity.red}
+ addUserKnob {6 ME0_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 multiLight1 n 1}
+ addUserKnob {1 ML1_name l ML1}
+ ML1_name "South Dome"
+ addUserKnob {6 ml1_initial l i -STARTLINE}
+ addUserKnob {41 value_4 l "MD1 Diffuse" T MD1_intensity.value}
+ addUserKnob {6 MD1_neutral l i -STARTLINE}
+ addUserKnob {41 value_5 l "MS1 Specular" T MS1_intensity.value}
+ addUserKnob {6 MS1_neutral l i -STARTLINE}
+ addUserKnob {41 value_3 l "ML1 Color" T ML1_color.value}
+ addUserKnob {6 MC1_neutral l i -STARTLINE}
+ addUserKnob {41 red_1 l "ML1 Exposure" T ML1_intensity.red}
+ addUserKnob {6 ME1_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 multiLight2 n 1}
+ addUserKnob {1 ML2_name l ML2}
+ ML2_name "Key Light"
+ addUserKnob {6 ml2_initial l i -STARTLINE}
+ addUserKnob {41 value_21 l "MD2 Diffuse" T MD2_intensity.value}
+ addUserKnob {6 MD2_neutral l i -STARTLINE}
+ addUserKnob {41 value_22 l "MS2 Specular" T MS2_intensity.value}
+ addUserKnob {6 MS2_neutral l i -STARTLINE}
+ addUserKnob {41 value_6 l "ML2 Color" T ML2_color.value}
+ addUserKnob {6 MC2_neutral l i -STARTLINE}
+ addUserKnob {41 red_7 l "ML2 Exposure" T ML2_intensity.red}
+ addUserKnob {6 ME2_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {20 multiLight3 n 1}
+ multiLight3 0
+ addUserKnob {1 ML3_name l ML3}
+ ML3_name "Fill light"
+ addUserKnob {6 ml3_initial l i -STARTLINE}
+ addUserKnob {41 value_23 l "MD3 Diffuse" T MD3_intensity.value}
+ addUserKnob {6 MD3_neutral l i -STARTLINE}
+ addUserKnob {41 value_7 l "MD3 Specular" T MS3_intensity.value}
+ addUserKnob {6 MS3_neutral l i -STARTLINE}
+ addUserKnob {41 value_8 l "ML3 Color" T ML3_color.value}
+ addUserKnob {6 MC3_neutral l i -STARTLINE}
+ addUserKnob {41 red_2 l "ML3 Exposure" T ML3_intensity.red}
+ addUserKnob {6 ME3_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {20 multiLight4 n 1}
+ multiLight4 0
+ addUserKnob {1 ML4_name l ML4}
+ ML4_name "Rim light"
+ addUserKnob {6 ml4_initial l i -STARTLINE}
+ addUserKnob {41 value_9 l "MD4 Diffuse" T MD4_intensity.value}
+ addUserKnob {6 MD4_neutral l i -STARTLINE}
+ addUserKnob {41 value_10 l "MS4 Specular" T MS4_intensity.value}
+ addUserKnob {6 MS4_neutral l i -STARTLINE}
+ addUserKnob {41 value_11 l "ML4 Color" T ML4_color.value}
+ addUserKnob {6 MC4_neutral l i -STARTLINE}
+ addUserKnob {41 red_3 l "ML4 Exposure" T ML4_intensity.red}
+ addUserKnob {6 ME4_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {20 multiLight5 n 1}
+ multiLight5 0
+ addUserKnob {1 ML5_name l ML5}
+ ML5_name "Other Light"
+ addUserKnob {6 ml5_initial l i -STARTLINE}
+ addUserKnob {41 value_12 l "MD5 Diffuse" T MD5_intensity.value}
+ addUserKnob {6 MD5_neutral l i -STARTLINE}
+ addUserKnob {41 value_13 l "MS5 Specular" T MS5_intensity.value}
+ addUserKnob {6 MS5_neutral l i -STARTLINE}
+ addUserKnob {41 value_14 l "ML5 Color" T ML5_color.value}
+ addUserKnob {6 MC5_neutral l i -STARTLINE}
+ addUserKnob {41 red_4 l "ML5 Exposure" T ML5_intensity.red}
+ addUserKnob {6 ME5_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {20 multiLight6 n 1}
+ multiLight6 0
+ addUserKnob {1 ML6_name l ML6}
+ ML6_name "Other Light"
+ addUserKnob {6 ml6_initial l i -STARTLINE}
+ addUserKnob {41 value_15 l "MD6 Diffuse" T MD6_intensity.value}
+ addUserKnob {6 MD6_neutral l i -STARTLINE}
+ addUserKnob {41 value_16 l "MS6 Specular" T MS6_intensity.value}
+ addUserKnob {6 MS6_neutral l i -STARTLINE}
+ addUserKnob {41 value_17 l "ML6 Color" T ML6_color.value}
+ addUserKnob {6 MC6_neutral l i -STARTLINE}
+ addUserKnob {41 red_5 l "ML6 Exposure" T ML6_intensity.red}
+ addUserKnob {6 ME6_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 multiLight7 n 1}
+ multiLight7 0
+ addUserKnob {1 ML7_name l ML7}
+ ML7_name "Other Light"
+ addUserKnob {6 ml7_initial l i -STARTLINE}
+ addUserKnob {41 value_18 l "MD7 Diffuse" T MD7_intensity.value}
+ addUserKnob {6 MD7_neutral l i -STARTLINE}
+ addUserKnob {41 value_19 l "MS7 Specular" T MS7_intensity.value}
+ addUserKnob {6 MS7_neutral l i -STARTLINE}
+ addUserKnob {41 value_20 l "ML7 Color" T ML7_color.value}
+ addUserKnob {6 MC7_neutral l i -STARTLINE}
+ addUserKnob {41 red_6 l "ML7 Exposure" T ML7_intensity.red}
+ addUserKnob {6 ME7_neutral l i -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+ addUserKnob {20 Bounce}
+ addUserKnob {6 bounceCheckbox l Active +STARTLINE}
+ bounceCheckbox true
+ addUserKnob {41 value_24 l Color T Multi_Bounce.value}
+ addUserKnob {6 sssbounce_neutral_color l i -STARTLINE}
+ addUserKnob {41 red_8 l Exposure T bounce_intensity.red}
+ addUserKnob {6 sssbounce_neutral_intensity l i -STARTLINE}
+ addUserKnob {20 Scatter l INVISIBLE +INVISIBLE}
+ addUserKnob {41 value_25 l INVISIBLE +INVISIBLE T Multi_Scater.value}
+ addUserKnob {6 scatterColor_neutral l INVISIBLE -STARTLINE +INVISIBLE}
+ addUserKnob {41 red_10 l INVISIBLE +INVISIBLE T scater_intensity.red}
+ addUserKnob {6 scatter_neutral l INVISIBLE -STARTLINE +INVISIBLE}
+ addUserKnob {20 Lift}
+ addUserKnob {4 lift_mix_choose l Lift/Mix M {None "Lift (Grade)" "Mix (Dissolve)" "" ""}}
+ lift_mix_choose "Lift (Grade)"
+ addUserKnob {26 ""}
+ addUserKnob {19 lift_color l Color}
+ lift_color {0 0 0 0}
+ addUserKnob {6 grade_lift_active l i -STARTLINE}
+ addUserKnob {19 mix_color l Color +HIDDEN}
+ mix_color {1 1 1 1}
+ addUserKnob {6 mix_color_active l i -STARTLINE +HIDDEN}
+ addUserKnob {7 mix_dissolve l Intensity +HIDDEN}
+ addUserKnob {6 mix_dissolve_active l i -STARTLINE +HIDDEN}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x444444ff
+  label LIFT
+  note_font_size 60
+  xpos -1309
+  ypos 72
+  bdwidth 809
+  bdheight 251
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  tile_color 0x444444ff
+  label "\nCOLOR\n"
+  note_font_size 50
+  xpos 4608
+  ypos -583
+  bdwidth 512
+  bdheight 710
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  tile_color 0x444444ff
+  label multiLights
+  note_font_size 50
+  xpos -1266
+  ypos -750
+  bdwidth 4318
+  bdheight 742
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  tile_color 0x444444ff
+  label Bounce
+  note_font_size 50
+  xpos 3076
+  ypos -749
+  bdwidth 470
+  bdheight 742
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  tile_color 0x444444ff
+  label Scatter
+  note_font_size 50
+  xpos 3564
+  ypos -750
+  bdwidth 322
+  bdheight 743
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0x444444ff
+  label Primary
+  note_font_size 50
+  xpos 3900
+  ypos -752
+  bdwidth 398
+  bdheight 737
+ }
+ Input {
+  inputs 0
+  name primary
+  xpos 4028
+  ypos -650
+  number 1
+ }
+set Ncdc405c0 [stack 0]
+ Dot {
+  name Dot11
+  xpos 5225
+  ypos -645
+ }
+ Dot {
+  name Dot15
+  xpos 5225
+  ypos 388
+ }
+push $Ncdc405c0
+ Unpremult {
+  name Unpremult1
+  xpos 3896
+  ypos -555
+ }
+ Input {
+  inputs 0
+  name multiSpecular7
+  xpos 2913
+  ypos -652
+  number 18
+ }
+push $Ncdc405c0
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle9
+  xpos 4028
+  ypos -553
+ }
+set Ncd5614e0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge29
+  xpos 2913
+  ypos -556
+ }
+set Ncd9efe50 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse7
+  xpos 2777
+  ypos -652
+  number 17
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge28
+  xpos 2777
+  ypos -556
+ }
+set Ncd9f0370 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular6
+  xpos 2330
+  ypos -649
+  number 16
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge26
+  xpos 2330
+  ypos -553
+ }
+set Nce2a0e70 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse6
+  xpos 2194
+  ypos -649
+  number 15
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge25
+  xpos 2194
+  ypos -553
+ }
+set Ncd486b40 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular5
+  xpos 1762
+  ypos -650
+  number 14
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge23
+  xpos 1762
+  ypos -554
+ }
+set Ncd968c30 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse5
+  xpos 1626
+  ypos -650
+  number 13
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge22
+  xpos 1626
+  ypos -554
+ }
+set Ncccecc40 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular4
+  xpos 1231
+  ypos -651
+  number 2
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge6
+  xpos 1231
+  ypos -555
+ }
+set Ncdbe95e0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse4
+  xpos 1095
+  ypos -651
+  number 3
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge7
+  xpos 1095
+  ypos -555
+ }
+set Ncead2fd0 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular3
+  xpos 735
+  ypos -651
+  number 4
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge8
+  xpos 735
+  ypos -555
+ }
+set Ncd2941b0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse3
+  xpos 599
+  ypos -651
+  number 5
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge9
+  xpos 599
+  ypos -555
+ }
+set Ncd484870 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular2
+  xpos 230
+  ypos -651
+  number 6
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge10
+  xpos 230
+  ypos -555
+ }
+set Nced642e0 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse2
+  xpos 120
+  ypos -651
+  number 7
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge11
+  xpos 120
+  ypos -555
+ }
+set Ncdd99560 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular1
+  xpos -271
+  ypos -652
+  number 8
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge12
+  xpos -271
+  ypos -556
+ }
+set Ncd7c9300 [stack 0]
+ Input {
+  inputs 0
+  name multiDiffuse1
+  xpos -381
+  ypos -652
+  number 9
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge13
+  xpos -381
+  ypos -556
+ }
+set Ncce1c5d0 [stack 0]
+push 0
+ Input {
+  inputs 0
+  name multiDiffuse0
+  xpos -859
+  ypos -651
+  number 10
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge14
+  xpos -859
+  ypos -556
+ }
+set Ncef3b170 [stack 0]
+ Input {
+  inputs 0
+  name multiSpecular0
+  xpos -749
+  ypos -651
+  number 11
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge15
+  xpos -749
+  ypos -556
+ }
+set Ncef3aef0 [stack 0]
+ Merge2 {
+  inputs 16+1
+  operation plus
+  name Merge16
+  xpos 3756
+  ypos -553
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name diff_bance
+  xpos 3756
+  ypos -468
+ }
+ Input {
+  inputs 0
+  name bounce
+  xpos 3244
+  ypos -655
+ }
+ Dot {
+  name Dot71
+  xpos 3278
+  ypos -421
+ }
+set Nced69840 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name diff_scatter
+  xpos 3756
+  ypos -426
+ }
+ Remove {
+  inputs 0
+  name RemoveDisconnect
+  xpos -1165
+  ypos -65
+  hide_input true
+  disable true
+ }
+ NoOp {
+  name Disconnect
+  xpos -1055
+  ypos -58
+ }
+set Ncd9dc590 [stack 0]
+ Switch {
+  inputs 2
+  which {{scatterCheckbox i}}
+  name scater_switch
+  xpos 3756
+  ypos -56
+ }
+set Ncdabde30 [stack 0]
+push $Nced69840
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name bounce_color_neutral
+  xpos 3244
+  ypos -317
+ }
+push $Nced69840
+ Dot {
+  name Dot63
+  xpos 3390
+  ypos -421
+ }
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name Multi_Bounce
+  xpos 3356
+  ypos -317
+ }
+ Switch {
+  inputs 2
+  which {{sssbounce_neutral_color i x1022 0}}
+  name bounceColor_neutral
+  xpos 3356
+  ypos -242
+ }
+set Ncd61a360 [stack 0]
+push $Ncd61a360
+ EXPTool {
+  mode Stops
+  gang false
+  green {{red.left i}}
+  blue {{red.left i}}
+  name bounce_intensity
+  label "\[value mode]"
+  xpos 3250
+  ypos -176
+ }
+ Switch {
+  inputs 2
+  which {{sssbounce_neutral_intensity i}}
+  name bounce_neutral
+  xpos 3356
+  ypos -110
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{bounceCheckbox i}}
+  name bounce_Switch
+  xpos 3356
+  ypos -58
+ }
+set Ncf0be820 [stack 0]
+push $Ncd9f0370
+ Dot {
+  name Dot61
+  xpos 2618
+  ypos -551
+ }
+push $Ncd9efe50
+ Dot {
+  name Dot62
+  xpos 2618
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus7
+  xpos 2584
+  ypos -86
+ }
+push $Ncd9f0370
+push $Ncd9f0370
+ Multiply {
+  channels rgb
+  name MD7_intensity
+  xpos 2702
+  ypos -471
+ }
+ Switch {
+  inputs 2
+  which {{MD7_neutral i}}
+  name md7_neutral
+  xpos 2777
+  ypos -420
+ }
+push $Ncd9efe50
+push $Ncd9efe50
+ Multiply {
+  channels rgb
+  name MS7_intensity
+  xpos 2838
+  ypos -471
+ }
+ Switch {
+  inputs 2
+  which {{MS7_neutral i}}
+  name ms7_neutral
+  xpos 2913
+  ypos -418
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML7
+  xpos 2851
+  ypos -367
+ }
+set Ncffe4fc0 [stack 0]
+push $Ncffe4fc0
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML7_color
+  xpos 2780
+  ypos -306
+ }
+ Switch {
+  inputs 2
+  which {{MC7_neutral i}}
+  name mc7_neutral
+  xpos 2851
+  ypos -244
+ }
+set Ncdcf4e90 [stack 0]
+push $Ncdcf4e90
+ EXPTool {
+  mode Stops
+  name ML7_intensity
+  label "\[value mode]"
+  xpos 2781
+  ypos -187
+ }
+ Switch {
+  inputs 2
+  which {{ME7_neutral i}}
+  name me7_neutral
+  xpos 2851
+  ypos -121
+ }
+ Switch {
+  inputs 2
+  which {{ml7_initial i}}
+  name ml7_initial
+  xpos 2851
+  ypos -86
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML7_Switch i}}
+  name ML7_Switch
+  xpos 2851
+  ypos -58
+ }
+set Nceb28f50 [stack 0]
+push $Ncd486b40
+ Dot {
+  name Dot59
+  xpos 2027
+  ypos -548
+ }
+push $Nce2a0e70
+ Dot {
+  name Dot60
+  xpos 2027
+  ypos -548
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus6
+  xpos 1993
+  ypos -86
+ }
+push $Ncd486b40
+push $Ncd486b40
+ Multiply {
+  channels rgb
+  name MD6_intensity
+  xpos 2117
+  ypos -476
+ }
+ Switch {
+  inputs 2
+  which {{MD6_neutral i}}
+  name md6_neutral
+  xpos 2194
+  ypos -425
+ }
+push $Nce2a0e70
+push $Nce2a0e70
+ Multiply {
+  channels rgb
+  name MS6_intensity
+  xpos 2253
+  ypos -476
+ }
+ Switch {
+  inputs 2
+  which {{MS1_neutral i}}
+  name ms6_neutral
+  xpos 2330
+  ypos -422
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML6
+  xpos 2271
+  ypos -364
+ }
+set Nce3b5d30 [stack 0]
+push $Nce3b5d30
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML6_color
+  xpos 2192
+  ypos -312
+ }
+ Switch {
+  inputs 2
+  which {{MC6_neutral i}}
+  name mc6_neutral
+  xpos 2271
+  ypos -265
+ }
+set Nce3b57d0 [stack 0]
+push $Nce3b57d0
+ EXPTool {
+  mode Stops
+  name ML6_intensity
+  label "\[value mode]"
+  xpos 2202
+  ypos -199
+ }
+ Switch {
+  inputs 2
+  which {{ME6_neutral i}}
+  name me6_neutral
+  xpos 2271
+  ypos -131
+ }
+ Switch {
+  inputs 2
+  which {{ml6_initial i}}
+  name ml6_initial
+  xpos 2269
+  ypos -86
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML6_Switch i}}
+  name ML6_Switch
+  xpos 2271
+  ypos -58
+ }
+set Ncfe51c90 [stack 0]
+push $Ncccecc40
+ Dot {
+  name Dot57
+  xpos 1503
+  ypos -549
+ }
+push $Ncd968c30
+ Dot {
+  name Dot58
+  xpos 1503
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus5
+  xpos 1469
+  ypos -86
+ }
+push $Ncccecc40
+push $Ncccecc40
+ Multiply {
+  channels rgb
+  name MD5_intensity
+  xpos 1550
+  ypos -473
+ }
+ Switch {
+  inputs 2
+  which {{MD5_neutral i}}
+  name md5_neutral
+  xpos 1626
+  ypos -401
+ }
+push $Ncd968c30
+push $Ncd968c30
+ Multiply {
+  channels rgb
+  name MS5_intensity
+  xpos 1686
+  ypos -473
+ }
+ Switch {
+  inputs 2
+  which {{MS5_neutral i}}
+  name ms5_neutral
+  xpos 1762
+  ypos -402
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML5
+  xpos 1703
+  ypos -355
+ }
+set Nce3acbd0 [stack 0]
+push $Nce3acbd0
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML5_color
+  xpos 1621
+  ypos -299
+ }
+ Switch {
+  inputs 2
+  which {{MC5_neutral i}}
+  name mc5_neutral
+  xpos 1703
+  ypos -240
+ }
+set Ncf2893a0 [stack 0]
+push $Ncf2893a0
+ EXPTool {
+  mode Stops
+  name ML5_intensity
+  label "\[value mode]"
+  xpos 1633
+  ypos -180
+ }
+ Switch {
+  inputs 2
+  which {{ME5_neutral i}}
+  name me5_neutral
+  xpos 1703
+  ypos -123
+ }
+ Switch {
+  inputs 2
+  which {{ml5_initial i}}
+  name ml5_initial
+  xpos 1703
+  ypos -86
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML5_Switch i}}
+  name ML5_Switch
+  xpos 1703
+  ypos -58
+ }
+set Ncea0ecc0 [stack 0]
+push $Ncead2fd0
+ Dot {
+  name Dot55
+  xpos 975
+  ypos -550
+ }
+push $Ncdbe95e0
+ Dot {
+  name Dot56
+  xpos 975
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus4
+  xpos 941
+  ypos -95
+ }
+push $Ncead2fd0
+push $Ncead2fd0
+ Multiply {
+  channels rgb
+  name MD4_intensity
+  xpos 1023
+  ypos -476
+ }
+ Switch {
+  inputs 2
+  which {{MD4_neutral i}}
+  name md4_neutral
+  xpos 1095
+  ypos -423
+ }
+push $Ncdbe95e0
+push $Ncdbe95e0
+ Multiply {
+  channels rgb
+  name MS4_intensity
+  xpos 1161
+  ypos -475
+ }
+ Switch {
+  inputs 2
+  which {{MS4_neutral i}}
+  name ms4_neutral
+  xpos 1231
+  ypos -422
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML4
+  xpos 1173
+  ypos -382
+ }
+set Nceeacf50 [stack 0]
+push $Nceeacf50
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML4_color
+  xpos 1082
+  ypos -331
+ }
+ Switch {
+  inputs 2
+  which {{MC4_neutral i}}
+  name mc4_neutral
+  xpos 1173
+  ypos -281
+ }
+set Nce3ffcd0 [stack 0]
+push $Nce3ffcd0
+ EXPTool {
+  mode Stops
+  name ML4_intensity
+  label "\[value mode]"
+  xpos 1100
+  ypos -209
+ }
+ Switch {
+  inputs 2
+  which {{ME4_neutral i}}
+  name me4_neutral
+  xpos 1173
+  ypos -144
+ }
+ Switch {
+  inputs 2
+  which {{ml4_initial i}}
+  name ml4_initial
+  xpos 1173
+  ypos -95
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML4_Switch i}}
+  name ML4_Switch
+  xpos 1173
+  ypos -58
+ }
+set Ncdac75e0 [stack 0]
+push $Ncd484870
+ Dot {
+  name Dot53
+  xpos 480
+  ypos -549
+ }
+push $Ncd2941b0
+ Dot {
+  name Dot54
+  xpos 480
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus3
+  xpos 446
+  ypos -80
+ }
+push $Ncd484870
+push $Ncd484870
+ Multiply {
+  channels rgb
+  name MD3_intensity
+  xpos 541
+  ypos -478
+ }
+ Switch {
+  inputs 2
+  which {{MD3_neutral i}}
+  name md3_neutral
+  xpos 599
+  ypos -416
+ }
+push $Ncd2941b0
+push $Ncd2941b0
+ Multiply {
+  channels rgb
+  name MS3_intensity
+  xpos 677
+  ypos -480
+ }
+ Switch {
+  inputs 2
+  which {{MS3_neutral i}}
+  name ms3_neutral
+  xpos 735
+  ypos -420
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML3
+  xpos 664
+  ypos -370
+ }
+set Ncf059070 [stack 0]
+push $Ncf059070
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML3_color
+  xpos 583
+  ypos -305
+ }
+ Switch {
+  inputs 2
+  which {{MC3_neutral i}}
+  name mc3_neutral
+  xpos 664
+  ypos -245
+ }
+set Nced5a4e0 [stack 0]
+push $Nced5a4e0
+ EXPTool {
+  mode Stops
+  name ML3_intensity
+  label "\[value mode]"
+  xpos 588
+  ypos -190
+ }
+ Switch {
+  inputs 2
+  which {{ME3_neutral i}}
+  name me3_neutral
+  xpos 664
+  ypos -126
+ }
+ Switch {
+  inputs 2
+  which {{ml3_initial i}}
+  name ml3_initial
+  xpos 664
+  ypos -80
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML3_Switch i}}
+  name ML3_Switch
+  xpos 664
+  ypos -58
+ }
+set Ncebf6270 [stack 0]
+push $Ncdd99560
+ Dot {
+  name Dot51
+  xpos -35
+  ypos -550
+ }
+push $Nced642e0
+ Dot {
+  name Dot52
+  xpos -35
+  ypos -550
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus2
+  xpos -69
+  ypos -86
+ }
+push $Ncdd99560
+push $Ncdd99560
+ Multiply {
+  channels rgb
+  name MD2_intensity
+  xpos 59
+  ypos -488
+ }
+ Switch {
+  inputs 2
+  which {{MD2_neutral i}}
+  name md2_neutral
+  xpos 120
+  ypos -421
+ }
+push $Nced642e0
+push $Nced642e0
+ Multiply {
+  channels rgb
+  name MS2_intensity
+  xpos 169
+  ypos -488
+ }
+ Switch {
+  inputs 2
+  which {{MS2_neutral i}}
+  name ms2_neutral
+  xpos 230
+  ypos -420
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML2
+  xpos 166
+  ypos -382
+ }
+set Ncf118a30 [stack 0]
+push $Ncf118a30
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML2_color
+  xpos 99
+  ypos -312
+ }
+ Switch {
+  inputs 2
+  which {{MC2_neutral i}}
+  name mc2_neutral
+  xpos 166
+  ypos -258
+ }
+set Ncf118150 [stack 0]
+push $Ncf118150
+ EXPTool {
+  mode Stops
+  name ML2_intensity
+  label "\[value mode]"
+  xpos 100
+  ypos -193
+ }
+ Switch {
+  inputs 2
+  which {{ME2_neutral i}}
+  name me2_neutral
+  xpos 166
+  ypos -129
+ }
+ Switch {
+  inputs 2
+  which {{ml2_initial i}}
+  name ml2_initial
+  xpos 166
+  ypos -86
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML2_Switch i}}
+  name ML2_Switch
+  xpos 166
+  ypos -58
+ }
+set Nccefe8a0 [stack 0]
+push 0
+push $Ncef3b170
+ Dot {
+  name Dot47
+  xpos -989
+  ypos -551
+ }
+push $Ncef3aef0
+ Dot {
+  name Dot48
+  xpos -989
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus
+  xpos -1023
+  ypos -94
+ }
+push $Ncef3b170
+push $Ncef3b170
+ Multiply {
+  channels rgb
+  name MD0_intensity
+  xpos -917
+  ypos -485
+ }
+ Switch {
+  inputs 2
+  which {{MD0_neutral i}}
+  name md0_neutral
+  xpos -859
+  ypos -403
+ }
+push $Ncef3aef0
+push $Ncef3aef0
+ Multiply {
+  channels rgb
+  name MS0_intensity
+  xpos -807
+  ypos -485
+ }
+ Switch {
+  inputs 2
+  which {{MS0_neutral i}}
+  name ms0_neutral
+  xpos -749
+  ypos -405
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML0
+  xpos -803
+  ypos -334
+ }
+set Nce719f90 [stack 0]
+push $Nce719f90
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML0_color
+  xpos -876
+  ypos -297
+ }
+ Switch {
+  inputs 2
+  which {{MC0_neutral i}}
+  name mc0_neutral
+  xpos -803
+  ypos -259
+ }
+set Ncdc6faa0 [stack 0]
+push $Ncdc6faa0
+ EXPTool {
+  mode Stops
+  name ML0_intensity
+  label "\[value mode]"
+  xpos -875
+  ypos -192
+ }
+ Switch {
+  inputs 2
+  which {{ME0_neutral i}}
+  name me0_neutral
+  xpos -803
+  ypos -126
+ }
+ Switch {
+  inputs 2
+  which {{ml0_initial i}}
+  name ml0_initial
+  xpos -803
+  ypos -94
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML0_Switch i}}
+  name ML0_Switch
+  xpos -803
+  ypos -58
+ }
+set Nceaeeed0 [stack 0]
+push $Ncce1c5d0
+ Dot {
+  name Dot50
+  xpos -529
+  ypos -551
+ }
+push $Ncd7c9300
+ Dot {
+  name Dot49
+  xpos -529
+  ypos -551
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Plus1
+  xpos -563
+  ypos -92
+ }
+push $Ncce1c5d0
+push $Ncce1c5d0
+ Multiply {
+  channels rgb
+  name MD1_intensity
+  xpos -432
+  ypos -487
+ }
+ Switch {
+  inputs 2
+  which {{MD1_neutral i}}
+  name md1_neutral
+  xpos -381
+  ypos -416
+ }
+push $Ncd7c9300
+push $Ncd7c9300
+ Multiply {
+  channels rgb
+  name MS1_intensity
+  xpos -321
+  ypos -485
+ }
+ Switch {
+  inputs 2
+  which {{MS1_neutral i}}
+  name ms1_neutral
+  xpos -271
+  ypos -417
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name DiffSpecML1
+  xpos -334
+  ypos -369
+ }
+set Ncce22890 [stack 0]
+push $Ncce22890
+ Multiply {
+  channels rgb
+  value {1 1 1 1}
+  name ML1_color
+  xpos -404
+  ypos -311
+ }
+ Switch {
+  inputs 2
+  which {{MC1_neutral i}}
+  name mc1_neutral
+  xpos -334
+  ypos -256
+ }
+set Ncf20f890 [stack 0]
+push $Ncf20f890
+ EXPTool {
+  mode Stops
+  name ML1_intensity
+  label "\[value mode]"
+  xpos -405
+  ypos -192
+ }
+ Switch {
+  inputs 2
+  which {{ME1_neutral i}}
+  name me1_neutral
+  xpos -334
+  ypos -130
+ }
+ Switch {
+  inputs 2
+  which {{ml1_initial i}}
+  name ml1_initial
+  xpos -334
+  ypos -92
+ }
+push $Ncd9dc590
+ Switch {
+  inputs 2
+  which {{ML1_Switch i}}
+  name ML1_Switch
+  xpos -334
+  ypos -58
+ }
+set Ncd1612f0 [stack 0]
+ Merge2 {
+  inputs 10+1
+  operation plus
+  name Merge1
+  xpos 4880
+  ypos -58
+ }
+ Input {
+  inputs 0
+  name color
+  xpos 4990
+  ypos -643
+  number 12
+ }
+push $Ncd5614e0
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos 4990
+  ypos -553
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge2
+  xpos 4990
+  ypos -58
+ }
+ Grade {
+  white 0.18
+  name Grade1
+  xpos 4990
+  ypos -9
+ }
+push $Ncd5614e0
+ Dot {
+  name Dot73
+  xpos 4855
+  ypos -548
+ }
+ Dot {
+  name Dot74
+  xpos 4855
+  ypos 80
+ }
+ SwitchMatte {
+  inputs 2
+  name SwitchMatte2
+  xpos 4990
+  ypos 75
+  from0 rgba.alpha
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox2
+  xpos 4990
+  ypos 383
+ }
+ Dot {
+  name Dot72
+  xpos 5024
+  ypos 529
+ }
+push $Ncdc405c0
+ Dot {
+  name Dot69
+  xpos 4544
+  ypos -645
+ }
+ Dot {
+  name Dot68
+  xpos 4544
+  ypos 441
+ }
+push $Ncdc405c0
+ Dot {
+  name Dot9
+  xpos 4190
+  ypos -645
+ }
+ Dot {
+  name Dot10
+  xpos 4190
+  ypos 388
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 1}
+  name atmosphere_color_neutral
+  xpos -1156
+  ypos 90
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[0\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[1\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[2\\]]" i} {"\[python nuke.thisGroup().knob('mix_color').getValue()\\\[3\\]]" i}}
+  name atmosphere_color
+  xpos -1291
+  ypos 161
+ }
+ Switch {
+  inputs 2
+  which {{mix_color_active i}}
+  name switch_atmosphere_color
+  xpos -1156
+  ypos 184
+ }
+set Ncebd98e0 [stack 0]
+push $Ncdabde30
+ Dot {
+  name Dot70
+  xpos 3790
+  ypos 46
+ }
+push $Ncf0be820
+ Dot {
+  name Dot8
+  xpos 3390
+  ypos 44
+ }
+push $Nceb28f50
+ Dot {
+  name Dot7
+  xpos 2885
+  ypos 44
+ }
+push $Ncfe51c90
+ Dot {
+  name Dot6
+  xpos 2305
+  ypos 46
+ }
+push $Ncea0ecc0
+ Dot {
+  name Dot5
+  xpos 1737
+  ypos 44
+ }
+push $Ncdac75e0
+ Dot {
+  name Dot4
+  xpos 1207
+  ypos 44
+ }
+push $Ncebf6270
+ Dot {
+  name Dot3
+  xpos 698
+  ypos 44
+ }
+push $Nccefe8a0
+ Dot {
+  name Dot2
+  xpos 200
+  ypos 44
+ }
+push 0
+push $Ncd1612f0
+ Dot {
+  name Dot1
+  xpos -300
+  ypos 44
+ }
+push $Nceaeeed0
+ Merge2 {
+  inputs 10+1
+  operation plus
+  name ML_merge
+  xpos -803
+  ypos 39
+ }
+set Nce3e2f50 [stack 0]
+ Dot {
+  name Dot44
+  xpos -1034
+  ypos 103
+ }
+ Dot {
+  name Dot14
+  xpos -1034
+  ypos 234
+ }
+ Dissolve {
+  inputs 2
+  name atmosphere_dissolve_neutrak
+  xpos -1156
+  ypos 222
+ }
+ Dot {
+  name Dot64
+  xpos -1122
+  ypos 284
+ }
+push $Ncebd98e0
+push $Nce3e2f50
+ Dot {
+  name Dot13
+  xpos -964
+  ypos 103
+ }
+ Dissolve {
+  inputs 2
+  which {{"\[python nuke.thisGroup().knob('mix_dissolve').getValue()]" i}}
+  name atmosphere_dissolve
+  xpos -998
+  ypos 177
+ }
+ Switch {
+  inputs 2
+  which {{parent.mix_dissolve_active.left i}}
+  name atmosphere_dissolve_switch
+  xpos -998
+  ypos 279
+ }
+push $Nce3e2f50
+ Dot {
+  name Dot66
+  xpos -612
+  ypos 110
+ }
+push $Nce3e2f50
+ Dot {
+  name Dot65
+  xpos -612
+  ypos 108
+ }
+ Grade {
+  black {{"\[python nuke.thisGroup().knob('lift_color').getValue()\\\[0\\]]" i} {"\[python nuke.thisGroup().knob('lift_color').getValue()\\\[1\\]]" i} {"\[python nuke.thisGroup().knob('lift_color').getValue()\\\[2\\]]" i} {"\[python nuke.thisGroup().knob('lift_color').getValue()\\\[3\\]]" i}}
+  name grade_lift_mix
+  xpos -717
+  ypos 195
+ }
+ Switch {
+  inputs 2
+  which {{parent.grade_lift_active.left i}}
+  name grade_lift_mix_neutral
+  xpos -646
+  ypos 279
+ }
+push $Nce3e2f50
+ Switch {
+  inputs 3
+  which {{parent.lift_mix_choose i}}
+  name switch_lift_mix
+  xpos -803
+  ypos 279
+ }
+ Dot {
+  name Dot12
+  xpos -769
+  ypos 331
+ }
+push $Ncd5614e0
+ SwitchMatte {
+  inputs 2
+  name SwitchMatte1
+  xpos 4042
+  ypos 326
+  from0 rgba.alpha
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos 4042
+  ypos 383
+ }
+ Switch {
+  inputs 2
+  which {{switch_primary i}}
+  name Switch1
+  xpos 4042
+  ypos 436
+ }
+ Switch {
+  inputs 2
+  which {{switch_grey i}}
+  name Switch2
+  xpos 4042
+  ypos 526
+ }
+ Output {
+  name out
+  xpos 4042
+  ypos 611
+ }
+end_group
