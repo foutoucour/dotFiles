@@ -16,15 +16,21 @@ class MayaSniffer(object):
 		self.client.send('python("import re");\n')
 		self.client.send('python("reg = re.compile(\'lightRig\')");\n')
 
-		self.dictDetails = { }
-		self.getLightRigs()
+		self.dictDetails = {
+			'lightRigs': self.getLightRigs()
+		}
+
+	@staticmethod
+	def toList(string):
+		string = string.replace('\n\x00', '')
+		string = string.replace('\t',' ')
+		return string.split(' ')
 
 	def getLightRigs(self):
-		message = 'string $rig[] = python("[ node for node in cmds.ls(type = \'transform\') if reg.search(node) ]");\n'
+		message = 'python("[ node for node in cmds.ls(type = \'transform\') if reg.search(node) ]");\n'
 		self.client.send(message)
-		self.lightRigs = self.client.recv(1024)
+		return self.toList(self.client.recv(1024))
 
 	def getResults(self):
-		return {'lightRigs':self.lightRigs}
-
+		return self.dictDetails
 
