@@ -12,12 +12,13 @@ class TcpServerThread(threading.Thread):
 		:type message: string or buffer
 		:param message: message to send to the client
 	"""
-	def __init__(self, port, message):
+	def __init__(self, port, message, binding = False):
 		""" ctr.
 		"""
 		# Variable to check the state of the server.
 		self.serverInitialised = False
 
+		self.__binding = binding
 		self._message = message
 		self._port = port
 		threading.Thread.__init__(self)
@@ -25,7 +26,7 @@ class TcpServerThread(threading.Thread):
 	def run(self):
 		""" Method running the server.
 		"""
-		s = TcpServer(self._port)
+		s = TcpServer(self._port, binding = self.__binding)
 		self.serverInitialised = True
 		s.sendMessage(self._message)
 
@@ -38,14 +39,15 @@ class TcpServer(TcpService):
 		:type host: string
 		:param host: Host to connect to. Default: local host
 	"""
-	def __init__(self, port, host = socket.gethostname()):
+	def __init__(self, port, host = socket.gethostname(), binding=False):
 		""" ctr.
 		"""
 		TcpService.__init__(self, host)
 		self._port = port
 
 		self.bufferSize = 1024
-		self._socket.bind((self._host, self._port))
+		if binding:
+			self._socket.bind((self._host, self._port))
 		self._socket.listen(5)
 
 	def sendMessage(self, message, backlog=5):
@@ -101,7 +103,7 @@ class Message(object):
 
 def main():
 	# Launching a server in a thread.
-	t = TcpServerThread(12345, 'Server')
+	t = TcpServerThread(12345, 'Server', binding = True)
 	t.start()
 
 	# Waiting that the server is initialised

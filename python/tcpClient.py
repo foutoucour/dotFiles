@@ -34,8 +34,3 @@ class TcpClient(TcpService):
 		return 'message from the client'
 
 
-if __name__ == '__main__':
-	c = ClientTCP()
-	sClientMessage = c.connect(12345)
-	clientMessage = eval(sClientMessage)
-	c.close()

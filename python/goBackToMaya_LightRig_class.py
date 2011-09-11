@@ -48,297 +48,16 @@
 import os
 import re
 import socket
-class MayaMessageSender(object):
-	""" Class to send a message to Maya.
-
-		:type host: string
-		:param host: name of the machine hosting.
-	"""
-	def __init__(self, host):
-		""" ctr.
-		"""
-		self.host = host
-		#listing all maya
-		self.maya = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		#~ self.connect(self.port)
-
-	def connect(self, port):
-		""" Method to connect maya to a port.
-
-			:type port: int
-			:param port: number of the port you to want to connect to
-		"""
-		self.maya.connect((self.host, port))
-
-	def send(self, message):
-		""" Method to send a message to maya.
-
-			:type message: string
-			:param message: TODO
-
-			:rtype: object
-			:return: the maya you sent the message to.
-		"""
-		self.maya.send(message)
-
-	def close(self):
-		""" Method to close maya.
-		"""
-		self.maya.close()
-
-class MayaValueUpdater(object):
-	""" Class to update value in Maya from Nuke
-
-		:type host: string
-		:param host: name of the machine hosting.
-	"""
-	__noSurfaceInteractionWarning = 'STOP. No changes have been made as I was unable to tweak the diffuse and spec for some/all of your lights.'
-	__noSurfaceInteractionWarning += 'Please add surface interaction components to all of your lights and try again.'
-
-	__surfaceInteractionLightComponent ='tklRManSurfaceInteractionLightComponent'
-	__surfaceInteractionLightComponents = [
-		__surfaceInteractionLightComponent,
-		'%s1' %__surfaceInteractionLightComponent
-	]
-
-	__tickleLightTypes = [
-		'tklInfiniteAreaLight',
-		'tklDistantLight',
-		'tklSpotLight',
-		'tklAreaLight'
-	]
-
-	_dictTickleParms = {
-		'diffuse' : 'tklParmFdiffuseStrength',
-		'specular' : 'tklParmFspecularStrength',
-		'exposure' : 'tklParmFexposure',
-		'tint' : 'tklParmCtintAdjust',
-		'color' : 'tklParmClightColor',
-	}
-
-
-
-	@staticmethod
-	def message(dictValues, lightRig):
-		message = 'mayaValueUpdater = MayaValueUpdater(%s, %s);' %(dictValues or '', lightRig)
-		message += 'mayaValueUpdater.updateValues()'
-		message += '");'
-		return message
-
-	def __init__(self, dictValues, lightRig):
-		""" ctr.
-		"""
-		self.__dictValues = dictValues
-		self.__lightRig = lightRig
-
-		self.__dictComponentFunctions = {
-			'diffuse' : self.__diffuse,
-			'specular' : self.__specular,
-			'exposure' : self.__exposure,
-			'tint' : self.__tint,
-			'color' : self.__tint
-		}
-
-	def updateValues(self):
-		"""
-		"""
-		import maya.cmds as cmds
-
-		cmds.select(self.__lightRig)
-
-		# what is this list ?
-		list =  cmds.listRelatives(cmds.ls(sl=1), ad=True)
-
-		listTickleLight = [cmds.listRelatives(node, p = True) for node in list if cmds.nodeType(node) in self.__tickleLightTypes]
-		listTickleLightShape = [node for node in list if cmds.nodeType(node) in self.__tickleLightTypes]
-		listTickleSurfInter = [cmds.listRelatives(node, p = True) for node in listTickleLight if cmds.nodeType(node) == self.__surfaceInteractionLightComponent ]
-
-
-		detectSurfInter = []
-
-		for node in listTickleLight:
-
-			for item in cmds.listRelatives(node, ad = True):
-
-				if cmds.nodeType(item) == self.__surfaceInteractionLightComponent:
-					cmds.confirmDialog(
-						title='surfInterComponent Problem',
-						message=self.__noSurfaceInteractionWarning,
-						button=['OK'],
-						defaultButton='Yes',
-						cancelButton='No',
-						dismissString='No'
-					)
-
-		for node in listTickleLight:
-			nodeShape = cmds.listRelatives(node)[0]
-			MLcategorie = cmds.getAttr(nodeShape + '.tklParmSaovCategory')
-
-			for component in cmds.listRelatives(node):
-				componentShape = cmds.listRelatives(component)
-
-				if cmds.nodeType(componentShape) in self.__surfaceInteractionLightComponents:
-					surfInteractLightComp = componentShape[0]
-					break
-
-				# TODO : is that at the good indentation level ???
-
-				#Mathematical operation, addtition or subtration, between the current value and the new value for each
-				#That pick up the current version in maya and addition or subtract the difference between Maya and Nuke
-
-				channel = 0
-				while channel < 8 : # onlu 8 channels available.
-
-					if MLcategorie == "multilight%s" %str(channel):
-						for key, param in self._dictTickleParms.items():
-							function = self.__dictComponentFunctions[key]
-
-							if key in self.__dictValues.keys() :
-								function(
-									componentShape = componentShape,
-									nodeShape = nodeShape,
-									attribut = param,
-									value = self.__dictValues[key]
-								)
-
-
-	def __diffuse(self, **kwargs):
-		""" Method to set the diffuse tickle parameter.
-			Needed keys :
-				- componentShape
-				- attribut
-				- value
-
-			:rtype: bool
-			:return: True if the new value was set to the attribut, False otherwise.
-
-			:raise: KeyError if missing key in kwargs
-		"""
-		return self.__multiply(
-			kwargs['componentShape'],
-			kwargs['attribut'],
-			kwargs['value']
-		)
-
-	def __specular(self, **kwargs):
-		""" Method to set the specular tickle parameter.
-			Needed keys :
-				- componentShape
-				- attribut
-				- value
-
-			:rtype: bool
-			:return: True if the new value was set to the attribut, False otherwise.
-
-			:raise: KeyError if missing key in kwargs
-		"""
-		return self.__multiply(
-			kwargs['componentShape'],
-			kwargs['attribut'],
-			kwargs['value']
-		)
-
-	def __exposure(self, **kwargs):
-		""" Method to set the exposure tickle parameter.
-			Needed keys :
-				- nodeShape
-				- attribut
-				- value
-
-			:rtype: bool
-			:return: True if the new value was set to the attribut, False otherwise.
-
-			:raise: KeyError if missing key in kwargs
-		"""
-		return self.__add(
-			kwargs['nodeShape'],
-			kwargs['attribut'],
-			kwargs['value']
-		)
-
-	def __tint(self, **kwargs):
-		""" Method to set the new values to the tint or color.
-			The attribut needs to be a double3.
-			Needed keys :
-				- nodeShape
-				- attribut
-				- value : value here has to be a tuple !
-
-
-			:rtype: bool
-			:return: True if the new value was set to the attribut, False otherwise.
-		"""
-		attr = '%s.%s' %(
-			kwargs['nodeShape'],
-			kwargs['attribut']
-		)
-		values = kwargs['value']
-
-		if cmds.objExists(attr):
-			cmds.setAttr(
-				attr,
-				(cmds.getAttr(attr)[0][0]) * values[0],
-				(cmds.getAttr(attr)[0][1]) * values[1],
-				(cmds.getAttr(attr)[0][2]) * values[2],
-				type = 'double3'
-			)
-			return True
-
-		else :
-			return False
-
-	def __add(self, shape, attribut, value):
-		""" Method to add the default value of the attribut and the value.
-			The method will also set the result of the multiplication to the attribut.
-
-			:type shape: string
-			:param shape: name of the shape to work on.
-			:type attribut: string
-			:param attribut: name of the attribut to work on.
-			:type value: int
-			:param value: value to multiply with.
-
-			:rtype: bool
-			:return: True if the add and the set ran well, otherwise False
-		"""
-		attr = '%s.%s' %( shape, attribut)
-
-		if cmds.objExists(attr):
-			defaultValue = cmds.getAttr(attr)
-			cmds.setAttr(attr, (defaultValue + value))
-			return True
-
-		else :
-			return False
-
-	def __multiply(self, shape, attribut, value):
-		""" Method to multiply the default value of the attribut and the value.
-			The method will also set the result of the multiplication to the attribut.
-
-			:type shape: string
-			:param shape: name of the shape to work on.
-			:type attribut: string
-			:param attribut: name of the attribut to work on.
-			:type value: int
-			:param value: value to multiply with.
-
-			:rtype: bool
-			:return: True if the multiplication and the set ran well, otherwise False
-		"""
-		attr = '%s.%s' %( shape, attribut)
-
-		if cmds.objExists(attr):
-			defaultValue = cmds.getAttr(attr)
-			cmds.setAttr(attr, (defaultValue * value))
-			return True
-
-		else :
-			return False
+from mpc.nukeSee.messenger import Messenger
 
 class GoBackToMaya(object):
 	""" Go back values MD and MS intensity, ML color and intenisty to Maya light
 		for have the same result between Nuke tweak and the new Maya primary pass.
 	"""
+	@staticmethod
+	def getSocket():
+		return socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 	def __init__(self, host, nukeShot, job, fileIn):
 		""" ctr.
 		"""
@@ -347,44 +66,42 @@ class GoBackToMaya(object):
 		self.nukeShot = nukeShot
 		self.job = job
 
-		#~ self.__mayaMessageSender = MayaMessageSender(self.host)
-
 	def listMaya(self):
+		""" List form port 9700 to  9711 the differente Maya opened.
 		"""
-		"""
-		#list form port 9700 to  9711 the differente Maya opened
 
-		mayaPorts = 11
+		mayaPorts = set()
+
 		curr_port = 9700
 		while curr_port < 9712 :
 			try:
-				mayaMessageSender = MayaMessageSender(self.host)
-				mayaMessageSender.connect(curr_port)
-				#~ message = 'python ("'
-				#~ message += 'import mpc.maya.lightingTools.getFromMaya;'
-				#~ message += 'getFromMaya.getLightingInformation()'
-				#~ message += '")'
+				s = self.getSocket()
 
-				message = 'python ("execfile(\'/usr/people/charles-c/Lighting/release/script/knowMayaPortLightRigShots.py\')");'
-				mayaMessageSender.send(message)
-				mayaMessageSender.close()
-
+				# the binding will error if the port is already used
+				# and we know that these ports are used by Maya.
+				s.bind((host, curr_port))
 			except:
-				mayaPorts -= 1
+				mayaPorts.add(curr_port)
 
 			curr_port += 1
 
-		import time
+		messages = []
 
-		time.sleep(mayaPorts)
+		for port in mayaPorts :
+			client = self.getSocket()
+			client.connect((self.host, maya))
+			client.send(message)
+			client.recv(1024)
+			client.close()
 
-		self.listCurrMaya = set()
-		mayaInfoFile = open("/tmp/mayaInfoLightRig.shot", "r")
-		for line in mayaInfoFile.readlines():
-			self.listCurrMaya.add(line)
+		print messages
+
+		#self.listCurrMaya = set()
+		#mayaInfoFile = open("/tmp/mayaInfoLightRig.shot", "r")
+		#for line in mayaInfoFile.readlines():
+			#self.listCurrMaya.add(line)
 
 		return self.listCurrMaya
-
 
 	def listLightRig(self):
 		""" After selected port, list all the differents lightRig exist in Maya
@@ -392,7 +109,7 @@ class GoBackToMaya(object):
 		for i in range(5):
 			mayaMessageSender = MayaMessageSender(self.host)
 			mayaMessageSender.connect(self.port[0])
-			messagee = 'python ("execfile(\'/tmp/fileLightRig.py\')");' # update this to move module into project rather than tmp
+			message = 'python ("execfile(\'/tmp/fileLightRig.py\')");' # update this to move module into project rather than tmp
 			mayaMessageSender.send(message)
 			mayaMessageSender.close()
 			# why are you maya all the time ?
