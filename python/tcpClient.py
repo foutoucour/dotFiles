@@ -1,11 +1,8 @@
 #!/usr/bin/python
 
-import sys
-sys.path.append("/Users/jordiriera/Documents/nukeLight")
-
 import socket
 
-class ClientTCP(object):
+class TcpClient(object):
     """ Class to set a TCP client.
 
         :type host: string

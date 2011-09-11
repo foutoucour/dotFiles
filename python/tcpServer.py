@@ -25,11 +25,11 @@ class ThreadClass(threading.Thread):
     def run(self):
         """ Method running the server.
         """
-        s = ServerTcp(self._port)
+        s = TcpServer(self._port)
         self.serverInitialised = True
         s.sendMessage(self._message)
 
-class ServerTcp(object):
+class TcpServer(object):
     """ Class to set a TCP server.
         The server will open a port,
 

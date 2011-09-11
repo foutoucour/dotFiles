@@ -1,0 +1,8 @@
+.build
+.deploy_ignore
+.project
+.pydevproject
+*.pyc
+*.swp
+*.*~
+.settings
