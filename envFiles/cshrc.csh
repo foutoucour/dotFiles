@@ -1,4 +1,4 @@
-#
+ 
 #Do not try to edit ~/.cshrc, ~/.tcshrc or .login
 
 # example mpcterm window size and font - uncomment to use
@@ -24,11 +24,6 @@ alias _prompt 'set prompt="%U%T%u:`whoami`:%B%~%b > "'
 
 ## shell title feature
 alias _shellTitleFunc 'source /mpc/people/jordi-r/config/shellTitleFunc.tcsh'
-## Trick to not have a shell with the same size than the window of gvim.
-### The eval create $COLUMNS and $LINES equal to the current size of the shell
-### so we need to store them in variables.
-alias _getSize      'eval `resize`;set columns=$COLUMNS;set lines=$LINES;'
-alias _resizeShell  'resize -s $lines $columns;'
 
 ###########################################################################################################
 # setting of shell
@@ -62,50 +57,29 @@ alias pushd    	'pushd \!:*;_prompt;'
 alias _vim		/mpc/people/jordi-r/apps/vim/bin/vim
 alias gvim      '_vim -c gvim'
 
-if( $?prompt ) then
-    if (`echo ${DESKTOP_SESSION}` == 'WindowMaker') then
-        alias gvim      '_getSize;_vim -c gvim \!:*;_resizeShell;'
-    endif
-endif
-
 ###########################################################################################################
 # Custom commands
 ###########################################################################################################
 ## Find in environment feature.
 ### Find a string in environment files use by a job.
 alias findInEnv		'/mpc/people/jordi-r/config/findInEnv'
-alias findInEnv2011	'/mpc/people/jordi-r/config/findInEnv2011'
-alias nameShell 	'echo -n "\033]2;\!:*\033\\";echo -n "\033]1;\!:*\033\\"'
+alias refresh 'cd;cd -'
 
 alias gitka     'gitk --all &'
 
-alias g			'gvim'
-alias ws 		'scite `which \!:*`'
-alias sw 		'ws'
+alias sourceMe  'source ~/config/cshrc.csh'
 
-alias refresh     'cd;cd -'
 
 
 alias cleanTools    'rm -fr $DEVTOOLS/*'
 
-alias j2011 	'job -d maya2011_\!:*'
-alias j2011rnd 	'job -d maya2011_\!:1 et2 rnd/rnd_pipeline'
-
 alias m				'maya &'
 alias mb            'maya -batch &'
-alias hg			'history | grep \!*'
-alias lg			'ls -1 | grep -i \!*'
-alias cg            'cd `ls | grep -i \!*`'
-alias ggo           'cd ~/workspace/git/; cg'
-alias eg            'env | grep -i \!*'
 alias bgColor		'echo -n "\033]11;\!*\033\\"'
 alias bgBlack   	'bgColor black'
 alias mayaNew 		'rm -fr $HOME/maya/$MAYA_VERSION-x64/prefs/shelves/*;maya &'
 
-#jordi-r Tue 05 Apr 2011 12:22:59 BST
-# make install feature.
-# This will increase the speed of the process and also remove some bug due to the .build feature.
-
+alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
 # clean all builds, make optmized install on 6 cores and if success show the finishing time
 alias makeInstall		'make clean; rm .build -fr;make install VERBOSE=0 OPTIMIZED=1 -j 6 &&echo&&echo&&date&&echo&&echo'
 alias makeI             'makeInstall'
@@ -115,7 +89,7 @@ alias makeI             'makeInstall'
 alias makeNewInstall 	'rm -fr ~/tools/*;makeInstall'
 alias makeN             'makeNewInstall'
 
-alias makeSphinx        'makeInstall; make sphinx'
+alias makeSphinx        'makeInstall&& make sphinx'
 alias makeS             'makeSphinx'
 
 
@@ -138,6 +112,10 @@ alias rob		'oi robert-t'
 alias qRob		'qoi robert-t \!:1'
 alias qrob		'qRob'
 
+if ( $?PYTHON_VERSION ) then
+    alias fixMpcMaya "cd ~/tools/python/$PYTHON_VERSION/$PLATFORM/maya/versions; ln -s v$MAYA_MAJOR_VERSION v`echo $MAYA_VERSION | sed -e 's/\./_/'`&& echo 'FIXED'; cd -"
+endif
+
 ## RCS
 alias Rco			'co -l'
 alias Rci			'ci -u'
@@ -145,26 +123,49 @@ alias Rci			'ci -u'
 # folder shortcuts
 ###########################################################################################################
 alias softScripts		 	'cd /software/tools/scripts'
-alias w						'cd ~/workspace/'
-alias wg					'cd ~/workspace/git/'
-alias t						'cd ~/tools/'
-alias T						'cd $TOOLS'
-alias c						'cd ~/config/'
 alias centralVersionPath 	'cd $TOOLS/config/environment/london/$MAYA_MAJOR_VERSION/$MUGGINS_VERSION/$PLATFORM'
 alias disciplinesPath		'cd /software/tools/config/disciplines/'
 
 alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
 
-if( $?prompt ) then
-    if ($?DESKTOP_SESSION) then
-        _shellTitleFunc
-        _prompt
-        bgBlack
-    endif
-endif
+
 
 
 set nobeep
 
+
+#vim like aliases
+# As they are really short I prefer to use ":" in front of them to avoid clashes
+alias w 'cd ~/workspace/'
+alias wg 'cd ~/workspace/git/'
+alias t 'cd ~/tools/'
+alias T 'cd $TOOLS'
+alias c 'cd ~/config/'
+alias g 'gvim'
+alias r 'refresh'
+alias q 'exit'
+alias e 'exit'
+alias E 'exit'
+alias ff 'firefox &'
+alias hg 'history | grep \!*'
+alias lg 'ls -1 | grep -i \!*'
+alias cg 'cd `ls | grep -i \!*`'
+alias go 'wg; cg'
+alias eg 'env | grep -i \!*'
+alias mmi 'mmakeI'
+alias mmn 'mmakeN'
+alias mi 'makeInstall'
+alias ms 'makeSphinx'
+alias mn 'makeNewInstall'
+alias sm 'sourceMe'
+alias ct 'cleanTools'
+alias gc 'g ~/config/cshrc.csh'
+alias ge 'g ~/config/env.csh'
+
+if( $?prompt ) then
+    #Need to be there to avoid to clash with git pulls
+    oi -u
+    bgBlack
+endif
 
 

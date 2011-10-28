@@ -67,7 +67,7 @@ set autochdir
 set nonumber
 set nu!
 set wrapscan
-"set guifont=Bitstream\ Vera\ Sans\ Mono\ 16
+set guifont=-misc-fixed-medium-r-normal--18-120-100-100-c-90-iso8859-1
 set hlsearch
 set incsearch
 set ruler
@@ -91,10 +91,10 @@ set nocp
 set ww=
 
 " ignorecase	ignore case when using a search pattern
-set ic
+"set ic
 
 " smartcase	override 'ignorecase' when pattern has upper case characters
-set scs
+"set scs
 
 " linebreak	wrap long lines at a character in 'breakat'
 "	(local to window)
@@ -133,7 +133,7 @@ set tpm=100
 set sj=-25
 
 " guifont	list of font names to be used in the GUI
- set gfn=Fixed16,
+ "set gfn=Fixed18,
 
 " visualbell	use a visual bell instead of beeping
 set vb
@@ -197,7 +197,8 @@ set ve=block
 hi Normal guibg=Black guifg=LightGray
 
 " Set the colors
-colorscheme liquidcarbon
+"colorscheme liquidarbon
+colorscheme darkblue
 
 
 if getline(1) =~ '-*-c++-*-'
@@ -294,15 +295,6 @@ let g:gundo_preview_height = 40
 let g:gundo_right = 0
 
 
-"the main keystrokes that put you into insert mode
-"noremap i :colorscheme blue<cr>i
-"noremap o :colorscheme blue<cr>o
-"noremap s :colorscheme blue<cr>s
-"noremap a :colorscheme blue<cr>a
-"noremap I :colorscheme blue<cr>I
-"noremap O :colorscheme blue<cr>O
-"noremap S :colorscheme blue<cr>S
-"noremap A :colorscheme blue<cr>A
 
 ""You need the next line to change the color back when you hit escape.
 "inoremap <Esc> <Esc>:colorscheme liquidcarbon<cr>
