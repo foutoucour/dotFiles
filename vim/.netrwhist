@@ -1,6 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/software/tools/config/disciplines/characterPackages'
-let g:netrw_dirhist_2='/mpc/devel/jordi-r/workspace/git/mpcAutoRender/python/core'
-let g:netrw_dirhist_3='/mpc/devel/jordi-r/workspace/git/mpcAutoRender'
-let g:netrw_dirhist_4='/mpc/devel/jordi-r/workspace/git/mpcAutoRender/docs'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/mpc/devel/jordi-r/workspace/git/mpcSolver'
