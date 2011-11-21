@@ -1,4 +1,3 @@
-cott2 rnd/rnd_pipeline10 rigging
 previs_wwz rnd/rnd_pipeline fur
 previs_wwz build fur
 previs_wwz rnd/rnd_pipeline fur
@@ -48,3 +47,4 @@ wwz build/vhclBus fur
 cott2 rnd/rnd_pipeline11 fur
 cott2 rnd/rnd_pipeline11 light
 wwz build/charMIsrael cloth
+wwz build/charMIsrael fur
