@@ -4,7 +4,8 @@
 #Do not try to edit ~/.cshrc, ~/.tcshrc or .login
 #set autolistsetenv MAYsource $TOOLS/config/devenv.cshA_SCRIPT_PATH $TOOLS/maya/mel/versionControl/:${MAYA_SCRIPT_PATH}
 
-source /software/tools_RND_PATCH/autoRenderBeta/env.csh
+#source /software/tools_RND_PATCH/autoRenderBeta/env.csh
+#source /software/tools_RND_PATCH/muppetRay_cropedRender/env.csh
 
 # needs by mpcMake and setup my env dev
 source $TOOLS/config/devenv.csh
