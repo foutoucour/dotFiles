@@ -1,17 +1,3 @@
-previs_wwz rnd/rnd_pipeline fur
-wwz rnd/rnd_pipeline fur
-cott2 CB_029/CB_029_0700 fur
-cott2 build/charKronos rigging
-cott2 rnd/rnd_pipeline fx
-cott2 build/charKronos rigging
-cott2 CB_026/CB_026_0240
-cott2 FE_081/FE_081_9240 light
-cott2 build/charKronos rigging
-cott2 FE_084/FE_084_1630
-cott2 build/charKronos rigging
-wwz rnd/rnd_pipeline
-cott2 rnd/rnd_pipeline
-uap 135_jc/135_jc_055 fx
 cott2 FE_084/FE_084_1630
 cott2 CB_026/CB_026_0311
 cott2 CB_026/CB_026_0240
@@ -48,3 +34,17 @@ cott2 EN_040/EN_040_0130
 cott2 FE_094/FE_094_2559 fx
 uap 135_jc/135_jc_025 fx
 cott2 CB_029/CB_029_0840 fx
+wwz build/propWeapon
+wwz build asset
+wwz build/charMIsrael
+wwz build/build_sequence
+wwz build/charBody
+wwz rnd/rnd_pipeline
+wwz build/propWeapon
+wwz build/charBody asset
+wwz build/build_sequence
+rnd build/build_sequence
+wwz build/build_sequence
+wwz 056_ifl/056_ifl_0100
+wwz build/build_sequence
+wwz 056_ifl/056_ifl_0100

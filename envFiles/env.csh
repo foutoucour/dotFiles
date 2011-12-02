@@ -18,7 +18,7 @@ setenv MOZ_DISABLE_PANGO 1
 setenv VOLMAYA_VERSION 0.4
 setenv VOLCORE_VERSION 0.4
 
-if (0) then
+if (1) then
     if ($?JOB) then
         setenv GIGGLE_IMPORT_PATH ${DEVTOOLS}/gubbins/giggle/${GIGGLE_VERSION}/scripts/readPackageAPI/${READPACKAGEAPI_VERSION}:${GIGGLE_IMPORT_PATH}
         setenv HUBPKG_CHARACTER_CONFIG_PATH $DEVTOOLS/gubbins/giggle/$GIGGLE_VERSION/scripts/characterPackages/$CHARACTERPACKAGES_VERSION
