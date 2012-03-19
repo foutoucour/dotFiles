@@ -13,22 +13,7 @@
 set filec
 set autolist
 
-###########################################################################################################
-# functions
-###########################################################################################################
 
-## prompt feature
-#alias _prompt 'set prompt="%U%T%u:`whoami`:%B$cwd%b: > "'
-alias _prompt 'set prompt="%U%T%u:`whoami`:%B%~%b > "'
-
-
-## shell title feature
-alias _shellTitleFunc 'source /mpc/people/jordi-r/config/shellTitleFunc.tcsh'
-## Trick to not have a shell with the same size than the window of gvim.
-### The eval create $COLUMNS and $LINES equal to the current size of the shell
-### so we need to store them in variables.
-alias _getSize      'eval `resize`;set columns=$COLUMNS;set lines=$LINES;'
-alias _resizeShell  'resize -s $lines $columns;'
 
 ###########################################################################################################
 # setting of shell
@@ -145,10 +130,10 @@ alias wg					'cd ~/workspace/git/'
 alias t						'cd ~/tools/'
 alias T						'cd $TOOLS'
 alias c						'cd ~/config/'
-alias centralVersionPath 	'cd $TOOLS/config/environment/london/$MAYA_MAJOR_VERSION/$MUGGINS_VERSION/$PLATFORM'
-alias disciplinesPath		'cd /software/tools/config/disciplines/'
+alias centralVersionPath 'cd $TOOLS/config/environment/london/$MAYA_MAJOR_VERSION/$MUGGINS_VERSION/$PLATFORM'
+alias disciplinesPath'cd /software/tools/config/disciplines/'
 
-alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
+alias cure 'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
 
 if( $?prompt ) then
     if ($?DESKTOP_SESSION) then
@@ -162,4 +147,5 @@ endif
 set nobeep
 
 
+# shortcut for MacOs
 
