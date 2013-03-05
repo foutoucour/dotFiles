@@ -1,0 +1,76 @@
+#Do not try to edit ~/.cshrc, ~/.tcshrc or .login
+
+# example mpcterm window size and font - uncomment to use
+#setenv XTERM_FONT screen15
+#setenv XTERM_GEOM 80x40
+setenv CLICOLOR YES
+setenv LSCOLORS ExGxFxdxCxDxDxhbadExEx
+
+alias gitka     'gitk --all &'
+###########################################################################################################
+# tab features
+###########################################################################################################
+set filec
+set autolist
+
+###########################################################################################################
+# functions
+###########################################################################################################
+
+## prompt feature
+#alias _prompt 'set prompt="%U%T%u:`whoami`:%B$cwd%b: > "'
+set prompt="%U%T%u:`whoami`:%B%~%b > "
+#i-search-back bound like on bash (Ctrl+R)
+bindkey "^R" i-search-back
+
+alias cd.. 		'cd ..'
+alias u         'cd ..'
+alias .. 		'cd ..'
+alias rm 		'rm -r'
+alias cp 		'cp -r'
+alias mkdir     'mkdir -p'
+alias mv 		'mv -i'
+alias grep      'grep --color=auto'
+
+# only for linux
+alias dir       'dir --color'
+alias ls        'ls -h'
+alias la        'ls -a'
+alias lt        'ls -lrt'
+
+#alias gvim      '_vim -c gvim'
+
+###########################################################################################################
+# Custom commands
+###########################################################################################################
+## Find in environment feature.
+### Find a string in environment files use by a job.
+
+alias sourceMe  'source .cshrc'
+
+
+alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
+
+
+alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
+
+
+
+
+set nobeep
+
+
+#vim like aliases
+alias g 'mvim'
+alias r 'refresh'
+alias q 'exit'
+alias e 'exit'
+alias E 'exit'
+alias ff 'firefox &'
+alias hg 'history | grep \!*'
+alias lg 'ls -1 | grep -i \!*'
+alias cg 'cd `ls | grep -i \!*`'
+alias go 'wg; cg'
+alias eg 'env | grep -i \!*'
+alias sm 'sourceMe'
+

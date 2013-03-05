@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='.'
 let g:netrw_dirhist_2='/mpc/devel/jordi-r/workspace/git/mpcAutoRender/python/render'
 let g:netrw_dirhist_3='/mpc/devel/jordi-r/workspace/git/mpcAutoRender/python/render/mentalRay'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='.'
 let g:netrw_dirhist_5='/mpc/devel/jordi-r/workspace/git/tickle/tickle'
 let g:netrw_dirhist_6='/mpc/devel/jordi-r/workspace/git/ripple'
 let g:netrw_dirhist_7='/mpc/devel/jordi-r/workspace/git/dmpTools/python'
+let g:netrw_dirhist_8='/Users/jordiriera'
