@@ -82,6 +82,7 @@ set smartindent
 
 syntax on
 autocmd BufEnter *.ggl set filetype=lua
+autocmd BufEnter *.html.twig set filetype=twig
 
 " compatible	behave very Vi compatible (not advisable)
 set nocp
