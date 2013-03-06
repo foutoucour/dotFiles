@@ -29,6 +29,7 @@ alias .. 		'cd ..'
 alias rm 		'rm -r'
 alias cp 		'cp -r'
 alias mkdir     'mkdir -p'
+
 alias mv 		'mv -i'
 alias grep      'grep --color=auto'
 
@@ -37,6 +38,7 @@ alias dir       'dir --color'
 alias ls        'ls -h'
 alias la        'ls -a'
 alias lt        'ls -lrt'
+alias ll 		'ls -l'
 
 #alias gvim      '_vim -c gvim'
 
@@ -46,7 +48,7 @@ alias lt        'ls -lrt'
 ## Find in environment feature.
 ### Find a string in environment files use by a job.
 
-alias sourceMe  'source .cshrc'
+alias sourceMe  'source ~/.cshrc'
 
 
 alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
@@ -62,6 +64,7 @@ set nobeep
 
 #vim like aliases
 alias g 'mvim'
+alias s 'subl'
 alias r 'refresh'
 alias q 'exit'
 alias e 'exit'
