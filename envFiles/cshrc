@@ -6,7 +6,8 @@
 setenv CLICOLOR YES
 setenv LSCOLORS ExGxFxdxCxDxDxhbadExEx
 
-alias gitka     'gitk --all &'
+
+alias gitka     'gitk --all'
 ###########################################################################################################
 # tab features
 ###########################################################################################################
@@ -22,6 +23,9 @@ set autolist
 set prompt="%U%T%u:`whoami`:%B%~%b > "
 #i-search-back bound like on bash (Ctrl+R)
 bindkey "^R" i-search-back
+
+alias gitReset 'echo "Creating a new git index."; cd /volumes/jordi_dev/cgsi; rm .git/index; git reset; cd -'
+alias resetGit gitReset
 
 alias cd.. 		'cd ..'
 alias u         'cd ..'
@@ -50,17 +54,11 @@ alias ll 		'ls -l'
 
 alias sourceMe  'source ~/.cshrc'
 
-
 alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
-
-
-alias cure             'echo "\!:1 >> \!:2 in `grep -l \!:1 *`";sed -i "s/\!:1/\!:2/g" `grep -rl \!:1 *`'
-
-
-
 
 set nobeep
 
+alias cm 'sudo ssh  jordi.devserver@192.168.0.14'
 
 #vim like aliases
 alias g 'mvim'
@@ -69,7 +67,6 @@ alias r 'refresh'
 alias q 'exit'
 alias e 'exit'
 alias E 'exit'
-alias ff 'firefox &'
 alias hg 'history | grep \!*'
 alias lg 'ls -1 | grep -i \!*'
 alias cg 'cd `ls | grep -i \!*`'
@@ -77,3 +74,4 @@ alias go 'wg; cg'
 alias eg 'env | grep -i \!*'
 alias sm 'sourceMe'
 
+alias cacheclear 'app/console cache:clear'
