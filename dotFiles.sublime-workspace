@@ -46,7 +46,7 @@
 			"file": "envFiles/cshrc",
 			"settings":
 			{
-				"buffer_size": 2088,
+				"buffer_size": 2223,
 				"line_ending": "Unix"
 			}
 		}
@@ -590,15 +590,15 @@
 					"file": "envFiles/cshrc",
 					"settings":
 					{
-						"buffer_size": 2088,
+						"buffer_size": 2223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								249,
-								249
+								972,
+								972
 							]
 						],
 						"settings":
