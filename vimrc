@@ -12,7 +12,7 @@ set ofu=syntaxcomplete#Complete
 
 " Taglist variables
 " Display function name in status bar:
-let g:ctags_statusline=1
+"let g:ctags_statusline=1
 " Automatically start script
 let generate_tags=1
 " Displays taglist results in a vertical window:
@@ -42,21 +42,22 @@ let g:pydiction_location = '/usr/people/jordi-r/.vim/after/ftplugin/pydiction-1.
 " Try to preserve the expand mode of the original file.
 " Highlight mismatches as bad
 highlight BadWhitespace ctermbg=red guibg=red
-fu Select_tab_style()
-    if search('^    ', 'n', 10)
-		" Display tabs at the beginning of a line in Python mode as bad.
-		" Expand tabs into spaces
-        set expandtab
-		match BadWhitespace /^\t\+/
-		redraw | echo "Whitespace is SPACES"
-    el 
-		" Display spaces at the beginning of a line in Python mode as bad.
-		" Don't expand tabs into spaces
-        set noexpandtab
-		match BadWhitespace /^ \+/
-		redraw | echo "Whitespace is TABS"
-    en
-endf
+"fu Select_tab_style()
+    "if search('^    ', 'n', 10)
+		"" Display tabs at the beginning of a line in Python mode as bad.
+		"" Expand tabs into spaces
+        "set expandtab
+		"match BadWhitespace /^\t\+/
+		"redraw | echo "Whitespace is SPACES"
+    "el 
+		"" Display spaces at the beginning of a line in Python mode as bad.
+		"" Don't expand tabs into spaces
+        "set noexpandtab
+		"match BadWhitespace /^ \+/
+		"redraw | echo "Whitespace is TABS"
+    "en
+"endf
+"au BufRead,BufNewFile *.py,*.pyw call Select_tab_style()
 
 " Tabs/spaces
 set tabstop=4
@@ -207,16 +208,16 @@ if getline(1) =~ '-*-c++-*-'
     set filetype=cpp
 endif
 
-function! SmartTab(forward)
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<Tab>"
-    elseif !a:forward
-        return "\<C-P>"
-    else
-        return "\<C-N>"
-    endif
-endfunction
+"function! SmartTab(forward)
+    "let col = col('.') - 1
+    "if !col || getline('.')[col - 1] !~ '\k'
+        "return "\<Tab>"
+    "elseif !a:forward
+        "return "\<C-P>"
+    "else
+        "return "\<C-N>"
+    "endif
+"endfunction
 
 " remapping
 
@@ -235,8 +236,9 @@ map <S-Right> :tabn<CR>
 map o o<ESC>
 map O O<ESC>
 map <C-S> :w<CR>
-map <F5> :%s/\s*$//g<CR>:noh<CR>
-map <S-F5> :%s/    /\t/g<CR>:noh<CR>
+map <D-5> :%s/\s*$//g<CR>:noh<CR>
+map <D-4> :%s/\t/    /g<CR>:noh<CR>
+"map <D-4> :%s/    /\t/g<CR>:noh<CR>
 
 map ,c; yyp:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
 map ,c" yypIprint "<Esc>A"<Esc>
@@ -267,6 +269,8 @@ set encoding=utf-8
 " Content awareness
 let python_highlight_all=1
 
+" Bind ctrl + space for completion
+:imap <C-Space> <C-X><C-O>
 
 " Alert when we get too long
 highlight WarnLength ctermbg=darkred ctermfg=white guibg=#773333
@@ -275,7 +279,6 @@ match WarnLength /\%>99v.\+/
 " Keep a couple of context lines
 set scrolloff=2
 
-au BufRead,BufNewFile *.py,*.pyw call Select_tab_style()
 " Warn about any trailing whitespace
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " Makefiles don't want tab expansion, it really breaks it.
@@ -298,7 +301,27 @@ let g:gundo_preview_height = 40
 let g:gundo_right = 0
 
 
+" CtrlP config
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|data\|logs\|cache\|vendor\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 ""You need the next line to change the color back when you hit escape.
 "inoremap <Esc> <Esc>:colorscheme liquidcarbon<cr>
+"colorscheme liquidcarbon
+
+" mapping to force to use hjkl as movers.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
