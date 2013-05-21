@@ -28,6 +28,7 @@ bindkey "^R" i-search-back
 alias gitReset 'echo "Creating a new git index."; cd /volumes/jordi_dev/cgsi; rm .git/index; git reset; cd -'
 alias resetGit gitReset
 
+alias pingLoL   'ping 216.52.241.254'
 alias cd.. 		'cd ..'
 alias u         'cd ..'
 alias .. 		'cd ..'
