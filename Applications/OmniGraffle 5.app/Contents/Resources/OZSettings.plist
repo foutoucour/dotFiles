@@ -1,0 +1,32 @@
+/*
+    Copyright 2000-2002, 2005, 2007, 2012 Omni Development, Inc.  All rights reserved.
+    
+    $Header: svn+ssh://source.omnigroup.com/Source/svn/Omni/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Internal/Store/OmniZuul/OZSettings.plist 162297 2012-02-28 00:47:28Z kc $
+    
+    DO NOT PUT APPLICATION-SPECIFIC MODIFICATIONS IN THIS SHARED FILE!
+    
+    Modify the application specific settings in the application Info-macos.xml
+*/
+
+{
+    LicenseFileKeys = {
+        Key = NSData;
+        Owner = NSString;
+    };
+    
+    LicensePathUserTranslations = {
+        "$(NEXT_ROOT)/Library/Application Support/Omni Group/Software Licenses" = "Computer";
+        "$(HOME)/Library/Application Support/Omni Group/Software Licenses" = "Personal";
+    };
+    
+    LicenseSearchPath = (
+        "$(NEXT_ROOT)/Library/Application Support/Omni Group/Software Licenses",
+        "$(HOME)/Library/Application Support/Omni Group/Software Licenses",
+    );
+    
+    OZLicenseFailureWarning = "This application is not licensed or too many users are using the application.";
+    
+    OZBuyThisAppURL = "https://store.omnigroup.com/";
+
+    OZHelpURL = "";
+}

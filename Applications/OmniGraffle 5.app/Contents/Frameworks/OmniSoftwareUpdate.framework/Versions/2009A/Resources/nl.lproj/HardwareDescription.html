@@ -1,0 +1,147 @@
+<!-- This file must be saved with UTF-8 encoding for OSUPreferencesClient to load it correctly! -->
+
+<html>
+
+	<head>
+		<title>Omni Software Update : Hardware Description</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+                <style type="text/css">
+                    table.toptable { border-spacing: 2px; width: 80%; }
+                    table.toptable th {
+                        font-weight: normal;
+                        text-align: right;
+                        background: #dddddd;
+                        width: 20%;
+                        vertical-align: top;
+                    }
+                    table.toptable td { background: #ddddee; }
+                    .explain { font-size: smaller; color: #555555; }
+                    table.subtable {
+                        border-collapse: collapse;
+                    }
+                    table.subtable th {
+                        empty-cells: hide;
+                        text-align: center;
+                        font-weight: bold;
+                        background: none;
+                        width: inherit;
+                        border: 1px solid black;
+                    }
+                    table.subtable td { border: 1px solid black; }
+                </style>
+	</head>
+
+	<body>
+		<br>
+		<p>Wanneer ${APP} naar nieuwe of bijgewerkte versies van zichzelf zoekt, kunt u ervoor kiezen om globale informatie over uw systeem mee te sturen. We gebruiken deze informatie om te bepalen welke systemen onze klanten gebruiken, zodat we weten welke systemen het belangrijkst zijn om te ondersteunen.</p>
+		<p>Omni maakt informatie over computerconfiguraties van afzonderlijke gebruikers <b>nooit</b> openbaar, maar publiceert alleen statistische informatie op basis van alle verzamelde configuraties. Wij respecteren uw privacy.</p>
+		<p>Als u geen informatie over uw systeem wilt versturen, schakelt u de optie hiervoor uit in het voorkeurenpaneel &apos;Nieuwe versie&apos; van dit programma.</p>
+		<p>De statistische gegevens die we verzamelen maken we wel bekend, zodat andere ontwikkelaars hier ook van kunnen profiteren. Hoe we deze gegevens publiceren kunt u zien op de <a href="http://update.omnigroup.com/">Omni Software Update</a>-webpagina.</p>
+		<p>De volgende informatie wordt altijd meegestuurd bij het zoeken naar nieuwe versies:</p>
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>OmniSoftwareUpdate-versie</th>
+					<td>${OSU_VER}</td>
+				</tr>
+				<tr>
+					<th>Programma-ID</th>
+					<td>${OSU_APP_ID}</td>
+				</tr>
+				<tr>
+					<th>Programmaversie</th>
+					<td>${OSU_APP_VER}</td>
+				</tr>
+				<tr>
+					<th>Overzicht nieuwe versies</th>
+					<td>${OSU_TRACK}</td>
+				</tr>
+				<tr>
+					<th>Zichtbare overzichten nieuwe versies</th>
+					<td>${OSU_VISIBLE_TRACKS}</td>
+				</tr>
+			</table>
+		</center>
+		<br>Als u de optie voor het meesturen van systeeminformatie in het voorkeurenpaneel &apos;Nieuwe versie&apos; inschakelt, wordt de volgende extra informatie meegestuurd:
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>UUID</th>
+					<td>${uuid}<br> <span class="explain">Een willekeurige tekenreeks waarmee uw computer anoniem wordt aangeduid. Hiermee kunnen we onze database up-to-date houden als uw systeemconfiguratie verandert. Deze aanduiding is op geen enkele manier gekoppeld aan uw naam of andere persoonlijke gegevens.</span></td>
+				</tr>
+				<tr>
+					<th>Licentietype</th>
+					<td>${license-type}<br> <span class="explain">De licentiecode zelf wordt nooit meegestuurd.</span></td>
+				</tr>
+				<tr>
+					<th>OS-versie</th>
+					<td>${os}</td>
+				</tr>
+				<tr>
+					<th>Systeemtaal</th>
+					<td>${lang}</td>
+				</tr>
+				<tr>
+					<th>Globale locatie</th>
+					<td>Breedtegraad: ${LATITUDE-DMS} Lengtegraad: ${LONGITUDE-DMS}<br> <span class="explain">Deze globale locatie is gebaseerd op de dichtstbijzijnde grote plaats die door Systeemvoorkeuren is geselecteerd bij het opgeven van de tijdzone tijdens de configuratie van uw computer. Welke locatie dit precies is kunt u zien op <a href="http://www.mapquest.com/?q=${LATITUDE},${LONGITUDE}">MapQuest</a>.</span>
+</td>
+				</tr>
+				<tr>
+					<th>Computermodel</th>
+					<td>${machine_name} (${hw-model})</td>
+				</tr>
+				<tr>
+					<th>Aantal processors</th>
+					<td>${ncpu}</td>
+				</tr>
+				<tr>
+					<th>Processortype</th>
+					<td>${cpu_type} (${cpu})</td>
+				</tr>
+				<tr>
+					<th>Processorsnelheid</th>
+					<td>${cpuhz}</td>
+				</tr>
+				<tr>
+					<th>Bussnelheid</th>
+					<td>${bushz}</td>
+				</tr>
+				<tr>
+					<th>Geheugen</th>
+					<td>${mem}</td>
+				</tr>
+				<tr>
+					<th>Beeldscherminstellingen</th>
+					<td>${DISPLAYS}</td>
+				</tr>
+				<tr>
+					<th>Videokaarten</th>
+					<td>${VIDEO}</td>
+				</tr>
+				<tr>
+					<th>OpenGL-informatie</th>
+					<td>${OPENGL}</td>
+				</tr>
+				<tr>
+					<th>OpenCL-informatie</th>
+					<td>${OPENCL}</td>
+				</tr>
+				<tr>
+					<th>Hoe vaak en hoe lang uitgevoerd</th>
+					<td>
+                                        <table class="subtable">
+                                                <tr><th></th><th>OS-versie</th><th>Alle versies</th></tr>
+                                                <tr><th>${RUNTIME-Hours}</th><td align="right">${runmin}</td><td align="right">${trunmin}</td></tr>
+                                                <tr><th>${RUNTIME-Launches}</th><td align="right">${nrun}</td><td align="right">${tnrun}</td></tr>
+                                                <tr><th>${RUNTIME-Crashes}</th><td align="right">${ndie}</td><td align="right">${tndie}</td></tr>
+                                        </table>
+                                        </td>
+				</tr>
+                                ${OTHERVARS}
+			</table>
+		</center>
+	</body>
+
+</html>

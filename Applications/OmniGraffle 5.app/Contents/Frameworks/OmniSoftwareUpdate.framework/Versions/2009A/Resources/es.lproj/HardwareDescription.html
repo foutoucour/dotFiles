@@ -1,0 +1,151 @@
+<!-- This file must be saved with UTF-8 encoding for OSUPreferencesClient to load it correctly! -->
+
+<html>
+
+	<head>
+		<title>Actualización de software de Omni: Descripción del hardware</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+                <style type="text/css">
+                    table.toptable { border-spacing: 2px; width: 80%; }
+                    table.toptable th {
+                        font-weight: normal;
+                        text-align: right;
+                        background: #dddddd;
+                        width: 20%;
+                        vertical-align: top;
+                    }
+                    table.toptable td { background: #ddddee; }
+                    .explain { font-size: smaller; color: #555555; }
+                    table.subtable {
+                        border-collapse: collapse;
+                    }
+                    table.subtable th {
+                        empty-cells: hide;
+                        text-align: center;
+                        font-weight: bold;
+                        background: none;
+                        width: inherit;
+                        border: 1px solid black;
+                    }
+                    table.subtable td { border: 1px solid black; }
+                </style>
+	</head>
+
+	<body>
+		<br>
+		<p>Cuando ${APP} busca versiones nuevas o actualizaciones de software, puede incluir opcionalmente información básica sobre la configuración de su sistema. Gracias a esta información, podemos saber qué sistemas utilizan nuestros usuarios y determinar cuáles de ellos necesitan un mayor soporte.</p>
+		<p>Omni no revelará <b>nunca</b> información sobre la configuración de los ordenadores de los usuarios, sino sólo datos estadísticos sobre las configuraciones estudiadas. Le garantizamos el máximo respeto hacia su privacidad.</p>
+		<p>Si prefiere no enviarnos información sobre su sistema, sólo tiene que anular la opción correspondiente en el panel Actualización de las preferencias de esta aplicación.</p>
+		<p>Las estadísticas que realizamos se hacen públicas para que también otros desarrolladores puedan beneficiarse de esta información. Si desea ver la información que publicamos, visite la <a href="http://update.omnigroup.com/">página web de actualización de software de Omni</a>.</p>
+		<p>Los datos siguientes se envían siempre junto con la consulta:</p>
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>Versión de OmniSoftwareUpdate</th>
+					<td>${OSU_VER}</td>
+				</tr>
+				<tr>
+					<th>ID de la aplicación</th>
+					<td>${OSU_APP_ID}</td>
+				</tr>
+				<tr>
+					<th>Versión de la aplicación</th>
+					<td>${OSU_APP_VER}</td>
+				</tr>
+				<tr>
+					<th>Pista de actualización</th>
+					<td>${OSU_TRACK}</td>
+				</tr>
+				<tr>
+					<th>Pistas de actualización visibles</th>
+					<td>${OSU_VISIBLE_TRACKS}</td>
+				</tr>
+			</table>
+		</center>
+		<br>
+		Si está activada la opción correspondiente en el panel Actualización de las preferencias de la aplicación, se enviarán además los datos siguientes:
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>UUID</th>
+					<td>${uuid}<br>
+					<span class="explain">Una secuencia de caracteres aleatoria que identifica de forma anónima su ordenador. Este identificador nos permite mantener actualizadas nuestras bases de datos cuando cambie la configuración de su ordenador. Este dato no está relacionado con su nombre ni con ninguna otra información personal.</span></td>
+				</tr>
+				<tr>
+					<th>Tipo de licencia</th>
+					<td>${license-type}<br>
+					<span class="explain">La clave de su licencia no se enviará nunca.</span></td>
+				</tr>
+				<tr>
+					<th>Versión de OS</th>
+					<td>${os}</td>
+				</tr>
+				<tr>
+					<th>Idioma preferido</th>
+					<td>${lang}</td>
+				</tr>
+				<tr>
+					<th>Ubicación general</th>
+					<td>Latitud: ${LATITUDE} Longitud: ${LONGITUDE-DMS}<br>
+<span class="explain"> Esta ubicación general está basada en la ciudad más cercana que seleccionó en la aplicación Preferencias del Sistema al ajustar la zona horaria durante la configuración del ordenador.  Puede ver exactamente la ubicación que se envía en <a href="http://www.mapquest.com/?q=${LATITUDE},${LONGITUDE}">MapQuest</a>.</span>
+</td>
+				</tr>
+				<tr>
+					<th>Modelo de ordenador</th>
+					<td>${machine_name} (${hw-model})</td>
+				</tr>
+				<tr>
+					<th>Unidades de CPU</th>
+					<td>${ncpu}</td>
+				</tr>
+				<tr>
+					<th>Tipo de CPU</th>
+					<td>${cpu_type} (${cpu})</td>
+				</tr>
+				<tr>
+					<th>Velocidad de la CPU</th>
+					<td>${cpuhz}</td>
+				</tr>
+				<tr>
+					<th>Velocidad de bus</th>
+					<td>${bushz}</td>
+				</tr>
+				<tr>
+					<th>Memoria</th>
+					<td>${mem}</td>
+				</tr>
+				<tr>
+					<th>Configuración de pantalla</th>
+					<td>${DISPLAYS}</td>
+				</tr>
+				<tr>
+					<th>Tarjetas de vídeo</th>
+					<td>${VIDEO}</td>
+				</tr>
+				<tr>
+					<th>Información sobre OpenGL</th>
+					<td>${OPENGL}</td>
+				</tr>
+				<tr>
+					<th>Información sobre OpenCL</th>
+					<td>${OPENCL}</td>
+				</tr>
+				<tr>
+					<th>Recuento y tiempos de ejecución</th>
+					<td>
+                                        <table class="subtable">
+                                                <tr><th></th><th>Versión actual</th><th>Todas las versiones</th></tr>
+                                                <tr><th>${RUNTIME-Hours}</th><td align="right">${runmin}</td><td align="right">${trunmin}</td></tr>
+                                                <tr><th>${RUNTIME-Launches}</th><td align="right">${nrun}</td><td align="right">${tnrun}</td></tr>
+                                                <tr><th>${RUNTIME-Crashes}</th><td align="right">${ndie}</td><td align="right">${tndie}</td></tr>
+                                        </table>
+                                        </td>
+				</tr>
+                                ${OTHERVARS}
+			</table>
+		</center>
+	</body>
+
+</html>

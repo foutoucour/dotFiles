@@ -1,0 +1,46 @@
+(
+   {
+      aliases = ( foot, feet );
+      unit = "ft";
+   },
+   {
+      aliases = ( inch, inches );
+      unit = "in";
+   },
+   {
+      aliases = ( meters, meter, metres, metre );
+      unit = "m";
+   },
+   {
+      aliases = ( yard, yards );
+      unit = "yd";
+   },
+   {
+      aliases = ( mile, miles );
+      unit = "mi";
+   },
+   {
+      aliases = ( point, points );
+      unit = "pt";
+   },
+   {
+      aliases = ( pixel, pixels );
+      unit = "px";
+   },
+   {
+      aliases = ( pica, picas );
+      unit = "p";
+   },
+   {
+      aliases = ( millimeter, millimeters, millimetre, millimetres );
+      unit = "mm";
+   },
+   {
+      aliases = ( centimeter, centimeters, centimetre, centimetres );
+      unit = "cm";
+   },
+   {
+      aliases = ( kilometer, kilometers, kilometre, kilometres );
+      unit = "km";
+   }
+)

@@ -1,0 +1,159 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Edit menu</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+<a name="editmenu"></a>
+<a name="undo"></a>
+        <h2>Edit menu</h2>
+                            <div class="item "><span class=""><span class="Bold">Undo —</span> OmniGraffle remembers a list of changes you make to a document. Choose this command to move one step backwards in the list, as if you hadn't done the last thing in the list. Keep choosing it to keep stepping backwards in time.</span>                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Redo —</span> If the last thing you did was to Undo something, you can step forward and do it again, effectively Undoing the Undo.</span>                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Cut —</span> Remove the current selection and put it on the clipboard, so you can paste it somewhere else.</span>                            </div>
+
+<a name="copyandpaste"></a>
+                            <div class="item "><span class=""><span class="Bold">Copy — </span>Copy the current selection to the clipboard.</span>                            </div>
+
+                            <div class="item "><span class="Bold">Copy As</span>                                <div class="item "><span class=""><span class="Bold">PDF</span> — Put a PDF copy of the current selection on the clipboard, for pasting into any application that understands PDF. If the application you paste into also supports <a href="help:anchor='linkback' bookID='OmniGraffle Help'">LinkBack</a> (this includes OmniGraffle itself), you can even go back and edit the pasted content in OmniGraffle.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">TIFF</span> — Put a TIFF copy of the current selection on the clipboard, for pasting into any application that understands TIFF.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Vector PICT</span> — Put a Vector PICT copy of the current selection on the clipboard, for pasting into any application that understands Vector PICT (this is especially useful for pasting into Microsoft Word, which has a curious bug that prevents it from getting the right data when you paste in OmniGraffle content with the ordinary <span class="UI">Copy</span> command).</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">AppleScript</span> — Put an AppleScript representation of the selected objects on the clipboard. You can paste the result into Script Editor or into the <a href="help:anchor='actioninspector' bookID='OmniGraffle Help'">Action inspector</a> of another object to make a script that recreates the objects. The output is also useful just for studying how OmniGraffle's AppleScript support works.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Paste —</span> Place the contents of the clipboard on the canvas, at the last place you clicked with the <a href="help:anchor='selectiontool' bookID='OmniGraffle Help'">Selection tool</a>. (or insert text from the clipboard if you are editing an object's text). If there is an image or some text in the clipboard, a new <a href="help:anchor='shapeobject' bookID='OmniGraffle Help'">shape object</a> containing the image or text is created.</span>                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Paste and Match Style —</span> When you are editing text, you can use this command to paste in some text without bringing along the style it had in the application you copied it from. Instead, it matches the style of the text you already have, as if you had typed it there yourself.</span>                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Duplicate —</span> Make a copy of the current selection and place it on the canvas, without using the clipboard.</span>                                <div class="item "><span class="">This command has a special feature:</span>                                </div>
+                                <div class="item Box">                                    <div class="item "><span class="">Select something on the canvas and Duplicate it.</span>                                    </div>
+                                    <div class="item "><span class="">Use the <a href="help:anchor='selectiontool' bookID='OmniGraffle Help'">Selection tool</a> to move the copy; OmniGraffle learns the distance and direction of the copy in relation to the original.</span>                                    </div>
+                                    <div class="item "><span class="">Duplicate again as many times as you like; each new copy is the same distance and direction from the previous copy.</span>                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item "><span class="Bold">Delete — Obliterate the current selection, forever banishing it from this plane of existence (unless you Undo).</span>                            </div>
+
+                            <div class="item "><span class="Bold">Select All — Select everything selectable on the canvas. Remember that objects on <a href="help:anchor='lockedlayers' bookID='OmniGraffle Help'">locked layers</a> can't be selected. If you are editing the text of an object, this instead selects all of the object's text.</span>                            </div>
+
+                            <div class="item "><span class="Bold">Select</span>                                <div class="item "><span class=""><span class="Bold">Similar Objects</span> — Select all of the objects on the canvas that have the same style attributes as the currently selected objects.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Connected Objects</span> — Select all shapes that are directly or indirectly connected by <a href="help:anchor='lines' bookID='OmniGraffle Help'">lines</a> to the currently selected objects, and all of the lines between.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Ancestor Objects</span> — Select all of the ancestors of the currently selected objects, based on the hierarchy established by <a href="help:anchor='connectionlines' bookID='OmniGraffle Help'">connection lines</a>.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Descendant Objects</span> — Select all of the descendants of the currently selected objects, based on the hierarchy established by <a href="help:anchor='connectionlines' bookID='OmniGraffle Help'">connection lines</a>.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class="Bold">Outlining — The commands in this sub-menu (and their keyboard shortcuts in particular) make it easier to work quickly in the <a href="help:anchor='outlineview' bookID='OmniGraffle Help'">outline view</a>. They are only available when the outline view is open and you have an active selection in it.</span>                            </div>
+
+                            <div class="item Pro"><span class="Bold">Mouseless Editing — These commands are most useful when you invoke their keyboard shortcuts; you can do a whole lot without even touching the mouse.</span>                                <div class="item "><span class=""><span class="Bold">Select Shape</span> — These commands select a shape based on its position relative to the currently selected shape.</span>                                </div>
+                                <div class="item "><span class=""><span class="UI">Create Shape</span> — These commands make a new shape relative to the currently selected shape.</span>                                </div>
+                            </div>
+
+                            <div class="item Pro"><span class="Bold">Canvases</span>                                <div class="item "><span class=""><span class="Bold">New Canvas</span> — Add a new <a href="help:anchor='canvas' bookID='OmniGraffle Help'">canvas</a> to the document.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Duplicate Canvas</span> — Add a new canvas, identical to the current canvas, to the document.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Delete Canvas</span> — Get rid of the current canvas completely.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class="Bold">Layers</span>                                <div class="item "><span class=""><span class="Bold">New Layer</span> — Add a new <a href="help:anchor='layer' bookID='OmniGraffle Help'">layer</a> to the current canvas.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">New Shared Layer</span> — Add a new <a href="help:anchor='sharedlayer' bookID='OmniGraffle Help'">shared layer</a> to the current canvas.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Duplicate Layer</span> — Add a new layer, identical to the selected layer, to the canvas.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Merge Layer Down</span> — Move everything on the selected layer to the next layer down, then delete the selected layer.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Delete Layer</span> — Get rid of the current layer completely. You can't delete the last layer in a canvas.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Delete All Copies</span> — This command is only available when you select a shared layer. It deletes all instances of the shared layer on any canvas throughout the document.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Layer Settings</span> — These commands replicate the clickable icons on a layer in the <a href="help:anchor='canvasessidebar' bookID='OmniGraffle Help'">canvases sidebar</a>. <span class="Bold">Visible</span> shows or hides objects on the layer, <span class="Bold">Printable</span> controls whether objects on the layer should be included when printing, and <span class="Bold">Unlocked</span> controls whether objects on the layer can be selected or edited. </span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Select All In Layer</span> — Select all of the objects on the selected layer.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Move Selection To Layer</span> — Move all selected objects to the selected layer.</span>                                </div>
+                            </div>
+
+                            <div class="item Pro"><span class="Bold">Tables</span>                                <div class="item "><span class=""><span class="Bold">Insert Row</span> — When you have one cell of a <a href="help:anchor='table' bookID='OmniGraffle Help'">table</a> selected, choose this command to add a new row of cells to the table. The new row appears immediately before the row containing the selected cell.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Insert Column</span> — When you have one cell of a table selected, choose this command to add a new column of cells to the table. The new row appears immediately before the row containing the selected cell.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Select Row</span> — When you have one cell of a table selected, choose this command to select the entire row that contains the cell.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Select Column</span> — When you have one cell of a table selected, choose this command to select the entire column that contains the cell.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class="Bold">Magnets</span>                                <div class="item "><span class=""><span class="Bold">Copy Magnets —</span> Put the <a href="help:anchor='magnet' bookID='OmniGraffle Help'">magnet</a> arrangement of the selected object onto the clipboard, so that you can paste them to a different object.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Paste Magnets —</span> If there is a magnet arrangement on the clipboard, apply it to the selected object. Any existing magnets are replaced by the new ones.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Delete Magnets —</span> Get rid of all the magnets on the selected objects.</span>                                </div>
+                            </div>
+
+<a name="shapecombinations"></a>
+<a name="boolean"></a>
+<a name="bool"></a>
+<a name="constructivegeometry"></a>
+<a name="shapecombinations"></a>
+<a name="intersection"></a>
+<a name="unite"></a>
+<a name="addshapes"></a>
+<a name="subtraction"></a>
+                            <div class="item Pro"><span class="Bold">Shapes</span>                                <div class="item "><span class=""><span class="Bold">Subtract Shapes —</span> Take the selected shapes and use the front shapes to punch a hole in the back-most shape. You can reorder shapes with the Bring/Send commands in the <span class="UI">Arrange</span> menu.</span>                                    <div class="item "><span class=""><img src="../../HelpImages/shape math 2.png" class="inline-image"></span>                                    </div>
+                                </div>
+                                <div class="item "><span class=""><span class="Bold">Union Shapes —</span> Combine two or more selected shapes, eliminating internal lines to make a single solid shape.</span>                                    <div class="item "><span class=""><img src="../../HelpImages/shape math 3.png" class="inline-image"></span>                                    </div>
+                                </div>
+                                <div class="item "><span class=""><span class="Bold">Intersect Shapes —</span> Create a shape from the overlapping areas of the selected shapes.</span>                                    <div class="item "><span class=""><img src="../../HelpImages/shape math 4.png" class="inline-image"></span>                                    </div>
+                                </div>
+                            </div>
+
+<a name="finddialog"></a>
+                            <div class="item "><span class="Bold">Find</span>                                <div class="item "><span class=""><span class="Bold">Find —</span> This summons OmniGraffle's Find panel. You can search for a specific string of text, or you can use a <a href="help:anchor='regularexpression' bookID='OmniGraffle Help'">regular expression</a> to match a whole class of strings. When searching for a specific string, select <span class="UI">Ignore Case</span> to match letters regardless of whether they are uppercase or lowercase; select <span class="UI">Whole Word</span> to avoid matching portions of a word. If you use groups in a regular expression, you might want to select (or replace) the whole expression, or just one of the groups; use the pop-up menu to indicate which. For the purposes of <span class="Bold">Previous</span> and <span class="Bold">Next</span>, OmniGraffle considers objects in left-to-right, top-to-bottom order.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Find Next —</span> Choose this to find the next occurrence of the text you last entered in the Find panel, as if you had just clicked its <span class="UI">Next</span> button.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Find Previous —</span> Choose this to find the previous occurrence of the string you last entered in the Find panel, as if you had just clicked its <span class="UI">Previous</span> button.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Enter Selection —</span> Select some text in an object, then choose this command to put the selected text into the Find panel, replacing whatever was there before. Then you can use the <span class="UI">Find Next</span> and <span class="UI">Find Previous</span> commands to search for other occurrences of the text.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Scroll to Selection —</span><span class="UI Bold"> </span>Move the view so that the selected objects are visible.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class="Bold">Spelling and Grammar</span>                                <div class="item "><span class="">This submenu contains Mac OS X's standard spelling and grammar utilities. For the purposes of <span class="Bold">Previous</span> and <span class="Bold">Next</span>, OmniGraffle considers objects in left-to-right, top-to-bottom order.</span>                                </div>
+                            </div>
+
+<a name="pagenumbers"></a>
+<a name="pagenumber"></a>
+<a name="numbering"></a>
+                            <div class="item "><span class="Bold">Insert Variable</span>                                <div class="item "><span class="">While you are editing a <a href="help:anchor='shapeobject' bookID='OmniGraffle Help'">shape object</a>'s text, choose one of these commands to insert a special tag. When you finish editing the text, the tag changes to represent some aspect of the object itself, the canvas, the page, or the document. If the data that the tag refers to changes, the tag automatically updates itself. Some variables, like Page Number, are useful for putting on a <a href="help:anchor='sharedlayer' bookID='OmniGraffle Help'">shared layer</a> and then sharing that layer with every canvas.</span>                                </div>
+                                <div class="item "><span class="">If you are using one of the date variables, you can customize the format of the date using Cocoa's <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatterSyntax.html">date formatting tokens</a>. For example, to get a date like &quot;2005 - 10 - 06 16:00&quot;, you could type this:</span>                                    <div class="item "><span class="Verbatim">&lt;%date %Y - %m - %d %H:%M %&gt;</span>                                    </div>
+                                </div>
+                                <div class="item "><span class=""><span class="Bold">Canvas Name —</span> the name of the canvas the object inhabits.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Document Name —</span> the name of the document the object inhabits.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Current Date —</span> the date right this very minute; this is nice for knowing when a document was printed.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Document Creation Date —</span> the date that the document was originally created, according to Mac OS X's file system.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Document Modification Date —</span> the date that the document was last saved, according to Mac OS X's file system.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Creator —</span> the name of the user who created the file, according to Mac OS X's file system.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Modifier —</span> the name of the user who last saved the file, according to Mac OS X's file system.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Page Number —</span> the number of the page that the object inhabits, based on settings in the <a href="help:anchor='canvassizeinspector' bookID='OmniGraffle Help'">Canvas Size inspector</a> and the <a href="help:anchor='pagesetup' bookID='OmniGraffle Help'">Page Setup</a> panel.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Total Pages —</span> the number of pages in the whole document. Use this with the Page Number tag to get results like &quot;Page 2 of 5&quot;.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">X Position —</span> the object's horizontal distance from the origin, just like in the <a href="help:anchor='geometryinspector' bookID='OmniGraffle Help'">Geometry inspector</a>.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Y Position —</span> the object's vertical distance from the origin, just like in the <a href="help:anchor='geometryinspector' bookID='OmniGraffle Help'">Geometry inspector</a>.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Width —</span> the object's horizontal size, just like in the <a href="help:anchor='geometryinspector' bookID='OmniGraffle Help'">Geometry inspector</a>.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Height —</span> the object's vertical size, just like in the <a href="help:anchor='geometryinspector' bookID='OmniGraffle Help'">Geometry inspector</a>.</span>                                </div>
+                                <div class="item "><span class=""><span class="Bold">Line Length —</span> This tag is somewhat unique. If the <a href="help:anchor='shape' bookID='OmniGraffle Help'">shape</a> containing the tag is a line label, it shows the line's length. It's not useful if the shape object is not attached to a line.</span>                                </div>
+                            </div>
+
+                            <div class="item "><span class=""><span class="Bold">Edit LinkBack item — </span>If you have pasted <a href="help:anchor='linkback' bookID='OmniGraffle Help'">LinkBack</a> content from another application, select the object and use this command to open the content in the original application.</span>                            </div>
+
+                            <div class="item "><span class="Bold"><span class="Bold">Special Characters</span><span class="Bold"> — Summon the standard Mac OS X Character Palette.</span></span>                            </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="Filemenu.html">← File menu</a></span>
+                
+
+                    <span class="right-nav"><a href="Viewmenu.html">View menu →</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

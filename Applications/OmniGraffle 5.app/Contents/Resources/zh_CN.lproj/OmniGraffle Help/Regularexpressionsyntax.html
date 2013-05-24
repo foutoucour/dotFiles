@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>常规表达式语法</title>
+
+
+<meta name="description" content="使用常规表达式语法来搜索和替换">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    <meta name="keywords" content="表达式语法字符多个实例字符串匹配一个符合空白数字线条文字之间查找最短使用行组位对开始尾位置单线条的关单个标签字母数字略过非空白新信息格式地址文件夹好文件存储菜单支持结束abc教找到1900与随意下一个下划线选择尾端2099大量非数字为简单日期新行非文字字母XML格YYYY-MM-DD相关对话框电子邮件大弹出式菜单替换书店示例anything@anything稍部分回车类似">
+</head>
+
+    <body>
+        <div class="Destination">
+        <h2>常规表达式语法</h2>
+        
+<a name="regularexpression">
+</a>
+                        <div class="item ">
+<span class="">OmniGraffle 的<a href="help:anchor='finddialog' bookID='OmniGraffle 帮助'">查找对话框</a>支持使用部分简单常规表达式。 常规表达式是用来表示整个字符串集的单个字符串。 使用的语法如下：</span>                            <div class="item ">
+<span class="">
+<span class="Verbatim">a*</span>－零或多个 <span class="Verbatim">a</span> 的实例（尽可能符合最长的字符串）</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">a*?</span> －零或多个 <span class="Verbatim">a</span> 的实例（尽可能符合最短的字符串）</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">a+</span>－一个或多个 <span class="Verbatim">a</span> 的实例（尽可能符合最长的字符串）</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">a+?</span> －一个或多个 <span class="Verbatim">a</span> 的实例（尽可能符合最短的字符串）</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">a?</span> －零或多个 <span class="Verbatim">a</span> 的实例</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">^</span>－线条的开始位置</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">$</span>－线条的结束位置</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">.</span>－任何字符</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">[a-z]</span>－<span class="Verbatim">a</span> 与 <span class="Verbatim">z</span> 之间的所有字符</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">[abc-]</span>－<span class="Verbatim">a</span>、<span class="Verbatim">b</span>、<span class="Verbatim">c</span> 或 <span class="Verbatim">-</span>
+</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">(abc)</span>－符合 abc 并将其存储为一个群组。使用“查找”对话中的<span class="UI">“选择或替换”</span>弹出式菜单来选择或替换某个群组，而非整个表达式。</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\1</span>－第一个匹配的群组文字</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">a|b</span>－<span class="Verbatim">a</span> 或 <span class="Verbatim">b</span>
+</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\n</span>－新行</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\r</span>－回车符</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\t</span>－tab 符</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\d</span>－数字</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\D</span>－非数字</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\w</span>－文字符（字母数字或下划线）</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\W</span>－非文字符</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\s</span>－空白</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\S</span>－非空白</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\</span>－略过下一个字符</span>                            </div>
+                        </div>
+                        <div class="item ">
+<span class="">常规表达式非常流行，您可以在互联网或稍好的图书馆或书店中找到大量相关信息。 这里有一些教您入门的示例：</span>                            <div class="item ">
+<span class="">
+<span class="Verbatim">\s*$</span>－匹配线条结尾端的空白。</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">&lt;.*?&gt; </span>－匹配以“<span class="Verbatim">&lt;</span>”开始且以“<span class="Verbatim">&gt;</span>”结尾的字符串，如 XML 标签。</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">\S+@\S+</span>－随意匹配类似电子邮件地址的项 (anything@anything)。</span>                            </div>
+                            <div class="item ">
+<span class="">
+<span class="Verbatim">(19|20)\d\d-\d\d?-\d\d?</span> －匹配 <span class="Verbatim">YYYY-MM-DD</span> 格式的日期，介于 1900 和 2099 之间</span>                            </div>
+                        </div>
+        </div>
+        
+        <div class="bottom-nav">
+        
+                <span class="left-nav">
+<a href="ApplicationSupportfolders.html">← Application Support 文件夹</a>
+</span>
+            
+             <br/> 
+        </div>
+        
+    </body>
+</html>

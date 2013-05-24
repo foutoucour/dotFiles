@@ -1,0 +1,147 @@
+<!-- This file must be saved with UTF-8 encoding for OSUPreferencesClient to load it correctly! -->
+
+<html>
+
+	<head>
+		<title>Omni Software Update : Descrizione dell&apos;Hardware</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+                <style type="text/css">
+                    table.toptable { border-spacing: 2px; width: 80%; }
+                    table.toptable th {
+                        font-weight: normal;
+                        text-align: right;
+                        background: #dddddd;
+                        width: 20%;
+                        vertical-align: top;
+                    }
+                    table.toptable td { background: #ddddee; }
+                    .explain { font-size: smaller; color: #555555; }
+                    table.subtable {
+                        border-collapse: collapse;
+                    }
+                    table.subtable th {
+                        empty-cells: hide;
+                        text-align: center;
+                        font-weight: bold;
+                        background: none;
+                        width: inherit;
+                        border: 1px solid black;
+                    }
+                    table.subtable td { border: 1px solid black; }
+                </style>
+	</head>
+
+	<body>
+		<br>
+		<p>Quando ${APP} verifica la presenza di nuove versioni aggiornate di se stesso, opzionalmente include alcune informazioni di base sulla configurazione del vostro sistema. Noi usiamo queste informazioni per capire quali sono i sistemi usati dai nostri clienti e quindi capire quali siano quelli più importanti da supportare.</p>
+		<p>Omni non cederà <b>mai</b> le informazioni che riguardano la configurazione di un singolo cliente - solo i dati statistici sulle informazioni complessivamente raccolte. Rispettiamo con onestà la vostra privacy.</p>
+		<p>Se preferite non fornire queste informazioni, nessun problema; semplicemente non barrate la casella nel pannello delle preferenze di Aggiornamento Omni Software in questa applicazione.</p>
+		<p>Noi rendiamo pubbliche le statistiche che raccogliamo, in modo che anche altri programmatori possano usare queste informazioni. Potete vedere l&apos;aspetto delle informazioni da noi rilasciate guardando la pagina <a href="http://update.omnigroup.com/">Omni Software Update</a>.</p>
+		<p>Vengono sempre inviate queste informazioni:</p>
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>Versione di OmniSoftwareUpdate</th>
+					<td>${OSU_VER}</td>
+				</tr>
+				<tr>
+					<th>ID dell&apos;applicazione</th>
+					<td>${OSU_APP_ID}</td>
+				</tr>
+				<tr>
+					<th>Versione dell&apos;Applicazione</th>
+					<td>${OSU_APP_VER}</td>
+				</tr>
+				<tr>
+					<th>Traccia aggiornamento</th>
+					<td>${OSU_TRACK}</td>
+				</tr>
+				<tr>
+					<th>Tracce aggiornamento visibili</th>
+					<td>${OSU_VISIBLE_TRACKS}</td>
+				</tr>
+			</table>
+		</center>
+		<br> Se abilitato nelle preferenze Aggiornamento, vengono inviate queste ulteriori informazioni:
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>UUID</th>
+					<td>${uuid}<br> <span class="explain">Una stringa casuale che, in modo anonimo, identifica il vostro computer. Ciò ci permette di mantenere aggiornato il nostro database quando cambia la configurazione del vostro sistema - non viene associato al vostro nome o ad informazioni di tipo personale.</span></td>
+				</tr>
+				<tr>
+					<th>Tipo di licenza</th>
+					<td>${license-type}<br> <span class="explain">La tua chiave di licenza non verrà mai inviata.</span></td>
+				</tr>
+				<tr>
+					<th>Versione dell&apos;OS</th>
+					<td>${os}</td>
+				</tr>
+				<tr>
+					<th>Lingua preferita</th>
+					<td>${lang}</td>
+				</tr>
+				<tr>
+					<th>Ubicazione generica</th>
+					<td>Latitudine: ${LATITUDE-DMS} Longitudine: ${LONGITUDE-DMS}<br> <span class="explain">Questa generica posizione si basa sulla città più grande e più vicina che l&apos;applicazione Preferenze di Sistema ha selezionato quando hai scelto il fuso orario in fase di prima impostazione del tuo computer.  Puoi vedere esattamente l&apos;ubicazione che verrà comunicata in <a href="http://www.mapquest.com/?q=${LATITUDE},${LONGITUDE}">MapQuest</a>.</span>
+</td>
+				</tr>
+				<tr>
+					<th>Modello di computer</th>
+					<td>${machine_name} (${hw-model})</td>
+				</tr>
+				<tr>
+					<th>Numero di CPU</th>
+					<td>${ncpu}</td>
+				</tr>
+				<tr>
+					<th>Tipo di CPU</th>
+					<td>${cpu_type} (${cpu})</td>
+				</tr>
+				<tr>
+					<th>Velocità della CPU</th>
+					<td>${cpuhz}</td>
+				</tr>
+				<tr>
+					<th>Velocità del Bus</th>
+					<td>${bushz}</td>
+				</tr>
+				<tr>
+					<th>Memoria</th>
+					<td>${mem}</td>
+				</tr>
+				<tr>
+					<th>Impostazione del monitor</th>
+					<td>${DISPLAYS}</td>
+				</tr>
+				<tr>
+					<th>Schede video</th>
+					<td>${VIDEO}</td>
+				</tr>
+				<tr>
+					<th>Informazioni su OpenGL</th>
+					<td>${OPENGL}</td>
+				</tr>
+				<tr>
+					<th>Informazioni su OpenCL</th>
+					<td>${OPENCL}</td>
+				</tr>
+				<tr>
+					<th>Conteggio esecuzione</th>
+					<td>
+                                        <table class="subtable">
+                                                <tr><th></th><th>Versione dell&apos;OS</th><th>All Versions</th></tr>
+                                                <tr><th>${RUNTIME-Hours}</th><td align="right">${runmin}</td><td align="right">${trunmin}</td></tr>
+                                                <tr><th>${RUNTIME-Launches}</th><td align="right">${nrun}</td><td align="right">${tnrun}</td></tr>
+                                                <tr><th>${RUNTIME-Crashes}</th><td align="right">${ndie}</td><td align="right">${tndie}</td></tr>
+                                        </table>
+                                        </td>
+				</tr>
+                                ${OTHERVARS}
+			</table>
+		</center>
+	</body>
+
+</html>

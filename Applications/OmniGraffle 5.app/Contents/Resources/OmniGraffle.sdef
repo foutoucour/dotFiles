@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary  title="OmniGraffle Terminology">
+	<suite name="Standard Suite" code="core" description="Common classes and commands for all applications.">
+		<cocoa name="NSCoreSuite"/>
+		<command name="open" code="aevtodoc" description="Open a document.">
+			<direct-parameter description="The file(s) to be opened.">
+				<type type="file" list="yes"/>
+			</direct-parameter>
+			<!-- According to TN2106, 'open' should return the resulting document object.  However, the Cocoa implementation does not do this yet. -->
+			<result type="specifier"/>
+		</command>
+		<enumeration name="save options" code="savo">
+			<enumerator name="yes" code="yes " description="Save the file."/>
+			<enumerator name="no" code="no  " description="Do not save the file."/>
+			<enumerator name="ask" code="ask " description="Ask the user whether or not to save the file."/>
+		</enumeration>
+		<command name="close" code="coreclos" description="Close a document.">
+			<cocoa class="NSCloseCommand"/>
+			<direct-parameter type="specifier" description="the document(s) or window(s) to close."/>
+			<parameter name="saving" code="savo" type="save options" optional="yes" description="Whether or not changes should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+			<parameter name="saving in" code="kfil" type="file" optional="yes" description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+		</command>
+		<command name="save" code="coresave" description="Save a document.">
+			<direct-parameter type="specifier" description="The document(s) or window(s) to save."/>
+			<parameter name="in" code="kfil" type="file" optional="yes" description="The file in which to save the document.">
+				<cocoa key="File"/>
+			</parameter>
+			<parameter name="as" code="fltp" type="text" optional="yes" description="The type of file to save.">
+				<cocoa key="FileType"/>
+			</parameter>
+		</command>
+		<enumeration name="printing error handling" code="enum">
+			<enumerator name="standard" code="lwst" description="Standard PostScript error handling"/>
+			<enumerator name="detailed" code="lwdt" description="print a detailed report of PostScript errors"/>
+		</enumeration>
+		<record-type name="print settings" code="pset">
+			<property name="copies" code="lwcp" type="integer" description="the number of copies of a document to be printed">
+				<cocoa key="NSCopies"/>
+			</property>
+			<property name="collating" code="lwcl" type="boolean" description="Should printed copies be collated?">
+				<cocoa key="NSMustCollate"/>
+			</property>
+			<property name="starting page" code="lwfp" type="integer" description="the first page of the document to be printed">
+				<cocoa key="NSFirstPage"/>
+			</property>
+			<property name="ending page" code="lwlp" type="integer" description="the last page of the document to be printed">
+				<cocoa key="NSLastPage"/>
+			</property>
+			<property name="pages across" code="lwla" type="integer" description="number of logical pages laid across a physical page">
+				<cocoa key="NSPagesAcross"/>
+			</property>
+			<property name="pages down" code="lwld" type="integer" description="number of logical pages laid out down a physical page">
+				<cocoa key="NSPagesDown"/>
+			</property>
+			<property name="error handling" code="lweh" type="printing error handling" description="how errors are handled">
+				<cocoa key="NSDetailedErrorReporting"/>
+			</property>
+			<property name="fax number" code="faxn" type="text" description="for fax number">
+				<cocoa key="NSFaxNumber"/>
+			</property>
+			<property name="target printer" code="trpr" type="text" description="for target printer">
+				<cocoa key="NSPrinterName"/>
+			</property>
+		</record-type>
+		<command name="print" code="aevtpdoc" description="Print a document.">
+			<direct-parameter description="The file(s), document(s), or window(s) to be printed.">
+				<type type="file" list="yes"/>
+				<type type="specifier"/>
+			</direct-parameter>
+ 			<parameter name="with properties" code="prdt" type="print settings" optional="yes" description="The print settings to use.">
+				<cocoa key="PrintSettings"/>
+			</parameter>
+ 			<parameter name="print dialog" code="pdlg" type="boolean" optional="yes" description="Should the application show the print dialog?">
+				<cocoa key="ShowPrintDialog"/>
+			</parameter>
+		</command>
+		<command name="quit" code="aevtquit" description="Quit the application.">
+			<cocoa class="NSQuitCommand"/>
+			<parameter name="saving" code="savo" type="save options" optional="yes" description="Whether or not changed documents should be saved before closing.">
+				<cocoa key="SaveOptions"/>
+			</parameter>
+		</command>
+		<command name="count" code="corecnte" description="Return the number of elements of a particular class within an object.">
+			<cocoa class="NSCountCommand"/>
+			<direct-parameter type="specifier" description="the object whose elements are to be counted"/>
+			<parameter name="each" code="kocl" type="type" optional="yes" description="The class of objects to be counted.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<result type="integer" description="the number of elements"/>
+		</command>
+		<command name="delete" code="coredelo" description="Delete an object.">
+			<cocoa class="NSDeleteCommand"/>
+			<direct-parameter type="specifier" description="the object to delete"/>
+		</command>
+		<command name="duplicate" code="coreclon" description="Copy object(s) and put the copies at a new location.">
+			<cocoa class="NSCloneCommand"/>
+			<direct-parameter type="specifier" description="the object(s) to duplicate"/>
+			<parameter name="to" code="insh" type="location specifier" optional="yes" description="The location for the new object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes" description="Properties to be set in the new duplicated object(s).">
+				<cocoa key="WithProperties"/>
+			</parameter>
+			<result type="specifier" description="the duplicated object(s)"/>
+		</command>
+		<command name="exists" code="coredoex" description="Verify if an object exists.">
+			<cocoa class="NSExistsCommand"/>
+			<direct-parameter type="any" description="the object in question"/>
+			<result type="boolean" description="true if it exists, false if not"/>
+		</command>
+		<command name="make" code="corecrel" description="Make a new object.">
+			<cocoa class="NSCreateCommand"/>
+			<parameter name="new" code="kocl" type="type" description="The class of the new object.">
+				<cocoa key="ObjectClass"/>
+			</parameter>
+			<parameter name="at" code="insh" type="location specifier" optional="yes" description="The location at which to insert the object.">
+				<cocoa key="Location"/>
+			</parameter>
+			<parameter name="with data" code="data" type="any" optional="yes" description="The initial contents of the object.">
+				<cocoa key="ObjectData"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes" description="The initial values for properties of the object.">
+				<cocoa key="KeyDictionary"/>
+			</parameter>
+			<result type="specifier" description="to the new object"/>
+		</command>
+		<command name="move" code="coremove" description="Move object(s) to a new location.">
+			<cocoa class="NSMoveCommand"/>
+			<direct-parameter type="specifier" description="the object(s) to move"/>
+			<parameter name="to" code="insh" type="location specifier" description="The new location for the object(s).">
+				<cocoa key="ToLocation"/>
+			</parameter>
+			<result type="specifier" description="the moved object(s)"/>
+		</command>
+		<class name="application" code="capp" description="The application's top-level scripting object.">
+			<cocoa class="OGApplication"/>
+			<property name="name" code="pnam" type="text" access="r" description="The name of the application."/>
+			<property name="frontmost" code="pisf" type="boolean" access="r" description="Is this the frontmost (active) application?">
+				<cocoa key="isActive"/>
+			</property>
+			<property name="version" code="vers" type="text" access="r" description="The version of the application."/>
+			<!-- BEGIN OMNIGRAFFLE -->
+			<property name="available templates" code="OGAT" access="r" description="A list of document templates that are currently available.">
+				<cocoa key="scriptAvailableTemplates"/>
+				<type type="item" list="yes"/>
+			</property>
+			<property type="boolean" name="professional" code="OGPR" access="r" description="Whether this application is OmniGraffle or OmniGraffle Professional">
+				<cocoa key="isPro"/>
+			</property>
+			<property type="export settings" name="current export settings" code="OGEX" access="r" description="The current export settings">
+				<cocoa key="scriptExportObject"/>
+			</property>
+			<property name="demo" code="OGDE" type="boolean" access="r" description="Is this the demo version of the application">
+				<cocoa key="isDemo"/>
+			</property>
+			<property name="professional" code="OGPR" type="boolean" access="r" description="Whether this application is OmniGraffle or OmniGraffle Professional"/>
+			<property type="graphic" name="self" code="OGse" access="r" description="Graphic clicked to start this script">
+				<cocoa key="clickedGraphic"/>
+			</property>
+			<!-- END OMNIGRAFFLE -->
+			<element type="document">
+				<cocoa key="orderedDocuments"/>
+			</element>
+			<element type="window" access="r">
+				<cocoa key="orderedWindows"/>
+			</element>
+			<responds-to name="open">
+				<cocoa method="handleOpenScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="quit">
+				<cocoa method="handleQuitScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="document" code="docu" description="A document.">
+			<cocoa class="OGGraffleDocument"/>
+			<!-- BEGIN OMNIGRAFFLE -->
+			<property type="boolean" name="show guides" code="OGgv" description="Whether manually set guides are visible">
+				<cocoa key="showGuides"/>
+			</property>
+			<property type="boolean" name="magnets visible" code="OGmv" description="Whether magnets are visible">
+				<cocoa key="magnetsVisible"/>
+			</property>
+			<property type="text" name="template" code="OGST" description="Set this to an available template name, or to the path to a Graffle file to use as a template for this document.">
+				<cocoa key="scriptTemplate"/>
+			</property>
+			<property type="boolean" name="distance guides enabled" code="OGde" description="Whether smart distance guides are enabled">
+				<cocoa key="distanceGuidesEnabled"/>
+			</property>
+			<property type="boolean" name="page breaks visible" code="OGbv" description="Whether page breaks are visible">
+				<cocoa key="pageBreaksVisible"/>
+			</property>
+			<property type="boolean" name="alignment guides enabled" code="OGge" description="Whether smart alignment guides are enabled">
+				<cocoa key="smartGuidesEnabled"/>
+			</property>
+			<property type="boolean" name="links visible" code="OGlv" description="Whether link indicators are visible">
+				<cocoa key="linksVisible"/>
+			</property>
+			<element type="canvas">
+				<cocoa key="models"/>
+			</element>
+			<!-- END OMNIGRAFFLE -->
+			
+			<property name="name" code="pnam" type="text" access="r" description="The document's name.">
+				<cocoa key="displayName"/>
+			</property>
+			<property name="modified" code="imod" type="boolean" access="r" description="Has the document been modified since the last save?">
+				<cocoa key="isDocumentEdited"/>
+			</property>
+			<property name="file" code="file" type="file" access="r" description="The document's location on disk.">
+				<cocoa key="fileURL"/>
+			</property>
+			<responds-to name="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+		<class name="window" code="cwin" description="A window.">
+			<cocoa class="NSWindow"/>
+			<!-- BEGIN OMNIGRAFFLE -->
+			<contents type="canvas" name="canvas" code="OGWS" description="Current canvas this window is viewing">
+				<cocoa key="page"/>
+			</contents>
+			<property name="selection" code="sele" description="Selected graphics">
+				<cocoa key="selection"/>
+				<type type="item" list="yes"/>
+			</property>
+			<property type="real" name="zoom" code="OWzm" description="Current zoom (magnification) setting for this document window">
+				<cocoa key="zoomValue"/>
+			</property>
+			<!-- END OMNIGRAFFLE -->
+			<property name="name" code="pnam" type="text" access="r" description="The full title of the window.">
+				<cocoa key="title"/>
+			</property>
+			<property name="id" code="ID  " type="integer" access="r" description="The unique identifier of the window.">
+				<cocoa key="uniqueID"/>
+			</property>
+			<property name="index" code="pidx" type="integer" description="The index of the window, ordered front to back.">
+				<cocoa key="orderedIndex"/>
+			</property>
+			<property name="bounds" code="pbnd" type="rectangle" description="The bounding rectangle of the window.">
+				<cocoa key="boundsAsQDRect"/>
+			</property>
+			<property name="closeable" code="hclb" type="boolean" access="r" description="Whether the window has a close box.">
+				<cocoa key="hasCloseBox"/>
+			</property>
+			<property name="minimizable" code="ismn" type="boolean" access="r" description="Whether the window can be minimized.">
+				<cocoa key="isMiniaturizable"/>
+			</property>
+			<property name="minimized" code="pmnd" type="boolean" description="Whether the window is currently minimized.">
+				<cocoa key="isMiniaturized"/>
+			</property>
+			<property name="resizable" code="prsz" type="boolean" access="r" description="Whether the window can be resized.">
+				<cocoa key="isResizable"/>
+			</property>
+			<property name="visible" code="pvis" type="boolean" description="Whether the window is currently visible.">
+				<cocoa key="isVisible"/>
+			</property>
+			<property name="zoomable" code="iszm" type="boolean" access="r" description="Whether the window can be zoomed.">
+				<cocoa key="isZoomable"/>
+			</property>
+			<property name="zoomed" code="pzum" type="boolean" description="Whether the window is currently zoomed.">
+				<cocoa key="isZoomed"/>
+			</property>
+			<property name="document" code="docu" type="document" access="r" description="The document whose contents are being displayed in the window."/>
+			<responds-to name="activate">
+				<cocoa method="handleActivateScriptCommand:"/>
+			</responds-to>
+			<responds-to name="close">
+				<cocoa method="handleCloseScriptCommand:"/>
+			</responds-to>
+			<responds-to name="print">
+				<cocoa method="handlePrintScriptCommand:"/>
+			</responds-to>
+			<responds-to name="save">
+				<cocoa method="handleSaveScriptCommand:"/>
+			</responds-to>
+		</class>
+	</suite>
+	<suite name="Text Suite" code="TEXT" description="A set of basic classes for text processing.">
+		<cocoa name="NSTextSuite"/>
+		<class name="rich text" plural="rich text" code="ctxt" description="Rich (styled) text">
+			<cocoa class="NSTextStorage"/>
+			<!-- this "type" element and the ones that follow, while they
+				contradict the DTD, are NOT errors.  Cocoa Scripting in 10.4
+				uses them to accomplish certain type conversions. -->
+			<type type="text"/>
+			<property name="color" code="colr" type="color" description="The color of the first character.">
+				<cocoa key="foregroundColor"/>
+			</property>
+			<property name="font" code="font" type="text" description="The name of the font of the first character.">
+				<cocoa key="fontName"/>
+			</property>
+			<property name="size" code="ptsz" type="integer" description="The size in points of the first character.">
+				<cocoa key="fontSize"/>
+			</property>
+			<element type="character"/>
+			<element type="paragraph"/>
+			<element type="word"/>
+			<element type="attribute run"/>
+			<element type="attachment"/>
+		</class>
+		<class name="attachment" code="atts" inherits="rich text" description="Represents an inline text attachment. This class is used mainly for make commands.">
+			<cocoa class="NSAttachmentTextStorage"/>
+			<property name="file name" code="atfn" type="text" description="The path to the file for the attachment">
+				<cocoa key="filename"/>
+			</property>
+		</class>
+	</suite>
+
+	<!--
+		OmniAppKit Extended Text Suite
+	-->
+	<suite name="Extended Text Suite" code="OETS" description="Extended functionality for text.">
+		<command name="bold" code="OETSOTbo" description="Bold some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="italicize" code="OETSOTit" description="Italicize some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="replace" code="OETSOTre">
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="replacement" code="OTrp" type="text" description="Replacement string">
+                        	<cocoa key="replacement"/>
+                        </parameter>
+			<parameter name="ignore case" code="OTcs" type="boolean" optional="yes" description="When doing a string replace (not regular expression), this controls whether to consider differences in case as significant.">
+                        	<cocoa key="ignoreCase"/>
+                        </parameter>
+			<parameter name="regexp" code="OTrx" type="text" optional="yes" description="Regular expression to find">
+                        	<cocoa key="regexp"/>
+                        </parameter>
+			<parameter name="string" code="OTst" type="text" optional="yes" description="String to find">
+                        	<cocoa key="string"/>
+                        </parameter>
+			<parameter name="whole words" code="OTww" type="boolean" optional="yes" description="When doing a string replace (not regular expression), this controls whether the pattern only matches whole words.">
+                        	<cocoa key="wholeWords"/>
+                        </parameter>
+		</command>
+		<command name="unbold" code="OETSOTub" description="Unbold some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="underline" code="OETSOTun" description="Underline some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="unitalicize" code="OETSOTui" description="Unitalicize some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="ununderline" code="OETSOTuu" description="Ununderline some text">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<class name="character" code="cha " inherits="rich text" description="This subdivides the text into characters.">
+			<cocoa class="NSSubTextStorage"/> <!-- Private Cocoa class, sadly.  Has to be declared or 10.5's relationship type-checking fails.  Can't be NSTextStorage otherwise NSScriptClassDescription gets confused about the sdef class to use for text storage instances -->
+			<type type="text"/>
+		</class>
+		<class name="paragraph" code="cpar" inherits="rich text" description="This subdivides the text into paragraphs.">
+			<cocoa class="NSSubTextStorage"/> <!-- Private Cocoa class, sadly.  Has to be declared or 10.5's relationship type-checking fails.  Can't be NSTextStorage otherwise NSScriptClassDescription gets confused about the sdef class to use for text storage instances -->
+			<type type="text"/>
+		</class>
+		<class name="word" code="cwor" inherits="rich text" description="This subdivides the text into words.">
+			<cocoa class="NSSubTextStorage"/> <!-- Private Cocoa class, sadly.  Has to be declared or 10.5's relationship type-checking fails.  Can't be NSTextStorage otherwise NSScriptClassDescription gets confused about the sdef class to use for text storage instances -->
+			<type type="text"/>
+		</class>
+		<class name="attribute run" code="catr" inherits="rich text" description="This subdivides the text into chunks that all have the same attributes.">
+			<cocoa class="NSSubTextStorage"/> <!-- Private Cocoa class, sadly.  Has to be declared or 10.5's relationship type-checking fails.  Can't be NSTextStorage otherwise NSScriptClassDescription gets confused about the sdef class to use for text storage instances -->
+			<type type="text"/>
+		</class>
+		<enumeration name="OTta" code="OTta">
+			<enumerator name="center" code="OTa1"/>
+			<enumerator name="justified" code="OTa3"/>
+			<enumerator name="left" code="OTa0"/>
+			<enumerator name="natural" code="OTa4"/>
+			<enumerator name="right" code="OTa2"/>
+		</enumeration>
+	</suite>
+
+
+	<!--
+		OmniGraffle
+	-->
+
+	<suite name="OmniGraffle" code="OGSS" description="OmniGraffle Script Suite">
+		<command name="assemble" code="OGSSOGGC" description="Group graphics">
+			<cocoa class="GroupCommand"/>
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="table shape" code="OGrc" optional="yes" description="The shape of a tabular group">
+                        	<cocoa key="tableShape"/>
+				<type type="item" list="yes"/>
+                        </parameter>
+			<parameter type="boolean" name="subgraph" code="OGsA" optional="yes" description="A subgraph with a background">
+				<cocoa key="subgraph"/>
+			</parameter>
+			<result type="group"/>
+		</command>
+		<command name="connect" code="OGSSOGCo" description="Draw a line between graphics">
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="to" code="insh" type="any" description="Graphic or graphics to connect to.">
+                        	<cocoa key="Target"/>
+			</parameter>
+			<parameter name="with properties" code="prdt" type="record" optional="yes" description="The initial values for properties of the line.">
+                        	<cocoa key="Properties"/>
+			</parameter>
+			<result type="line"/>
+		</command>
+		<command name="flip" code="OGSSOGFl" description="Flip graphics">
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="over" code="OGFo" type="FlipOrientation" description="Orientation to flip the graphic around">
+                        	<cocoa key="FlipOrientation"/>
+			</parameter>
+		</command>
+		<command name="import" code="OGSSodoc" description="Open or import a file. The command can optionally specify settings to use when converting other file types to Graffle documents.">
+			<cocoa class="OGOpenCommand"/>
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="categories" code="Oiic" type="boolean" optional="yes" description="Include class categories when importing source code?">
+				<cocoa key="includeCategories"/>
+			</parameter>
+			<parameter name="frameworks" code="Oiif" type="boolean" optional="yes" description="Include frameworks when importing source code?">
+				<cocoa key="includeFrameworks"/>
+			</parameter>
+			<parameter name="instance variable types" code="Oiit" type="boolean" optional="yes" description="Include the types of instance variables when importing source code?">
+				<cocoa key="includeIvarTypes"/>
+			</parameter>
+			<parameter name="instance variables" code="Oiii" type="boolean" optional="yes" description="Include instance variables when importing source code?">
+				<cocoa key="includeIvars"/>
+			</parameter>
+			<parameter name="interaction allowed" code="shui" type="boolean" optional="yes" description="Is the application allowed to prompt the user for missing import settings? (If this is set to false, then Graffle will return an error rather than prompting the user for missing settings.)">
+				<cocoa key="interactionAllowed"/>
+			</parameter>
+			<parameter name="mapping" code="Oitm" type="record" optional="yes" description="A record or list associating outline column titles with template text field names">
+				<cocoa key="templateMapping"/>
+			</parameter>
+			<parameter name="method signatures" code="Oiis" type="boolean" optional="yes" description="Include the type signatures of methods when importing source code?">
+				<cocoa key="includeMethodSignatures"/>
+			</parameter>
+			<parameter name="methods" code="Oiim" type="boolean" optional="yes" description="Include method names when importing source code?">
+				<cocoa key="includeMethods"/>
+			</parameter>
+			<parameter name="outline template" code="Ooit" type="text" optional="yes" description="The name or path of the template to use for importing an outline">
+				<cocoa key="importTemplate"/>
+			</parameter>
+			<parameter name="protocols" code="Oiip" type="boolean" optional="yes" description="Include protocol definitions when importing source code?">
+				<cocoa key="includeProtocols"/>
+			</parameter>
+			<result type="document"/>
+		</command>
+		<command name="layout" code="OGSSOGLA" description="Layout some graphics, or a whole document using the document's Layout Info.">
+			<cocoa class="LayoutCommand"/>
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="page adjust" code="OGSSOGPA" description="Change the number of pages to fit the current graphics">
+			<direct-parameter type="specifier" description="the object for the command"/>
+		</command>
+		<command name="slide" code="OGSSOGSl" description="Slide graphics by a vector amount">
+			<direct-parameter type="specifier" description="the object for the command"/>
+			<parameter name="by" code="OGSv" type="point" description="The x and y amounts to shift the graphics">
+				<cocoa key="Vector"/>
+			</parameter>
+		</command>
+		<class name="canvas" code="OGWS" description="A canvas" plural="canvases">
+			<cocoa class="OGModel"/>
+			<property type="integer" name="horizontal pages" code="OGhp" description="Horizontal pages">
+				<cocoa key="horizontalPages"/>
+			</property>
+			<property type="point" name="page size" code="OGps" access="r" description="Size of each page">
+				<cocoa key="scriptPageSize"/>
+			</property>
+			<property type="real" name="columnSpacing" code="OGCs" description="Spacing between graphics in a column">
+				<cocoa key="columnSpacing"/>
+			</property>
+			<property type="real" name="rowSpacing" code="OGRs" description="Spacing between graphics in a row">
+				<cocoa key="rowSpacing"/>
+			</property>
+			<property type="solid" name="canvasBackground" code="OGcB" access="r" description="Canvas background graphic">
+				<cocoa key="scriptCanvasBackground"/>
+			</property>
+			<property type="VerticalAlignment" name="rowAlignment" code="OGRA" description="Row alignment">
+				<cocoa key="scriptRowAlignment"/>
+			</property>
+			<property type="boolean" name="adjusts pages" code="OGlp" description="Adjust number of pages on the canvas automatically?">
+				<cocoa key="autoAdjustCanvasSize"/>
+			</property>
+			<property type="point" name="canvasSize" code="OGcs" description="Size of the canvas (page size multiplied by number of pages)">
+				<cocoa key="scriptCanvasSize"/>
+			</property>
+			<property type="text" name="name" code="pnam" description="Name of this canvas">
+				<cocoa key="sheetTitle"/>
+			</property>
+			<property type="HorizontalAlignment" name="columnAlignment" code="OGCA" description="Column alignment">
+				<cocoa key="scriptColumnAlignment"/>
+			</property>
+			<property type="grid" name="grid" code="OGgi" description="Settings for the grid">
+				<cocoa key="gridInfo"/>
+			</property>
+			<property type="layout info" name="layout info" code="OGli" description="Settings for automatic layout">
+				<cocoa key="layoutInfo"/>
+			</property>
+			<property type="integer" name="vertical pages" code="OGvp" description="Vertical pages">
+				<cocoa key="verticalPages"/>
+			</property>
+			<property type="integer" name="id" code="ID  " description="Unique identifier">
+				<cocoa key="uniqueID"/>
+			</property>
+			<element type="line">
+				<cocoa key="lines"/>
+			</element>
+			<element type="graphic">
+				<cocoa key="graphics"/>
+			</element>
+			<element type="layer">
+				<cocoa key="scriptLayers"/>
+			</element>
+			<element type="group">
+				<cocoa key="groups"/>
+			</element>
+			<element type="shape">
+				<cocoa key="shapes"/>
+			</element>
+			<element type="solid">
+				<cocoa key="solids"/>
+			</element>
+			<element type="subgraph">
+				<cocoa key="subgraphs"/>
+			</element>
+		</class>
+		<class name="export settings" code="OGex" description="Export settings" plural="export settings">
+			<cocoa class="OAPreferenceController"/>
+			<property type="real" name="resolution" code="OGpp" description="The number of pixels per point in the resulting exported image (1.0 for 72 DPI).">
+				<cocoa key="pixelsPerPoint"/>
+			</property>
+			<property type="point" name="origin" code="Ogor" description="Origin of the manual export region (position of the upper-left corner of the bounding rectangle)">
+				<cocoa key="scriptOrigin"/>
+			</property>
+			<property type="ExportAreaType" name="area type" code="OGea" description="The type of area to be exported">
+				<cocoa key="scriptExportAreaType"/>
+			</property>
+			<property type="boolean" name="draws background" code="OGeb" description="Draw the background canvas color (if false, leaves the background transparent during export).">
+				<cocoa key="drawTIFFBackground"/>
+			</property>
+			<property type="boolean" name="include border" code="OGbs" description="Whether or not to include a border area around the exported graphics">
+				<cocoa key="borderSpace"/>
+			</property>
+			<property type="real" name="border amount" code="OGba" description="The number of pixels of border area to include in exported graphics">
+				<cocoa key="borderAmount"/>
+			</property>
+			<property type="point" name="size" code="ptsz" description="Size of the manual export region (width and height of the bounding rectangle)">
+				<cocoa key="scriptSize"/>
+			</property>
+			<property type="boolean" name="export read only" code="OGer" description="Whether to export in graffle format as a read-only document">
+				<cocoa key="exportGraffleReadOnly"/>
+			</property>
+			<property type="boolean" name="copy linked images" code="OGel" description="Whether to copy in any linked images when exporting in graffle format">
+				<cocoa key="exportGraffleCopyLinkedImages"/>
+			</property>
+			<property type="text" name="html image type" code="OGei" description="The format to save the image in for HTML image map export">
+				<cocoa key="scriptHTMLImageType"/>
+			</property>
+			<property type="real" name="export scale" code="OGes" description="The scale to use during export">
+				<cocoa key="exportScale"/>
+			</property>
+		</class>
+		<class name="subgraph" plural="subgraphs" code="OGsg" inherits="group" description="A grouped set graphics with a background graphic.  Can be collapsed to show as a single graphic.">
+			<cocoa class="Subgraph"/>
+			<property type="real" name="left margin" code="OGsL">
+				<cocoa key="scriptLeftMargin"/>
+			</property>
+			<property type="boolean" name="collapsed" code="OGsC" description="Is the subgraph collapsed?">
+				<cocoa key="scriptCollapsed"/>
+			</property>
+			<property type="shape" name="background" code="OGsB" access="r" description="The background for the subgraph">
+				<cocoa key="scriptBackgroundGraphic"/>
+			</property>
+			<property type="real" name="top margin" code="OGsT">
+				<cocoa key="scriptTopMargin"/>
+			</property>
+			<property type="real" name="right margin" code="OGsR">
+				<cocoa key="scriptRightMargin"/>
+			</property>
+			<property type="real" name="bottom margin" code="OGsD">
+				<cocoa key="scriptBottomMargin"/>
+			</property>
+		</class>
+		<class name="graphic" code="OGGr" description="A graphic" plural="graphics">
+			<cocoa class="Graphic"/>
+			<property type="text" name="tag" code="Ogtg" description="Arbitrary string tag attached to this graphic and available for script use, it is stored as part of user data">
+				<cocoa key="scriptTag"/>
+			</property>
+			<property type="canvas" name="jump" code="Ogju" description="Destination canvas of jump action">
+				<cocoa key="scriptJump"/>
+			</property>
+			<property type="StrokeJoin" name="stroke join" code="OGSJ" description="Type of join between segments of the stroke">
+				<cocoa key="scriptLineJoin"/>
+			</property>
+			<property type="point" name="origin" code="Ogor" description="Origin of the graphic (position of the upper-left corner of the bounding rectangle)">
+				<cocoa key="scriptOrigin"/>
+			</property>
+			<property type="color" name="shadow color" code="Ogsc" description="Color of the shadow">
+				<cocoa key="scriptShadowColor"/>
+			</property>
+			<property type="record" name="user data" code="Ogud" description="A dictionary attached to this graphic and available for script use">
+				<cocoa key="userData"/>
+			</property>
+			<property type="boolean" name="draws stroke" code="Ogdl" description="Does this graphic draw its stroke?">
+				<cocoa key="scriptStroke"/>
+			</property>
+			<property type="integer" name="stroke pattern" code="OGLP" description="Dash pattern of the stroke">
+				<cocoa key="scriptLinePattern"/>
+			</property>
+			<property type="real" name="shadow fuzziness" code="Ogsf" description="The 'fuzziness' of the graphic's shadow">
+				<cocoa key="scriptShadowFuzziness"/>
+			</property>
+			<property type="real" name="corner radius" code="Ogcr" description="Curvature of corners in the stroke path">
+				<cocoa key="scriptCornerRadius"/>
+			</property>
+			<property type="canvas" name="canvas" code="OGWS" access="r" description="Canvas that this graphic is on">
+				<cocoa key="model"/>
+			</property>
+			<property type="color" name="stroke color" code="Oglc" description="Color of the stroke">
+				<cocoa key="scriptStrokeColor"/>
+			</property>
+			<property type="point" name="shadow vector" code="Ogsv" description="The direction of the graphic's shadow">
+				<cocoa key="scriptShadowVector"/>
+			</property>
+			<property type="group" name="group" code="OGGR" access="r" description="Which group (if any) this graphic is in">
+				<cocoa key="group"/>
+			</property>
+			<property type="text" name="script" code="scpt" description="Source of attached AppleScript">
+				<cocoa key="scriptScript"/>
+			</property>
+			<property type="real" name="thickness" code="Ogth" description="Thickness of the stroke">
+				<cocoa key="scriptThickness"/>
+			</property>
+			<property type="text" name="notes" code="Ognt" description="Notes for this graphic">
+				<cocoa key="scriptNotes"/>
+			</property>
+			<property type="integer" name="rank group" code="Ogrg" description="Rank group assigned to this graphic for hierarchical layout. There are two special groups: the maximum rank group (which is -1) and the minimum rank group (which is -2)">
+				<cocoa key="scriptRankGroup"/>
+			</property>
+			<property type="boolean" name="flipped vertically" code="Ogvf" description="Is this graphic flipped vertically?">
+				<cocoa key="scriptVerticallyFlipped"/>
+			</property>
+			<property type="boolean" name="flipped horizontally" code="Oghf" description="Is this graphic flipped horizontally?">
+				<cocoa key="scriptHorizontallyFlipped"/>
+			</property>
+			<property type="point" name="size" code="ptsz" description="Size of the graphic (width and height of the bounding rectangle)">
+				<cocoa key="scriptSize"/>
+			</property>
+			<property type="StrokeCap" name="stroke cap" code="OGSC" description="Type of cap at ends of the stroke">
+				<cocoa key="scriptLineCap"/>
+			</property>
+			<property type="boolean" name="locked" code="Oglo" description="Is this graphic locked?">
+				<cocoa key="scriptLocked"/>
+			</property>
+			<property type="boolean" name="allows connections" code="Ogac" description="Does this graphic allow connections to it?">
+				<cocoa key="allowConnections"/>
+			</property>
+			<property type="boolean" name="draws shadow" code="Ogds" description="Does this graphic draw its shadow?">
+				<cocoa key="scriptShadow"/>
+			</property>
+			<property type="layer" name="layer" code="OGLa" description="Which layer this graphic is in">
+				<cocoa key="scriptLayer"/>
+			</property>
+			<property type="integer" name="id" code="ID  " access="r" description="Unique identifier">
+				<cocoa key="scriptID"/>
+			</property>
+			<property type="boolean" name="aligns edges to grid" code="OGag" description="When snapped to the grid does this graphic align its edges to the grid? (The alternative is to align its center to the grid.)">
+				<cocoa key="gridEdges"/>
+			</property>
+			<property type="text" name="url" code="Ogur" description="Web link for this graphic">
+				<cocoa key="scriptURL"/>
+			</property>
+			<property type="boolean" name="double stroke" code="OGDL" description="Does this graphic have a double-lined stroke?">
+				<cocoa key="scriptDoubleStroke"/>
+			</property>
+			<element type="user data item">
+				<cocoa key="scriptUserDataItems"/>
+			</element>
+			<element type="line" access="r">
+				<cocoa key="scriptLines"/>
+			</element>
+			<element type="line" access="r">
+				<cocoa key="scriptOutgoingLines"/>
+			</element>
+			<element type="line" access="r">
+				<cocoa key="scriptIncomingLines"/>
+			</element>
+		</class>
+		<class name="grid" code="OGgi" description="The grid of a canvas" plural="grids">
+			<cocoa class="GridInfo"/>
+			<property type="boolean" name="draws in front" code="OGgf" description="Does the grid draw in front of all shapes?">
+				<cocoa key="gridInFront"/>
+			</property>
+			<property type="color" name="script major grid color" code="OGgj" description="Color of major lines">
+				<cocoa key="scriptMajorGridColor"/>
+			</property>
+			<property type="color" name="script grid color" code="colr" description="Color of the grid">
+				<cocoa key="scriptGridColor"/>
+			</property>
+			<property type="real" name="spacing" code="OGgp" description="Number of pixels between minor grid lines">
+				<cocoa key="gridSpacing"/>
+			</property>
+			<property type="boolean" name="visible" code="pvis" description="Is the grid visible?">
+				<cocoa key="showsGrid"/>
+			</property>
+			<property type="boolean" name="major" code="OGgm" description="Does the grid have 'major' lines?">
+				<cocoa key="drawMajorGrid"/>
+			</property>
+			<property type="integer" name="major spacing" code="OGga" description="The number of minor grid lines for each major line">
+				<cocoa key="majorGridSpacing"/>
+			</property>
+			<property type="boolean" name="snaps" code="OGgn" description="Do points snap to the grid?">
+				<cocoa key="snapsToGrid"/>
+			</property>
+		</class>
+		<class name="shared layer" plural="shared layers" code="OGSL" inherits="layer" description="A layer that can be shared by multiple canvases">
+			<cocoa class="OGLayerClone"/>
+		</class>
+		<class name="group" code="OGGR" description="A grouped set of graphics" inherits="graphic" plural="groups">
+			<cocoa class="Group"/>
+			<property type="boolean" name="connect to group only" code="OGog" description="Only connect to the group?">
+				<cocoa key="onlyConnectToTheGroup"/>
+			</property>
+			<property type="real" name="rotation" code="Ogro" description="Rotation of the group in degrees">
+				<cocoa key="rotation"/>
+			</property>
+			<property name="magnets" code="Ogmg" description="List of magnet points. (In a square from {-0.5,-0.5} to {0.5,0.5}.)">
+				<cocoa key="scriptMagnets"/>
+				<type type="item" list="yes"/>
+			</property>
+			<element type="line" access="r">
+				<cocoa key="lines"/>
+			</element>
+			<element type="graphic" access="r">
+				<cocoa key="graphics"/>
+			</element>
+			<element type="group" access="r">
+				<cocoa key="groups"/>
+			</element>
+			<element type="shape" access="r">
+				<cocoa key="shapes"/>
+			</element>
+			<element type="solid" access="r">
+				<cocoa key="solids"/>
+			</element>
+			<element type="subgraph" access="r">
+				<cocoa key="subgraphs"/>
+			</element>
+		</class>
+		<class name="incoming line" code="OgiL" description="Incoming line" inherits="graphic" plural="incoming lines">
+			<cocoa class="LineGraphic"/>
+			<element type="label">
+				<cocoa key="scriptLabels"/>
+			</element>
+			<element type="point">
+				<cocoa key="scriptPoints"/>
+			</element>
+			<property name="destination" code="Olde" type="graphic" description="Graphic that the head of the line is connected to.">
+				<cocoa key="scriptDestination"/>
+			</property>
+			<property name="head magnet" code="Olhm" type="integer" description="Which magnet of the destination graphic the line attaches to">
+				<cocoa key="scriptHeadMagnet"/>
+			</property>
+			<property name="head scale" code="Olhs" type="real" description="Scale of line ending on the head of the line (1.0 being the normal size)">
+				<cocoa key="scriptTailScale"/>
+			</property>
+			<property name="head type" code="Olht" type="text" description="Type of line ending on the head of the line">
+				<cocoa key="scriptHeadType"/>
+			</property>
+			<property name="line type" code="Ollt" type="LineDrawingType" description="Type of the line">
+				<cocoa key="scriptLineType"/>
+			</property>
+			<property name="point list" code="Oplt" type="point" list="yes" description="A list containing all the points of the line.">
+				<cocoa key="scriptPoints"/>
+			</property>
+			<property name="source" code="Olso" type="graphic" description="Graphic that the tail of the line is connected to.">
+				<cocoa key="scriptSource"/>
+			</property>
+			<property name="tail magnet" code="Oltm" type="integer" description="Which magnet of the source graphic the line attaches to">
+				<cocoa key="scriptTailMagnet"/>
+			</property>
+			<property name="tail scale" code="Olts" type="real" description="Scale of line ending on the tail of the line (1.0 being the normal size)">
+				<cocoa key="scriptTailScale"/>
+			</property>
+			<property name="tail type" code="Oltt" type="text" description="Type of line ending on the tail of the line">
+				<cocoa key="scriptTailType"/>
+			</property>
+		</class>
+		<class name="label" code="OGLB" description="A label on a line" inherits="shape" plural="labels">
+			<cocoa class="LabelGraphicForAppleScript"/>
+		</class>
+		<class name="layer" code="OGLa" description="A layer" plural="layers">
+			<cocoa class="OGLayer"/>
+			<property type="boolean" name="prints" code="OGLp" description="do the layer's graphics print?">
+				<cocoa key="isPrintable"/>
+			</property>
+			<property type="text" name="scriptName" code="pnam" description="name of the layer">
+				<cocoa key="scriptName"/>
+			</property>
+			<property type="boolean" name="locked" code="Oglo" description="are the layer's graphics locked?">
+				<cocoa key="isLocked"/>
+			</property>
+			<property type="boolean" name="visible" code="pvis" description="are the layer's graphics visible?">
+				<cocoa key="isVisible"/>
+			</property>
+			<element type="line">
+				<cocoa key="lines"/>
+			</element>
+			<element type="graphic">
+				<cocoa key="graphics"/>
+			</element>
+			<element type="group">
+				<cocoa key="groups"/>
+			</element>
+			<element type="shape">
+				<cocoa key="shapes"/>
+			</element>
+			<element type="solid">
+				<cocoa key="solids"/>
+			</element>
+			<element type="subgraph">
+				<cocoa key="subgraphs"/>
+			</element>
+		</class>
+		<class name="layout info" code="OGli" description="Automated layout for a canvas" plural="layout infos">
+			<cocoa class="LayoutInfo"/>
+			<property type="boolean" name="automatic layout" code="OGla" description="Enable/disable automatic layout">
+				<cocoa key="scriptAutomaticLayout"/>
+			</property>
+			<property type="LayoutDirection" name="direction" code="OGld" description="Hierarchical layout direction">
+				<cocoa key="scriptLayoutDirection"/>
+			</property>			
+			<property type="real" name="rank separation" code="OGls" description="Separation between ranks in hieararchical layout (in inches)">
+				<cocoa key="scriptHierarchicalRankSeparation"/>
+			</property>
+			<property type="real" name="radial separation" code="OGlr" description="Separation between objects in radial layout (0-1)">
+				<cocoa key="scriptRadialShapeRepulsion"/>
+			</property>
+			<property type="real" name="radial line length" code="OGlv" description="Radial layout line length (9-200)">
+				<cocoa key="scriptRadialLineLength"/>
+			</property>
+			<property type="real" name="circular line length" code="OGlc" description="Circular layout line length (0-108)">
+				<cocoa key="scriptCircularLineLength"/>
+			</property>
+			<property type="real" name="force directed line length" code="OGll" description="Default line length in force directed layout (0.125 - 2.75)">
+				<cocoa key="scriptForceDirectedLineLength"/>
+			</property>
+			<property type="real" name="force directed separation" code="OGln" description="Separation between objects in force directed layout (0-1)">
+				<cocoa key="scriptForceDirectedShapeRepulsion"/>
+			</property>
+			<property name="type" code="OGlt" type="LayoutType" description="Type of layout to perform">
+				<cocoa key="scriptLayoutType"/>
+			</property>
+			<property type="real" name="object separation" code="OGlo" description="Separation between objects in hieararchical layout (in inches)">
+				<cocoa key="scriptHierarchicalObjectSeparation"/>
+			</property>
+		</class>
+		<class name="line" code="OGLi" description="A line" inherits="graphic" plural="lines">
+			<cocoa class="LineGraphic"/>
+			<property type="graphic" name="source" code="Olso" description="Graphic that the tail of the line is connected to.">
+				<cocoa key="scriptSource"/>
+			</property>
+			<property type="integer" name="tail magnet" code="Oltm" description="Which magnet of the source graphic the line attaches to">
+				<cocoa key="scriptTailMagnet"/>
+			</property>
+			<property type="real" name="head scale" code="Olhs" description="Scale of line ending on the head of the line (1.0 being the normal size)">
+				<cocoa key="scriptHeadScale"/>
+			</property>
+			<property type="text" name="head type" code="Olht" description="Type of line ending on the head of the line">
+				<cocoa key="scriptHeadType"/>
+			</property>
+			<property type="LineHopType" name="hop type" code="OGHt" description="The behavior when one line crosses over another line.">
+				<cocoa key="scriptHopType"/>
+			</property>
+			<property type="graphic" name="destination" code="Olde" description="Graphic that the head of the line is connected to.">
+				<cocoa key="scriptDestination"/>
+			</property>
+			<property type="LineDrawingType" name="line type" code="Ollt" description="Type of the line">
+				<cocoa key="scriptLineType"/>
+			</property>
+			<property type="real" name="tail scale" code="Olts" description="Scale of line ending on the tail of the line (1.0 being the normal size)">
+				<cocoa key="scriptTailScale"/>
+			</property>
+			<property name="bezier point list" code="Oclt" description="A list containing all the points and control points of a bezier type line.">
+				<cocoa key="scriptControlPointList"/>
+				<type type="item" list="yes"/>
+			</property>
+			<property type="text" name="tail type" code="Oltt" description="Type of line ending on the tail of the line">
+				<cocoa key="scriptTailType"/>
+			</property>
+			<property name="point list" code="Oplt" description="A list containing all the points of the line.">
+				<cocoa key="scriptPointList"/>
+				<type type="item" list="yes"/>
+			</property>
+			<property type="integer" name="head magnet" code="Olhm" description="Which magnet of the destination graphic the line attaches to">
+				<cocoa key="scriptHeadMagnet"/>
+			</property>
+			<element type="point">
+				<cocoa key="scriptPoints"/>
+			</element>
+			<element type="solid">
+				<cocoa key="scriptLabels"/>
+			</element>
+		</class>
+		<class name="outgoing line" code="OgoL" description="Outgoing line" inherits="graphic" plural="outgoing lines">
+			<cocoa class="LineGraphic"/>
+			<element type="label">
+				<cocoa key="scriptLabels"/>
+			</element>
+			<element type="point">
+				<cocoa key="scriptPoints"/>
+			</element>
+			<property name="destination" code="Olde" type="graphic" description="Graphic that the head of the line is connected to.">
+				<cocoa key="scriptDestination"/>
+			</property>
+			<property name="head magnet" code="Olhm" type="integer" description="Which magnet of the destination graphic the line attaches to">
+				<cocoa key="scriptHeadMagnet"/>
+			</property>
+			<property name="head scale" code="Olhs" type="real" description="Scale of line ending on the head of the line (1.0 being the normal size)">
+				<cocoa key="scriptTailScale"/>
+			</property>
+			<property name="head type" code="Olht" type="text" description="Type of line ending on the head of the line">
+				<cocoa key="scriptHeadType"/>
+			</property>
+			<property name="line type" code="Ollt" type="LineDrawingType" description="Type of the line">
+				<cocoa key="scriptLineType"/>
+			</property>
+			<property name="point list" code="Oplt" type="point" list="yes" description="A list containing all the points of the line.">
+				<cocoa key="scriptPoints"/>
+			</property>
+			<property name="source" code="Olso" type="graphic" description="Graphic that the tail of the line is connected to.">
+				<cocoa key="scriptSource"/>
+			</property>
+			<property name="tail magnet" code="Oltm" type="integer" description="Which magnet of the source graphic the line attaches to">
+				<cocoa key="scriptTailMagnet"/>
+			</property>
+			<property name="tail scale" code="Olts" type="real" description="Scale of line ending on the tail of the line (1.0 being the normal size)">
+				<cocoa key="scriptTailScale"/>
+			</property>
+			<property name="tail type" code="Oltt" type="text" description="Type of line ending on the tail of the line">
+				<cocoa key="scriptTailType"/>
+			</property>
+		</class>
+		<class name="point" code="OGPo" description="A point" plural="points">
+			<cocoa class="OGAppleScriptPoint"/>
+			<property type="real" name="x" code="OGpx" access="r" description="x position">
+				<cocoa key="x"/>
+			</property>
+			<property type="real" name="y" code="OGpy" access="r" description="y position">
+				<cocoa key="y"/>
+			</property>
+		</class>
+		<class name="connectable shape" plural="connectable shapes" code="OGCg" inherits="shape" description="A shape that can be connected between two graphics">
+			<cocoa class="ConnectedGraphic"/>
+			<property type="graphic" name="source" code="Olso" description="Graphic that shape is connected from.">
+				<cocoa key="scriptSource"/>
+			</property>
+			<property type="graphic" name="destination" code="Olde" description="Graphic that the shape is connected to.">
+				<cocoa key="scriptDestination"/>
+			</property>
+		</class>
+		<class name="polygon" code="OGPy" description="This class is leftover from the scripting support in OmniGraffle 3. What were formerly polygons are now all custom shapes." inherits="solid" plural="polygons">
+			<cocoa class="ShapedGraphic"/>
+			<element type="point"/>
+			<property name="name" code="pnam" type="text" description="name of the shape for a built-in tool (&quot;Rectangle&quot;, &quot;Circle&quot;, et cetera). A custom shape will be named &quot;Bezier&quot;."/>
+			<property name="point list" code="Oplt" type="point" list="yes" description="A list containing all of the control knob points for a custom shape created by the pen tool."/>
+		</class>
+		<class name="row" code="OGtr" description="A row (horizontal slice) of a table." plural="rows">
+			<cocoa class="TableGroupSlice"/>
+			<element type="graphic"/>
+			<property name="size" code="ptsz" type="point" description="The size of this slice of the table"/>
+			<property name="width" code="OGsw" type="real" description="The width of this table row or table column"/>
+		</class>
+		<class name="shape" code="OGSh" description="A graphic with a shape" inherits="solid" plural="shapes">
+			<cocoa class="ShapedGraphic"/>
+			<property type="real" name="arrow width" code="OGaw" description="The arrow head width (in points) for shapes with &quot;AdjustableArrow&quot; and &quot;AdjustableDoubleArrow&quot; shape names.">
+				<cocoa key="scriptArrowWidth"/>
+			</property>
+			<property type="text" name="name" code="pnam" description="name of the shape for a built-in tool (&quot;Rectangle&quot;, &quot;Circle&quot;, et cetera). A custom shape will be named &quot;Bezier&quot;.">
+				<cocoa key="scriptShapeName"/>
+			</property>
+			<property type="real" name="endAngle" code="OGed" description="The end angle for shapes with &quot;AdjustableArc&quot; and &quot;AdjustableWedge&quot; shape names.">
+				<cocoa key="scriptEndAngle"/>
+			</property>
+			<property type="real" name="innerRadius" code="OGir" description="The inner radius (0.05 - 1) for shapes with &quot;AdjustableStar&quot; shape names.">
+				<cocoa key="scriptInnerRadius"/>
+			</property>
+			<property type="real" name="shaft height" code="OGah" description="The height of the arrow shaft relative to the height of the shape (0-1) for shapes with &quot;AdjustableArrow&quot; and &quot;AdjustableDoubleArrow&quot; shape names.">
+				<cocoa key="scriptShaftHeight"/>
+			</property>
+			<property type="integer" name="starPoints" code="OGsP" description="The number of points for shapes with &quot;AdjustableStar&quot; shape names.">
+				<cocoa key="scriptStarPoints"/>
+			</property>
+			<property type="real" name="startAngle" code="OGsd" description="The start angle for shapes with &quot;AdjustableArc&quot; and &quot;AdjustableWedge&quot; shape names.">
+				<cocoa key="scriptStartAngle"/>
+			</property>
+			<property name="point list" code="Oplt" description="A list containing all of the control knob points for a custom shape created by the pen tool.">
+				<cocoa key="scriptPointList"/>
+				<type type="item" list="yes"/>
+			</property>
+			<element type="point">
+				<cocoa key="scriptPoints"/>
+			</element>
+		</class>
+		<class name="solid" code="OGSo" description="Any graphic which is solid instead of a line. Includes polygons and shapes." inherits="graphic" plural="solids">
+			<cocoa class="SolidGraphic"/>
+			<contents type="text" name="text" code="ctxt" description="The text inside the solid">
+				<cocoa key="scriptText"/>
+			</contents>
+			<property type="real" name="image scale" code="OGic" description="For manual image fills, the scale of the image">
+				<cocoa key="scriptImageScale"/>
+			</property>
+			<property type="point" name="textPosition" code="Otsp" description="Position of the graphic's text space in proportion to the graphic's size">
+				<cocoa key="scriptTextScalePosition"/>
+			</property>
+			<property type="real" name="gradient angle" code="Ogga" description="Angle of a linear gradient fill.">
+				<cocoa key="scriptGradientAngle"/>
+			</property>
+			<property type="point" name="textSize" code="Otss" description="Size of the graphic's text space in proportion to the graphic's size">
+				<cocoa key="scriptTextScaleSize"/>
+			</property>
+			<property type="text" name="image" code="Ogif" description="Set to a file name to load an image fill.">
+				<cocoa key="scriptImageFill"/>
+			</property>
+			<property type="real" name="rotation" code="Ogro" description="Rotation of the graphic in degrees">
+				<cocoa key="rotation"/>
+			</property>
+			<property type="color" name="fill color" code="Ogfc" description="The fill color. For linear and radial gradient fills this is the starting color">
+				<cocoa key="scriptFillColor"/>
+			</property>
+			<property type="point" name="image offset" code="Ogio" description="For manual image fills, the offset of the image in the solid">
+				<cocoa key="scriptImageOffset"/>
+			</property>
+			<property type="boolean" name="relative text rotation" code="Otrr" description="Whether the rotation of the text is from horizontal, or from the shape's existing rotation">
+				<cocoa key="textUseRelativeRotation"/>
+			</property>
+			<property type="TextAutosizing" name="autosizing" code="Ogas" description="Autosizing behavior of the solid around the text">
+				<cocoa key="scriptAutosizing"/>
+			</property>
+			<property type="real" name="interline spacing" code="Ogls" description="Extra space (leading) between lines of text">
+				<cocoa key="scriptLineSpacing"/>
+			</property>
+			<property type="real" name="labelPosition" code="Olap" description="If this graphic is a label, the position along the line which it is connected to.">
+				<cocoa key="scriptLabelPosition"/>
+			</property>
+			<property type="VerticalAlignment" name="text placement" code="Ogtp" description="Placement of the text inside the solid">
+				<cocoa key="scriptTextPlacement"/>
+			</property>
+			<property type="LabelOrientation" name="labelRotation" code="Olar" description="If this graphic is a label, the type of rotation around the line which it is connected to.">
+				<cocoa key="scriptLabelRotationType"/>
+			</property>
+			<property type="real" name="intercharacter spacing" code="Ogss" description="Extra space (tracking or kerning) between characters of text">
+				<cocoa key="scriptCharacterSpacing"/>
+			</property>
+			<property type="text" name="text" code="ctxt" description="The text inside the solid">
+				<cocoa key="scriptText"/>
+			</property>
+			<property type="FillType" name="fill" code="Ogfi" description="The type of fill for this solid">
+				<cocoa key="scriptFillType"/>
+			</property>
+			<property type="real" name="textRotation" code="Otro" description="Rotation of the graphic's text">
+				<cocoa key="textRotation"/>
+			</property>
+			<property name="magnets" code="Ogmg" description="List of magnet points. (In a square from {-0.5,-0.5} to {0.5,0.5}.)">
+				<cocoa key="scriptMagnets"/>
+				<type type="item" list="yes"/>
+			</property>
+			<property type="line" name="labelConnection" code="Olac" description="If this graphic is a label, the line which it is connected to.">
+				<cocoa key="scriptLabelConnection"/>
+			</property>
+			<property type="integer" name="side padding" code="Ogsp" description="Padding at the left and right of the graphic's text space">
+				<cocoa key="scriptSidePadding"/>
+			</property>
+			<property type="color" name="blend color" code="OgBc" description="For double linear and radial fills, this is the middle blending color.">
+				<cocoa key="scriptBlendColor"/>
+			</property>
+			<property type="color" name="gradient color" code="Oggc" description="For linear and radial fills, this is the ending color.">
+				<cocoa key="scriptGradientColor"/>
+			</property>
+			<property type="real" name="labelOffset" code="Olao" description="If this graphic is a label, the offset from the line which it is connected to.">
+				<cocoa key="scriptLabelOffset"/>
+			</property>
+			<property type="point" name="gradient center" code="OggC" description="Starting point of a radial gradient fill. (In a square from {-1,-1} to {1,1} so {0,0} is the center of the solid.)">
+				<cocoa key="scriptGradientCenter"/>
+			</property>
+			<property type="real" name="blend fraction" code="Ogmf" description="For double linear and radial fills, this is the position of the blend color from 0 to 1.">
+				<cocoa key="scriptBlendMiddleFraction"/>
+			</property>
+			<property type="ImageSizingType" name="image sizing" code="Ogis" description="How to size and display the image fill.">
+				<cocoa key="scriptImageSizing"/>
+			</property>
+			<property type="integer" name="vertical padding" code="Ogtb" description="Padding at the top and bottom of the graphic's text space">
+				<cocoa key="scriptTopBottomPadding"/>
+			</property>
+		</class>
+		<class name="table" code="OGtg" description="A tabular grouping of graphics" inherits="group" plural="tables">
+			<cocoa class="TableGroup"/>
+			<element type="TableGroupColumnSlice">
+				<cocoa key="scriptColumns"/>
+			</element>
+			<element type="TableGroupRowSlice">
+				<cocoa key="scriptRows"/>
+			</element>
+		</class>
+		<class name="table slice" code="OGts" description="A slice (row or column) of a table" plural="table slices">
+			<cocoa class="TableGroupSlice"/>
+			<property type="point" name="size" code="ptsz" description="The size of this slice of the table">
+				<cocoa key="scriptSize"/>
+			</property>
+			<property type="real" name="width" code="OGsw" description="The width of this table row or table column">
+				<cocoa key="scriptWidth"/>
+			</property>
+			<element type="graphic" access="r">
+				<cocoa key="graphics"/>
+			</element>
+		</class>
+		<class name="user data item" code="Ogdi" description="A user-defined data value" plural="user data items">
+			<cocoa class="UserDataItem"/>
+			<property type="text" name="name" code="pnam" access="r" description="The name of this user-defined data value">
+				<cocoa key="name"/>
+			</property>
+			<property type="text" name="value" code="valL" description="User-supplied data value">
+				<cocoa key="value"/>
+			</property>
+		</class>
+		<enumeration name="FillType" code="OGFT">
+			<enumerator name="solid fill" code="OGf1">
+				<cocoa name="solid"/>
+			</enumerator>
+			<enumerator name="no fill" code="OGf0">
+				<cocoa name="none"/>
+			</enumerator>
+			<enumerator name="radial fill" code="OGf3">
+				<cocoa name="radial"/>
+			</enumerator>
+			<enumerator name="linear fill" code="OGf2">
+				<cocoa name="linear"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="LineDrawingType" code="OGLT">
+			<enumerator name="bezier" code="OGL4">
+				<cocoa name="bezier"/>
+			</enumerator>
+			<enumerator name="curved" code="OGL2">
+				<cocoa name="curved"/>
+			</enumerator>
+			<enumerator name="straight" code="OGL1">
+				<cocoa name="straight"/>
+			</enumerator>
+			<enumerator name="orthogonal" code="OGL3">
+				<cocoa name="orthogonal"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="HorizontalAlignment" code="OGha">
+			<enumerator name="center" code="OTa1">
+				<cocoa name="center"/>
+			</enumerator>
+			<enumerator name="right" code="OTa2">
+				<cocoa name="right"/>
+			</enumerator>
+			<enumerator name="left" code="OTa0">
+				<cocoa name="left"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="TextAutosizing" code="OGta">
+			<enumerator name="full" code="OGt1">
+				<cocoa name="full"/>
+			</enumerator>
+			<enumerator name="vertically only" code="OGt2">
+				<cocoa name="vertical"/>
+			</enumerator>
+			<enumerator name="clip" code="OGt3">
+				<cocoa name="clip"/>
+			</enumerator>
+			<enumerator name="overflow" code="OGt0">
+				<cocoa name="overflow"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="ExportAreaType" code="OGea">
+			<enumerator name="manual region" code="OGe2">
+				<cocoa name="exportManualRegion"/>
+			</enumerator>
+			<enumerator name="all graphics" code="OGe1">
+				<cocoa name="exportAllGraphics"/>
+			</enumerator>
+			<enumerator name="entire document" code="OGe4">
+				<cocoa name="exportDocument"/>
+			</enumerator>
+			<enumerator name="selected graphics" code="OGe0">
+				<cocoa name="exportSelectedGraphics"/>
+			</enumerator>
+			<enumerator name="current canvas" code="OGe3">
+				<cocoa name="exportPage"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="LayoutType" code="OGlt">
+			<enumerator name="radial" code="OGl2" description="radial">
+				<cocoa name="radial"/>
+			</enumerator>
+			<enumerator name="circular" code="OGl3" description="circular">
+				<cocoa name="circular"/>
+			</enumerator>
+			<enumerator name="hierarchical" code="OGl0" description="hierarchical">
+				<cocoa name="hierarchical"/>
+			</enumerator>
+			<enumerator name="force directed" code="OGl1" description="force-directed">
+				<cocoa name="forceDirected"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="VerticalAlignment" code="OGva">
+			<enumerator name="top" code="OGv0">
+				<cocoa name="top"/>
+			</enumerator>
+			<enumerator name="bottom" code="OGv2">
+				<cocoa name="bottom"/>
+			</enumerator>
+			<enumerator name="center" code="OTa1">
+				<cocoa name="center"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="ImageSizingType" code="OGIS">
+			<enumerator name="stretched" code="OGI1">
+				<cocoa name="stretched"/>
+			</enumerator>
+			<enumerator name="manual" code="OGI0">
+				<cocoa name="manual"/>
+			</enumerator>
+			<enumerator name="tiled" code="OGI2">
+				<cocoa name="tiled"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="LineHopType" code="OGHT">
+			<enumerator name="gap hop" code="OGH6">
+				<cocoa name="gapHop"/>
+			</enumerator>
+			<enumerator name="bridge hop" code="OGH7">
+				<cocoa name="bridgeHop"/>
+			</enumerator>
+			<enumerator name="round under hop" code="OGH8">
+				<cocoa name="roundUnderHop"/>
+			</enumerator>
+			<enumerator name="round hop" code="OGH1">
+				<cocoa name="roundHop"/>
+			</enumerator>
+			<enumerator name="no hop" code="OGH0">
+				<cocoa name="noHop"/>
+			</enumerator>
+			<enumerator name="square under hop" code="OGH9">
+				<cocoa name="squareUnderHop"/>
+			</enumerator>
+			<enumerator name="square hop" code="OGH2">
+				<cocoa name="squareHop"/>
+			</enumerator>
+			<enumerator name="three side under hop" code="OGHb">
+				<cocoa name="threeSideUnderHop"/>
+			</enumerator>
+			<enumerator name="two side hop" code="OGH3">
+				<cocoa name="twoSideHop"/>
+			</enumerator>
+			<enumerator name="two side under hop" code="OGHa">
+				<cocoa name="twoSideUnderHop"/>
+			</enumerator>
+			<enumerator name="three side hop" code="OGH4">
+				<cocoa name="threeSideHop"/>
+			</enumerator>
+			<enumerator name="ignore hop" code="OGH5">
+				<cocoa name="ignoreHop"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="LabelOrientation" code="OGLO">
+			<enumerator name="custom" code="OGX4">
+				<cocoa name="custom"/>
+			</enumerator>
+			<enumerator name="vertical" code="OGX1">
+				<cocoa name="vertical"/>
+			</enumerator>
+			<enumerator name="horizontal" code="OGX0">
+				<cocoa name="horizontal"/>
+			</enumerator>
+			<enumerator name="perpendicular" code="OGX3">
+				<cocoa name="perpendicular"/>
+			</enumerator>
+			<enumerator name="parallel" code="OGX2">
+				<cocoa name="parallel"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="StrokeJoin" code="OGSJ">
+			<enumerator name="bevel" code="OGbe">
+				<cocoa name="bevel"/>
+			</enumerator>
+			<enumerator name="miter" code="OGmi">
+				<cocoa name="miter"/>
+			</enumerator>
+			<enumerator name="round" code="OGro">
+				<cocoa name="round"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="LayoutDirection" code="OGld">
+			<enumerator name="right to left" code="OGd4" description="right to left">
+				<cocoa name="rightToLeftHierarchy"/>
+			</enumerator>
+			<enumerator name="left to right" code="OGd2" description="left to right">
+				<cocoa name="leftToRightHierarchy"/>
+			</enumerator>
+			<enumerator name="top to bottom" code="OGd1" description="top to bottom">
+				<cocoa name="topToBottomHierarchy"/>
+			</enumerator>
+			<enumerator name="bottom to top" code="OGd3" description="bottom to top">
+				<cocoa name="bottomToTopHierarchy"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="FlipOrientation" code="OGOr">
+			<enumerator name="vertically" code="OGO1">
+				<cocoa name="vertically"/>
+			</enumerator>
+			<enumerator name="horizontally" code="OGO0">
+				<cocoa name="horizontally"/>
+			</enumerator>
+		</enumeration>
+		<enumeration name="StrokeCap" code="OGSC">
+			<enumerator name="square" code="OGsq">
+				<cocoa name="square"/>
+			</enumerator>
+			<enumerator name="butt" code="OGbu">
+				<cocoa name="butt"/>
+			</enumerator>
+			<enumerator name="round" code="OGro">
+				<cocoa name="round"/>
+			</enumerator>
+		</enumeration>
+	</suite>
+	<!-- need 'color' from OSStyle.sdef -->
+	<suite name="OmniStyle Scripting" code="OSss" description="Scripting for Omni's style framework.">
+		
+		<!-- The text suite normally defines this as follows, but this is woefully out of date with NSColor
+		<value-type name="color" code="cRGB">
+			<cocoa class="NSColor"/>
+		</value-type>
+		-->
+		
+		<value-type name="TIFF data" code="TIFF">
+			<cocoa class="NSData"/>
+		</value-type>
+		<value-type name="PNG data" code="PNGf"> <!-- There is no standard AE type for PNG, so using kQTFileTypePNG here -->
+			<cocoa class="NSData"/>
+		</value-type>
+		<value-type name="archive data" code="OSAd"> <!-- NSKeyedArchiver data -->
+			<cocoa class="NSData"/>
+		</value-type>
+
+		<record-type name="color" code="OSco">
+			<property name="r" code="OSrv" type="real" description="If the color is in a RGB color space, this is the calibrated floating point red component, from zero to one.">
+				<cocoa key="r"/>
+			</property>
+			<property name="g" code="OSgv" type="real" description="If the color is in a RGB color space, this is the calibrated floating point green component, from zero to one.">
+				<cocoa key="g"/>
+			</property>
+			<property name="b" code="OSbv" type="real" description="If the color is in a RGB color space, this is the calibrated floating point blue component, from zero to one.">
+				<cocoa key="b"/>
+			</property>
+			
+			<property name="w" code="OSwv" type="real" description="If the color is in a White color space, this is the calibrated floating point white component, from zero to one, with zero being totally black and one being totally white.">
+				<cocoa key="w"/>
+			</property>
+
+			<property name="c" code="OScv" type="real" description="If the color is in a CMYK color space, this is the device-specific floating point cyan component, from zero to one.  There is currently no support for calibrated CYMK color spaces.">
+				<cocoa key="c"/>
+			</property>
+			<property name="y" code="OSyv" type="real" description="If the color is in a CMYK color space, this is the device-specific floating point yellow component, from zero to one.  There is currently no support for calibrated CYMK color spaces.">
+				<cocoa key="y"/>
+			</property>
+			<property name="m" code="OSym" type="real" description="If the color is in a CMYK color space, this is the device-specific floating point magenta component, from zero to one.  There is currently no support for calibrated CYMK color spaces.">
+				<cocoa key="m"/>
+			</property>
+			<property name="k" code="OSyk" type="real" description="If the color is in a CMYK color space, this is the device-specific floating point black component, from zero to one.  There is currently no support for calibrated CYMK color spaces.">
+				<cocoa key="k"/>
+			</property>
+
+			<property name="h" code="OShv" type="real" description="If the color is in a HSV color space, this is the calibrated floating point hue component, from zero to one.">
+				<cocoa key="h"/>
+			</property>
+			<property name="s" code="OSsv" type="real" description="If the color is in a HSV color space, this is the calibrated floating point saturation component, from zero to one.">
+				<cocoa key="s"/>
+			</property>
+			<property name="v" code="OSvv" type="real" description="If the color is in a HSV color space, this is the calibrated floating point value component, from zero to one.">
+				<cocoa key="v"/>
+			</property>
+			
+			<property name="a" code="OSav" type="real" description="The opacity or alpha of the color as a floating point number from zero to one with zero being totally transparent and one being totally opaque.">
+				<cocoa key="a"/>
+			</property>
+			
+			<property name="catalog" code="OScC" type="text" description="If the color is in a catalog color space, this is the name of the catalog.">
+				<cocoa key="catalog"/>
+			</property>
+			<property name="name" code="pnam" type="text" description="If the color is in a catalog color space, this is the name of color with in the catalog.">
+				<cocoa key="name"/>
+			</property>
+			<property name="png" code="OScp" type="PNG data" description="If the color is in a pattern color space, this is PNG data for the image representing the pattern.">
+				<cocoa key="png"/>
+			</property>
+			<property name="tiff" code="OSct" type="TIFF data" description="If the color is in a pattern color space, this is TIFF data for the image representing the pattern.">
+				<cocoa key="tiff"/>
+			</property>
+
+			<property name="archive" code="OScA" type="archive data" description="If the color cannot be represented in any other format, a binary archive is placed in this property.">
+				<cocoa key="archive"/>
+			</property>
+		</record-type>
+	</suite>
+</dictionary>

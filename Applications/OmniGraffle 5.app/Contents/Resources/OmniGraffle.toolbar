@@ -1,0 +1,150 @@
+{
+    allowedItemIdentifiers = (
+        DrawingMode, BringToFront, SendToBack, SmartLock, Lock, Unlock, SmartGroup, Group, Ungroup, LayoutGraph, LayoutSelection, SnapToGrid, SmartGuides, ShowExtras, ShowRulers, ToggleSidebar, ToggleOutlineSidebar, ShowInfo, ShowPalette, PickDiagramStyle, StyleTray,
+        NSToolbarShowFontsItem, NSToolbarShowColorsItem, NSToolbarPrintItem, OSAScriptTemplate,
+        NSToolbarSeparatorItem, NSToolbarSpaceItem, NSToolbarFlexibleSpaceItem, NSToolbarCustomizeToolbarItem
+    ); 
+    defaultItemIdentifiers = (
+        ToggleSidebar, ToggleOutlineSidebar, NSToolbarSeparatorItem, DrawingMode, NSToolbarSeparatorItem, BringToFront, SendToBack, SmartLock, SmartGroup, NSToolbarFlexibleSpaceItem, ShowPalette, ShowInfo
+    ); 
+    stringTable = "OmniGraffleToolbar";
+    itemInfoByIdentifier = {
+        BringToFront = {
+            action = "bringToFront:"; 
+            imageName = BringToFront; 
+            optionKeyAction = "bringForward:"; 
+            optionKeyImageName = BringForward; 
+            target = firstResponder;
+        }; 
+        SendToBack = {
+            action = "sendToBack:"; 
+            imageName = SendToBack; 
+            optionKeyAction = "sendBackward:"; 
+            optionKeyImageName = SendBackward; 
+            target = firstResponder;
+        }; 
+        SmartLock = {
+            action = "smartLock:"; 
+            imageName = Locked; 
+            optionKeyAction = "smartUnlock:"; 
+            target = firstResponder;
+        }; 
+        SmartGroup = {
+            action = "smartGroup:"; 
+            imageName = Group; 
+            optionKeyAction = "smartUngroup:"; 
+            target = firstResponder;
+        }; 
+        Lock = {
+            action = "lock:"; 
+            imageName = Locked; 
+            target = firstResponder;
+        }; 
+        StartPresentation = {
+            action = "showPresentation:"; 
+            imageName = StartPresentation; 
+            target = firstResponder;
+        }; 
+        Unlock = {
+            action = "unlock:"; 
+            imageName = Unlocked; 
+            target = firstResponder;
+        }; 
+        Group = {
+            action = "group:"; 
+            imageName = Group; 
+            target = firstResponder;
+        }; 
+        Ungroup = {
+            action = "ungroup:"; 
+            imageName = Ungroup; 
+            target = firstResponder;
+        }; 
+        ExpandSubgraph = {
+            action = "expandSubgraph:"; 
+            imageName = Subgraph-Expand; 
+            target = firstResponder;
+        }; 
+        CollapseSubgraph = {
+            action = "collapseSubgraph:"; 
+            imageName = Subgraph-Collapse; 
+            target = firstResponder;
+        }; 
+        GroupSubgraph = {
+            action = "groupAsSubgraph:"; 
+            imageName = Subgraph-Group; 
+            target = firstResponder;
+        }; 
+        SnapToGrid = {
+            action = "toggleSnapsToGrid:"; 
+            imageName = SnapToGrid; 
+            target = firstResponder;
+        }; 
+        SmartGuides = {
+            action = "toggleSmartAndDistanceGuides:"; 
+            imageName = "SmartGuides-On"; 
+            target = firstResponder;
+        };
+        PickDiagramStyle = {
+            action = "pickDiagramStyle:"; 
+            imageName = DiagramStyle; 
+            target = firstResponder;
+        }; 
+        ToggleSidebar = {
+            action = "toggleSidebar:"; 
+            imageName = Sidebar-Canvas; 
+            target = firstResponder;
+        }; 
+        ToggleOutlineSidebar = {
+            action = "toggleOutlineSidebar:"; 
+            imageName = Sidebar-Outline; 
+            target = firstResponder;
+        }; 
+        ShowRulers = {
+            action = "toggleRulers:"; 
+            imageName = Rulers-Show; 
+            target = firstResponder;
+        }; 
+        ShowExtras = {
+            action = "toggleExtras:"; 
+            imageName = Extras-Show; 
+            target = firstResponder;
+        }; 
+        ShowInfo = {
+            action = "showInspectorPanelAction:"; 
+            imageName = inspectorButton; 
+            target = firstResponder;
+        }; 
+       LayoutGraph = {
+            action = "autoLayout:"; 
+            imageName = AutoLayout; 
+            target = firstResponder;
+        }; 
+        LayoutSelection = {
+            action = "autoLayoutSelection:"; 
+            imageName = AutoLayoutSelection; 
+            target = firstResponder;
+        }; 
+        
+        ShowPalette = {
+            action = "toggleResourceBrowserAction:"; 
+            imageName = palettesButton;
+            target = firstResponder;
+        }; 
+        
+        DrawingMode = {
+        };
+		
+	MakeTable = {
+            action = "makeTable:";
+            imageName = MakeTable;
+            target = firstResponder;
+	};
+
+        OSAScriptTemplate = {
+        };
+        
+        StyleTray = {
+        };
+   }; 
+}

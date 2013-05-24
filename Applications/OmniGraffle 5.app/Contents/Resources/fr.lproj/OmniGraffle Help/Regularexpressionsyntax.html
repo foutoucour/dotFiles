@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Syntaxe d’expressions</title>
+		
+		
+		<meta name="description" content="Utilisation d’expressions rationnelles avec la fonction Rechercher et remplacer.">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+        <div class="Destination">
+        <h2>Syntaxe d’expressions</h2>
+        
+<a name="regularexpression"></a>
+                        <div class="item "><span class="">La <a href="help:anchor='finddialog' bookID='Aide OmniGraffle'">zone de dialogue Rechercher</a> prend en charge l’utilisation d’expressions rationnelles simples. Une expression rationnelle est une chaîne de caractères qui représente tout un ensemble de chaînes. On utilise la syntaxe suivante :</span>                            <div class="item "><span class=""><span class="Verbatim">a*</span> : aucune occurrence ou toutes les occurrences trouvées de <span class="Verbatim">a</span> (correspond à la chaîne la plus longue possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a*?</span> : aucune occurrence ou toutes les occurrences trouvées de <span class="Verbatim">a</span> (correspond à la chaîne la plus courte possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+</span> : au moins une occurrence de <span class="Verbatim">a</span> (correspond à la chaîne la plus longue possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+?</span> : au moins une occurrence de <span class="Verbatim">a</span> (correspond à la chaîne la plus courte possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a?</span> : aucune occurrence ou toutes les occurrences trouvées de <span class="Verbatim">a</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">^</span> : début d’une ligne</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">$</span> : fin d’une ligne</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">.</span> : n’importe quel caractère</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[a-z]</span> : tous les caractères compris entre <span class="Verbatim">a</span> et <span class="Verbatim">z</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[abc-]</span> : <span class="Verbatim">a</span>, <span class="Verbatim">b</span>, <span class="Verbatim">c</span> ou <span class="Verbatim">-</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(abc)</span> : reconnaît abc et le stocke en tant que groupe. Utilisez le menu local <span class="UI">Sélectionner ou remplacer</span> dans la zone de dialogue Rechercher afin de sélectionner ou de remplacer uniquement l’un de ces groupes plutôt que l’expression toute entière.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\1</span> : texte du premier groupe trouvé</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a|b</span> : <span class="Verbatim">a</span> ou <span class="Verbatim">b</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\n</span> : saut de ligne</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\r</span> : retour chariot</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\t</span> : caractère de tabulation</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\d</span> : chiffre</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\D</span> : non chiffre</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\w</span> : caractère mot (alphanumérique ou tiret de soulignement « _ »)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\W</span> : caractère non mot</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\s</span> : blanc</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S</span> : non blanc</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\</span> : pour échapper le caractère suivant</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class="">Les expressions sont très courantes, c’est pourquoi vous devriez pouvoir trouver de nombreuses informations à leur sujet sur Internet, dans une bibliothèque ou une librairie informatique. Voici quelques exemples pour vous familiariser :</span>                            <div class="item "><span class=""><span class="Verbatim">\s*$</span> : reconnaît les blancs à la fin des lignes.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">&lt;.*?&gt; :</span> reconnaît les chaînes de caractères commençant par <span class="Verbatim">&lt;</span> et finissant par <span class="Verbatim">&gt;</span>, comme les balises XML.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S+@\S+</span> : reconnaît de façon très libre les éléments ressemblant à des adresses de messagerie (quelquechose@quelquechose).</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(19|20)\d\d-\d\d?-\d\d?</span> : reconnaît les dates au format <span class="Verbatim">AAAA-MM-JJ</span>, entre 1900 et 2099.</span>                            </div>
+                        </div>
+
+
+        </div>
+        
+
+        <div class="bottom-nav">
+        
+
+                <span class="left-nav"><a href="ApplicationSupportfolders.html">← Dossiers Application Support </a></span>
+            
+
+             <br/> 
+        </div>
+        
+
+    </body>
+</html>

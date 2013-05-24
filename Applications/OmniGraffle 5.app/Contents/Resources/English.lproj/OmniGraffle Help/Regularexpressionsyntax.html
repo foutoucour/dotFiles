@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Regular expression syntax</title>
+		
+		
+		<meta name="description" content="">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+            <div class="Destination">
+            
+<a name="regularexpression"></a>
+        <h2>Regular expression syntax</h2>
+                        <div class="item "><span class="">OmniGraffle's <a href="help:anchor='finddialog' bookID='OmniGraffle Help'">Find dialog</a> supports the use of some simple regular expressions. A regular expression is a single string that represents a whole set of strings. The following syntax is used:</span>                            <div class="item "><span class=""><span class="Verbatim">a*</span> — zero or more instances of <span class="Verbatim">a</span> (matches the longest string possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a*?</span> — zero or more instances of <span class="Verbatim">a</span> (matches the shortest string possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+</span> — one or more instances of <span class="Verbatim">a</span> (matches the longest string possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+?</span> — one or more instances of <span class="Verbatim">a</span> (matches the shortest string possible)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a?</span> — zero or one instance of <span class="Verbatim">a</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">^</span> — beginning of a line</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">$</span> — end of a line</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">.</span> — any character</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[a-z]</span> — all characters between <span class="Verbatim">a</span> and <span class="Verbatim">z</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[abc-]</span> — <span class="Verbatim">a</span>, <span class="Verbatim">b</span>, <span class="Verbatim">c</span>, or <span class="Verbatim">-</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(abc)</span> — matches abc and stores it as a group. Use the <span class="UI">Select or Replace</span> pop-up menu in the Find dialog to select or replace only one of these groups rather than the whole expression.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\1</span> — text of first matched group</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a|b</span> — <span class="Verbatim">a</span> or <span class="Verbatim">b</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\n</span> — newline</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\r</span> — carriage return</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\t</span> — tab character</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\d</span> — digit</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\D</span> — non-digit</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\w</span> — word character (alphanumeric or underscore)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\W</span> — non-word character</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\s</span> — whitespace</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S</span> — non-whitespace</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\</span> — escape the next character</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class="">Regular expressions are very popular, so you should be able to find plenty of information about them on the internet or in a good library or bookstore. Here are a few examples to get you started:</span>                            <div class="item "><span class=""><span class="Verbatim">\s*$</span> — matches whitespace at the end of a line.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">&lt;.*?&gt; </span>— matches strings that begin with <span class="Verbatim">&lt;</span> and end with <span class="Verbatim">&gt;</span>, such as XML tags.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S+@\S+</span> — very liberally matches things that resemble e-mail addresses (anything@anything).</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(19|20)\d\d-\d\d?-\d\d?</span> — matches dates in the format <span class="Verbatim">YYYY-MM-DD</span>, between 1900 and 2099</span>                            </div>
+                        </div>
+
+
+            </div>
+            
+
+            <div class="bottom-nav">
+            
+
+                    <span class="left-nav"><a href="ApplicationSupportfolders.html">← Application Support folders</a></span>
+                
+
+                &nbsp;<br/>&nbsp;
+            </div>
+            
+
+    </body>
+</html>

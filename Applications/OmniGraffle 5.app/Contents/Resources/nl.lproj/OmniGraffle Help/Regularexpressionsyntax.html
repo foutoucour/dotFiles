@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>Syntaxis van reguliere expressies</title>
+		
+		
+		<meta name="description" content="Het gebruik van reguliere expressies bij zoeken en vervangen.">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+        <div class="Destination">
+        <h2>Syntaxis van reguliere expressies</h2>
+        
+<a name="regularexpression"></a>
+                        <div class="item "><span class="">Het venster <a href="help:anchor='finddialog' bookID='OmniGraffle Help'">Zoeken</a> van OmniGraffle ondersteunt het gebruik van bepaalde eenvoudige reguliere expressies. Een reguliere expressie is één string waarmee een hele reeks strings wordt weergegeven. De volgende syntaxis wordt gebruikt:</span>                            <div class="item "><span class=""><span class="Verbatim">a*</span>: nul of meer exemplaren van <span class="Verbatim">a</span> (hiermee wordt gezocht naar de langst mogelijke string)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a*?</span>: nul of meer exemplaren van <span class="Verbatim">a</span> (hiermee wordt gezocht naar de kortst mogelijke string)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+</span>: een of meer exemplaren van <span class="Verbatim">a</span> (hiermee wordt gezocht naar de langst mogelijke string)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a+?</span>: een of meer exemplaren van <span class="Verbatim">a</span> (hiermee wordt gezocht naar de kortst mogelijke string)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a?</span>: nul of één exemplaar van <span class="Verbatim">a</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">^</span>: begin van een regel</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">$</span>: einde van een regel</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">.</span>: willekeurig teken</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[a-z]</span>: alle tekens tussen <span class="Verbatim">a</span> en <span class="Verbatim">z</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">[abc-]</span>: <span class="Verbatim">a</span>, <span class="Verbatim">b</span>, <span class="Verbatim">c</span> of <span class="Verbatim">-</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(abc)</span>: hiermee wordt gezocht naar abc en wordt het resultaat opgeslagen als een groep. Gebruik het venstermenu <span class="UI">Selecteer of vervang</span> in het venster Zoeken om slechts één van deze groepen in plaats van de hele expressie te zoeken en te vervangen.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\1</span>: tekst van eerste overeenkomende groep</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">a|b</span>: <span class="Verbatim">a</span> of <span class="Verbatim">b</span></span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\n</span>: nieuwe regel</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\r</span>: nieuwe alinea</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\t</span>: tabteken</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\d</span>: cijfer</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\D</span>: niet-cijfer</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\w</span>: woordteken (alfanumeriek teken of onderstrepingsteken)</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\W</span>: niet-woordteken</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\s</span>: spatie</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S</span>: niet-spatie</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\</span>: hiermee wordt het volgende teken overgeslagen</span>                            </div>
+                        </div>
+
+                        <div class="item "><span class="">Reguliere expressies zijn zeer populair, dus kunt u er heel veel informatie over vinden op internet of in een goede bibliotheek of boekenwinkel. Hier zijn enkele voorbeelden om u op weg te helpen:</span>                            <div class="item "><span class=""><span class="Verbatim">\s*$</span>: hiermee wordt gezocht naar spaties aan het einde van een regel.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">&lt;.*?&gt;</span>: hiermee wordt gezocht naar strings die beginnen met <span class="Verbatim">&lt;</span> en eindigen met<span class="Verbatim">&gt;</span>, bijvoorbeeld XML-codes.</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">\S+@\S+</span>: hiermee wordt een zeer algemene zoekactie naar e-mailadressen uitgevoerd (iets@iets).</span>                            </div>
+                            <div class="item "><span class=""><span class="Verbatim">(19|20)\d\d-\d\d?-\d\d?</span>: hiermee wordt gezocht naar datums in de structuur <span class="Verbatim">JJJJ-MM-DD</span>, tussen 1900 en 2099.</span>                            </div>
+                        </div>
+
+
+        </div>
+        
+
+        <div class="bottom-nav">
+        
+
+                <span class="left-nav"><a href="ApplicationSupportfolders.html">← Mappen in Application Support</a></span>
+            
+
+             <br/> 
+        </div>
+        
+
+    </body>
+</html>

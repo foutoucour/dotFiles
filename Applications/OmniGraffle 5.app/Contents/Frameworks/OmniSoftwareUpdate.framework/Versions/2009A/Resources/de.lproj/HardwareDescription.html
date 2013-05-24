@@ -1,0 +1,147 @@
+<!-- This file must be saved with UTF-8 encoding for OSUPreferencesClient to load it correctly! -->
+
+<html>
+
+	<head>
+		<title>Omni Software Update : Hardware Description</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+                <style type="text/css">
+                    table.toptable { border-spacing: 2px; width: 80%; }
+                    table.toptable th {
+                        font-weight: normal;
+                        text-align: right;
+                        background: #dddddd;
+                        width: 20%;
+                        vertical-align: top;
+                    }
+                    table.toptable td { background: #ddddee; }
+                    .explain { font-size: smaller; color: #555555; }
+                    table.subtable {
+                        border-collapse: collapse;
+                    }
+                    table.subtable th {
+                        empty-cells: hide;
+                        text-align: center;
+                        font-weight: bold;
+                        background: none;
+                        width: inherit;
+                        border: 1px solid black;
+                    }
+                    table.subtable td { border: 1px solid black; }
+                </style>
+	</head>
+
+	<body>
+		<br>
+		<p>Bei der Suche nach neuen und aktualisierten Versionen kann das Programm ${APP} optional einige grundlegenden Informationen über Ihre Systemkonfiguration an uns senden. Wir verwenden diese Informationen, um zu ermitteln, welche Systeme unsere Kunden einsetzen, um diese effizient unterstützen zu können.</p>
+		<p>Omni wird <b>niemals</b> Informationen über die Computerkonfigurationen seiner Kunden veröffentlichen. Die gesammelten Daten über die Konfigurationen werden ausschließlich zu statistischen Zwecken genutzt und weitergegeben. Der Schutz Ihrer Daten hat für Omni höchste Priorität.</p>
+		<p>Wenn Sie Ihre Systeminformationen nicht weitergeben möchten, entfernen Sie bitte einfach die Markierung aus dem Feld &quot;Systeminformationen senden&quot; im Bereich &quot;Einstellungen&quot; &gt; &quot;Aktualisierung&quot; dieses Programms.</p>
+		<p>Wir veröffentlichen unsere Statistiken, sodass andere Entwickler ebenfalls von diesen Informationen profitieren können. Wenn Sie sehen möchten, welche Informationen von uns veröffentlicht werden, besuchen Sie bitte die folgende Web-Site: <a href="http://update.omnigroup.com/">Omni Software Update</a>.</p>
+		<p>Die folgenden Informationen werden bei der Suche nach Aktualisierungen immer gesendet:</p>
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>Version der Omni Software-Aktualisierung</th>
+					<td>${OSU_VER}</td>
+				</tr>
+				<tr>
+					<th>Programm-ID</th>
+					<td>${OSU_APP_ID}</td>
+				</tr>
+				<tr>
+					<th>Programmversion</th>
+					<td>${OSU_APP_VER}</td>
+				</tr>
+				<tr>
+					<th>Update-Spur</th>
+					<td>${OSU_TRACK}</td>
+				</tr>
+				<tr>
+					<th>Sichtbare Update-Spuren</th>
+					<td>${OSU_VISIBLE_TRACKS}</td>
+				</tr>
+			</table>
+		</center>
+		<br> Wenn das entsprechende Feld im Bereich &quot;Aktualisierung&quot; der Einstellungen markiert ist, werden die folgenden Informationen mit der Anfrage gesendet:
+		<p></p>
+		<center>
+			<table class="toptable">
+				<tr>
+					<th>UUID</th>
+					<td>${uuid}<br> <span class="explain">Eine per Zufallsgenerator erzeugte Zeichenfolge, die Ihren Computer anonym kennzeichnet. Hiermit können wir unsere Datenbank auf dem aktuellen Stand halten, falls sich Ihre Systemkonfiguration ändern sollte. Diese Zeichenfolge wird nicht unter Verwendung Ihres Namens oder anderer persönlicher Daten generiert.</span></td>
+				</tr>
+				<tr>
+					<th>Lizenzart</th>
+					<td>${license-type}<br> <span class="explain">Ihre Lizenznummer wird niemals gesendet.</span></td>
+				</tr>
+				<tr>
+					<th>OS-Version</th>
+					<td>${os}</td>
+				</tr>
+				<tr>
+					<th>Sprachversion</th>
+					<td>${lang}</td>
+				</tr>
+				<tr>
+					<th>Standort</th>
+					<td>Längengrad: ${LATITUDE-DMS} Breitengrad: ${LONGITUDE-DMS}<br> <span class="explain">Dieser Standort basiert auf der nächsten größeren Stadt, die Sie bei der Konfiguration Ihres Computers in den Systemeinstellungen zur Auswahl einer Zeitzone angegeben haben. Sie können den hiermit angegebenen Ort über folgende Web-Site genau anzeigen lassen:<a href="http://www.mapquest.com/?q=${LATITUDE},${LONGITUDE}"> MapQuest</a>.</span>
+</td>
+				</tr>
+				<tr>
+					<th>Computermodelll</th>
+					<td>${machine_name} (${hw-model})</td>
+				</tr>
+				<tr>
+					<th>CPU-Anzahl</th>
+					<td>${ncpu}</td>
+				</tr>
+				<tr>
+					<th>CPU-Typ</th>
+					<td>${cpu_type} (${cpu})</td>
+				</tr>
+				<tr>
+					<th>CPU-Takt</th>
+					<td>${cpuhz}</td>
+				</tr>
+				<tr>
+					<th>Bustakt</th>
+					<td>${bushz}</td>
+				</tr>
+				<tr>
+					<th>Arbeitsspeicher</th>
+					<td>${mem}</td>
+				</tr>
+				<tr>
+					<th>Bildschirm-Einstellungen</th>
+					<td>${DISPLAYS}</td>
+				</tr>
+				<tr>
+					<th>Videokarte</th>
+					<td>${VIDEO}</td>
+				</tr>
+				<tr>
+					<th>OpenGL Informationen</th>
+					<td>${OPENGL}</td>
+				</tr>
+				<tr>
+					<th>OpenCL Informationen</th>
+					<td>${OPENCL}</td>
+				</tr>
+				<tr>
+					<th>Anzahl und Zeiten der Ausführung</th>
+					<td>
+                                        <table class="subtable">
+                                                <tr><th></th><th>OS-Version</th><th>Alle Versionen</th></tr>
+                                                <tr><th>${RUNTIME-Hours}</th><td align="right">${runmin}</td><td align="right">${trunmin}</td></tr>
+                                                <tr><th>${RUNTIME-Launches}</th><td align="right">${nrun}</td><td align="right">${tnrun}</td></tr>
+                                                <tr><th>${RUNTIME-Crashes}</th><td align="right">${ndie}</td><td align="right">${tndie}</td></tr>
+                                        </table>
+                                        </td>
+				</tr>
+                                ${OTHERVARS}
+			</table>
+		</center>
+	</body>
+
+</html>

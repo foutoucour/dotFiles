@@ -1,0 +1,67 @@
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<title>キャンバスサイズインスペクタでキャンバスのサイズとスケールを変更する</title>
+		
+		
+		<meta name="description" content="キャンバスのサイズと一部のプリントオプションを変更する">
+        <link rel="stylesheet" href="help.css" type="text/css">
+    </head>
+    <body>
+
+        <div class="Destination">
+        <h2>キャンバスサイズインスペクタで<span class="Drop">キャンバスのサイズとスケールを変更する</span></h2>
+        
+<a name="pagebreak"></a>
+<a name="canvassize"></a>
+<a name="canvassizeinspector"></a>
+<a name="canvasunits"></a>
+<a name="measurementunits"></a>
+                            <div class="item "><span class="">このインスペクタを使用し、キャンバスのサイズ、プリントページにキャンバスを合わせる方法、または使用する測定単位を変更します。</span>                            </div>
+
+                            <div class="item "><span class="">[<span class="UI">キャンバスサイズ</span>] フィールドは、キャンバスの幅と高さをコントロールします。[<a href="help:anchor='ruler' bookID='OmniGraffle ヘルプ'">ルーラー</a>] で使用可能な任意の単位を使用するか、またはページ数を入力します。</span>                            </div>
+
+                            <div class="item "><span class="">[<span class="UI">サイズは用紙の等倍に設定する</span>] を選択すると、ページの端にキャンバスの端がスナップされます。これにより、キャンバスがページの途中で終了されるのを防止します。</span>                            </div>
+
+                            <div class="item "><span class="">[<span class="UI">キャンバスサイズを自動調整する</span>] を選択すると、作成するオブジェクトに合わせてキャンバスが拡大または縮小されます。</span>                            </div>
+
+                            <div class="item "><span class="">プリント時に [<span class="UI">キャンバスを１枚の用紙にプリントする</span>] が選択されている場合、画面上のサイズにはかかわらず、一枚の用紙収まるようにキャンバスが拡大または縮小されます。</span>                            </div>
+
+                            <div class="item "><span class="">ページの [<span class="UI">方向</span>] は縦（垂直）、横（水平）、または [<a href="help:anchor='pagesetup' bookID='OmniGraffle ヘルプ'">ページ設定</a>] の設定から取得できます。</span>                            </div>
+
+                            <div class="item "><span class="Bold">ルーラー単位</span>                                <div class="item "><span class="">[<span class="UI">ルーラー単位</span>] ポップアップメニューでは、現在のキャンバスに使用する<a href="help:anchor='measurementunits' bookID='OmniGraffle ヘルプ'">測定単位</a>のタイプを設定します。OmniGraffle でサポートされている単位は、標準の略記とともにすべてリストされています。</span>                                </div>
+                                <div class="item "><span class="">ダイアグラムの実際のサイズは、他印を変更しても変更されません。これは、単に異なる方法で測定されています。ルーラーとインスペクタにより、選択した単位を使用して、ここに測定値が表示されます。</span>                                </div>
+                                <div class="item "><span class="">アスタリスク（*）を使用してマークをつけた単位をキャンバス単位として使用できます。つまり、スケール（下記を参照）をセットアップすると、等式の「実際のサイズ」の左側部分にはこれらの単位のみを使用できます。スケール等式の右側の「理論サイズ」部分では、任意の単位を使用できます。</span>                                </div>
+                            </div>
+
+<a name="unitscale"></a>
+                            <div class="item Pro"><span class="Bold">縮尺単位</span>                                <div class="item "><span class="">[<span class="UI">縮尺単位</span>] コントロールは、スケールの単純な式を解釈できます。<span class="UI">1 in = 1 ft</span> など、複数の有用なスケールが使用できます。また、[<span class="UI">カスタム</span>] を選択して独自のスケールを入力することもできます。</span>                                </div>
+                                <div class="item "><span class="">たとえば、<span class="Verbatim">1 cm = 1 m</span> を入力するとします。ルーラーで 1cm 会ったものが 1m になります。キャンバスで幅 2cm 出会ったオブジェクトが 2m になるなどです。この単位設定は、等式の第２の値に一致するように変更されます。</span>                                </div>
+                                <div class="item "><span class="">また、比率を入力することもできます。たとえば、<span class="Verbatim">1:12</span> と入力したとします。ルーラー単位は同じですが、キャンバスのオブジェクトは、スケール変更前と比較して１２倍の大きさになります。</span>                                </div>
+                                <div class="item "><span class="">スケールをもとに戻し、ルーラーおよびオブジェクトを「実際のサイズ」で処理するには、[<span class="UI">縮尺単位</span>] ポップアップメニューから [<span class="UI">スケールをリセット</span>] を選択します。</span>                                </div>
+                                <div class="item "><span class="">すでにスケールをセットアップしており、別のものに直接変換している場合は、新規スケールに一致するように、オブジェクトがキャンバス上で実際のサイズに変更されます。たとえば、<span class="Verbatim">1 cm = 1 m</span> で作業をしており、スケールを <span class="Verbatim">2 cm = 1 m</span> に変更するとします。ルーラー上のマークが以前の 2 倍になり、キャンバスのオブジェクトは、ルーラーに忠実に画面上で 2 倍になります。[単位スケール] ポップアップメニューの [<span class="UI">スケールを次にリセット:</span>] セクションを選択すると、オブジェクトのサイズを変更せずに新規スケールを取得できます。</span>                                </div>
+                            </div>
+
+<a name="origin"></a>
+                            <div class="item "><span class="">デフォルトでは、キャンバスの最も上部左端が基点です（つまり、ルーラーの測定が開始されるポイントで、座標は0,0）。基点を変更するには、２つの[<span class="UI">基点</span>] フィールドに値を入力します。（また、<a href="help:anchor='rulers' bookID='OmniGraffle ヘルプ'">ルーラー</a>が一致する角から機転をドラッグすることができます）。<a href="help:anchor='geometryinspector' bookID='OmniGraffle ヘルプ'">配置インスペクタ</a>の座標は、この基点ポイントに基づいています。</span>                            </div>
+
+
+        </div>
+        
+
+        <div class="bottom-nav">
+        
+
+                <span class="left-nav"><a href="AddingdatatoobjectswiththeNoteinspector.html">← メモインスペクタ<span class="Drop">でオブジェクトにオブジェクトを追加する</span></a></span>
+            
+
+                <span class="right-nav"><a href="Gridinspector.html">グリッドインスペクタ<span class="Drop">でグリッドをセットアップする</span> →</a></span>
+            
+
+             <br/> 
+        </div>
+        
+
+    </body>
+</html>

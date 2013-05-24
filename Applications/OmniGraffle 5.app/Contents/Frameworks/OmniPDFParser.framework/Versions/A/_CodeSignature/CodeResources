@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>files</key>
+	<dict>
+		<key>Resources/Info.plist</key>
+		<data>
+		4BzIBS5jedlI90xSOqwYPsy9nDY=
+		</data>
+		<key>Resources/MacExpertEncoding.array</key>
+		<data>
+		olyzZWINAHGN/mRwQrpCrUDoZug=
+		</data>
+		<key>Resources/MacRomanEncoding.array</key>
+		<data>
+		x7WF8+i5x6iyHR0lB/uc3knX1Ts=
+		</data>
+		<key>Resources/NextStepEncoding.array</key>
+		<data>
+		rw9xFtT/nInVzj67rXIl+4j1dS8=
+		</data>
+		<key>Resources/PDFDocEncoding.array</key>
+		<data>
+		t8XnyjY5U4uhrVrGvfp7YTSGfrk=
+		</data>
+		<key>Resources/StandardEncoding.array</key>
+		<data>
+		Mjw3i+VxTGPKi6YbVbxwlmLioGs=
+		</data>
+		<key>Resources/SymbolEncoding.array</key>
+		<data>
+		5H5jA2WLuPA/eHlFa2TmGSztZdg=
+		</data>
+		<key>Resources/WinAnsiEncoding.array</key>
+		<data>
+		VSTRhcC/T+mPgw0UOQghS0fxU4g=
+		</data>
+	</dict>
+	<key>rules</key>
+	<dict>
+		<key>^Resources/</key>
+		<true/>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^version.plist$</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

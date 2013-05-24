@@ -1,0 +1,43 @@
+Build details:
+
+Product: OmniGraffle-5.4.x
+Tag: OmniGraffle/5.4.2/GM1-v139.16
+Date: 2012-08-23 10:23:54 -0700
+Builder: omnibuild
+Host: tb107a.private.omnigroup.com
+Revision: 171715
+
+Xcode: /Applications/Xcode.app/Contents/Developer
+Xcode 4.3.3
+Build version 4E3002
+
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Configurations 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniBase 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniFoundation 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniAppKit 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniInspector 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniWMF 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/Nisus/LinkBack/Source 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/EvidentPoint/emf2pdf 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniQuartz 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniStyle 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniStyle 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniUnzip 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniFileStore 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniUI/Mac 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/OmniGraffle-5.4.x 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniSoftwareUpdate 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniObjCParser 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/OmniPDF/Framework 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/CrashCatcher/Framework 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Scripts 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Internal/Store/OmniZuul 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/OmniGraffle-5.4.x 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Frameworks/OmniMachO 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/CrashCatcher/CrashReports 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/CrashCatcher/Framework 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Applications/CrashCatcher/App 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Tools/OmniLocalization 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Localizations/Resources/OmniGraffle 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/Workspaces 171715
+/tags/OmniGraffle/5.4.2/GM1-v139.16/OmniGroup/DiskImageTemplates 171715
