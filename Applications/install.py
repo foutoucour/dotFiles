@@ -9,19 +9,20 @@ logging.basicConfig()
 logger.setLevel(logging.INFO)
 
 class Install_menu(object):
-
     def __init__(self):
         """ Print out a menu giving all the applications to install or uninstall."""
-
-
+        # differents modes
+        #
         modes = {
             '1': self.install,
             '2': self.uninstall
         }
 
+        # First Menu, getting the choice between install and uninstall.
+        #
         for mode in sorted(modes.keys()):
             method = modes[mode]
-            print '%s: %s' % (mode, method.__name__)
+            print('%s: %s' % (mode, method.__name__))
 
         pick = raw_input('Pick the number of a mode to use: ')
 
@@ -35,11 +36,11 @@ class Install_menu(object):
 
         applications = glob.glob('%s/*.app' % os.getcwd())
 
-        print '0: all'
+        print('0: all')
 
         for i, app in enumerate(sorted(applications)):
             app_name = os.path.splitext(os.path.basename(app))[0]
-            print '%s: %s' % (i+1, app_name)
+            print('%s: %s' % (i+1, app_name))
 
         pick = raw_input('Pick the number of an app to install: ')
 
@@ -60,7 +61,7 @@ class Install_menu(object):
                     method(applications[pick])
 
     def install(self, application):
-        logger.debug('Installing: %s' % application)
+        logger.info('Installing: %s' % application)
         try:
             os.symlink(
                 application,
@@ -72,11 +73,11 @@ class Install_menu(object):
         except OSError, e:
             logger.warning(e)
             logger.info(
-                '%s Already exists in /Applications. Uninstall it then rety' % application
+                '%s Already exists in /Applications. Uninstall it then retry.' % application
             )
 
     def uninstall(self, application):
-        logger.debug('Uninstalling: %s' % application)
+        logger.info('Uninstalling: %s' % application)
         app_path = '/Applications/%s' % os.path.basename(application)
 
         try:
