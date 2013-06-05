@@ -34,3 +34,5 @@
     tool = meld
     ;tool = vimdiff 
 
+[push]
+	default = matching
