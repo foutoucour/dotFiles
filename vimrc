@@ -203,6 +203,8 @@ hi Normal guibg=Black guifg=LightGray
 "colorscheme liquidarbon
 colorscheme darkblue
 
+au BufRead,BufNewFile set filetype=python
+autocmd BufEnter *.html set filetype=htmldjango
 
 if getline(1) =~ '-*-c++-*-'
     set filetype=cpp
