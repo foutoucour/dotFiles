@@ -77,3 +77,6 @@ alias eg 'env | grep -i \!*'
 alias sm 'sourceMe'
 
 alias cacheclear 'app/console cache:clear'
+
+alias sshlolpicks 'ssh lolpicks@ssh.alwaysdata.com'
+alias errorLog 'tail -n 50 ~/admin/log/error.log'
