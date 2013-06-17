@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>11E53</string>
+	<string>11G63b</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2009</string>
+	<string>OSU_VERSION_NUMBER</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -46,6 +46,8 @@
 				<array/>
 				<key>OSUIncludeHardwareDetails</key>
 				<true/>
+				<key>OSUIncludeOpenGLDetails</key>
+				<false/>
 				<key>OSUVisibleTracks</key>
 				<array/>
 			</dict>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>11E53</string>
+	<string>11G63b</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
@@ -486,7 +486,7 @@
 	<key>CFBundleExecutable</key>
 	<string>OmniGraffle</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OmniGraffle 5.4.2, version 139.16.0.171715, Copyright 2000–2012 The Omni Group</string>
+	<string>OmniGraffle 5.4.3, version 139.17.0.185490, Copyright 2000–2013 The Omni Group</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>OmniGraffle Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -502,11 +502,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5.4.2</string>
+	<string>5.4.3</string>
 	<key>CFBundleSignature</key>
 	<string>OGfl</string>
 	<key>CFBundleVersion</key>
-	<string>139.16.0.171715</string>
+	<string>139.17.0.185490</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -536,7 +536,7 @@
 	<key>NSHumanReadableCompleteName</key>
 	<string>OmniGraffle</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright 2000–2012 The Omni Group</string>
+	<string>Copyright 2000–2013 The Omni Group</string>
 	<key>NSHumanReadableShortName</key>
 	<string>OmniGraffle</string>
 	<key>NSInfoPlistVersion</key>
@@ -545,8 +545,8 @@
 	<string>OmniGraffle</string>
 	<key>NSPrincipalClass</key>
 	<string>OGApplication</string>
-	<key>NSUbiquitousDisplaySet</key>
-	<string>com.omnigroup.OmniGraffle.cloud</string>
+	<key>NSSupportsAutomaticGraphicsSwitching</key>
+	<true/>
 	<key>OAAboutPanelControllerClass</key>
 	<string>OGAboutPanelController</string>
 	<key>OFBundleRegistryConfig</key>
