@@ -54,10 +54,18 @@ create_symlink(
     '{0}/.vimrc'.format(_HOME_DIR)
 )
 
-# cshrc file
+# pylintrc file
 #
 create_symlink(
     '{0}/pylintrc'.format(_PROJECT_DIR),
     '{0}/.pylintrc'.format(_HOME_DIR)
+)
+
+
+# dev_env file
+#
+create_symlink(
+    '{0}/envFiles/dev_env'.format(_PROJECT_DIR),
+    '{0}/.dev_env'.format(_HOME_DIR)
 )
 

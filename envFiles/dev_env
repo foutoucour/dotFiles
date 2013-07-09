@@ -1,4 +1,4 @@
-set ADDITIONAL_PYTHONPATH=/Users/jordiriera/:/Users/jordiriera/dev/extp/
+set ADDITIONAL_PYTHONPATH=/Users/jordiriera/:/Users/jordiriera/dev/
 
 if ($?PYTHONPATH) then
     setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}:${PYTHONPATH}

@@ -85,8 +85,8 @@ alias errorLog 'tail -n 50 ~/admin/log/error.log'
 alias pipExtp 'pip install --install-option="--prefix=~/scripting/extp/" \!*'
 
 
-if ( -e dev_env ) then
+if ( -e ~/.dev_env ) then
     echo "Sourcing development_environment"
-    source dev_env
+    source ~/.dev_env
 endif
 
