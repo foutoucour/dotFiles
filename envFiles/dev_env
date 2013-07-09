@@ -1,4 +1,4 @@
-set ADDITIONAL_PYTHONPATH=/Users/jordiriera/:/Users/jordiriera/dev/
+set ADDITIONAL_PYTHONPATH=/Users/jordiriera/:/Users/jordiriera/dev/:/Users/jordiriera/dev/lib/python2.7/site-packages/
 
 if ($?PYTHONPATH) then
     setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}:${PYTHONPATH}
@@ -7,5 +7,5 @@ else
 endif
 
 
-#setenv PATH /Users/jordiriera/scripting/extp/bin:${PATH}
+setenv PATH /Users/jordiriera/dev/bin:${PATH}
 
