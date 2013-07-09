@@ -1,21 +1,31 @@
 #!/usr/bin/python
+""" Installs all the symlink from the project to replace the current environment."""
+import logging
+
+logger = logging.getLogger(__name__)
+logging.basicConfig()
+logger.setLevel(logging.INFO)
+#logger.setLevel(logging.DEBUG)
 
 import os
 _PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 _HOME_DIR = os.path.expanduser('~')
 
 def create_symlink(src, dst):
+    logger.debug('Symlinking {} to {}'.format(src, dst))
+
     if not os.path.exists(src):
         raise IOError(
             '{0} doesn\'t exists. Exit'.format(src)
         )
 
     if os.path.exists(dst):
-        raise IOError(
-            '{0} exists. Exit'.format(dst)
+        logger.warning(
+            '{0} exists. Skipping.'.format(dst)
         )
 
-    os.symlink(src, dst)
+    else:
+        os.symlink(src, dst)
 
 
 # cshrc file
@@ -42,5 +52,12 @@ create_symlink(
 create_symlink(
     '{0}/vimrc'.format(_PROJECT_DIR),
     '{0}/.vimrc'.format(_HOME_DIR)
+)
+
+# cshrc file
+#
+create_symlink(
+    '{0}/pylintrc'.format(_PROJECT_DIR),
+    '{0}/.pylintrc'.format(_HOME_DIR)
 )
 

@@ -1,0 +1,11 @@
+set ADDITIONAL_PYTHONPATH=/Users/jordiriera/:/Users/jordiriera/dev/extp/
+
+if ($?PYTHONPATH) then
+    setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}:${PYTHONPATH}
+else
+    setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}
+endif
+
+
+#setenv PATH /Users/jordiriera/scripting/extp/bin:${PATH}
+

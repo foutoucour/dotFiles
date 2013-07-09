@@ -14,7 +14,7 @@
 		</data>
 		<key>Resources/app.icns</key>
 		<data>
-		Aol70E0akaOWcAEo/kFDAzCRu90=
+		clX3Nylf/f+cYXYkAxZhHmSogkw=
 		</data>
 		<key>Resources/container-migration.plist</key>
 		<data>
@@ -42,7 +42,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EpnJ592f1TdYP/fW8jCHdJ4ZIW8=
+			Kn90zDwkaRC+42NlkkA1q2KUo3w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -53,31 +53,27 @@
 		</data>
 		<key>Resources/htdocs/default.html</key>
 		<data>
-		dVxDQ92Kq2wA9s0xFmCp9cWnhU0=
+		URHjQZycV8ZoTR0NH5wpY9++Y9A=
 		</data>
 		<key>Resources/htdocs/spinner.html</key>
 		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.46590390b0.woff</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.4551014b13.woff</key>
 		<data>
-		Qh8H/ldqBE0yoM4zmbtleg7td/g=
+		Jscp5yXLCsTrwpjRC7e7y0JK2H8=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.51c31bc7c4.svg</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.d04e707b6b.eot</key>
 		<data>
-		UcMbx8S99CVU/iLOHPwjuNmV2C0=
+		C8e5GMQ93SNtxv65dd4Vx7Tt8/Q=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.be84af4095.eot</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.f02eb3c5a8.svg</key>
 		<data>
-		At/Jl8xbGvTGeqZG3wESGMqN4MQ=
+		8C6zxahdTztF92yuSMu2F3flcDI=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.f803e7a54d.ttf</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.f801fce326.ttf</key>
 		<data>
-		XlE4Pv8wnF+VRvoxDotcwfv2Cs8=
-		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/app_logo.png</key>
-		<data>
-		v0M68HffzLlSVKRTNry6rye9F1c=
+		ytePUkdRHMPQ3Tb8ke24GYR/fLE=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/grad_top_dark.png</key>
 		<data>
@@ -91,21 +87,21 @@
 		<data>
 		y/6j0iXfJ6r4WZJe9cq9JMsEFOE=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey_light.b639ecbade.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey_light.9bce719a36.gif</key>
 		<data>
-		6NzwAEfMDQ/jQF1lBeNcgNwMNAg=
+		4rZbTziPNPK18PoAk3bwG1Dj2nQ=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_white.03ac840e9a.gif</key>
 		<data>
 		yxkDMPsArigUqYeIyHM3ix84Bjk=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_dark.64c23fcb6d.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_dark.d91a9884ec.gif</key>
 		<data>
-		uunTf6qqzcqNEVu/iGo/vXgCdi0=
+		u/XIH3wgSt+iAXI5FR79+s3QI38=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_light.307aa2f1f4.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_light.6632df67aa.gif</key>
 		<data>
-		/hCBzeeyrLVpthgb1Z/+am1KHXM=
+		TZeK4VCYr6BNTh/W4qbIbFu1ewA=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_trans.0b5333c214.gif</key>
 		<data>
@@ -119,21 +115,29 @@
 		<data>
 		5kvq2T5ujg04QpMqUGG5iaqVtSg=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2012_@1x.2a6cf48f3f.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@1x.49337c77eb.png</key>
 		<data>
-		ZpXBqhFG3OmChTdFNZ+Wg4G789w=
+		LHSn/MscC/ko3NflO+z0Y2Pjnkg=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2012_@2x.250e262099.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@2x.0095ba7a9e.png</key>
 		<data>
-		l4eFgCg6BkT8Oddtjhjku/0jukk=
+		XWSsA7AWTjms1KM0bHDTHTDM010=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/td_web_dark_dropdown_bg.png</key>
 		<data>
 		csORDHTaptzw5a/hxqq8VxIktSE=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_web_sprite_bgs.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_01.5c954b7caa.png</key>
 		<data>
-		APAX7rhTJdxq1qXvAb6o+sJiwtk=
+		ippuNDAvrHMMKMVtgDkbTvNEzHU=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_02.e06017c7c8.png</key>
+		<data>
+		1hP0BMBB/dRTbM7lLyemMSocAUU=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_03.478335e895.png</key>
+		<data>
+		qw9sbMSp43lORmjGhNRg3lW0dSg=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnbar/columnbar.png</key>
 		<data>
@@ -161,87 +165,91 @@
 		</data>
 		<key>Resources/htdocs/web/assets/logos/128.png</key>
 		<data>
-		pUUGdXzCNS6empI94Ykbo4vfpJg=
+		HhnIjTFINHKRw9EHmtaludFaPIQ=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/16.png</key>
 		<data>
-		0cUuffUyR7l4N9hoXNltjdWkiYQ=
+		fTtsrfABIq02whFLg4XwYXKZenQ=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/24.png</key>
 		<data>
-		HPtwQb5H4kcPk8A2dkHT+Soyvr4=
+		hPGvvUOkOrgBjHbu/Rj05/FJons=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/32.png</key>
 		<data>
-		ESbRHjW9vfQk/7uSYjVZEVqhlIM=
+		kQB/lFkWC4V+9bCDA0hZbsz3nI4=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/48.png</key>
 		<data>
-		sxFGBppQukLV16LsqnVupNXuJw0=
+		kvgd87yy2V+KHkbInkyBGHbUJfQ=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/favicon.67208ada0c.ico</key>
+		<key>Resources/htdocs/web/assets/logos/64.8e10bce9cb.png</key>
 		<data>
-		7f7gMoN9ygWFSJp6Z2aObntP16M=
+		AH1Cul0ipZhxhRHf+4lS1xyR4/c=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad.1bf9b0dee8.png</key>
+		<key>Resources/htdocs/web/assets/logos/favicon.f5202c658f.ico</key>
 		<data>
-		aBz4YkRrDmVPLKzvaREO9lrqN7I=
+		PV2PHL5/WQquQS+gDA5TF+/72s8=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad@2x.ff99fd6116.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad.3a5af93946.png</key>
 		<data>
-		yDr2bNIZr8FdNpD/yyW98kGeCWk=
+		31g3ixS0vy+1uqLXDeT4pDWcLU8=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone.b60ae08a47.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad@2x.14a7fe8d68.png</key>
 		<data>
-		3h+BbpeDOA5XSmsxzebvWldE/zo=
+		BQux8gpm0TEiEj9j2MqAHN0QZPs=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone@2x.e69e1ecaec.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone.1f0aff147c.png</key>
 		<data>
-		q0B9HY6NOMJ3Sb2HFLBAdbmQswk=
+		96k5dDzOVArU5stsnPaVhcPd+Is=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/start_logo.ce61e187e4.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone@2x.fc9d3136f6.png</key>
 		<data>
-		0TpCdyXoyBq5YXuMrxlQ4Mpslfo=
+		wH18UwVmLjBgDnO5ELlCl9lEjyo=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/start_logo@2x.ca753548ab.png</key>
+		<key>Resources/htdocs/web/assets/logos/start_logo.df6a05dc61.png</key>
 		<data>
-		DPYkV5CmbAPUC1BEPC21sQj4PrI=
+		HjK9KWiyQkVQoUK2yjlGJDGGitw=
+		</data>
+		<key>Resources/htdocs/web/assets/logos/start_logo@2x.31bcc9b4a5.png</key>
+		<data>
+		2ExEhALWtzekWdJdu0f91yZog8A=
 		</data>
 		<key>Resources/htdocs/web/assets/sounds/tweet.de96e2b3d6.mp3</key>
 		<data>
 		6Q9O7NrG8udVM6pRMLAyswoemDY=
 		</data>
-		<key>Resources/htdocs/web/css/app-dark.0824648660.css</key>
+		<key>Resources/htdocs/web/css/app-dark.49dd2f3632.css</key>
 		<data>
-		CCRkhmBSFJf7p57eDUdZt3+hnb4=
+		Sd0vNjLpDZ9Py9mbZNWO+QitNGc=
 		</data>
-		<key>Resources/htdocs/web/css/app-light.8ac7a711e8.css</key>
+		<key>Resources/htdocs/web/css/app-light.49453f24c8.css</key>
 		<data>
-		isenEegQtjrK+ZSoUuq9eaFT0yI=
+		SUU/JMgYK0JNkNxsSsjYCZuxvKA=
 		</data>
-		<key>Resources/htdocs/web/css/font.e2e7c5e80a.css</key>
+		<key>Resources/htdocs/web/css/font.0b13ef8c37.css</key>
 		<data>
-		4ufF6AoUeHQGULhJc9bmfPcArj0=
+		CxPvjDfxFbxmphw1x3WFHDNiYMo=
 		</data>
-		<key>Resources/htdocs/web/css/notification.b0c10932bd.css</key>
+		<key>Resources/htdocs/web/css/notification.6e9832facf.css</key>
 		<data>
-		sMEJMr0ekVqmCtCjNPRpwPRKsug=
+		bpgy+s9kQ/RD/X/Tcj5v15FQuGo=
 		</data>
 		<key>Resources/htdocs/web/css/unsupported.css</key>
 		<data>
-		Q5Mfo1vIg0JJ4Qj1tKy+lpaR9X0=
+		mD8efsV77smJFBmqdEgHXm6Z66k=
 		</data>
-		<key>Resources/htdocs/web/mustaches/mustaches.abbc46a1c0.js</key>
+		<key>Resources/htdocs/web/mustaches/mustaches.bdd2a41a2e.js</key>
 		<data>
-		3pwNaq1co4h2tUBW+8MTTzRdfJc=
+		BTF+lu0nGOPHMTqkKtjOGfNKuyA=
 		</data>
 		<key>Resources/htdocs/web/scripts/background.js</key>
 		<data>
-		1VCHd6KIxCcmfTXNu5JZLpBBr3I=
+		U3oDMejaNY4nBhdAD4VWfPQZgcI=
 		</data>
-		<key>Resources/htdocs/web/scripts/default.1f57bc06f0.js</key>
+		<key>Resources/htdocs/web/scripts/default.b52e971d1a.js</key>
 		<data>
-		UcacOVtwBFWW3Q9CNKGW8GoLvHw=
+		XllB5fhcUv41MrR1KNJEWIGV7i8=
 		</data>
 		<key>Resources/htdocs/web/scripts/lib/require.84963bd900.js</key>
 		<data>
@@ -251,13 +259,21 @@
 		<data>
 		aSUVTtIcRAkOMVN6hWh8KbOcaTE=
 		</data>
-		<key>Resources/htdocs/web/scripts/swift/app/main.972323b1dc.js</key>
+		<key>Resources/htdocs/web/scripts/swift/app/main.10424e7b25.js</key>
 		<data>
-		Y9D8jOLaVSGtp887ZeSqjjn2ooc=
+		BFRy18CIYKp/Fr54iMyjLlua8MA=
+		</data>
+		<key>Resources/htdocs/web/scripts/unbundled/deprecated.js</key>
+		<data>
+		1V6fFHTxM4NGd9L2UvUEwx2nUHo=
 		</data>
 		<key>Resources/htdocs/web/scripts/unbundled/feathers.js</key>
 		<data>
-		wul0PyCu4wUACRwPJLh70ikE/vc=
+		bRsZreIKmWVVTvbe5IFhz91Up0o=
+		</data>
+		<key>Resources/htdocs/web/scripts/unbundled/google_analytics.js</key>
+		<data>
+		nepIpWFseuY+g17eZor26wK6OGA=
 		</data>
 		<key>Resources/htdocs/web/scripts/unbundled/nfn_worker.js</key>
 		<data>
@@ -269,7 +285,15 @@
 		</data>
 		<key>Resources/htdocs/web/templates/notification.html</key>
 		<data>
-		D23nqAFxqzbSCan/vKV32XxlW3w=
+		yMZtFOIbimQxSLYR9CrdTCM3eFw=
+		</data>
+		<key>Resources/loading_htdocs/default.html</key>
+		<data>
+		yW6QKdQlPj02+JSmi4Lgp3rvG8U=
+		</data>
+		<key>Resources/loading_htdocs/spinner_large_grey_light.gif</key>
+		<data>
+		6NzwAEfMDQ/jQF1lBeNcgNwMNAg=
 		</data>
 	</dict>
 	<key>rules</key>
