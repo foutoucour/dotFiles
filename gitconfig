@@ -30,6 +30,7 @@
 	lg = log
 	merge = merge --no-commit
     push = push --recurse-submodules=on-demand
+    pull = pull --recurse-submodules
 [merge]
 	conflictstyle = diff3
     ;tool = meld
