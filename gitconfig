@@ -1,6 +1,6 @@
 [user]
 	name = Jordi Riera
-	email = jordi.riera@cgstepinside.com
+	email = kender.jr@gmail.com
 [color]
 	ui = true
 [color "branch"]
@@ -29,10 +29,12 @@
 	df = diff
 	lg = log
 	merge = merge --no-commit
+    push = push --recurse-submodules=on-demand
 [merge]
 	conflictstyle = diff3
-    tool = meld
+    ;tool = meld
     ;tool = vimdiff 
 
 [push]
 	default = matching
+
