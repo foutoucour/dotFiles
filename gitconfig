@@ -28,12 +28,10 @@
 	co = checkout
 	df = diff
 	lg = log
-	merge = merge --no-commit
-    push = push --recurse-submodules=on-demand
-    pull = pull --recurse-submodules
+	merge = "merge --no-commit"
 [merge]
 	conflictstyle = diff3
-    ;tool = meld
+    tool = meld
     ;tool = vimdiff 
 
 [push]
