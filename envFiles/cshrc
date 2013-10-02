@@ -60,8 +60,6 @@ alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
 
 set nobeep
 
-alias cm 'sudo ssh  jordi.devserver@192.168.0.14'
-
 #vim like aliases
 alias g 'mvim'
 alias s 'subl'
@@ -78,7 +76,7 @@ alias sm 'sourceMe'
 
 alias cacheclear 'app/console cache:clear'
 
-alias sshLolpicks 'ssh lolpicks@ssh.alwaysdata.com'
+alias sshLop 'ssh leagueofpicks@ssh.alwaysdata.com'
 alias errorLog 'tail -n 50 ~/admin/log/error.log'
 
 
