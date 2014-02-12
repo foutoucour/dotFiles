@@ -77,6 +77,7 @@ alias sm 'sourceMe'
 alias cacheclear 'app/console cache:clear'
 
 alias sshLeest 'ssh leestbot@ssh.alwaysdata.com'
+alias sshftcLeest 'ssh foutoucour@web437.webfaction.com'
 alias errorLog 'tail -n 50 ~/admin/log/error.log'
 
 
