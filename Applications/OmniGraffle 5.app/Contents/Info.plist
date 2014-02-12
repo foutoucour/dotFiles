@@ -486,7 +486,7 @@
 	<key>CFBundleExecutable</key>
 	<string>OmniGraffle</string>
 	<key>CFBundleGetInfoString</key>
-	<string>OmniGraffle 5.4.3, version 139.17.0.185490, Copyright 2000–2013 The Omni Group</string>
+	<string>OmniGraffle 5.4.4, version 139.18.0.187838, Copyright 2000–2013 The Omni Group</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>OmniGraffle Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -502,11 +502,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>5.4.3</string>
+	<string>5.4.4</string>
 	<key>CFBundleSignature</key>
 	<string>OGfl</string>
 	<key>CFBundleVersion</key>
-	<string>139.17.0.185490</string>
+	<string>139.18.0.187838</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>

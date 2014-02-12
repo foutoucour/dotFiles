@@ -1,40 +1,40 @@
 Build details:
 
 Product: OmniGraffle-5.4.x
-Tag: OmniGraffle/5.4.3/GM-v139.17
-Date: 2013-05-31 10:41:30 -0700
+Tag: OmniGraffle/5.4.4/GM-v139.18
+Date: 2013-07-08 12:33:03 -0700
 Builder: omnibuild
 Host: tb107a.private.omnigroup.com
-Revision: 185490
+Revision: 187838
 
 Xcode: /Applications/Xcode.app/Contents/Developer
 Xcode 4.3.3
 Build version 4E3002
 
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Configurations 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniBase 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniFoundation 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniAppKit 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniInspector 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniWMF 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/Nisus/LinkBack/Source 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/EvidentPoint/emf2pdf 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/OmniGraffle-5.4.x 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniSoftwareUpdate 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniObjCParser 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/OmniPDF/Framework 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/CrashCatcher/Framework 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniStyle 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniQuartz 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniStyle 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Scripts 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Internal/Store/OmniZuul 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/OmniGraffle-5.4.x 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Frameworks/OmniMachO 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/CrashCatcher/CrashReports 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/CrashCatcher/Framework 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Applications/CrashCatcher/App 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Tools/OmniLocalization 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Localizations/Resources/OmniGraffle 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/Workspaces 185490
-/tags/OmniGraffle/5.4.3/GM-v139.17/OmniGroup/DiskImageTemplates 185490
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Configurations 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniBase 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniFoundation 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniAppKit 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniInspector 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniWMF 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/Nisus/LinkBack/Source 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/EvidentPoint/emf2pdf 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/OmniGraffle-5.4.x 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniSoftwareUpdate 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniObjCParser 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/OmniPDF/Framework 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/CrashCatcher/Framework 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniStyle 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniQuartz 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniStyle 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Scripts 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Internal/Store/OmniZuul 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/OmniGraffle-5.4.x 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Frameworks/OmniMachO 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/CrashCatcher/CrashReports 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/CrashCatcher/Framework 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Applications/CrashCatcher/App 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Tools/OmniLocalization 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Localizations/Resources/OmniGraffle 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/Workspaces 187838
+/tags/OmniGraffle/5.4.4/GM-v139.18/OmniGroup/DiskImageTemplates 187838

@@ -8,11 +8,13 @@
     html, body, .loading {
         height: 100%;
         width: 100%;
+
     }
     body {
         padding: 0;
         margin: 0;
-        background: #55555A;
+        background: #269;
+        background-image: -webkit-radial-gradient(center center, ellipse cover, #269, #274256);
     }
     .loading {
         display: table;
@@ -26,7 +28,9 @@
 </head>
 <body>
     <div class="loading">
-        <div class="loading-cell"><img src="spinner_large_grey_light.gif" alt=""></div>
+        <div class="loading-cell">
+            <img src="spinner_blue.gif" alt="{{_i}}Loading&hellip;{{/i}}" class="spinner-centered">
+        </div>
     </div>
 </body>
 </html>

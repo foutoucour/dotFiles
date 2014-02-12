@@ -14,7 +14,7 @@
 		</data>
 		<key>Resources/app.icns</key>
 		<data>
-		clX3Nylf/f+cYXYkAxZhHmSogkw=
+		qHFz6AKmWecTB8dZEvQLw6Ec/jE=
 		</data>
 		<key>Resources/container-migration.plist</key>
 		<data>
@@ -53,215 +53,259 @@
 		</data>
 		<key>Resources/htdocs/default.html</key>
 		<data>
-		URHjQZycV8ZoTR0NH5wpY9++Y9A=
+		kAxSlIA2fmNAMPqCvleQP4rnvCM=
 		</data>
 		<key>Resources/htdocs/spinner.html</key>
 		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.4551014b13.woff</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.1c007898e1.woff</key>
 		<data>
-		Jscp5yXLCsTrwpjRC7e7y0JK2H8=
+		32uytiLvKi5ODZ3icIB0h0iPuDU=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.d04e707b6b.eot</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.4b752bf365.eot</key>
 		<data>
-		C8e5GMQ93SNtxv65dd4Vx7Tt8/Q=
+		erRul7vY74jD5QJRcSWv764YErs=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.f02eb3c5a8.svg</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.6f536fd38c.ttf</key>
 		<data>
-		8C6zxahdTztF92yuSMu2F3flcDI=
+		Uy0PUpy00p5HuOK9Z8rkvmN3vR4=
 		</data>
-		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.f801fce326.ttf</key>
+		<key>Resources/htdocs/web/assets/fonts/tweetdeck-regular-webfont.e08e06cfbb.svg</key>
 		<data>
-		ytePUkdRHMPQ3Tb8ke24GYR/fLE=
+		4I4Gz7vV3wnDGuoxQutgisWZJzg=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/grad_top_dark.png</key>
 		<data>
-		ttT2Fbu5Z3aYkSyBGdvBH48kSKw=
+		A89EXoVmyR6xkocy7JQPRWjlbRk=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_dark.8d674a1b5b.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner-666-on-eee.cb67cd9e76.gif</key>
 		<data>
-		502Hc1UW/3UIagif5CHQpb3z190=
+		eg+qwmTWoS9HmUh0JMWnR1tjIT0=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey.c8a72e5a48.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner-fff-2595be.a8f343f10d.gif</key>
 		<data>
-		y/6j0iXfJ6r4WZJe9cq9JMsEFOE=
+		OY8mXUy+ZgByLNC0G1wfeYMj7SI=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey_light.9bce719a36.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner-fff-on-5e727e.4c0ea2e6f8.gif</key>
 		<data>
-		4rZbTziPNPK18PoAk3bwG1Dj2nQ=
+		Kk/aNkR6MRHWTp/E29pGldyFJT8=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_white.03ac840e9a.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_blue.af92d16c30.gif</key>
 		<data>
-		yxkDMPsArigUqYeIyHM3ix84Bjk=
+		GgntdmVn3vocD1d/+9ncQKxNh9s=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_dark.d91a9884ec.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_dark.c0c667e34d.gif</key>
 		<data>
-		u/XIH3wgSt+iAXI5FR79+s3QI38=
+		bjNd22E5q4rR0NW/YULJhzrilrg=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_light.6632df67aa.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey.61ee834445.gif</key>
 		<data>
-		TZeK4VCYr6BNTh/W4qbIbFu1ewA=
+		2j/Yn/MPkSowSysN6pbRqOGP87k=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_trans.0b5333c214.gif</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_grey_light.gif</key>
 		<data>
-		SMCy3lSg5NMadHLzAtHtafM9lsY=
+		V6MkWTN7KB45/QZwEy4BMn2yafM=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_large_white.920d5d81aa.gif</key>
+		<data>
+		G43nhMqEV8U3O/p4kiF0LtF9Ki8=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_dark.d28588078c.gif</key>
+		<data>
+		xyjwrCDlPM3m+5H3Bc8/P+8UFPU=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_light.8af444af15.gif</key>
+		<data>
+		Xc2MDlI43ouWlGmFcUasRW8VyV0=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/spinner_small_trans.d01275b7fd.gif</key>
+		<data>
+		xAEEKrn8zdwTLJqBGp59DlOlfdc=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/td_profile_empty.jpg</key>
 		<data>
-		JGyIuffg0XE8nZPxGFeOOru6ADY=
+		mlZUvESoXXTEfIxC3N686rjlf5Y=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/td_profile_empty@2x.jpg</key>
 		<data>
-		5kvq2T5ujg04QpMqUGG5iaqVtSg=
+		KNEbDUNXteblUmheEOZ5ECZ0U1k=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@1x.49337c77eb.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_screenshot@1x.png</key>
 		<data>
-		LHSn/MscC/ko3NflO+z0Y2Pjnkg=
+		A/dpvDZE1mUHwhzvqD7zsmlY/aM=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@2x.0095ba7a9e.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_screenshot@2x.png</key>
 		<data>
-		XWSsA7AWTjms1KM0bHDTHTDM010=
+		Rz0iiPfAYbb3peOfpvCfPTuAEfY=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@1x.6365c96a8b.png</key>
+		<data>
+		uiswnyxzud1KiSxvj19TOfa9aAU=
+		</data>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_sprite_sheet_2013_@2x.a4408103c6.png</key>
+		<data>
+		AVYmbryvOzkX0b6pL3A32t/Eyu8=
 		</data>
 		<key>Resources/htdocs/web/assets/global/backgrounds/td_web_dark_dropdown_bg.png</key>
 		<data>
-		csORDHTaptzw5a/hxqq8VxIktSE=
+		/tQrkmmUN+gARfapKNkBfYZJF8w=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_01.5c954b7caa.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_01.a15841704b.png</key>
 		<data>
-		ippuNDAvrHMMKMVtgDkbTvNEzHU=
+		JFYf8/JlLnGqozaqXu8Oi0l41C8=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_02.e06017c7c8.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_02.324afc1dda.png</key>
 		<data>
-		1hP0BMBB/dRTbM7lLyemMSocAUU=
+		OKJYQjVWYyD3pfImq4Mr3hB9s8Y=
 		</data>
-		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_03.478335e895.png</key>
+		<key>Resources/htdocs/web/assets/global/backgrounds/td_whatsnew_03.5ca80afe70.png</key>
 		<data>
-		qw9sbMSp43lORmjGhNRg3lW0dSg=
+		1uZsgu+cYoKc43rc1ZmLu7pveCQ=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnbar/columnbar.png</key>
 		<data>
-		x5T6ycbOOPnZmQF5kUe66mYhujE=
+		IOIYdCIV25/m0PJC0F8UezP20FM=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnbar/columnbar_active.png</key>
 		<data>
-		pusTWp+1idMjTmRedKOSRHITd8A=
+		nl3azfLcEs3WGN9yNVqYLQ+81Bc=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnnav/column_nav_l.png</key>
 		<data>
-		G+RV14Cc2r0HeSQm8kCV0buuXpE=
+		f0vCZ28yYZmiuZ9+3/75Tqi6f7Q=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnnav/column_nav_l_active.png</key>
 		<data>
-		hV653r6XcoFfPEmjjPwCuuCAHJ8=
+		5YwSrzooYXjKQp5mXO8d4gZXi8g=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnnav/column_nav_r.png</key>
 		<data>
-		Hu5XN4UV+Ry6kp8/rtRjtcBQ6ic=
+		7BGu1EbSZXytNOoC+lStDs466FU=
 		</data>
 		<key>Resources/htdocs/web/assets/global/buttons/columnnav/column_nav_r_active.png</key>
 		<data>
-		1UFVtGLVG3V+SOM3WnWUelcGrsc=
+		yq701jLAAcs+zREgA3QcT4aNevo=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/128.png</key>
 		<data>
-		HhnIjTFINHKRw9EHmtaludFaPIQ=
+		RRaJq57lOGJBB2A+BwVM+inN6/s=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/16.png</key>
 		<data>
-		fTtsrfABIq02whFLg4XwYXKZenQ=
+		E9a9/+Pr87EXK0S6asbgnZyhpW4=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/24.png</key>
 		<data>
-		hPGvvUOkOrgBjHbu/Rj05/FJons=
+		745NBkjKwO3b+m/9AB7BhT+quY8=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/32.png</key>
 		<data>
-		kQB/lFkWC4V+9bCDA0hZbsz3nI4=
+		NgBhA6+QnMxbwHEH9DHBacv3uxQ=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/48.png</key>
 		<data>
-		kvgd87yy2V+KHkbInkyBGHbUJfQ=
+		cAQBOLxyiFzD51whvp8CbOaCRvM=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/64.8e10bce9cb.png</key>
+		<key>Resources/htdocs/web/assets/logos/64.320d8ad0af.png</key>
 		<data>
-		AH1Cul0ipZhxhRHf+4lS1xyR4/c=
+		HLNBiaSHXjGNPyad49AiTeBzgEQ=
 		</data>
 		<key>Resources/htdocs/web/assets/logos/favicon.f5202c658f.ico</key>
 		<data>
 		PV2PHL5/WQquQS+gDA5TF+/72s8=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad.3a5af93946.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad.64a188e1e7.png</key>
 		<data>
-		31g3ixS0vy+1uqLXDeT4pDWcLU8=
+		3DD3mdD5khlpu6yfJmqid40DiQQ=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad@2x.14a7fe8d68.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-ipad@2x.5647c13391.png</key>
 		<data>
-		BQux8gpm0TEiEj9j2MqAHN0QZPs=
+		z/EyXL5L5SWDYu9W+qi2Eh2zhdA=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone.1f0aff147c.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone.8e2f1850d9.png</key>
 		<data>
-		96k5dDzOVArU5stsnPaVhcPd+Is=
+		KafYV6uT3eIhdHWhNwmpnUGDYuU=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone@2x.fc9d3136f6.png</key>
+		<key>Resources/htdocs/web/assets/logos/ios-icon-iphone@2x.bab67f3659.png</key>
 		<data>
-		wH18UwVmLjBgDnO5ELlCl9lEjyo=
+		tr1AN7A/JglMHq683s8bhMMF2FU=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/start_logo.df6a05dc61.png</key>
+		<key>Resources/htdocs/web/assets/logos/start_logo.2848f885d5.png</key>
 		<data>
-		HjK9KWiyQkVQoUK2yjlGJDGGitw=
+		L6awSiF21WqATR3xvslXK3TQ9RQ=
 		</data>
-		<key>Resources/htdocs/web/assets/logos/start_logo@2x.31bcc9b4a5.png</key>
+		<key>Resources/htdocs/web/assets/logos/start_logo@2x.224d68dc6c.png</key>
 		<data>
-		2ExEhALWtzekWdJdu0f91yZog8A=
+		TfDvhwPlkqG/xnoL7tUsJTqD/2o=
+		</data>
+		<key>Resources/htdocs/web/assets/sounds/tweet.9663ad9dcb.ogg</key>
+		<data>
+		HmjvtvuyE9zyJ2Y7b3QbsxNi6v0=
 		</data>
 		<key>Resources/htdocs/web/assets/sounds/tweet.de96e2b3d6.mp3</key>
 		<data>
 		6Q9O7NrG8udVM6pRMLAyswoemDY=
 		</data>
-		<key>Resources/htdocs/web/css/app-dark.49dd2f3632.css</key>
+		<key>Resources/htdocs/web/css/app-dark.36b6e8fe17.css</key>
 		<data>
-		Sd0vNjLpDZ9Py9mbZNWO+QitNGc=
+		Nrbo/hdw3G2Zv4+ArycpS6xN+9Y=
 		</data>
-		<key>Resources/htdocs/web/css/app-light.49453f24c8.css</key>
+		<key>Resources/htdocs/web/css/app-light.4d5eeda5d3.css</key>
 		<data>
-		SUU/JMgYK0JNkNxsSsjYCZuxvKA=
+		TV7tpdNaaSu/tKNailT4VfX1YHQ=
 		</data>
-		<key>Resources/htdocs/web/css/font.0b13ef8c37.css</key>
+		<key>Resources/htdocs/web/css/error.css</key>
 		<data>
-		CxPvjDfxFbxmphw1x3WFHDNiYMo=
+		LEat01GcEep5Bgz+LD1iI/blhBM=
 		</data>
-		<key>Resources/htdocs/web/css/notification.6e9832facf.css</key>
+		<key>Resources/htdocs/web/css/font.f9ae73e6de.css</key>
 		<data>
-		bpgy+s9kQ/RD/X/Tcj5v15FQuGo=
+		+a5z5t7YmjOY1Fka4PmXK2YGlKY=
+		</data>
+		<key>Resources/htdocs/web/css/form-page.css</key>
+		<data>
+		RjQN80w54EU//KlMOiarOelU9eU=
+		</data>
+		<key>Resources/htdocs/web/css/home.css</key>
+		<data>
+		hROjDcMQKRteD80dqV2OYBvEYxM=
+		</data>
+		<key>Resources/htdocs/web/css/notification.css</key>
+		<data>
+		Df4RXS+I7AeyD6S6L5eD/izyOfI=
+		</data>
+		<key>Resources/htdocs/web/css/static-page.css</key>
+		<data>
+		LU4QDH4LK8+8cEeMJWvmBPqXCfE=
 		</data>
 		<key>Resources/htdocs/web/css/unsupported.css</key>
 		<data>
-		mD8efsV77smJFBmqdEgHXm6Z66k=
+		LU4QDH4LK8+8cEeMJWvmBPqXCfE=
 		</data>
-		<key>Resources/htdocs/web/mustaches/mustaches.bdd2a41a2e.js</key>
+		<key>Resources/htdocs/web/mustaches/mustaches.aae6022732.js</key>
 		<data>
-		BTF+lu0nGOPHMTqkKtjOGfNKuyA=
+		NT1WOqcw2DD1bbCIhgDtxsmM+vA=
 		</data>
-		<key>Resources/htdocs/web/scripts/background.js</key>
+		<key>Resources/htdocs/web/scripts/background.c5299259bf.js</key>
 		<data>
-		U3oDMejaNY4nBhdAD4VWfPQZgcI=
+		oIQRPdGxpKf1dw6Z0OtsvzUiQ8c=
 		</data>
-		<key>Resources/htdocs/web/scripts/default.b52e971d1a.js</key>
+		<key>Resources/htdocs/web/scripts/default.8cbf6b17a6.js</key>
 		<data>
-		XllB5fhcUv41MrR1KNJEWIGV7i8=
+		gfMjFgrZzhjxBRNcVlowVv9j5rw=
 		</data>
-		<key>Resources/htdocs/web/scripts/lib/require.84963bd900.js</key>
+		<key>Resources/htdocs/web/scripts/lib/bower_components/requirejs/require.85cf3c7cca.js</key>
 		<data>
-		hJY72QB3g5/IaUTSm8nZTyx4V+I=
+		hc88fMpxJBYcMbINQWQrsGfbMI0=
 		</data>
-		<key>Resources/htdocs/web/scripts/notifications.656cafef69.js</key>
+		<key>Resources/htdocs/web/scripts/swift/app/main.a6dd1cb93f.js</key>
 		<data>
-		aSUVTtIcRAkOMVN6hWh8KbOcaTE=
+		KsaW5/K21pEFKDnTcZ2V2NOs+NQ=
 		</data>
-		<key>Resources/htdocs/web/scripts/swift/app/main.10424e7b25.js</key>
+		<key>Resources/htdocs/web/scripts/unbundled/account-delete.js</key>
 		<data>
-		BFRy18CIYKp/Fr54iMyjLlua8MA=
+		Ap+ZUezmZlftnIl/JVlRY81/VAc=
 		</data>
 		<key>Resources/htdocs/web/scripts/unbundled/deprecated.js</key>
 		<data>
@@ -269,31 +313,35 @@
 		</data>
 		<key>Resources/htdocs/web/scripts/unbundled/feathers.js</key>
 		<data>
-		bRsZreIKmWVVTvbe5IFhz91Up0o=
+		5/Ix1EhuGeeRFqNmX9HCe+E01Gk=
 		</data>
-		<key>Resources/htdocs/web/scripts/unbundled/google_analytics.js</key>
+		<key>Resources/htdocs/web/scripts/unbundled/home.js</key>
 		<data>
-		nepIpWFseuY+g17eZor26wK6OGA=
+		lE+yizckXVeSwnPA9eQElU/4ekg=
 		</data>
 		<key>Resources/htdocs/web/scripts/unbundled/nfn_worker.js</key>
 		<data>
 		EZ4WKSqmB8cF9Pwt+i6/Kqiy1Qg=
 		</data>
+		<key>Resources/htdocs/web/scripts/unbundled/password-reset.js</key>
+		<data>
+		tKvJkSpo/HVJOmCehEApQiuTl8E=
+		</data>
+		<key>Resources/htdocs/web/scripts/unbundled/send-reset-link.js</key>
+		<data>
+		p/ADWFi875QqOYLlbEOiRxCawRc=
+		</data>
 		<key>Resources/htdocs/web/templates/background.html</key>
 		<data>
-		ZNVdl1/PkCbJbXkNrbkLcN5jRoE=
-		</data>
-		<key>Resources/htdocs/web/templates/notification.html</key>
-		<data>
-		yMZtFOIbimQxSLYR9CrdTCM3eFw=
+		lgROu9r9HJrRLq/pqJZ1JG62N7A=
 		</data>
 		<key>Resources/loading_htdocs/default.html</key>
 		<data>
-		yW6QKdQlPj02+JSmi4Lgp3rvG8U=
+		27CRy4yzcGOHkGnmYU/qMwSxknU=
 		</data>
-		<key>Resources/loading_htdocs/spinner_large_grey_light.gif</key>
+		<key>Resources/loading_htdocs/spinner_blue.gif</key>
 		<data>
-		6NzwAEfMDQ/jQF1lBeNcgNwMNAg=
+		x6f1rlQrDsfepEk7gN+/mavEjpA=
 		</data>
 	</dict>
 	<key>rules</key>
