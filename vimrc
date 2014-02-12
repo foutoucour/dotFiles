@@ -73,7 +73,6 @@ set hlsearch
 set incsearch
 set ruler
 set menuitems=100
-set tabpagemax=100
 set backspace=indent,eol,start
 set smartindent
 
@@ -158,8 +157,6 @@ set fo=crq
 " completeopt	whether to use a popup menu for Insert mode completion
 set cot=menu,longest,preview
 
-" joinspaces	use two spaces after '.' when joining a line
-set nojs
 
 "
 " shiftwidth	number of spaces used for each step of (auto)indent
@@ -176,14 +173,6 @@ set sr
 " expandtab	expand <Tab> to spaces in Insert mode
 "	(local to buffer)
 set et
-
-" smartindent	do clever autoindenting
-"	(local to buffer)
-set si
-
-" cindent	enable specific indenting for C code
-" 	(local to buffer)
-"set cin
 
 " fileformats	list of file formats to look for when editing a file
 set ffs=unix,dos,mac
@@ -210,30 +199,9 @@ if getline(1) =~ '-*-c++-*-'
     set filetype=cpp
 endif
 
-"function! SmartTab(forward)
-    "let col = col('.') - 1
-    "if !col || getline('.')[col - 1] !~ '\k'
-        "return "\<Tab>"
-    "elseif !a:forward
-        "return "\<C-P>"
-    "else
-        "return "\<C-N>"
-    "endif
-"endfunction
-
 " remapping
-
-map <S-F2> ajordi-r <C-R>=strftime("%c")<CR><Esc>,ccA<ESC>
-map <F2> Oi<Tab><Tab>"""<CR>"""<Esc>
-map <C-F2> oi# Ni !<Esc>
 inoremap <Tab> <C-R>=SmartTab(1)<CR>
 inoremap <S-Tab> <C-R>=SmartTab(0)<CR>
-
-"map <S-Left> :bp!<CR>
-"map <S-Right> :bn!<CR>
-
-map <S-Left> :tabp<CR>
-map <S-Right> :tabn<CR>
 
 map o o<ESC>
 map O O<ESC>
@@ -242,18 +210,8 @@ map <D-5> :%s/\s*$//g<CR>:noh<CR>
 map <D-4> :%s/\t/    /g<CR>:noh<CR>
 "map <D-4> :%s/    /\t/g<CR>:noh<CR>
 
-map ,c; yyp:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
-map ,c" yypIprint "<Esc>A"<Esc>
-map ,c' yypIprint '<Esc>A'<Esc>
-map ,C; yyP:s/"/\\\"/g<CR>:noh<CR>Iprint ("<Esc>A\n");<Esc>
-map ,C" yyPIprint "<Esc>A"<Esc>
-map ,C' yyPIprint '<Esc>A'<Esc>
-
-
 map <F10> Iimport pdb; pdb.set_trace()<CR><ESC>
 map <F11> :tabprevious<CR>:set co=161<CR>:vsplit<CR>:bn<CR>:tabnext<CR>:q<CR>
-"map <F12> <C-W>w
-"map <Tab> <C-W>w
 
 " quicker window navigation
 nnoremap <C-j> <C-w>j
@@ -275,8 +233,9 @@ let python_highlight_all=1
 :imap <C-Space> <C-X><C-O>
 
 " Alert when we get too long
-highlight WarnLength ctermbg=darkred ctermfg=white guibg=#773333
-match WarnLength /\%>99v.\+/
+"highlight WarnLength ctermbg=darkred ctermfg=white guibg=#773333
+"match WarnLength /\%>99v.\+/
+set cc=99
 
 " Keep a couple of context lines
 set scrolloff=2
