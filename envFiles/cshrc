@@ -88,8 +88,14 @@ alias v.mockvalidator 'source ~/env/mockvalidator/bin/activate.csh; cd ~/dev/moc
 
 alias pylint 'pylint -f colorized'
 
+if ( -e ~/.local_env ) then
+    echo "Sourcing Local Environment"
+    source ~/.local_env
+endif
+
 if ( -e ~/.dev_env ) then
     echo "Sourcing development_environment"
     source ~/.dev_env
 endif
+
 
