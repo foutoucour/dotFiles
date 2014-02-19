@@ -83,9 +83,9 @@ alias errorLog 'tail -n 50 ~/admin/log/error.log'
 
 alias pipExtp 'pip install --install-option="--prefix=~/scripting/extp/" \!*'
 
-alias v.leestbot 'source ~/env/leestbot/bin/activate.csh; cd ~/dev/leestbot'
-alias v.githooky 'source ~/env/githooky/bin/activate.csh; cd ~/dev/githooky'
-alias v.mockvalidator 'source ~/env/mockvalidator/bin/activate.csh; cd ~/dev/mockvalidator'
+alias v.leestbot 'source ~/envs/leestbot/bin/activate.csh; cd ~/dev/leestbot'
+alias v.twitter_switch 'source ~/envs/twitter_switch/bin/activate.csh; cd ~/dev/djang0-twitter-switch'
+alias v.foutoucour 'source ~/envs/foutoucour/bin/activate.csh; cd ~/dev/foutoucour'
 
 alias pylint 'pylint -f colorized'
 
