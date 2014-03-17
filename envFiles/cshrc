@@ -24,10 +24,7 @@ set prompt="%U%T%u:`whoami`:%B%~%b > "
 #i-search-back bound like on bash (Ctrl+R)
 bindkey "^R" i-search-back
 
-alias gitReset 'echo "Creating a new git index."; cd /volumes/jordi_dev/cgsi; rm .git/index; git reset; cd -'
-alias resetGit gitReset
 
-alias pingLoL   'ping 216.52.241.254'
 alias cd.. 		'cd ..'
 alias u         'cd ..'
 alias .. 		'cd ..'
@@ -76,8 +73,9 @@ alias sm 'sourceMe'
 
 alias cacheclear 'app/console cache:clear'
 
-alias sshLeest 'ssh leestbot@ssh.alwaysdata.com'
-alias sshftcLeest 'ssh foutoucour@web437.webfaction.com'
+#alias sshLeest 'ssh leestbot@ssh.alwaysdata.com'
+alias sshftc 'ssh foutoucour@ssh.alwaysdata.com'
+#alias sshftcLeest 'ssh foutoucour@web437.webfaction.com'
 alias errorLog 'tail -n 50 ~/admin/log/error.log'
 
 
@@ -88,6 +86,8 @@ alias v.twitter_switch 'source ~/envs/twitter_switch/bin/activate.csh; cd ~/dev/
 alias v.foutoucour 'source ~/envs/foutoucour/bin/activate.csh; cd ~/dev/foutoucour'
 
 alias pylint 'pylint -f colorized'
+alias python 'python -m IPython'
+alias dshell './manage.py shell -i ipython'
 
 if ( -e ~/.local_env ) then
     echo "Sourcing Local Environment"
