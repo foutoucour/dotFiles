@@ -84,10 +84,14 @@ alias pipExtp 'pip install --install-option="--prefix=~/scripting/extp/" \!*'
 alias v.foutoucour 'source ~/envs/foutoucour/bin/activate.csh; cd ~/dev/foutoucour'
 alias v.kenderland 'source ~/envs/kenderland/bin/activate.csh; cd ~/dev/kenderland'
 alias v.tweepy 'source ~/envs/tweepy/bin/activate.csh; cd ~/dev/tweepy'
+alias v.dogallowed 'source ~/envs/dogallowed/bin/activate.csh; cd ~/dev/dogallowed'
 
 alias pylint 'pylint -f colorized'
-alias python 'python -m IPython'
-alias dshell './manage.py shell -i ipython'
+alias ipython 'python -m IPython'
+alias dj 'python manage.py'
+alias dshell 'dj shell -i ipython'
+alias spp 'dj shell_plus'
+alias rpp 'dj runserver_plus'
 
 if ( -e ~/.local_env ) then
     echo "Sourcing Local Environment"
