@@ -105,7 +105,7 @@ set lbr
 set co=99
 
 " lines	number of lines in the display
-set lines=80
+" set lines=80
 
 " list	show <Tab> as ^I and end-of-line as $
 "	(local to window)

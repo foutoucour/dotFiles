@@ -1,0 +1,43 @@
+#!/usr/bin/tcsh
+
+alias gvim      'vim.gnome'
+alias g         'gvim'
+alias _pep8_test 'find . -name "*.py" -print|xargs pep8|grep -v "too long"'
+alias _p8t '_pep8_test'
+
+# Aliases odoo
+#
+# v._neutral_env:
+# - sets ODOO_PROJECT env variable.
+# - sets the prompt, the title of the tab and cd to the project folder.
+# - requires the name of the project as the first argument.
+alias v._neutral_env 'setenv ODOO_PROJECT "\!:1"; set prompt="[$ODOO_PROJECT|$ODOO_NAME] %U%T%u:`whoami`:%B%~%b > "; echo -ne "\033]2;$ODOO_PROJECT|$ODOO_NAME\007" ; setenv ODOO_PROJECT_DIR "/home/jriera/projects/odoo/$ODOO_PROJECT"; cd $ODOO_PROJECT_DIR'
+
+alias __set_odoo_server_settings 'rm /home/jriera/.openerp_serverrc; ln -s /home/jriera/"$ODOO_NAME"_serverrc /home/jriera/.openerp_serverrc'
+
+alias __set2openerp 'setenv ODOO_NAME "openerp"; setenv ODOO_SFL_FOLDER "openerp"; __set_odoo_server_settings'
+alias __set2odoo 'setenv ODOO_NAME "odoo"; setenv ODOO_SFL_FOLDER "sfl"; __set_odoo_server_settings' 
+
+alias v.training '__set2odoo && v._neutral_env training'
+alias v.sobook '__set2odoo && v._neutral_env sobook'
+alias v.conceptparadesign '__set2odoo && v._neutral_env conceptparadesign'
+alias v.primaco '__set2odoo && v._neutral_env primaco'
+alias v.odoo8 '__set2odoo && v._neutral_env odoo'
+alias v.odoo7 '__set2openerp && v._neutral_env odoo'
+alias v.isb '__set2openerp && v._neutral_env isb'
+alias v.server-tools '__set2odoo && v._neutral_env server-tools'
+alias v.molecule-R '__set2openerp && v._neutral_env molecule-R'
+
+alias __reset_db 'dropdb \!:2; createdb \!:2 -O \!:1'
+alias _reset_db_odoo '__reset_db odoo8dev'
+alias _reset_db_openerp '__reset_db openerp7dev'
+
+alias _python_dev 'python /home/jriera/projects/odoo/$ODOO_PROJECT/bin/python_dev'
+alias _pd '_python_dev'
+alias _start_odoo 'python /home/jriera/projects/odoo/$ODOO_PROJECT/bin/start_"$ODOO_NAME" --workers=0'
+alias _so '_start_odoo'
+alias _start_odoo_test '_start_odoo -d \!:1 -i \!:2 --test-enable --log-level=test --stop-after-init'
+alias _sot '_start_odoo_test'
+
+alias _install_odoo 'echo "Running install.sh" && cd "$ODOO_PROJECT_DIR"/git/"$ODOO_SFL_FOLDER"/tools && ./install.sh && cd -'
+alias _io '_install_odoo'

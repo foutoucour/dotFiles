@@ -1,6 +1,6 @@
 [user]
 	name = Jordi Riera
-	email = kender.jr@gmail.com
+	email = jordi.riera@savoirfairelinux.com
 [color]
 	ui = true
 [color "branch"]
@@ -39,3 +39,5 @@
 [push]
 	default = matching
 
+[diff]
+	external = /home/jriera/.gitdiff_meld.py

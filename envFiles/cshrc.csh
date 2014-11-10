@@ -62,8 +62,4 @@ if( $?prompt ) then
     bgBlack
 endif
 
-||||||| merged common ancestors
-=======
-# shortcut for MacOs
->>>>>>> DAG
 
