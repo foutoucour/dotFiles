@@ -1,4 +1,13 @@
 #!/usr/bin/tcsh
+# virtual envs:
+#setenv PATH $HOME/bin:$PATH
+#setenv TEMP $HOME/tmp
+#setenv WORKON_HOME $HOME/.virtualenvs
+#setenv VIRTUALENVWRAPPER_TMPDIR $WORKON_HOME/tmp
+#setenv VIRTUALENVWRAPPER_PYTHON /usr/local/bin/python2.7
+#source $HOME/.local/bin/virtualenvwrapper.sh
+#setenv PIP_VIRTUALENV_BASE $WORKON_HOME
+#setenv PIP_RESPECT_VIRTUALENV true
 
 alias gvim      'vim.gnome'
 alias g         'gvim'
@@ -18,15 +27,22 @@ alias __set_odoo_server_settings 'rm /home/jriera/.openerp_serverrc; ln -s /home
 alias __set2openerp 'setenv ODOO_NAME "openerp"; setenv ODOO_SFL_FOLDER "openerp"; __set_odoo_server_settings'
 alias __set2odoo 'setenv ODOO_NAME "odoo"; setenv ODOO_SFL_FOLDER "sfl"; __set_odoo_server_settings' 
 
+# openerp projects
+alias v.molecule-R '__set2openerp && v._neutral_env molecule-R'
+alias v.odoo7 '__set2openerp && v._neutral_env odoo'
+alias v.isb '__set2openerp && v._neutral_env isb'
+alias v.molecule-R '__set2openerp && v._neutral_env molecule-R'
+alias v.odoo7 '__set2openerp && v._neutral_env odoo'
+alias v.isb '__set2openerp && v._neutral_env isb'
+alias v.fruigor '__set2openerp && v._neutral_env fruigor'
+
+# odoo projects
 alias v.training '__set2odoo && v._neutral_env training'
 alias v.sobook '__set2odoo && v._neutral_env sobook'
 alias v.conceptparadesign '__set2odoo && v._neutral_env conceptparadesign'
 alias v.primaco '__set2odoo && v._neutral_env primaco'
 alias v.odoo8 '__set2odoo && v._neutral_env odoo'
-alias v.odoo7 '__set2openerp && v._neutral_env odoo'
-alias v.isb '__set2openerp && v._neutral_env isb'
 alias v.server-tools '__set2odoo && v._neutral_env server-tools'
-alias v.molecule-R '__set2openerp && v._neutral_env molecule-R'
 
 alias __reset_db 'dropdb \!:2; createdb \!:2 -O \!:1'
 alias _reset_db_odoo '__reset_db odoo8dev'

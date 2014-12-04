@@ -37,7 +37,7 @@
     ;tool = vimdiff 
 
 [push]
-	default = matching
+	default = simple
 
 [diff]
 	external = /home/jriera/.gitdiff_meld.py
