@@ -1,5 +1,7 @@
 #!/usr/bin/tcsh
 
+alias gvim      'vim.gnome'
+alias g         'gvim'
 
 alias gitka     'gitk --all'
 ###########################################################################################################
@@ -46,44 +48,19 @@ alias ll 		'ls -l'
 
 alias sourceMe  'source ~/.cshrc'
 
-alias echoGitDiff   'echo "cd `echo $PWD` && git difftool -y && cd -"'
-
 set nobeep
 
 #vim like aliases
 # alias g 'mvim'
 # alias s 'subl'
 alias r 'refresh'
-alias q 'exit'
 alias e 'exit'
 alias E 'exit'
 alias hg 'history | grep \!*'
 alias lg 'ls -1 | grep -i \!*'
 alias cg 'cd `ls | grep -i \!*`'
-alias go 'wg; cg'
 alias eg 'env | grep -i \!*'
 alias sm 'sourceMe'
-#alias cacheclear 'app/console cache:clear'
-
-#alias sshLeest 'ssh leestbot@ssh.alwaysdata.com'
-#alias sshftc 'ssh foutoucour@ssh.alwaysdata.com'
-#alias sshkender 'ssh kender@web411.webfaction.com'
-#alias errorLog 'tail -n 50 ~/admin/log/error.log'
-
-
-#alias pipExtp 'pip install --install-option="--prefix=~/scripting/extp/" \!*'
-
-#alias v.foutoucour 'source ~/envs/foutoucour/bin/activate.csh; cd ~/dev/foutoucour'
-#alias v.kenderland 'source ~/envs/kenderland/bin/activate.csh; cd ~/dev/kenderland'
-#alias v.tweepy 'source ~/envs/tweepy/bin/activate.csh; cd ~/dev/tweepy'
-#alias v.dogallowed 'source ~/envs/dogallowed/bin/activate.csh; cd ~/dev/dogallowed'
-
-#alias pylint 'pylint -f colorized'
-#alias ipython 'python -m IPython'
-#alias dj 'python manage.py'
-#alias dshell 'dj shell -i ipython'
-#alias spp 'dj shell_plus'
-#alias rpp 'dj runserver_plus'
 
 if ( -e ~/.local_env ) then
     echo "Sourcing Local Environment"
@@ -100,6 +77,7 @@ if ( -e ~/.dev_env ) then
     echo "Sourcing development_environment"
     source ~/.dev_env
 endif
+
 
 alias ls        'ls --color=auto'
 
