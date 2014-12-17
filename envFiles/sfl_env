@@ -28,22 +28,23 @@ alias __set2openerp 'setenv ODOO_NAME "openerp"; setenv ODOO_SFL_FOLDER "openerp
 alias __set2odoo 'setenv ODOO_NAME "odoo"; setenv ODOO_SFL_FOLDER "sfl"; __set_odoo_server_settings' 
 
 # openerp projects
-alias v.molecule-R '__set2openerp && v._neutral_env molecule-R'
+alias v.molecule-r '__set2openerp && v._neutral_env molecule-R'
 alias v.odoo7 '__set2openerp && v._neutral_env odoo'
 alias v.isb '__set2openerp && v._neutral_env isb'
 alias v.odoo7 '__set2openerp && v._neutral_env odoo'
 alias v.isb '__set2openerp && v._neutral_env isb'
+alias v.ebox '__set2openerp && v._neutral_env ebox'
 alias v.fruigor '__set2openerp && v._neutral_env fruigor'
 
 # odoo projects
 alias v.training '__set2odoo && v._neutral_env training'
 alias v.sobook '__set2odoo && v._neutral_env sobook'
 alias v.modele '__set2odoo && v._neutral_env modele'
+alias v.prototype '__set2odoo && v._neutral_env prototype'
 alias v.degama '__set2odoo && v._neutral_env degama'
 alias v.conceptparadesign '__set2odoo && v._neutral_env conceptparadesign'
 alias v.primaco '__set2odoo && v._neutral_env primaco'
 alias v.odoo8 '__set2odoo && v._neutral_env odoo'
-alias v.server-tools '__set2odoo && v._neutral_env server-tools'
 
 alias __reset_db 'dropdb \!:2; createdb \!:2 -O \!:1'
 alias _reset_db_odoo '__reset_db odoo8dev'
