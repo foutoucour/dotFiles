@@ -20,7 +20,7 @@ alias _p8t '_pep8_test'
 # - sets ODOO_PROJECT env variable.
 # - sets the prompt, the title of the tab and cd to the project folder.
 # - requires the name of the project as the first argument.
-alias v._neutral_env 'setenv ODOO_PROJECT "\!:1"; set prompt="[$ODOO_PROJECT|$ODOO_NAME] %U%T%u:`whoami`:%B%~%b > "; echo -ne "\033]2;$ODOO_PROJECT|$ODOO_NAME\007" ; setenv ODOO_PROJECT_DIR "/home/jriera/projects/odoo/$ODOO_PROJECT"; cd $ODOO_PROJECT_DIR'
+alias v._neutral_env 'setenv ODOO_PROJECT "\!:1"; set prompt="[$ODOO_PROJECT|$ODOO_NAME] %U%T%u:`whoami`:%B%~%b > "; echo -ne "\033]2;$ODOO_PROJECT|$ODOO_NAME\007" ; setenv ODOO_PROJECT_DIR "/home/jriera/projects/odoo/$ODOO_PROJECT"; cd $ODOO_PROJECT_DIR/git/$ODOO_SFL_FOLDER'
 
 alias __set_odoo_server_settings 'rm /home/jriera/.openerp_serverrc; ln -s /home/jriera/"$ODOO_NAME"_serverrc /home/jriera/.openerp_serverrc'
 
@@ -37,6 +37,7 @@ alias v.ebox '__set2openerp && v._neutral_env ebox'
 alias v.fruigor '__set2openerp && v._neutral_env fruigor'
 
 # odoo projects
+alias v.robotiq '__set2odoo && v._neutral_env robotiq'
 alias v.training '__set2odoo && v._neutral_env training'
 alias v.sobook '__set2odoo && v._neutral_env sobook'
 alias v.modele '__set2odoo && v._neutral_env modele'
