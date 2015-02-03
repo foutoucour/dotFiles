@@ -1,13 +1,4 @@
 #!/usr/bin/tcsh
-# virtual envs:
-#setenv PATH $HOME/bin:$PATH
-#setenv TEMP $HOME/tmp
-#setenv WORKON_HOME $HOME/.virtualenvs
-#setenv VIRTUALENVWRAPPER_TMPDIR $WORKON_HOME/tmp
-#setenv VIRTUALENVWRAPPER_PYTHON /usr/local/bin/python2.7
-#source $HOME/.local/bin/virtualenvwrapper.sh
-#setenv PIP_VIRTUALENV_BASE $WORKON_HOME
-#setenv PIP_RESPECT_VIRTUALENV true
 
 alias gvim      'vim.gnome'
 alias g         'gvim'
@@ -31,10 +22,11 @@ alias __set2odoo 'setenv ODOO_NAME "odoo"; setenv ODOO_SFL_FOLDER "sfl"; __set_o
 alias v.molecule-r '__set2openerp && v._neutral_env molecule-R'
 alias v.odoo7 '__set2openerp && v._neutral_env odoo'
 alias v.isb '__set2openerp && v._neutral_env isb'
-alias v.odoo7 '__set2openerp && v._neutral_env odoo'
 alias v.isb '__set2openerp && v._neutral_env isb'
 alias v.ebox '__set2openerp && v._neutral_env ebox'
+alias v.oif '__set2openerp && v._neutral_env oif'
 alias v.fruigor '__set2openerp && v._neutral_env fruigor'
+alias v.erp_sfl '__set2openerp && v._neutral_env erp_sfl'
 
 # odoo projects
 alias v.robotiq '__set2odoo && v._neutral_env robotiq'
@@ -51,12 +43,23 @@ alias __reset_db 'dropdb \!:2; createdb \!:2 -O \!:1'
 alias _reset_db_odoo '__reset_db odoo8dev'
 alias _reset_db_openerp '__reset_db openerp7dev'
 
-alias _python_dev 'python /home/jriera/projects/odoo/$ODOO_PROJECT/bin/python_dev'
+alias _python_dev 'python /home/jriera/projects/odoo/$ODOO_PROJECT/bin/python_"$ODOO_NAME"'
 alias _pd '_python_dev'
+
 alias _start_odoo 'python /home/jriera/projects/odoo/$ODOO_PROJECT/bin/start_"$ODOO_NAME" --workers=0'
 alias _so '_start_odoo'
+
 alias _start_odoo_test '_start_odoo -d \!:1 -i \!:2 --test-enable --log-level=test --stop-after-init'
 alias _sot '_start_odoo_test'
 
 alias _install_odoo 'echo "Running install.sh" && cd "$ODOO_PROJECT_DIR"/git/"$ODOO_SFL_FOLDER"/tools && ./install.sh && cd -'
 alias _io '_install_odoo'
+
+alias _upgrade_odoo 'echo "Running upgrade script" && cd "$ODOO_PROJECT_DIR"/git/"$ODOO_SFL_FOLDER"/tools/bin && ./upgrade_"$ODOO_NAME" -d \!:1 && cd-'
+alias _ud '_upgrade_odoo'
+
+alias _sflv_se 'sflvault search'
+alias _sflv_sh 'sflvault show'
+alias _sflv_co 'sflvault connect'
+alias _sflvault_search_project 'echo "sflvault search $ODOO_PROJECT" && sflvault search "$ODOO_PROJECT"'
+alias _ssp '_sflvault_search_project'
