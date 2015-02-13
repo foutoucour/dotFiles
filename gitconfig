@@ -29,8 +29,9 @@
 	br = branch
 	co = checkout
 	df = diff
-	lg = log
-	merge = "merge --no-commit"
+    merge = "merge --no-commit"
+    pull = "pull --prune"
+    push = "push --tag"
 [merge]
 	conflictstyle = diff3
     tool = meld
