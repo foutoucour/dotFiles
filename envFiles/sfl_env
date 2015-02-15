@@ -2,6 +2,7 @@
 
 alias gvim      'vim.gnome'
 alias g         'gvim'
+alias ls        'ls --auto=color'
 alias _pep8_test 'find . -name "*.py" -print|xargs pep8|grep -v "too long"'
 alias _p8t '_pep8_test'
 

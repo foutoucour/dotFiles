@@ -1,7 +1,5 @@
 #!/usr/bin/tcsh
 
-alias gvim      'vim.gnome'
-alias g         'gvim'
 
 alias gitka     'gitk --all'
 ###########################################################################################################
@@ -32,8 +30,6 @@ alias mv 		'mv -i'
 alias grep      'grep --color=auto'
 
 # only for linux
-alias dir       'dir --color'
-alias ls        'ls --color=auto'
 alias ls        'ls -h'
 alias la        'ls -a'
 alias lt        'ls -lrt'
@@ -51,8 +47,6 @@ alias sourceMe  'source ~/.cshrc'
 set nobeep
 
 #vim like aliases
-# alias g 'mvim'
-# alias s 'subl'
 alias r 'refresh'
 alias e 'exit'
 alias E 'exit'
@@ -79,5 +73,4 @@ if ( -e ~/.dev_env ) then
 endif
 
 
-alias ls        'ls --color=auto'
 
