@@ -1,0 +1,20 @@
+#/bin/sh
+
+echo "Install cshrc file. For local dev files, see ~/dotFiles/envFiles."
+ln -s ~/dotFiles/envFiles/cshrc ~/.cshrc
+
+echo "Install vim configurations."
+ln -s ~/dotFiles/vim ~/.vim
+ln -s ~/dotFiles/vimrc ~/.vimrc
+
+echo "Install git configs"
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+
+echo "\tgit auto completion."
+ln -s ~/dotFiles/git-completion.tcsh ~/.git-completion.tcsh
+ln -s ~/dotFiles/git-completion.bash ~/.git-completion.bash
+
+echo "\tgit diff with meld."
+ln -s ~/dotFiles/gitdiff_meld.py ~/.gitdiff_meld.py
+
+echo "Done"
