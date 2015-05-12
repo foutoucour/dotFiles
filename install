@@ -8,7 +8,7 @@ ln -s ~/dotFiles/vim ~/.vim
 ln -s ~/dotFiles/vimrc ~/.vimrc
 
 echo "Install git configs"
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
+ln -s ~/dotFiles/gitconfig ~/.gitconfig
 
 echo "\tgit auto completion."
 ln -s ~/dotFiles/git-completion.tcsh ~/.git-completion.tcsh

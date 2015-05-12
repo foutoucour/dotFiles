@@ -21,6 +21,7 @@
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /Users/jordiriera/.gitignore_global
 	autocrlf = input
+	editor = vim
 [branch]
 	autosetupmerge = true
 [alias]
