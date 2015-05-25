@@ -1,0 +1,29 @@
+[user]
+	name = Jordi Riera
+	email = jriera@rodeofx.com
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = /Users/jordiriera/.gitignore_global
+	autocrlf = input
+	editor = vi
+[branch]
+	autosetupmerge = true
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+    merge = "merge --no-commit"
+    pull = "pull --prune"
+    push = "push --tag"
+[merge]
+    conflictstyle = diff3
+    tool = vimdiff 
+
