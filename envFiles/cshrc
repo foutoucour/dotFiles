@@ -56,19 +56,6 @@ alias ls        'ls -h'
 alias la        'ls -a'
 alias lt        'ls -lrt'
 alias ll 		'ls -l'
-
-
-###########################################################################################################
-# Custom commands
-###########################################################################################################
-## Find in environment feature.
-### Find a string in environment files use by a job.
-
-alias sourceMe  'source ~/.cshrc'
-
-set nobeep
-
-#vim like aliases
 alias r 'refresh'
 alias e 'exit'
 alias E 'exit'
@@ -76,7 +63,20 @@ alias hg 'history | grep \!*'
 alias lg 'ls -1 | grep -i \!*'
 alias cg 'cd `ls | grep -i \!*`'
 alias eg 'env | grep -i \!*'
+alias sourceMe  'source ~/.cshrc'
 alias sm 'sourceMe'
+
+
+
+
+# Addition of path to bin from dotFiles repo
+setenv PATH ${PATH}:$HOME/dotFiles/bin
+setenv EDITOR vim
+
+set nobeep
+
+
+
 
 if ( -e ~/.local_env ) then
     echo "Sourcing Local Environment"

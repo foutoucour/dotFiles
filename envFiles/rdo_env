@@ -1,3 +1,29 @@
 #!/usr/bin/tcsh
-alias ls        'ls --color=auto'
 
+# setup so the local dev is taken in count in python
+set ADDITIONAL_PYTHONPATH=$HOME/rdoenv/python_libs/pure
+
+if ($?PYTHONPATH) then
+    setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}:${PYTHONPATH}
+else
+    setenv PYTHONPATH ${ADDITIONAL_PYTHONPATH}
+endif
+
+alias ls        'ls --color=auto'
+alias pycharm   'cd ~/pycharm/current/bin/;./pycharm.sh;cd-'
+
+# alias to help to use tank
+# - set TANK_CONFIG env
+# - set the prompt
+# - first argument is the name of the config to use
+alias v.tank 'setenv TANK_CONFIG "\!:1"; echo -ne "\033]2;$TANK_CONFIG\007" && setenv TANK_CONFIG_DIR "/mnt/users/jriera/rdoenv/tank/sandbox/$TANK_CONFIG" && cd $TANK_CONFIG_DIR && setenv PROJECT_PROMPT "[$TANK_CONFIG] "'
+
+alias _v.py 'setenv PROJECT_PROMPT "(py\!:1)" && source ~/virtualenv/python\!:1/bin/activate.csh'
+alias _py26 '_v.py 2.6'
+alias _py27 '_v.py 2.7'
+alias _tank 'cd $TANK_CONFIG_DIR && ./tank \!:* && cd -'
+
+alias _tank_clone 'cd /mnt/users/jriera/rdoenv/tank && ./tank_clone.py \!:* && cd -'
+# shortcut to python embed in maya. Pretty useful to work with pyside.
+alias python_maya '/softwareLocal/maya/linux/current/maya2015-x64/bin/mayapy'
+alias mayapy 'python_maya'
