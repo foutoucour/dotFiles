@@ -37,7 +37,7 @@ alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo
 #alias _prompt 'set prompt="%U%T%u:`whoami`:%B$cwd%b: > "'
 # set prompt="%U%T%u:`whoami`:%B%~%b`__git_current_branch` > "
 setenv PROJECT_PROMPT
-alias precmd 'set prompt="${magenta}$PROJECT_PROMPT${white}%U%T%u:`whoami`:${green}%B%~%b ${cyan}`__git_current_branch`${end}> "'
+alias precmd 'set prompt="\n-- ${magenta}$PROJECT_PROMPT${white}%U%T%u %n@%m ${green}%B%~%b ${cyan}`__git_current_branch`${end}-- \n > "'
 #i-search-back bound like on bash (Ctrl+R)
 bindkey "^R" i-search-back
 
@@ -47,7 +47,7 @@ alias .. 		'cd ..'
 alias rm 		'rm -r'
 alias cp 		'cp -r'
 alias mkdir     'mkdir -p'
-
+alias h         'history'
 alias mv 		'mv -i'
 alias grep      'grep --color=auto'
 
@@ -59,7 +59,6 @@ alias ll 		'ls -l'
 alias r 'refresh'
 alias e 'exit'
 alias E 'exit'
-alias hg 'history | grep \!*'
 alias lg 'ls -1 | grep -i \!*'
 alias cg 'cd `ls | grep -i \!*`'
 alias eg 'env | grep -i \!*'
@@ -79,20 +78,18 @@ set nobeep
 
 
 if ( -e ~/.local_env ) then
-    echo "Sourcing Local Environment"
+    echo "\033[0;32mSourcing Local Environment \033[0m"
     source ~/.local_env
 endif
 
 if ( -e ~/.git-completion.tcsh) then
-    echo "Sourcing git completion script"
+    echo "\033[0;32mSourcing Git Completion Script \033[0m"
     source ~/.git-completion.tcsh
     set autolist=ambiguous # adviced in the how to use
 endif
 
 if ( -e ~/.dev_env ) then
-    echo "Sourcing development_environment"
+    echo "\033[0;32mSourcing Development Environment \033[0m"
     source ~/.dev_env
 endif
-
-
 

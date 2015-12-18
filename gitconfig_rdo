@@ -1,27 +1,35 @@
 [user]
-	name = Jordi Riera
-	email = jriera@rodeofx.com
+    name = Jordi Riera
+    email = jriera@rodeofx.com
 [color]
-	ui = true
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+    ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
 [core]
-	editor = vi
-	filemode = false
+    editor = vi
+    filemode = false
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [alias]
-	st = status
-	ci = commit
-	br = branch
-	co = checkout
-	df = diff
-	merge = "merge --no-commit"
-	pull = "pull --prune"
-	push = "push --tag"
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    merge = "merge --no-commit"
+    pull = "pull --prune"
+    push = "push --tag"
+    relativelog = log --all --color --graph --decorate --topo-order --date=relative --abbrev-commit --pretty=format:\"%C(green)%h %C(red bold)[%<(14)%ad] %Creset%s%Cred%d%C(white bold) [%an]\"
+	cola = !/rdo/software/git-cola/2.4/bin/git-cola
+	dag = !/rdo/software/git-cola/2.4/bin/git-dag
 [merge]
-	conflictstyle = diff3
-	tool = vimdiff 
+    conflictstyle = diff3
+    tool = vimdiff 
+[diff]
+    external = /mnt/users/jriera/.gitdiff_meld.py
+    tool = meld
 
+[push]
+	default = current

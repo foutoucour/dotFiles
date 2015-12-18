@@ -12,18 +12,33 @@ endif
 alias ls        'ls --color=auto'
 alias pycharm   'cd ~/pycharm/current/bin/;./pycharm.sh;cd-'
 
-# alias to help to use tank
-# - set TANK_CONFIG env
-# - set the prompt
-# - first argument is the name of the config to use
-alias v.tank 'setenv TANK_CONFIG "\!:1"; echo -ne "\033]2;$TANK_CONFIG\007" && setenv TANK_CONFIG_DIR "/mnt/users/jriera/rdoenv/tank/sandbox/$TANK_CONFIG" && cd $TANK_CONFIG_DIR && setenv PROJECT_PROMPT "[$TANK_CONFIG] "'
+if ($?TERM) then
 
-alias _v.py 'setenv PROJECT_PROMPT "(py\!:1)" && source ~/virtualenv/python\!:1/bin/activate.csh'
+
+
+echo "\033[0;32mSetting custom aliases:\033[0m"
+alias _virt 'setenv PROJECT_PROMPT "\!:1 " && source ~/virtualenv/\!:1/bin/activate.csh'
+alias _v.py 'setenv PROJECT_PROMPT " py\!:1 " && source ~/virtualenv/python\!:1/bin/activate.csh'
+echo " * _py26 and _py27: switch to python 2.x virtual envs."
 alias _py26 '_v.py 2.6'
 alias _py27 '_v.py 2.7'
-alias _tank 'cd $TANK_CONFIG_DIR && ./tank \!:* && cd -'
+alias _pyGluttony 'setenv PROJECT_PROMPT "(gluttony)" && source ~/virtualenv/gluttony/bin/activate.csh'
 
-alias _tank_clone 'cd /mnt/users/jriera/rdoenv/tank && ./tank_clone.py \!:* && cd -'
-# shortcut to python embed in maya. Pretty useful to work with pyside.
-alias python_maya '/softwareLocal/maya/linux/current/maya2015-x64/bin/mayapy'
-alias mayapy 'python_maya'
+echo " * maya_2015SP2: launch maya 2015SP2"
+alias maya_2015SP2 maya2015SP2
+
+echo " * aliases to folders: (l.{} to local, p.{} to prod)"
+echo "   - x.pylibs"
+alias l.pylibs 'cd ~/rdoenv/python_libs/pure/rodeo'
+alias p.pylibs 'cd ~/prod/python_libs/pure/rodeo'
+echo "   - x.workgroup"
+alias l.workgroups 'cd ~/rdoenv/workgroups'
+alias p.workgroups 'cd ~/prod/workgroups'
+echo "   - x.tank_config"
+alias l.tank_config 'cd ~/rdoenv/tank/sandbox/rdo_Primary/config/'
+alias p.tank_config 'cd ~/prod/tank/config'
+echo "   - x.tank_local_apps"
+alias l.tank_local_apps 'cd ~/rdoenv/tank/sandbox/local_apps/'
+alias p.tank_local_apps 'cd ~/prod/tank/sandbox/local_apps/'
+
+endif
