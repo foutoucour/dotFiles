@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# ALIASES
+alias gitka='gitk --all'
+alias cd..='cd ..'
+alias u='cd ..'
+alias rm='rm -r'
+alias cp='cp -r'
+alias mkdir='mkdir -p'
+alias h='history'
+alias mv='mv -i'
+alias grep='grep --color=auto'
+alias ls='ls -h'
+alias la='ls -a'
+alias ll='ls -l'
+alias r='refresh'
+alias lg='ls -1 | grep -i \!*'
+alias eg='env | grep -i \!*'
+alias sourceMe='source ~/.bash_aliases'
+alias ls='ls --color=auto'
+
+
+# colors!
+RED="\[\033[31;1m\]"
+RED="\[\033[31m\]"
+GREEN="\[\033[32m\]"
+YELLOW="\[\033[33m\]"
+BLUE="\[\033[34m\]"
+MAGENTA="\[\033[35m\]"
+CYAN="\[\033[36m\]"
+WHITE="\[\033[37m\]"
+END="\[\033[0m\]"
+
+. ~/.git-prompt.sh
+export PS1="${WHITE}-- \T \u@\h ${GREEN}\w ${CYAN}\$(__git_ps1) ${END}-- ${SELECT}\n > "
+
+export WORKON_HOME=~/virtualenvs/
+
+# ENVIRONMENT VARIABLES
+export EDITOR=vim
+
+if [ -f ~/.local_env ]; then
+    echo -e "\033[0;32mSourcing Local Environment \033[0m"
+    . ~/.local_env
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+    echo -e "\033[0;32mSourcing Git Completion Script \033[0m"
+    . ~/.git-completion.bash
+    set autolist=ambiguous
+fi
+
+if [ -f ~/.dev_env ]; then
+    echo -e "\033[0;32mSourcing Development Environment \033[0m"
+    source ~/.dev_env
+fi
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    echo -e "\033[0;32mSourcing virtualenvwrapper.sh \033[0m (virtualenv home: ${WORKON_HOME})"
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo -e "\033[0;31mvirtualenvwrapper is not installed. Please run pip install --user virtualenvwrapper \033[0m"
+fi
