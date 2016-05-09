@@ -1,0 +1,12 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim meld tmux shutter python-pip
+
+sudo apt-get install git-cola
+
+sudo pip install virtualenv
+
+cd ~
+mkdir virtualenvs
+cd ~
+

@@ -2,3 +2,5 @@
 alias ls        'ls --color=auto'
 
 alias v.cg 'setenv ODOO_PROJECT "cgstudiomap" && echo -ne "\033]2;$ODOO_PROJECT\007" && setenv ODOO_PROJECT_DIR "~/projects/$ODOO_PROJECT/main" && source ~/virtualenvs/"$ODOO_PROJECT"/bin/activate.csh && setenv PROJECT_PROMPT "[$ODOO_PROJECT] " && cd $ODOO_PROJECT_DIR'
+
+tmux
