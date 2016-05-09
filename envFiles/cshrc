@@ -74,9 +74,6 @@ setenv EDITOR vim
 
 set nobeep
 
-
-
-
 if ( -e ~/.local_env ) then
     echo "\033[0;32mSourcing Local Environment \033[0m"
     source ~/.local_env
