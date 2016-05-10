@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Git hook that check the code before the push is done.
+
+echo "Nosetests of tests in rodeo/tests/unit_tests."
+nosetests $PWD/pure/rodeo/tests/
+code=$?
+# Check if the shell is interactive
+# /dev/tty will make git-cola crashes for example
+if [ -z "$PS1" ]; then
+
+    exec < /dev/tty
+    if [ "$code" == "0" ]; then
+        exit 0
+    fi
+    echo -n "Not all tests pass. Commit (y/n): "
+    read response
+    if [ "$response" == "y" ]; then
+        exit 0
+    fi
+fi 
+exit $code
+
