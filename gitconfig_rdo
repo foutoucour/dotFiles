@@ -27,9 +27,6 @@
 [merge]
     conflictstyle = diff3
     tool = vimdiff 
-[diff]
-    external = /mnt/users/jriera/.gitdiff_meld.py
-    tool = meld
 
 [push]
 	default = current

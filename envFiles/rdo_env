@@ -22,6 +22,7 @@ echo "\033[0;32mSetting custom aliases:\033[0m"
 alias _virt 'setenv PROJECT_PROMPT "\!:1 " && source ~/virtualenv/\!:1/bin/activate.csh'
 alias _v.py 'setenv PROJECT_PROMPT " py\!:1 " && source ~/virtualenv/python\!:1/bin/activate.csh'
 alias _py27 '_v.py 2.7'
+alias _pySelenuim '_virt selenium'
 
 echo " * aliases to folders: (l.{} to local, p.{} to prod)"
 echo "   - x.pylibs"
@@ -38,4 +39,7 @@ alias l.tank_local_apps 'cd ~/rdoenv/tank/sandbox/local_apps/'
 alias p.tank_local_apps 'cd ~/prod/tank/sandbox/local_apps/'
 
 alias logs 'cd /rodeo/setup/logs/'
+alias confs 'cd /rdo/rodeo/setup/etc/rodeofx/'
+alias my_ingest_bid '/sandbox/rdoenv/workgroups/toolbox/shotgun/ingestBid.py'
+alias admin_film_prod 'cd /mntx/admin/02_FILM/1-IN\ PRODUCTION'
 endif
