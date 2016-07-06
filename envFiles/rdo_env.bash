@@ -14,4 +14,11 @@ if [ ! -z "$PS1" ]; then
     echo -e "   - x.tank_local_apps"
     alias l.tank_local_apps='cd ~/rdoenv/tank/sandbox/local_apps/'
     alias p.tank_local_apps='cd ~/prod/tank/sandbox/local_apps/'
+
+    alias whenchanged="/mnt/rodeo/setup/lib/python/pure/whenchanged/when-changed"
+    alias logs='cd /rodeo/setup/logs/'
+    alias confs='cd /rdo/rodeo/setup/etc/rodeofx/'
+    alias my_ingest_bid='/sandbox/rdoenv/workgroups/toolbox/shotgun/ingestBid.py'
+    alias admin_film_prod='cd /mntx/admin/02_FILM/1-IN\ PRODUCTION'
+    alias _ssh_forge64='ssh localdev@forge64'
 fi

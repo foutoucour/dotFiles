@@ -37,7 +37,7 @@ alias __git_current_branch 'git rev-parse --abbrev-ref HEAD >& /dev/null && echo
 #alias _prompt 'set prompt="%U%T%u:`whoami`:%B$cwd%b: > "'
 # set prompt="%U%T%u:`whoami`:%B%~%b`__git_current_branch` > "
 setenv PROJECT_PROMPT
-alias precmd 'set prompt="\n-- ${magenta}$PROJECT_PROMPT${white}%U%T%u %n@%m ${green}%B%~%b ${cyan}`__git_current_branch`${end}-- \n > "'
+alias precmd 'set prompt="\n--${red}tcsh ${magenta}$PROJECT_PROMPT${white}%U%T%u %n@%m ${yellow}%B%~%b ${cyan}`__git_current_branch`${end}-- \n > "'
 #i-search-back bound like on bash (Ctrl+R)
 bindkey "^R" i-search-back
 
@@ -74,9 +74,9 @@ setenv EDITOR vim
 
 set nobeep
 
-if ( -e ~/.local_env ) then
+if ( -e ~/.local_env.tcsh ) then
     echo "\033[0;32mSourcing Local Environment \033[0m"
-    source ~/.local_env
+    source ~/.local_env.tcsh
 endif
 
 if ( -e ~/.git-completion.tcsh) then
@@ -85,8 +85,8 @@ if ( -e ~/.git-completion.tcsh) then
     set autolist=ambiguous # adviced in the how to use
 endif
 
-if ( -e ~/.dev_env ) then
+if ( -e ~/.dev_env.tcsh ) then
     echo "\033[0;32mSourcing Development Environment \033[0m"
-    source ~/.dev_env
+    source ~/.dev_env.tcsh
 endif
-
+echo "Done"

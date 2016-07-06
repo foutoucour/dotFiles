@@ -1,0 +1,9 @@
+# file that should be loaded in $WORKON_HOME/postmkvirtualenv
+# pip install -r ~/dotFiles/postmkrequirements.txt
+#
+ipdb
+ipython
+nose
+coverage
+sphinx
+pep8

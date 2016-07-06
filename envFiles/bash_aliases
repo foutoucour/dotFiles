@@ -16,7 +16,7 @@ alias ll='ls -l'
 alias r='refresh'
 alias lg='ls -1 | grep -i \!*'
 alias eg='env | grep -i \!*'
-alias sourceMe='source ~/.bash_aliases'
+alias sourceMe='. ~/.bash_aliases'
 alias ls='ls --color=auto'
 
 
@@ -31,17 +31,22 @@ CYAN="\[\033[36m\]"
 WHITE="\[\033[37m\]"
 END="\[\033[0m\]"
 
-. ~/.git-prompt.sh
-export PS1="${WHITE}-- \T \u@\h ${GREEN}\w ${CYAN}\$(__git_ps1) ${END}-- ${SELECT}\n > "
+
+if [ -f ~/.git-prompt.sh ]; then
+    echo -e "\033[0;32mSourcing git prompt script\033[0m"
+    . ~/.git-prompt.sh
+    export PS1="${WHITE}--- \T \u@\h ${GREEN}\w ${CYAN}\$(__git_ps1) ${END} ${SELECT}\n>>> "
+fi
+
 
 export WORKON_HOME=~/virtualenvs/
 
 # ENVIRONMENT VARIABLES
 export EDITOR=vim
 
-if [ -f ~/.local_env ]; then
+if [ -f ~/.local_env.bash ]; then
     echo -e "\033[0;32mSourcing Local Environment \033[0m"
-    . ~/.local_env
+    . ~/.local_env.bash
 fi
 
 if [ -f ~/.git-completion.bash ]; then
@@ -50,14 +55,17 @@ if [ -f ~/.git-completion.bash ]; then
     set autolist=ambiguous
 fi
 
-if [ -f ~/.dev_env ]; then
-    echo -e "\033[0;32mSourcing Development Environment \033[0m"
-    source ~/.dev_env
-fi
-
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    echo -e "\033[0;32mSourcing virtualenvwrapper.sh \033[0m (virtualenv home: ${WORKON_HOME})"
+    echo -e "\033[0;32mSourcing virtualenvwrapper.sh (/usr/local/bin) \033[0m (virtualenv home: ${WORKON_HOME})"
     source /usr/local/bin/virtualenvwrapper.sh
+elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    echo -e "\033[0;32mSourcing virtualenvwrapper.sh (/usr/bin) \033[0m (virtualenv home: ${WORKON_HOME})"
+    source /usr/bin/virtualenvwrapper.sh
 else
     echo -e "\033[0;31mvirtualenvwrapper is not installed. Please run pip install --user virtualenvwrapper \033[0m"
+fi
+
+if [ -f ~/.dev_env.bash ]; then
+    echo -e "\033[0;32mSourcing Development Environment \033[0m"
+    source ~/.dev_env.bash
 fi
