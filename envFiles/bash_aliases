@@ -39,7 +39,7 @@ if [ -f ~/.git-prompt.sh ]; then
 fi
 
 
-export WORKON_HOME=~/virtualenvs/
+export WORKON_HOME=$HOME/virtualenvs/
 
 # ENVIRONMENT VARIABLES
 export EDITOR=vim
