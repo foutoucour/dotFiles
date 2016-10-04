@@ -21,5 +21,4 @@ if [ ! -z "$PS1" ]; then
     alias my_ingest_bid='$HOME/rdoenv/workgroups/toolbox/shotgun/ingestBid.py'
     alias ingest_bid='/rodeo/setup/bin/shotgun/ingestBid.py'
     alias admin_film_prod='cd /mntx/admin/02_FILM/1-IN\ PRODUCTION'
-    alias _ssh_forge64='ssh localdev@forge64'
 fi

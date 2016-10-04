@@ -17,7 +17,11 @@ alias r='refresh'
 alias lg='ls -1 | grep -i \!*'
 alias eg='env | grep -i \!*'
 alias sourceMe='. ~/.bash_aliases'
-alias ls='ls --color=auto'
+if [ $(uname) == 'Darwin' ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 
 
 # colors!
