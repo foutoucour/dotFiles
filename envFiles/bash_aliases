@@ -34,6 +34,9 @@ else
     alias ls='ls --color=auto'
 fi
 
+# docker aliases
+alias drmae='docker rm $(docker ps -qa --no-trunc --filter "status=exited")'
+alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
 
 if [ -f ~/.git-prompt.sh ]; then
