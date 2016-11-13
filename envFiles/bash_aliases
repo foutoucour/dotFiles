@@ -62,16 +62,6 @@ if [ -f ~/.git-completion.bash ]; then
     set autolist=ambiguous
 fi
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    echo -e "\033[0;32mSourcing virtualenvwrapper.sh (/usr/local/bin) \033[0m (virtualenv home: ${WORKON_HOME})"
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    echo -e "\033[0;32mSourcing virtualenvwrapper.sh (/usr/bin) \033[0m (virtualenv home: ${WORKON_HOME})"
-    source /usr/bin/virtualenvwrapper.sh
-else
-    echo -e "\033[0;31mvirtualenvwrapper is not installed. Please run pip install --user virtualenvwrapper \033[0m"
-fi
-
 if [ -f ~/.dev_env.bash ]; then
     echo -e "\033[0;32mSourcing Development Environment \033[0m"
     source ~/.dev_env.bash
