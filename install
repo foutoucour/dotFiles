@@ -41,4 +41,9 @@ if [ ! -f ~/.gitdiff_meld.py ]; then
     ln -s ~/dotFiles/gitdiff_meld.py ~/.gitdiff_meld.py
 fi
 
+if [ -f ./install_apt ]; then
+    echo -e "Install apt package"
+    sudo bash ./install_apt
+fi
+
 echo -e "Done"

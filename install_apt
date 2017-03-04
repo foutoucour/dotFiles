@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+apt-get -y update
+apt-get -y upgrade
+
+apt-get install -y \
+    vim \
+    tmux \
+    terminator \
+    python-pip \
+    python3-pip \
+    git-cola \
+    gitk 
+
+# python 2 stuff
+pip2 install --upgrade pip
+python2 -m pip install ipython
+
+# python 3 stuff
+pip3 install --upgrade pip
+pip3 install virtualenvwrapper
+# from http://stackoverflow.com/questions/33524956/ipython3-and-ipython2-conflict
+python3 -m pip install ipython
+
+
+# docker, from https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+# But first, let's update the package database:
+apt-get update
+# Now let's install Docker. Add the GPG key for the official Docker repository to the system:
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+# Add the Docker repository to APT sources:
+apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+#Update the package database with the Docker packages from the newly added repo:
+apt-get update
+# Finally, install Docker:
+apt-get install -y docker-engine
+# docker-compose
+pip3 install docker-compose
+
+# Spotify for ubuntu: https://www.spotify.com/ca-en/download/linux/
+# 1. Add the Spotify repository signing key to be able to verify downloaded packages
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+
+# 2. Add the Spotify repository
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+
+# 3. Update list of available packages
+apt-get update
+
+# 4. Install Spotify
+apt-get install -y spotify-client
+
+# SBT for ubuntu: http://www.scala-sbt.org/release/docs/Installing-sbt-on-Linux.html
+echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+apt-get update
+apt-get install -y sbt
+
+apt-get autoremove -y
