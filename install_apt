@@ -10,6 +10,7 @@ apt-get install -y \
     python-pip \
     python3-pip \
     git-cola \
+    shutter \
     gitk 
 
 # python 2 stuff
