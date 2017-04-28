@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#if not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # colors!
 readonly RED="\[\033[31m\]"
 readonly GREEN="\[\033[32m\]"
@@ -73,3 +76,5 @@ if [ -f ~/.dev_env.bash ]; then
     echo -e "\033[0;32mSourcing Development Environment \033[0m"
     source ~/.dev_env.bash
 fi
+
+export PATH="/usr/local/bin:$PATH"
