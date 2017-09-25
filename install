@@ -36,11 +36,6 @@ if [ ! -f ~/.git-completion.bash ]; then
     ln -s ~/dotFiles/git-completion.bash ~/.git-completion.bash
 fi
 
-if [ ! -f ~/.gitdiff_meld.py ]; then
-    echo -e "git diff with meld."
-    ln -s ~/dotFiles/gitdiff_meld.py ~/.gitdiff_meld.py
-fi
-
 if [ -f ./install_apt ]; then
     echo -e "Install apt package"
     sudo bash ./install_apt
