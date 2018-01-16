@@ -13,6 +13,10 @@ else
     fi
 fi
 
+echo "Install fish stuff"
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+curl -L https://get.oh-my.fish | fish
+omf install shellder
 if [ $SHELL != $(which fish) ]; then
     echo -e "Setting shell to fish. Logout to have bash has default shell language."
     chsh -s $(which fish)
