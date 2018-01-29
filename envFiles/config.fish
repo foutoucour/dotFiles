@@ -35,5 +35,7 @@ set -x EDITOR vim
 # virtualenv for fish: http://virtualfish.readthedocs.io/
 eval (python -m virtualfish)
 
+echo "Setting PIPENV_VENV_IN_PROJECT so pipenv install venv in `root/.venv` folder."
+set -x PIPENV_VENV_IN_PROJECT 1
 # special case of $PATH: https://github.com/fish-shell/fish-shell/issues/527
 set -gx PATH /usr/local/sbin /usr/local/bin $PATH
