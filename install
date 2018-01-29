@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sudo su -
 if [ $(uname) == 'Darwin' ]; then
     if [ ! -f $(which brew) ]; then
         echo "Darwin: Install brew"
@@ -7,10 +7,7 @@ if [ $(uname) == 'Darwin' ]; then
     fi
     brew install fish
 else
-    if [ -f ./install_apt ]; then
-        echo -e "Install apt package"
-        sudo bash ./install_apt
-    fi
+    apt-get install fish
 fi
 
 echo "Install fish stuff"
