@@ -29,8 +29,7 @@ alias ll='ls -l'
 alias r='refresh'
 alias lg='ls -1 | grep -i \!*'
 alias eg='env | grep -i \!*'
-# should be improved as the file can actually be ~/.bashrc (on Darwin for example)
-alias sourceMe='. ~/.bash_aliases'
+alias dc='docker-compose'
 if [ $(uname) == 'Darwin' ]; then
     alias ls='ls -G'
 else
@@ -80,5 +79,8 @@ if [ -f ~/.dev_env.bash ]; then
     source ~/.dev_env.bash
 fi
 
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+

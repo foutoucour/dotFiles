@@ -1,14 +1,27 @@
 #!/usr/bin/env bash
-
-
-if [ $SHELL != /bin/bash ]; then
-    echo -e "Setting shell to bash. Logout to have bash has default shell language."
-    chsh -s /bin/bash
+sudo su -
+if [ $(uname) == 'Darwin' ]; then
+    if [ ! -f $(which brew) ]; then
+        echo "Darwin: Install brew"
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    brew install fish
+else
+    apt-get install fish
 fi
 
-if [ ! -f ~/.bash_aliases ]; then
-    echo -e "Install bash file. For local dev files, see ~/dotFiles/envFiles."
-    ln -s ~/dotFiles/envFiles/bash_aliases ~/.bash_aliases
+echo "Install fish stuff"
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+curl -L https://get.oh-my.fish | fish
+omf install shellder
+if [ $SHELL != $(which fish) ]; then
+    echo -e "Setting shell to fish. Logout to have bash has default shell language."
+    chsh -s $(which fish)
+fi
+
+if [ ! -f "~/.config/fish/config.fish" ]; then
+    echo -e "Install fish file."
+    ln -s ~/dotFiles/envFiles/config.fish ~/.config/fish/config.fish
 fi
 
 if [ ! -d ~/.vim ]; then
@@ -26,19 +39,6 @@ if [ ! -f ~/.gitconfig ]; then
     ln -s ~/dotFiles/gitconfig ~/.gitconfig
 fi
 
-if [ ! -f ~/.git-prompt.sh ]; then
-    echo -e "git prompt."
-    ln -s ~/dotFiles/git-prompt.sh ~/.git-prompt.sh
-fi
 
-if [ ! -f ~/.git-completion.bash ]; then
-    echo -e "git auto completion."
-    ln -s ~/dotFiles/git-completion.bash ~/.git-completion.bash
-fi
-
-if [ -f ./install_apt ]; then
-    echo -e "Install apt package"
-    sudo bash ./install_apt
-fi
 
 echo -e "Done"
